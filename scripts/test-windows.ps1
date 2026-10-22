@@ -41,6 +41,11 @@ Assert-Rejected { Get-SafeChildPath ([IO.Path]::GetPathRoot($sandbox)) 'file' } 
 if ($env:OS -eq 'Windows_NT') {
     Assert-Rejected { Get-SafeChildPath $sandbox 'C:\outside' } 'Reject rooted Windows paths'
     Assert-Rejected { Assert-DeploymentTarget $sandbox '' } 'Do not deploy another registered directory'
+    $encoding = Get-NativePathEncoding
+    $representable = $true
+    try { $encoding.GetBytes($sandbox) | Out-Null } catch { $representable = $false }
+    if ($representable) { Assert-NativeRimeDirectory $sandbox }
+    else { Assert-Rejected { Assert-NativeRimeDirectory $sandbox } 'Reject unsupported native paths before overwriting settings' }
 }
 & (Join-Path $PSScriptRoot 'deploy.ps1') -UserDir $sandbox -Preview
 Assert-Test (-not (Test-Path -LiteralPath $marker)) 'Preview must not create a backup or overwrite settings'
@@ -94,14 +99,22 @@ if ($Engine) {
     & cmd.exe /d /c $build
     if ($LASTEXITCODE -ne 0) { throw 'Windows engine harness compilation failed.' }
     $previousWeasel = $env:RIME_TEST_WEASEL_DIR
+    # PowerShell file operations above exercise Chinese paths. The stock Lua module
+    # requires a path representable by the process ANSI code page (1252 on CI).
+    $engineDirectory = Join-Path $cache ("engine caf" + [char]0xE9 + '-' + [Guid]::NewGuid().ToString('N'))
+    Assert-NativeRimeDirectory $engineDirectory
+    Move-Item -LiteralPath $sandbox -Destination $engineDirectory
     try {
         $env:RIME_TEST_WEASEL_DIR = $weasel
         foreach ($schema in @('luna_pinyin_simp', 'wanxiang')) {
-            & $binary $sandbox $schema
+            & $binary $engineDirectory $schema
             if ($LASTEXITCODE -ne 0) { throw "Real Windows engine test failed: $schema" }
         }
-        & (Join-Path $PSScriptRoot 'verify.ps1') -UserDir $sandbox
-    } finally { $env:RIME_TEST_WEASEL_DIR = $previousWeasel }
+        & (Join-Path $PSScriptRoot 'verify.ps1') -UserDir $engineDirectory
+    } finally {
+        $env:RIME_TEST_WEASEL_DIR = $previousWeasel
+        Move-Item -LiteralPath $engineDirectory -Destination $sandbox
+    }
 }
 & (Join-Path $PSScriptRoot 'rollback.ps1') -UserDir $sandbox -SkipDeploy
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'default.custom.yaml')) -eq $original) 'Restore original settings'

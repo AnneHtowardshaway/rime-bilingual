@@ -85,6 +85,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -Weasel
 
 等待重新部署完成，切换到小狼毫中文模式，在方案选单选择“万象拼音”或“朙月拼音·简化字”。输入 `github`，第二候选应为 `GitHub`，按 `2` 上屏。英文释义使用 Segoe UI，中文使用系统自带微软雅黑，支持浅色与深色主题。
 
+**路径限制：** 小狼毫携带的 [Lua 模块使用 Windows 本地编码路径](https://github.com/hchunhui/librime-lua/blob/master/src/modules.cc)。目录必须能被系统 ANSI 码页无损表示，例如英文 Windows 默认码页 1252 无法表示中文目录。正式安装会在覆盖文件前检测并拒绝不兼容路径；可在小狼毫安装设置中选择纯英文用户目录后重试。脚本不修改系统区域、注册表或全局 UTF-8 选项。PowerShell 的文件复制支持中文目录，不代表原生引擎也支持该路径。
+
 检查和回滚：
 
 ```powershell
@@ -135,7 +137,7 @@ docker	Docker	容器
 
 以上为 macOS 命令。完整测试使用已安装鼠须管的 librime、Lua 与语法模型插件，并需要 Xcode Command Line Tools 的 `clang++`。首次额外下载固定版本的 Rime API 头文件并校验。测试不会写入正在使用的输入法目录。Linux CI 运行 Lua 与脚本检查。
 
-Windows 开发测试（隔离目录包含空格与中文）：
+Windows 开发测试（文件操作覆盖空格与中文；真实引擎覆盖系统码页可表示的非 ASCII 路径）：
 
 ```powershell
 # 脚本解析、真实资源校验、安装预览、备份、回滚及目录保护

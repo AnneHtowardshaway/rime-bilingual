@@ -61,13 +61,38 @@ function Resolve-WeaselDirectory([string]$WeaselDir) {
     throw 'Install Weasel first, or specify -WeaselDir with its installation directory.'
 }
 
+function Get-NativePathEncoding {
+    if ($env:OS -ne 'Windows_NT') { throw 'Windows native code page detection requires Windows.' }
+    if (-not ('RimeBilingual.NativeCodePage' -as [type])) {
+        Add-Type -TypeDefinition 'namespace RimeBilingual { public static class NativeCodePage { [System.Runtime.InteropServices.DllImport("kernel32.dll")] public static extern uint GetACP(); } }'
+    }
+    if ('System.Text.CodePagesEncodingProvider' -as [type]) {
+        [Text.Encoding]::RegisterProvider([Text.CodePagesEncodingProvider]::Instance)
+    }
+    return [Text.Encoding]::GetEncoding([RimeBilingual.NativeCodePage]::GetACP(),
+        [Text.EncoderFallback]::ExceptionFallback, [Text.DecoderFallback]::ExceptionFallback)
+}
+
+function Assert-NativeRimeDirectory([string]$Directory) {
+    $encoding = Get-NativePathEncoding
+    try {
+        $roundTrip = $encoding.GetString($encoding.GetBytes($Directory))
+        if ($roundTrip -cne $Directory) { throw 'Path cannot round-trip.' }
+    } catch {
+        throw "Weasel Lua cannot represent this directory in Windows code page $($encoding.CodePage): $Directory. Choose a representable Weasel user directory before installation; system locale will not be modified."
+    }
+}
+
 function Assert-DeploymentTarget([string]$UserDir, [string]$WeaselDir) {
     if ($env:OS -ne 'Windows_NT') { throw 'Native deployment requires Windows. Use -SkipDeploy for isolated tests.' }
     $registered = Get-RegisteredRimeDirectory
     if ($UserDir.TrimEnd('\', '/') -ine $registered.TrimEnd('\', '/')) {
         throw 'Weasel /deploy always uses the registered directory. Use -SkipDeploy for a custom test directory.'
     }
-    return Resolve-WeaselDirectory $WeaselDir
+    Assert-NativeRimeDirectory $UserDir
+    $installation = Resolve-WeaselDirectory $WeaselDir
+    Assert-NativeRimeDirectory $installation
+    return $installation
 }
 
 function Invoke-WeaselDeployment([string]$WeaselDir) {
