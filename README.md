@@ -44,7 +44,7 @@ cd rime-bilingual
 ./scripts/deploy.sh
 ```
 
-默认安装到 `$HOME/Library/Rime`。首次需要联网下载约 34 MiB 万象 Base 发布包和约 400 MiB 语法模型，随后运行完全离线。下载使用固定版本与 SHA-256 校验；校验失败会终止，不使用未知版本替代。
+默认安装到 `$HOME/Library/Rime`。首次需要联网下载约 34 MiB 万象 Base 发布包和约 380 MiB 语法模型，随后运行完全离线。下载使用固定版本、模型资产 ID 与 SHA-256 校验；校验失败或上游删除资产时会终止，不跟随可变的 LTS 下载地址，也不使用未知版本替代。
 
 部署后等待鼠须管部署完成，按 **Control + grave**（重音符键）或 **F4** 打开方案选单，选择“万象拼音”或“朙月拼音·简化字”。输入 `github`，按数字 **2** 应输出 `GitHub`。
 
@@ -63,7 +63,7 @@ RIME_FONT_PRESET=compact ./scripts/deploy.sh
 先安装并启用[官方小狼毫](https://github.com/rime/weasel/releases)，然后克隆仓库，或在 GitHub 选择 **Code → Download ZIP** 并解压。在项目目录打开 PowerShell：
 
 ```powershell
-# 安装预览；首次会下载约 34 MiB Base 包与约 400 MiB 模型
+# 安装预览；首次会下载约 34 MiB Base 包与约 380 MiB 模型
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -Preview
 
 # 备份、安装并调用小狼毫重新部署

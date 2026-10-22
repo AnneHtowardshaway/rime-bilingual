@@ -36,6 +36,8 @@ $marker = Join-Path $sandbox 'backups/.rime-bilingual-windows-last-backup'
 Assert-Rejected { Get-SafeChildPath $sandbox '../escape' } 'Reject parent traversal'
 Assert-Rejected { Get-SafeChildPath $sandbox 'dir\..\escape' } 'Reject Windows traversal'
 Assert-Rejected { Get-SafeChildPath $sandbox 'file:stream' } 'Reject alternate data streams'
+Assert-Test ((Resolve-RimeDirectory ($sandbox + [IO.Path]::DirectorySeparatorChar)) -eq $sandbox) 'Normalize a trailing separator'
+Assert-Rejected { Get-SafeChildPath ([IO.Path]::GetPathRoot($sandbox)) 'file' } 'Reject a filesystem root'
 if ($env:OS -eq 'Windows_NT') {
     Assert-Rejected { Get-SafeChildPath $sandbox 'C:\outside' } 'Reject rooted Windows paths'
     Assert-Rejected { Assert-DeploymentTarget $sandbox '' } 'Do not deploy another registered directory'

@@ -21,7 +21,7 @@ if [ "$dry_run" = '0' ] && [ "${RIME_SKIP_RELOAD:-0}" != '1' ] && [ ! -x "$squir
 fi
 wanxiang_version='v17.10.3'
 wanxiang_source="$project_root/.cache/wanxiang/$wanxiang_version/source"
-wanxiang_model="$project_root/.cache/wanxiang/LTS/wanxiang-lts-zh-hans.gram"
+wanxiang_model="$project_root/.cache/wanxiang/models/655157355/wanxiang-lts-zh-hans.gram"
 backup_stamp="$(date '+%Y%m%d-%H%M%S')-$$"
 backup_dir="$rime_dir/backups/qingjian-learning-$backup_stamp"
 manifest="$backup_dir/deployed-files.txt"

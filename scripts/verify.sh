@@ -6,7 +6,8 @@ built_wanxiang="$rime_dir/build/wanxiang.schema.yaml"
 built_luna="$rime_dir/build/luna_pinyin_simp.schema.yaml"
 built_theme="$rime_dir/build/squirrel.yaml"
 model="$rime_dir/wanxiang-lts-zh-hans.gram"
-expected_model_sha256='8f1b2d3ed2b2755fdd445f6ab103eff613052080b62a0c049f4b166043a16ac4'
+expected_model_sha256='9eedac1d836f3fdafb61b162035c8937253aedc106be40b2b957d9ab64e9ed89'
+legacy_model_sha256='8f1b2d3ed2b2755fdd445f6ab103eff613052080b62a0c049f4b166043a16ac4'
 
 for path in \
   "$rime_dir/default.custom.yaml" \
@@ -30,7 +31,7 @@ do
 done
 
 actual_model_sha256=$(shasum -a 256 "$model" | awk '{print $1}')
-test "$actual_model_sha256" = "$expected_model_sha256"
+test "$actual_model_sha256" = "$expected_model_sha256" || test "$actual_model_sha256" = "$legacy_model_sha256"
 
 grep -Fq 'schema_id: wanxiang' "$built_wanxiang"
 grep -Eq 'language: "?wanxiang-lts-zh-hans"?' "$built_wanxiang"

@@ -2,11 +2,13 @@
 # Keep PowerShell sources ASCII for Windows PowerShell 5.1 (no BOM required).
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
+$ProgressPreference = 'SilentlyContinue'
 $script:ProjectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $script:Utf8 = New-Object Text.UTF8Encoding($false)
 $script:WanxiangVersion = 'v17.10.3'
 $script:BaseHash = 'b01a9d62a0717c15b4669ea237226f13028ebe017bd2ed728cf92a2c0151bf1a'
-$script:ModelHash = '8f1b2d3ed2b2755fdd445f6ab103eff613052080b62a0c049f4b166043a16ac4'
+$script:ModelHash = '9eedac1d836f3fdafb61b162035c8937253aedc106be40b2b957d9ab64e9ed89'
+$script:ModelAssetId = '655157355'
 $script:UpstreamFiles = @(
     'default.yaml', 'wanxiang.schema.yaml', 'wanxiang.dict.yaml',
     'wanxiang_algebra.yaml', 'wanxiang_symbols.yaml',
@@ -30,8 +32,13 @@ function Get-RegisteredRimeDirectory {
 }
 
 function Resolve-RimeDirectory([string]$UserDir) {
-    if (-not $UserDir) { return Get-RegisteredRimeDirectory }
-    return [IO.Path]::GetFullPath([Environment]::ExpandEnvironmentVariables($UserDir))
+    if (-not $UserDir) { $resolved = Get-RegisteredRimeDirectory }
+    else { $resolved = [IO.Path]::GetFullPath([Environment]::ExpandEnvironmentVariables($UserDir)) }
+    $resolved = $resolved.TrimEnd('\', '/')
+    if ($resolved -eq [IO.Path]::GetPathRoot($resolved).TrimEnd('\', '/')) {
+        throw 'Use a dedicated Rime user directory, not a filesystem root.'
+    }
+    return $resolved
 }
 
 function Resolve-WeaselDirectory([string]$WeaselDir) {
@@ -70,8 +77,9 @@ function Invoke-WeaselDeployment([string]$WeaselDir) {
 }
 
 function Assert-FileHash([string]$File, [string]$Expected) {
-    if ((Get-FileHash -LiteralPath $File -Algorithm SHA256).Hash -ine $Expected) {
-        throw "SHA-256 mismatch: $File. Remove the invalid cache and retry. No unverified resource will be installed."
+    $actual = (Get-FileHash -LiteralPath $File -Algorithm SHA256).Hash
+    if ($actual -ine $Expected) {
+        throw "SHA-256 mismatch: $File. Expected $Expected; got $actual. No unverified resource will be installed."
     }
 }
 
@@ -84,7 +92,7 @@ function Get-CheckedDownload([string]$Url, [string]$File, [string]$Hash) {
         for ($attempt = 1; $attempt -le 3; $attempt++) {
             try {
                 Write-Host "Downloading: $Url"
-                Invoke-WebRequest -UseBasicParsing -Uri $Url -OutFile $temporary -TimeoutSec 180
+                Invoke-WebRequest -UseBasicParsing -Uri $Url -Headers @{ Accept = 'application/octet-stream' } -OutFile $temporary -TimeoutSec 180
                 break
             } catch {
                 if ($attempt -eq 3) { throw }
@@ -102,9 +110,9 @@ function Get-WanxiangResources {
     $cache = Join-Path $script:ProjectRoot '.cache/wanxiang'
     $base = Join-Path $cache $script:WanxiangVersion
     $archive = Join-Path $base 'rime-wanxiang-base.zip'
-    $model = Join-Path $cache 'LTS/wanxiang-lts-zh-hans.gram'
+    $model = Join-Path $cache "models/$script:ModelAssetId/wanxiang-lts-zh-hans.gram"
     Get-CheckedDownload "https://github.com/amzxyz/rime-wanxiang/releases/download/$script:WanxiangVersion/rime-wanxiang-base.zip" $archive $script:BaseHash
-    Get-CheckedDownload 'https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram' $model $script:ModelHash
+    Get-CheckedDownload "https://api.github.com/repos/amzxyz/rime-wanxiang-data/releases/assets/$script:ModelAssetId" $model $script:ModelHash
     $source = Join-Path $base 'source'
     if (-not (Test-Path -LiteralPath (Join-Path $source 'wanxiang.schema.yaml'))) {
         if (Test-Path -LiteralPath $source) { throw "Incomplete extraction: $source. Remove that cache directory and retry." }
@@ -144,6 +152,9 @@ function Get-SafeChildPath([string]$Root, [string]$Relative) {
         throw "Unsafe manifest path: $Relative"
     }
     $resolvedRoot = [IO.Path]::GetFullPath($Root).TrimEnd('\', '/')
+    if (-not $resolvedRoot -or $resolvedRoot -eq [IO.Path]::GetPathRoot([IO.Path]::GetFullPath($Root)).TrimEnd('\', '/')) {
+        throw 'A filesystem root is not a permitted installation or backup directory.'
+    }
     $result = [IO.Path]::GetFullPath((Join-Path $resolvedRoot $Relative))
     if (-not $result.StartsWith($resolvedRoot + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) {
         throw "Path escapes its root: $Relative"

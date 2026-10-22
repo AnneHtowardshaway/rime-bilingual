@@ -5,11 +5,12 @@ project_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 cache_root="$project_root/.cache/wanxiang"
 release_version='v17.10.3'
 base_sha256='b01a9d62a0717c15b4669ea237226f13028ebe017bd2ed728cf92a2c0151bf1a'
-model_sha256='8f1b2d3ed2b2755fdd445f6ab103eff613052080b62a0c049f4b166043a16ac4'
+model_sha256='9eedac1d836f3fdafb61b162035c8937253aedc106be40b2b957d9ab64e9ed89'
+model_asset_id='655157355'
 base_url="https://github.com/amzxyz/rime-wanxiang/releases/download/$release_version/rime-wanxiang-base.zip"
-model_url='https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram'
+model_url="https://api.github.com/repos/amzxyz/rime-wanxiang-data/releases/assets/$model_asset_id"
 base_dir="$cache_root/$release_version"
-model_dir="$cache_root/LTS"
+model_dir="$cache_root/models/$model_asset_id"
 base_archive="$base_dir/rime-wanxiang-base.zip"
 model_file="$model_dir/wanxiang-lts-zh-hans.gram"
 source_dir="$base_dir/source"
@@ -38,10 +39,11 @@ download() {
 
   if command -v aria2c >/dev/null 2>&1; then
     aria2c --max-tries=5 --retry-wait=2 --max-connection-per-server=4 \
+      --header='Accept: application/octet-stream' \
       --split=4 --min-split-size=5M --dir="$temp_dir" \
       --out="$(basename -- "$destination")" "$url"
   else
-    curl --http1.1 --retry 5 --retry-all-errors -fL "$url" -o "$temp_file"
+    curl --http1.1 --retry 5 --retry-all-errors -H 'Accept: application/octet-stream' -fL "$url" -o "$temp_file"
   fi
 
   actual_sha256=$(sha256_of "$temp_file")
