@@ -69,7 +69,8 @@ function Get-NativePathEncoding {
     if ('System.Text.CodePagesEncodingProvider' -as [type]) {
         [Text.Encoding]::RegisterProvider([Text.CodePagesEncodingProvider]::Instance)
     }
-    return [Text.Encoding]::GetEncoding([RimeBilingual.NativeCodePage]::GetACP(),
+    $codePage = [int]([RimeBilingual.NativeCodePage]::GetACP())
+    return [Text.Encoding]::GetEncoding($codePage,
         [Text.EncoderFallback]::ExceptionFallback, [Text.DecoderFallback]::ExceptionFallback)
 }
 
