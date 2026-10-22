@@ -29,6 +29,9 @@ foreach ($relative in $files) {
 }
 $withdrawn = Join-Path $backup ('rolled-back-' + [Guid]::NewGuid().ToString('N'))
 foreach ($relative in $files) {
+    # Older manifests included an existing aggregate even though installation preserved it.
+    if ($relative -eq 'luna_pinyin.tech.dict.yaml' -and
+        (Test-Path -LiteralPath (Get-SafeChildPath (Join-Path $backup 'previous') $relative) -PathType Leaf)) { continue }
     $current = Get-SafeChildPath $target $relative
     if (Test-Path -LiteralPath $current -PathType Leaf) {
         $retained = Get-SafeChildPath $withdrawn $relative

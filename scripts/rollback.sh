@@ -53,6 +53,11 @@ while IFS= read -r relative_path; do
       ;;
   esac
 
+  # 兼容旧版清单：这份已有的私人聚合词库当初并未被安装器覆盖。
+  if [ "$relative_path" = 'luna_pinyin.tech.dict.yaml' ] && [ -f "$backup_dir/previous/$relative_path" ]; then
+    continue
+  fi
+
   if [ -f "$rime_dir/$relative_path" ]; then
     mkdir -p "$installed_dir/$(dirname -- "$relative_path")"
     mv "$rime_dir/$relative_path" "$installed_dir/$relative_path"

@@ -67,6 +67,10 @@ $backup = [IO.File]::ReadAllText($marker, $script:Utf8)
 $manifestFile = Join-Path $backup 'deployed-files.json'
 $validManifest = [IO.File]::ReadAllText($manifestFile, $script:Utf8)
 $manifest = $validManifest | ConvertFrom-Json
+# Exercise an older backup that listed the untouched private aggregate.
+$manifest.Files += 'luna_pinyin.tech.dict.yaml'
+Write-Utf8File (Join-Path $backup 'previous/luna_pinyin.tech.dict.yaml') $aggregate
+$validManifest = $manifest | ConvertTo-Json -Depth 4
 $manifest.Files += '../escape'
 Write-Utf8File $manifestFile ($manifest | ConvertTo-Json -Depth 4)
 $beforeHash = (Get-FileHash -LiteralPath (Join-Path $sandbox 'default.custom.yaml')).Hash
