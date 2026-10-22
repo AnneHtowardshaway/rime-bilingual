@@ -50,7 +50,14 @@ result = run("github", { "GitHub", "Git湖北", "Git" })
 equal(result[1].text, "Git湖北"); equal(result[2].text, "GitHub")
 equal(run("github", { "GitHub" })[1].text, "GitHub")
 equal(run("github", {})[1].text, "GitHub")
-for _, code in ipairs({ "githu", "githubx", "kaifa", "github.com", "GitHub" }) do
+for _, item in ipairs({ { "zai", "Z.ai" }, { "mergerequest", "Merge Request" } }) do
+  result = run(item[1], { "原候选", item[2]:lower(), "后续候选" })
+  equal(result[1].text, "原候选"); equal(result[2].text, item[2])
+  equal(result[2]._end, #item[1]); equal(#result, 3)
+  equal(#run(item[1], { "原候选" }, { internet_english_disabled = true }), 1)
+end
+for _, code in ipairs({ "githu", "githubx", "kaifa", "github.com", "GitHub",
+    "za", "mergereques", "mergerequestx" }) do
   result = run(code, { "原候选" }); equal(#result, 1); equal(result[1].text, "原候选")
 end
 for _, option in ipairs({ "ascii_mode", "internet_english_disabled" }) do

@@ -47,6 +47,7 @@ anthropic	Anthropic	AI
 gemini	Gemini	AI 助手
 deepseek	DeepSeek	AI
 qwen	Qwen	AI
+zai	Z.ai	AI 平台
 ollama	Ollama	本地模型
 huggingface	Hugging Face	模型社区
 copilot	Copilot	AI 助手
@@ -191,6 +192,7 @@ branch	branch	分支
 merge	merge	合并
 rebase	rebase	变基
 pullrequest	pull request	合并请求
+mergerequest	Merge Request	合并请求
 frontend	frontend	前端
 backend	backend	后端
 fullstack	full stack	全栈

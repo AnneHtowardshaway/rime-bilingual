@@ -10,7 +10,7 @@
 | `github` | 第二候选为 `GitHub` | 按数字 **2** |
 | `docker` | 出现规范英文候选 `Docker` | 选择该候选 |
 
-内置 **196 个常用英文编码**，包括 GitHub、GitLab、Docker、ChatGPT、JavaScript、VS Code 等；英文候选和英文释义都可以单独关闭。
+内置 **198 个常用英文编码**，包括 GitHub、GitLab、Docker、ChatGPT、JavaScript、VS Code 等；英文候选和英文释义都可以单独关闭。
 
 **直接跳到：** [安装](#安装) · [安装后怎么用](#安装后怎么用) · [字号与开关](#字号与开关) · [恢复原配置](#恢复原配置) · [常见问题](#常见问题)
 
@@ -96,7 +96,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -Previe
 
 **看到英文候选和英文释义，就可以正常使用了。** 不需要运行开发测试或继续调整配置。
 
-英文词使用完整小写编码，例如 `github`、`chatgpt`。项目只做精确匹配，不做英文前缀联想；未命中的输入沿用原候选顺序。若原方案只有这个英文一个候选，则只保留一个规范英文候选。
+英文词使用完整小写编码，例如 `github`、`chatgpt`；输入 `zai` 可选 `Z.ai`，输入 `mergerequest` 可选 `Merge Request`，编码中不加点号或空格。项目只做精确匹配，不做英文前缀联想；未命中的输入沿用原候选顺序。若原方案只有这个英文一个候选，则只保留一个规范英文候选。
 
 ## 字号与开关
 

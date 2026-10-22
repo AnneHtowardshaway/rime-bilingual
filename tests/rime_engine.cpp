@@ -103,16 +103,28 @@ static int run(int argc, char** argv) {
         {"chatgpt", "ChatGPT"}, {"javascript", "JavaScript"}, {"typescript", "TypeScript"},
         {"python", "Python"}, {"vscode", "VS Code"}, {"openai", "OpenAI"},
         {"kubernetes", "Kubernetes"}, {"nginx", "Nginx"}, {"markdown", "Markdown"},
+        {"zai", "Z.ai"}, {"mergerequest", "Merge Request"},
       };
       for (auto& item : cases) {
         auto candidates = query(api, session, item.first);
         size_t index = candidates.size() == 1 ? 0 : 1;
         require(!candidates.empty() && candidates[index].first == item.second,
                 "第二候选不匹配：" + std::string(item.first));
-        require(std::string(item.first) != "github" || index == 1, "GitHub 必须位于第二项");
+        const std::string code = item.first;
+        require((code != "github" && code != "zai" && code != "mergerequest") || index == 1,
+                "英文必须位于第二项：" + code);
         int count = 0;
         for (auto& candidate : candidates) if (candidate.first == item.second) count++;
         require(count == 1, "英文候选重复：" + std::string(item.first));
+        // 点号和空格必须作为候选文本整体提交，不能重新解释成标点或选词键。
+        if (code == "zai" || code == "mergerequest") {
+          api->process_key(session, '2', 0);
+          RIME_STRUCT(RimeCommit, phrase_commit);
+          require(api->get_commit(session, &phrase_commit), "数字 2 没有提交：" + code);
+          std::string text = phrase_commit.text;
+          api->free_commit(&phrase_commit);
+          require(text == item.second, "完整英文提交错误：" + code + " → " + text);
+        }
         std::printf("PASS %s / %s → %zu. %s\n", argv[2], item.first, index + 1, item.second);
       }
       // 选择第二候选必须提交完整英文，而不是部分编码或中文组句。
