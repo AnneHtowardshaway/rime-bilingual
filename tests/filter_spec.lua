@@ -7,11 +7,16 @@ end
 rime_api = { get_user_data_dir = function() return root .. "/rime" end }
 log = { error = function(message) error(message) end, info = function() end }
 Candidate = function(kind, start, finish, text, comment)
-  return { type = kind, start = start, _end = finish, text = text, comment = comment }
+  return { type = kind, start = start, _end = finish, text = text, comment = comment,
+    quality = 0,
+    get_dynamic_type = function(self) return self._original and "Shadow" or "Simple" end,
+    get_genuine = function(self) return self._original or self end }
 end
 ShadowCandidate = function(original, kind, text, comment)
-  return Candidate(kind, original.start, original._end,
+  local shadow = Candidate(kind, original.start, original._end,
     text ~= "" and text or original.text, comment)
+  shadow._original = original
+  return shadow
 end
 yield = function(candidate) output[#output + 1] = candidate end
 local function stream(candidates)
@@ -99,4 +104,17 @@ end
 equal(run_gloss(1, false), "v. develop")
 equal(run_gloss(2, false), "v. develop · v. exploit")
 equal(run_gloss(2, true), "")
+-- 模拟简繁转换后的嵌套包装；注释必须保留简体显示和底层学习候选。
+local original = Candidate("phrase", 0, 3, "嵐", "")
+original.quality = 7
+local converted = ShadowCandidate(original, "simplified", "岚", "")
+local wrapped = ShadowCandidate(converted, "simplified", "", "lan")
+wrapped.quality = 9
+env = environment("lan")
+gloss.init(env)
+output = {}
+gloss.func(stream({ wrapped }), env)
+equal(output[1].text, "岚"); equal(output[1]:get_genuine(), original)
+equal(output[1].quality, 9); equal(output[1].start, 0); equal(output[1]._end, 3)
+equal(output[1].comment, "lan  n. storm")
 print("Lua 回归通过：" .. count .. " 个英文编码、去重、范围、开关与释义配置")

@@ -36,6 +36,7 @@ static Candidates query(RimeApi* api, RimeSessionId session, const std::string& 
   api->free_context(&context);
   return result;
 }
+#include "learning_spec.h"
 static int run(int argc, char** argv) {
   if (argc < 3) { std::fprintf(stderr, "用法：rime-engine USER_DIR SCHEMA [INPUT]\n"); return 2; }
   RimeApi* api = nullptr;
@@ -92,7 +93,9 @@ static int run(int argc, char** argv) {
     require(api->select_schema(session, argv[2]), "无法选择方案");
     api->set_option(session, "ascii_mode", False);
     stage = "query and commit";
-    if (argc > 3) {
+    if (argc > 3 && std::string(argv[3]) == "--check-learning") {
+      learning_persistence_spec(api, session, argv[2]);
+    } else if (argc > 3) {
       auto candidates = query(api, session, argv[3]);
       std::printf("%s / %s\n", argv[2], argv[3]);
       for (size_t i = 0; i < candidates.size(); i++)
@@ -159,6 +162,7 @@ static int run(int argc, char** argv) {
         require(!prefixed.empty() && prefixed[0].first == "GitHub", "vv 入口回归");
       }
       std::printf("PASS %s：选择、数字键提交、中文释义、开关与旧入口\n", argv[2]);
+      learning_spec(api, session, argv[2]);
     }
     api->destroy_session(session);
     api->finalize();

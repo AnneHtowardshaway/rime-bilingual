@@ -23,6 +23,7 @@ clang++ -std=c++17 -I "$cache" tests/rime_engine.cpp -o "$cache/rime-engine" \
 sandbox=$(mktemp -d "$cache/run.XXXXXX")
 printf '原配置\n' > "$sandbox/default.custom.yaml"
 printf '%s\n' '-- existing custom extension' > "$sandbox/rime.lua"
+printf '星澜工作室\txinglangongzuoshi\t1000\n' > "$sandbox/custom_phrase.txt"
 awk '/^\.\.\.$/ { print "  - private_user" } { print }' rime/luna_pinyin.tech.dict.yaml > "$sandbox/luna_pinyin.tech.dict.yaml"
 cat > "$sandbox/private_user.dict.yaml" <<'EOF'
 ---
@@ -39,6 +40,7 @@ for schema in luna_pinyin_simp wanxiang; do
     cat "$sandbox/$schema.log"; exit 1;
   }
   cat "$sandbox/$schema.log"
+  "$cache/rime-engine" "$sandbox" "$schema" --check-learning
 done
 RIME_USER_DIR="$sandbox" scripts/verify.sh
 grep -Fq 'style/font_point: 15' "$sandbox/squirrel.custom.yaml"
@@ -47,6 +49,7 @@ grep -Fq -- '- private_user' "$sandbox/luna_pinyin.tech.dict.yaml"
 RIME_USER_DIR="$sandbox" RIME_SKIP_RELOAD=1 scripts/rollback.sh
 test "$(cat "$sandbox/default.custom.yaml")" = '原配置'
 test "$(cat "$sandbox/private.userdb/sentinel")" = 'private learning sentinel'
+test "$(cat "$sandbox/custom_phrase.txt")" = "$(printf '星澜工作室\txinglangongzuoshi\t1000')"
 test ! -e "$sandbox/lua/internet_english_filter.lua"
 grep -Fq -- '- private_user' "$sandbox/luna_pinyin.tech.dict.yaml"
 grep -Fq -- '-- existing custom extension' "$sandbox/rime.lua"

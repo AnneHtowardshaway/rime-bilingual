@@ -27,6 +27,9 @@ $sandbox = Join-Path $cache ("isolated $unicode-" + [Guid]::NewGuid().ToString('
 $original = "# existing configuration`npatch: {}`n"
 Write-Utf8File (Join-Path $sandbox 'default.custom.yaml') $original
 Write-Utf8File (Join-Path $sandbox 'rime.lua') '-- existing private extension'
+$privatePhrase = -join ([char[]](0x661F, 0x6F9C, 0x5DE5, 0x4F5C, 0x5BA4))
+$privatePhrase += "`txinglangongzuoshi`t1000`n"
+Write-Utf8File (Join-Path $sandbox 'custom_phrase.txt') $privatePhrase
 $aggregate = [IO.File]::ReadAllText((Join-Path $script:ProjectRoot 'rime/luna_pinyin.tech.dict.yaml'), $script:Utf8)
 Write-Utf8File (Join-Path $sandbox 'luna_pinyin.tech.dict.yaml') ($aggregate + "`n# private imports retained`n")
 Write-Utf8File (Join-Path $sandbox 'private.userdb/sentinel') 'private learning data'
@@ -109,6 +112,8 @@ if ($Engine) {
         foreach ($schema in @('luna_pinyin_simp', 'wanxiang')) {
             & $binary $engineDirectory $schema
             if ($LASTEXITCODE -ne 0) { throw "Real Windows engine test failed: $schema" }
+            & $binary $engineDirectory $schema --check-learning
+            if ($LASTEXITCODE -ne 0) { throw "User dictionary persistence test failed: $schema" }
         }
         & (Join-Path $PSScriptRoot 'verify.ps1') -UserDir $engineDirectory
     } finally {
@@ -119,6 +124,7 @@ if ($Engine) {
 & (Join-Path $PSScriptRoot 'rollback.ps1') -UserDir $sandbox -SkipDeploy
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'default.custom.yaml')) -eq $original) 'Restore original settings'
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'private.userdb/sentinel')) -eq 'private learning data') 'Preserve user learning data'
+Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'custom_phrase.txt'), $script:Utf8) -eq $privatePhrase) 'Preserve private phrases on installation and rollback'
 Assert-Test (-not (Test-Path -LiteralPath (Join-Path $sandbox 'lua/internet_english_filter.lua'))) 'Remove newly installed files on rollback'
 Assert-Rejected { & (Join-Path $PSScriptRoot 'rollback.ps1') -UserDir $sandbox -SkipDeploy } 'Reject repeated rollback'
 Write-Host "Windows installer/rollback tests passed. PowerShell $($PSVersionTable.PSVersion). Sandbox: $sandbox"

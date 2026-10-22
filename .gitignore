@@ -11,3 +11,4 @@ backups/
 *.bak*
 installation.yaml
 user.yaml
+custom_phrase.txt

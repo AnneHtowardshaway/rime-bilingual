@@ -1,6 +1,8 @@
 # 简体朙月拼音：保留原有技术英文词库，并追加离线中英译词注释。
 patch:
   translator/dictionary: luna_pinyin.tech
+  translator/enable_user_dict: true
+  custom_phrase/initial_quality: 99
   switches/@0/states:
     - 中文
     - 英文

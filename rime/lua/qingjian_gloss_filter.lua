@@ -77,8 +77,17 @@ function M.func(input, env)
         comment = gloss
       end
 
-      -- ShadowCandidate 保留原候选的输入范围、质量和学习关系，仅覆盖显示注释。
-      yield(ShadowCandidate(candidate, candidate.type, "", comment))
+      -- librime 的学习入口只解包一层 ShadowCandidate。简繁转换等上游
+      -- 过滤器已包装过候选时，不能再次嵌套，否则原生 Phrase 无法被识别。
+      -- 保留显示文字（如「嵐」转成「岚」），直接包装最底层候选。
+      local original = candidate
+      while original:get_dynamic_type() == "Shadow"
+          or original:get_dynamic_type() == "Uniquified" do
+        original = original:get_genuine()
+      end
+      local annotated = ShadowCandidate(original, candidate.type, candidate.text, comment)
+      annotated.quality = candidate.quality
+      yield(annotated)
     end
   end
 end

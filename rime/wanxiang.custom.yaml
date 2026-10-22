@@ -1,6 +1,9 @@
 # 万象 Base 本地补丁：保留上游排序链，在去重前追加青简英文释义。
 patch:
   menu/page_size: 6
+  # 使用 Rime 原生词频学习；固定短语保存在用户目录，不随仓库安装覆盖。
+  translator/enable_user_dict: true
+  custom_phrase/initial_quality: 99
   engine/filters:
     - lua_filter@*wanxiang.context_reorder*F
     - lua_filter@*wanxiang.auto_phrase
