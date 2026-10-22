@@ -1,0 +1,23 @@
+# 万象 Base 本地补丁：保留上游排序链，在去重前追加青简英文释义。
+patch:
+  menu/page_size: 6
+  engine/filters:
+    - lua_filter@*wanxiang.context_reorder*F
+    - lua_filter@*wanxiang.auto_phrase
+    - lua_filter@*wanxiang.super_lookup
+    - lua_filter@*wanxiang.charset_filter
+    - lua_filter@*wanxiang.super_comment_preedit
+    - lua_filter@*wanxiang.super_replacer
+    - lua_filter@*wanxiang.super_filter
+    - lua_filter@*wanxiang.super_english*F
+    - lua_filter@*wanxiang.super_sequence*F
+    - lua_filter@*qingjian_gloss_filter
+    - lua_filter@*internet_english_filter
+    - uniquifier
+  switches/+:
+    - name: internet_english_disabled
+      reset: 0
+      states: [英文候选, 关闭英文候选]
+    - name: bilingual_gloss_disabled
+      reset: 0
+      states: [英文释义, 关闭英文释义]

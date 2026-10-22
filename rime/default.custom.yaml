@@ -1,0 +1,23 @@
+# 万象拼音为日常主方案，保留明月拼音简体供对比和回退。
+patch:
+  schema_list:
+    - schema: wanxiang
+    - schema: luna_pinyin_simp
+  menu/page_size: 6
+  switcher/hotkeys:
+    - Control+grave
+    - F4
+  punctuator/full_shape:
+    __include: punctuation:/full_shape
+  punctuator/half_shape:
+    __include: punctuation:/half_shape
+  selector/bindings:
+    ISO_Left_Tab: previous_candidate
+    Shift+Tab: previous_candidate
+    Tab: next_candidate
+  recognizer/patterns/email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+  recognizer/patterns/uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
+  recognizer/patterns/url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
+  ascii_composer/switch_key:
+    Shift_L: commit_code
+    Shift_R: commit_code

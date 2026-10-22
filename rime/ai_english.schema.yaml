@@ -1,0 +1,48 @@
+# Rime schema
+# encoding: utf-8
+---
+schema:
+  schema_id: ai_english
+  name: "AI 英文"
+  version: "2026.07.20"
+  description: "为中文方案的 AI 英文候选提供可编译的独立码表。"
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - table_translator
+    - punct_translator
+  filters:
+    - uniquifier
+
+speller:
+  alphabet: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_"
+
+translator:
+  dictionary: ai_english
+  enable_completion: false
+  enable_sentence: false
+  enable_user_dict: false
+
+punctuator:
+  import_preset: default
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+...

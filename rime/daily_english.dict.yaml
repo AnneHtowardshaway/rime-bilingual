@@ -1,0 +1,339 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# 日常中英对照词库。英文单词作为精确编码，在中文输入状态显示英文候选。
+---
+name: daily_english
+version: "2026.07.20"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# 学习、书写与办公
+book	book	9000
+notebook	notebook	8800
+dictionary	dictionary	8500
+page	page	8500
+paper	paper	8500
+pen	pen	8500
+pencil	pencil	8500
+eraser	eraser	8000
+folder	folder	8500
+desk	desk	8500
+office	office	8800
+company	company	8800
+team	team	8800
+colleague	colleague	8500
+manager	manager	8500
+customer	customer	8500
+report	report	8800
+presentation	presentation	8800
+meeting	meeting	9000
+project	project	9000
+task	task	9000
+
+# 数字设备与沟通
+computer	computer	9000
+keyboard	keyboard	8800
+mouse	mouse	8800
+screen	screen	8500
+charger	charger	8500
+battery	battery	8500
+internet	internet	9000
+website	website	8800
+browser	browser	8800
+email	email	9000
+message	message	9000
+reply	reply	8800
+question	question	8800
+answer	answer	8800
+phone	phone	9000
+call	call	8800
+video	video	8500
+photo	photo	8500
+document	document	9000
+file	file	9000
+link	link	8800
+account	account	8800
+password	password	8800
+login	login	8800
+logout	logout	8500
+notification	notification	8500
+setting	setting	8800
+translation	translation	8500
+
+# 时间、计划与组织
+today	today	9000
+tomorrow	tomorrow	9000
+yesterday	yesterday	8800
+morning	morning	8500
+afternoon	afternoon	8500
+evening	evening	8500
+tonight	tonight	8500
+week	week	8500
+month	month	8500
+year	year	8500
+calendar	calendar	8800
+schedule	schedule	8800
+appointment	appointment	8500
+deadline	deadline	8800
+plan	plan	8800
+priority	priority	8500
+reminder	reminder	8500
+available	available	8500
+
+# 常用动作
+open	open	9000
+close	close	9000
+start	start	9000
+stop	stop	8800
+save	save	9000
+send	send	9000
+receive	receive	8500
+download	download	9000
+upload	upload	9000
+install	install	8800
+update	update	9000
+delete	delete	8800
+copy	copy	8800
+paste	paste	8800
+share	share	8800
+search	search	9000
+check	check	8800
+choose	choose	8500
+create	create	8800
+write	write	8800
+read	read	8800
+learn	learn	8500
+help	help	8800
+wait	wait	8500
+finish	finish	8800
+change	change	8800
+order	order	8800
+pay	pay	8800
+buy	buy	8800
+return	return	8500
+
+# 日常生活、出行与购物
+home	home	8800
+room	room	8500
+door	door	8500
+table	table	8500
+water	water	8800
+coffee	coffee	8800
+tea	tea	8800
+breakfast	breakfast	8500
+lunch	lunch	8500
+dinner	dinner	8500
+restaurant	restaurant	8500
+menu	menu	8500
+hotel	hotel	8500
+airport	airport	8500
+ticket	ticket	8800
+map	map	8500
+address	address	8500
+price	price	8800
+payment	payment	8800
+invoice	invoice	8500
+delivery	delivery	8500
+package	package	8500
+
+# 常用描述词
+good	good	9000
+important	important	9000
+urgent	urgent	8800
+ready	ready	8800
+busy	busy	8800
+free	free	8800
+easy	easy	8800
+difficult	difficult	8500
+new	new	8800
+old	old	8500
+big	big	8500
+small	small	8500
+fast	fast	8800
+slow	slow	8500
+correct	correct	8800
+wrong	wrong	8500
+same	same	8500
+different	different	8500
+complete	complete	8500
+successful	successful	8500
+
+# 社交、表达与常用回复
+hello	hello	9000
+hi	hi	9000
+thanks	thanks	9000
+thank you	thankyou	8800
+sorry	sorry	8800
+please	please	8800
+welcome	welcome	8500
+okay	okay	9000
+ok	ok	9000
+yes	yes	9000
+no	no	9000
+maybe	maybe	8800
+sure	sure	8800
+great	great	8800
+awesome	awesome	8500
+perfect	perfect	8500
+nice	nice	8500
+fine	fine	8500
+happy	happy	8500
+excited	excited	8500
+love	love	8800
+like	like	8800
+dislike	dislike	8000
+agree	agree	8500
+understand	understand	8800
+confirm	confirm	8800
+please check	pleasecheck	8000
+thank you very much	thankyouverymuch	8000
+see you	seeyou	8500
+Good morning	goodmorning	8500
+Good night	goodnight	8500
+take care	takecare	8000
+
+# 家庭、健康与日常物品
+family	family	8800
+friend	friend	8800
+parent	parent	8500
+child	child	8500
+people	people	8500
+name	name	8800
+number	number	8800
+birthday	birthday	8500
+gift	gift	8500
+food	food	8800
+fruit	fruit	8500
+milk	milk	8500
+bread	bread	8500
+rice	rice	8500
+egg	egg	8500
+apple	apple	8800
+banana	banana	8000
+snack	snack	8000
+medicine	medicine	8500
+doctor	doctor	8500
+hospital	hospital	8500
+health	health	8500
+exercise	exercise	8500
+sleep	sleep	8800
+shower	shower	8000
+clothes	clothes	8500
+shirt	shirt	8000
+shoes	shoes	8000
+bag	bag	8500
+key	key	8800
+wallet	wallet	8500
+
+# 出行、位置与天气
+car	car	8800
+taxi	taxi	8500
+bus	bus	8500
+train	train	8800
+subway	subway	8500
+station	station	8500
+flight	flight	8500
+trip	trip	8800
+travel	travel	8800
+visit	visit	8500
+arrive	arrive	8500
+leave	leave	8500
+drive	drive	8500
+walk	walk	8500
+weather	weather	8800
+sunny	sunny	8000
+rainy	rainy	8000
+cloudy	cloudy	8000
+hot	hot	8500
+cold	cold	8500
+near	near	8500
+far	far	8500
+left	left	8500
+right	right	8500
+center	center	8000
+
+# 数字生活、媒体与娱乐
+wifi	wifi	9000
+bluetooth	bluetooth	8800
+app	app	9000
+apps	apps	8500
+username	username	8500
+profile	profile	8500
+contact	contact	8800
+group	group	8500
+chat	chat	9000
+voice	voice	8500
+music	music	8800
+song	song	8500
+movie	movie	8800
+game	game	8800
+news	news	8500
+podcast	podcast	8500
+live	live	8500
+stream	stream	8500
+playlist	playlist	8000
+favorite	favorite	8500
+follow	follow	8500
+subscribe	subscribe	8500
+online	online	8800
+offline	offline	8500
+
+# 常用工作、学习与消费短语
+email address	emailaddress	8500
+phone number	phonenumber	8500
+meeting room	meetingroom	8000
+work from home	workfromhome	8000
+onsite	onsite	8000
+feedback	feedback	8800
+note	note	8800
+notes	notes	8500
+idea	idea	8500
+example	example	8500
+result	result	8800
+detail	detail	8500
+option	option	8500
+choice	choice	8500
+reason	reason	8500
+problem	problem	8800
+solution	solution	8800
+mistake	mistake	8500
+practice	practice	8500
+review	review	8800
+submit	submit	8500
+approve	approve	8500
+cancel	cancel	8500
+shopping	shopping	8500
+store	store	8500
+sale	sale	8000
+discount	discount	8500
+receipt	receipt	8500
+cash	cash	8500
+card	card	8500
+
+# 常用英文服务与产品名：维持官方大小写
+WeChat	wechat	9500
+WeChat Pay	wechatpay	9200
+Alipay	alipay	9200
+Taobao	taobao	9000
+JD	jd	8800
+Meituan	meituan	8800
+Douyin	douyin	8800
+Xiaohongshu	xiaohongshu	8500
+TikTok	tiktok	9000
+YouTube	youtube	9000
+Netflix	netflix	8500
+Spotify	spotify	8800
+Apple Music	applemusic	8800
+App Store	appstore	9000
+iCloud	icloud	9000
+AirDrop	airdrop	9000
+AirPods	airpods	9000
+Google Maps	googlemaps	8500
+Google Translate	googletranslate	8500
+Gmail	gmail	8800
+Zoom	zoom	8500
+Slack	slack	8500
+Notion	notion	8500
+Canva	canva	8500

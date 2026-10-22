@@ -1,0 +1,196 @@
+# Rime dictionary
+# encoding: utf-8
+---
+name: tech_english_java
+version: "2026.07.17"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# Spring、Jakarta 与 Java Web 框架
+Spring Framework	spring	9200
+Spring Boot	springboot	9500
+Jakarta EE	jakartaee	8800
+Eclipse MicroProfile	eclipsemicroprofile	8200
+Spring MVC	springmvc	9000
+Spring WebFlux	springwebflux	9000
+Spring Web Services	springwebservices	8200
+Spring HATEOAS	springhateoas	8000
+Spring Data	springdata	9000
+Spring Data JPA	springdatajpa	9000
+Spring Data JDBC	springdatajdbc	8500
+Spring Data Redis	springdataredis	8800
+Spring Data MongoDB	springdatamongodb	8500
+Spring Security	springsecurity	9200
+Spring Authorization Server	springauthorizationserver	8500
+Spring Session	springsession	8500
+Spring Cloud	springcloud	9000
+Spring Cloud Gateway	springcloudgateway	9000
+Spring Cloud OpenFeign	springcloudopenfeign	8500
+Spring Cloud Config	springcloudconfig	8500
+Spring Batch	springbatch	8500
+Spring Integration	springintegration	8200
+Spring Retry	springretry	8500
+Spring Scheduler	springscheduler	7800
+Spring for Apache Kafka	springkafka	8500
+Spring AMQP	springamqp	8500
+Spring JMS	springjms	8000
+Spring GraphQL	springgraphql	8500
+Spring REST Docs	springrestdocs	8200
+springdoc-openapi	springdocopenapi	8500
+Quarkus	quarkus	9000
+Micronaut	micronaut	8800
+Helidon	helidon	8000
+Eclipse Vert.x	vertx	8800
+Dropwizard	dropwizard	8200
+Javalin	javalin	8200
+Spark Java	sparkjava	7800
+Play Framework	playframework	8000
+Ratpack	ratpack	7800
+Armeria	armeria	8000
+
+# Jakarta、容器、ORM 与 SQL 工具
+Jakarta RESTful Web Services	jakartarest	8200
+JAX-RS	jaxrs	8800
+Jakarta Persistence	jakartapersistence	8500
+JPA	jpa	9000
+Jakarta Servlet	jakartaservlet	8500
+Jakarta Bean Validation	jakartabeanvalidation	8500
+Jakarta WebSocket	jakartawebsocket	8200
+CDI	cdi	8500
+Apache Tomcat	tomcat	8800
+Eclipse Jetty	jetty	8500
+Undertow	undertow	8200
+WildFly	wildfly	8200
+Payara Server	payara	8000
+Open Liberty	openliberty	8200
+GlassFish	glassfish	8000
+Hibernate ORM	hibernate	9200
+Hibernate Reactive	hibernatereactive	8200
+EclipseLink	eclipselink	8000
+Apache OpenJPA	openjpa	7800
+Ebean	ebean	8000
+MyBatis	mybatis	9000
+MyBatis-Plus	mybatisplus	8800
+MyBatis-Spring	mybatisspring	8200
+Jdbi	jdbi	8200
+jOOQ	jooq	9000
+Querydsl	querydsl	8500
+JDBC	jdbc	9000
+Spring JDBC	springjdbc	8500
+JdbcTemplate	jdbctemplate	8500
+NamedParameterJdbcTemplate	namedparameterjdbctemplate	8200
+HikariCP	hikaricp	8800
+Apache DBCP	apachedbcp	8000
+Alibaba Druid	alibabadruid	8200
+C3P0	c3p0	7800
+Flyway	flyway	8800
+Liquibase	liquibase	8500
+
+# 网络、RPC、消息与缓存
+Netty	netty	9000
+Apache MINA	apachemina	8000
+Grizzly	grizzly	7800
+gRPC-Java	grpcjava	8800
+Apache Dubbo	dubbo	8800
+Apache CXF	apachecxf	8000
+RSocket	rsocket	8200
+OkHttp	okhttp	8800
+Apache HttpClient	apachehttpclient	8500
+Apache HttpComponents	apachehttpcomponents	8000
+Retrofit	retrofit	8500
+OpenFeign	openfeign	8500
+GraphQL Java	graphqljava	8500
+Netflix DGS	netflixdgs	8200
+Apache Kafka Clients	kafkaclients	8200
+Reactor Kafka	reactorkafka	8000
+RabbitMQ Java Client	rabbitmqjavaclient	8200
+Apache ActiveMQ Artemis	activemqartemis	8000
+Apache RocketMQ	rocketmq	8500
+Apache Pulsar Client	pulsarclient	8200
+Jedis	jedis	8500
+Lettuce	lettuce	8500
+Redisson	redisson	8500
+Caffeine	caffeine	8500
+Ehcache	ehcache	8000
+Guava Cache	guavacache	8000
+
+# JSON、认证、服务治理与日志
+Jackson	jackson	9000
+Gson	gson	8500
+Fastjson2	fastjson2	8500
+JSON-B	jsonb	8000
+Kryo	kryo	8000
+Hessian	hessian	7800
+Hibernate Validator	hibernatevalidator	8500
+Spring Security OAuth	springsecurityoauth	8200
+OAuth2 Client	oauth2client	8200
+OAuth2 Resource Server	oauth2resourceserver	8200
+Keycloak	keycloak	8800
+JJWT	jjwt	8200
+Nimbus JOSE + JWT	nimbusjosejwt	8000
+Auth0 Java JWT	auth0javajwt	8000
+Bouncy Castle	bouncycastle	8200
+Jasypt	jasypt	8000
+Google Tink	googletink	8000
+Apache Shiro	shiro	8500
+Casbin Java	casbinjava	8000
+Sa-Token	satoken	8500
+Nacos	nacos	8800
+Sentinel	sentinel	8800
+Seata	seata	8500
+Resilience4j	resilience4j	8500
+Spring Cloud Alibaba	springcloudalibaba	8500
+Nacos Discovery	nacosdiscovery	8200
+Nacos Config	nacosconfig	8200
+SLF4J	slf4j	8800
+Apache Commons Logging	commonslogging	8000
+Logback	logback	8800
+Log4j 2	log4j2	8800
+java.util.logging	javalogging	8000
+
+# 可观测性、测试、构建与通用工具
+Micrometer	micrometer	8500
+OpenTelemetry Java	oteljava	8500
+Prometheus Java Client	prometheusjavaclient	8200
+Spring Boot Actuator	actuator	8800
+Micrometer Tracing	micrometertracing	8000
+JUnit 5	junit5	9000
+JUnit Jupiter	junitjupiter	8500
+TestNG	testng	8200
+Mockito	mockito	8800
+EasyMock	easymock	8000
+JMockit	jmockit	7800
+AssertJ	assertj	8200
+Hamcrest	hamcrest	8000
+REST Assured	restassured	8200
+MockMvc	mockmvc	8500
+WebTestClient	webtestclient	8200
+Testcontainers	testcontainers	8800
+Spring Boot Test	springboottest	8200
+Arquillian	arquillian	7800
+WireMock Java	wiremockjava	8200
+MockServer	mockserver	8000
+Hoverfly Java	hoverflyjava	7800
+Awaitility	awaitility	8000
+Apache Maven	maven	9000
+Gradle	gradle	9000
+Ant	antbuild	7800
+Lombok	lombok	8800
+MapStruct	mapstruct	8500
+Immutables	immutables	8000
+AutoValue	autovalue	8000
+Google Guava	guava	8500
+Apache Commons	apachecommons	8200
+Hutool	hutool	8200
+Vavr	vavr	8000
+Project Reactor	projectreactor	8500
+Reactor Core	reactorcore	8200
+RxJava	rxjava	8500
+Swagger Core	swaggercore	8000
+SmallRye OpenAPI	smallryeopenapi	7800
+Checkstyle	checkstyle	8200
+PMD	pmd	8000
+SpotBugs	spotbugs	8200
+JaCoCo	jacoco	8200
+SonarQube	sonarqube	8500

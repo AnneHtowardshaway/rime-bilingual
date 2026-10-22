@@ -1,0 +1,96 @@
+# Rime dictionary
+# encoding: utf-8
+---
+name: tech_english_programming
+version: "2026.07.16"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# 数据结构：数组、对象与集合
+array	shuzu	100
+dynamic array	dongtaishuzu	100
+object	duixiang	100
+list	liebiao	100
+dictionary	zidian	100
+map	yingshe	100
+hash map	hashbiao	100
+hash table	hashbiao	100
+set	jihe	100
+tuple	yuanzu	100
+queue	duilie	100
+stack	shujuzhan	100
+linked list	lianbiao	100
+tree	shu	100
+binary tree	erchashu	100
+graph	tu	100
+node	jiedian	100
+edge	bian	100
+key	jian	100
+value	zhi	100
+key-value pair	jianzhidui	100
+property	shuxing	100
+attribute	shuxing	100
+field	ziduan	100
+data structure	shujujiegou	100
+
+# 类型、变量与面向对象
+data type	shujuleixing	100
+primitive type	yuanshileixing	100
+reference type	yinyongleixing	100
+generic	fanxing	100
+type inference	leixingtuiduan	100
+type conversion	leixingzhuanhuan	100
+casting	qiangzhileixingzhuanhuan	100
+string	zifuchuan	100
+number	shuzi	100
+boolean	buerzhi	100
+null	kongzhi	100
+undefined	weidingyi	100
+constant	changliang	100
+immutable	bukebian	100
+method	fangfa	100
+constructor	gouzaohanshu	100
+instance	shili	100
+static	jingtai	100
+class variable	leibianliang	100
+instance variable	shilibianliang	100
+access modifier	fangwenxiushifu	100
+public	gongkai	100
+private	siyou	100
+protected	baohu	100
+abstract class	chouxianglei	100
+
+# 表达式、控制流与错误处理
+statement	yuju	100
+expression	biaodashi	100
+operator	yunsuanfu	100
+conditional	tiaojian	100
+loop	xunhuan	100
+recursion	digui	100
+scope	zuoyongyu	100
+break	zhongduan	100
+continue	jixu	100
+return	fanhui	100
+await	dengdai	100
+input	shuru	100
+output	shuchu	100
+try catch	yichangchuli	100
+serialization	xuliehua	100
+deserialization	fanxuliehua	100
+parsing	jiexi	100
+validation	yanzheng	100
+logging	rizhi	100
+
+# 代码组织、构建与常见运行概念
+import	daoru	100
+export	daochu	100
+command line interface	minglinghangjiekou	100
+application	application	100
+library	ku	100
+application binary interface	yingyongerjinzhijiekou	100
+software version	banben	100
+release	fabu	100
+dependency graph	yilaiguanxitu	100
+application programming interface	api	100
+software development lifecycle	ruanjiankaifashengmingzhouqi	100

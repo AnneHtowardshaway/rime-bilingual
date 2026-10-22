@@ -1,0 +1,752 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# 独立技术英文码表。由 luna_pinyin_simp.custom.yaml 中的
+# table_translator@tech_english 挂载，以英文前缀 `;` 触发。
+---
+name: tech_english_table
+version: "2026.07.17"
+sort: by_weight
+use_preset_vocabulary: false
+import_tables:
+  - tech_english_rust
+  - tech_english_python
+  - tech_english_go
+  - tech_english_java
+...
+
+# 语言、框架与产品名
+JavaScript	js	10000
+JavaScript	javascript	9500
+TypeScript	ts	10000
+TypeScript	typescript	9500
+GitHub	github	9800
+GitLab	gitlab	9600
+Node.js	node	10000
+Node.js	nodejs	9800
+Next.js	next	9800
+Next.js	nextjs	9600
+Vue.js	vue	10000
+Vue.js	vuejs	9600
+React	react	10000
+Angular	angular	9500
+Svelte	svelte	9000
+Astro	astro	8800
+Vite	vite	9500
+Nuxt	nuxt	9200
+Electron	electron	9000
+Express	express	9500
+FastAPI	fastapi	9200
+Ruby on Rails	rails	8800
+Laravel	laravel	8800
+macOS	macos	9800
+iOS	ios	9800
+Android	android	9500
+Linux	linux	9500
+Windows	windows	9200
+MySQL	mysql	9800
+PostgreSQL	postgres	9800
+PostgreSQL	postgresql	9600
+MongoDB	mongo	9600
+MongoDB	mongodb	9500
+Redis	redis	9500
+SQLite	sqlite	9200
+GraphQL	graphql	9600
+WebSocket	websocket	9500
+OpenAI	openai	9800
+ChatGPT	chatgpt	9800
+PyTorch	pytorch	9500
+TensorFlow	tensorflow	9500
+Kubernetes	k8s	9500
+Kubernetes	kubernetes	9300
+Docker	docker	9500
+Terraform	terraform	9000
+Ansible	ansible	8800
+Jenkins	jenkins	8800
+
+# 编程语言、脚本语言与标记语言
+C	c	10000
+C++	cpp	10000
+C++	cplusplus	9500
+C#	csharp	10000
+C Sharp	csharp	9500
+Objective-C	objc	9500
+Java	java	10000
+Python	python	10000
+Go	go	10000
+Golang	golang	9500
+Rust	rust	9800
+Ruby	ruby	9500
+PHP	php	9500
+Swift	swift	9500
+Kotlin	kotlin	9500
+Scala	scala	9000
+Dart	dart	9000
+R	rlang	9000
+MATLAB	matlab	8800
+Julia	julia	8800
+Lua	lua	9000
+Perl	perl	8500
+Haskell	haskell	8800
+Elixir	elixir	9000
+Erlang	erlang	8800
+F#	fsharp	8800
+Visual Basic	visualbasic	8500
+VB.NET	vbnet	8500
+VBA	vba	8500
+Groovy	groovy	8800
+Clojure	clojure	8800
+Lisp	lisp	8800
+Common Lisp	commonlisp	8500
+Scheme	scheme	8500
+Racket	racket	8500
+OCaml	ocaml	8800
+Forth	forth	8000
+Fortran	fortran	8500
+COBOL	cobol	8000
+Pascal	pascal	8500
+Delphi	delphi	8500
+Ada	ada	8000
+Assembly	assembly	9000
+Assembly language	assemblylanguage	8500
+Bash	bash	9500
+Zsh	zsh	9000
+Fish	fishshell	8500
+PowerShell	powershell	9300
+Shell	shell	9000
+SQL	sql	9800
+PL/SQL	plsql	8800
+T-SQL	tsql	8800
+HTML	html	9800
+CSS	css	9800
+Sass	sass	9000
+SCSS	scss	9000
+Less	lesscss	8500
+JSX	jsx	9500
+TSX	tsx	9500
+XML	xml	9200
+YAML	yaml	9200
+TOML	toml	8800
+Markdown	markdown	9200
+MDX	mdx	8800
+Protocol Buffers	protobuf	9000
+Protocol Buffers	protocolbuffers	8500
+Protobuf	protobuf	9000
+Apache Thrift	thrift	8500
+Avro	avro	8500
+Solidity	solidity	9000
+Vyper	vyper	8500
+Move	movelang	8500
+Cairo	cairolang	8500
+Zig	zig	9000
+Nim	nim	8500
+Crystal	crystal	8500
+D	dlang	8500
+Vala	vala	8000
+Hack	hacklang	8000
+Apex	apex	8500
+ABAP	abap	8000
+GDScript	gdscript	8500
+ActionScript	actionscript	8500
+CoffeeScript	coffeescript	8500
+Elm	elm	8500
+ReasonML	reasonml	8500
+ReScript	rescript	8500
+PureScript	purescript	8500
+Smalltalk	smalltalk	8000
+Logo	logolang	7500
+Prolog	prolog	8000
+
+# 前端开发、浏览器与工程化
+DOM	dom	9500
+Document Object Model	dom	9000
+browser	browser	9000
+Chrome	chrome	9000
+Firefox	firefox	8800
+Safari	safari	8800
+Microsoft Edge	edge	8500
+React DOM	reactdom	9200
+React Router	reactrouter	9200
+Redux	redux	9000
+Zustand	zustand	8800
+TanStack Query	tanstackquery	8800
+React Hook Form	reacthookform	8600
+Vue Router	vuerouter	9000
+Pinia	pinia	9000
+Vuex	vuex	8800
+VitePress	vitepress	8800
+Docusaurus	docusaurus	8500
+Storybook	storybook	8800
+Tailwind CSS	tailwind	9200
+Bootstrap	bootstrap	8800
+Material UI	mui	9000
+Ant Design	antd	9000
+Chakra UI	chakraui	8500
+shadcn/ui	shadcn	9000
+Radix UI	radixui	8500
+Headless UI	headlessui	8500
+CSS Modules	cssmodules	8800
+CSS-in-JS	cssinjs	8800
+Styled Components	styledcomponents	8800
+Emotion	emotioncss	8500
+PostCSS	postcss	8800
+Autoprefixer	autoprefixer	8500
+Babel	babel	9000
+SWC	swc	9000
+esbuild	esbuild	9000
+Rollup	rollup	8800
+webpack	webpack	9000
+Parcel	parcel	8500
+Turbopack	turbopack	8500
+ESLint	eslint	9000
+Prettier	prettier	9000
+Jest	jest	9000
+Vitest	vitest	9000
+Playwright	playwright	9000
+Cypress	cypress	8800
+Puppeteer	puppeteer	8800
+Testing Library	testinglibrary	8800
+Lighthouse	lighthouse	8800
+Web Vitals	webvitals	8500
+Service Worker	serviceworker	8800
+Progressive Web App	pwa	9000
+single-page application	spa	9000
+client-side rendering	csr	9000
+hydration	hydration	9000
+code splitting	codesplitting	8800
+lazy loading	lazyloading	8800
+tree shaking	treeshaking	8800
+hot module replacement	hmr	9000
+source map	sourcemap	8800
+breakpoint	breakpoint	8500
+responsive design	responsivedesign	9000
+mobile-first	mobilefirst	8500
+viewport	viewport	8800
+Flexbox	flexbox	9000
+CSS Grid	cssgrid	9000
+BEM	bem	8500
+accessibility	a11y	9000
+Accessible Rich Internet Applications	aria	8800
+Web Content Accessibility Guidelines	wcag	8500
+semantic HTML	semantichtml	8800
+Web Components	webcomponents	8800
+custom element	customelement	8500
+Shadow DOM	shadowdom	8800
+iframe	iframe	8500
+cookie	cookie	8800
+IndexedDB	indexeddb	8800
+Cache API	cacheapi	8500
+Web Worker	webworker	8800
+SharedWorker	sharedworker	8000
+Server-Sent Events	sse	8800
+WebRTC	webrtc	8800
+virtual DOM	vdom	9000
+
+# Vue 全家桶：官方核心、Nuxt 生态、组件库与工具链
+Vue 3	vue3	9800
+Vue 2	vue2	8500
+Vue Router	routervue	9000
+Pinia	piniastore	9000
+Vuex	vuexstore	8800
+Vue Devtools	vuedevtools	9000
+Vue CLI	vuecli	8500
+create-vue	createvue	8800
+Vue Test Utils	vuetestutils	9000
+Vue Language Tools	vuelanguagetools	8800
+Volar	volar	9200
+vue-tsc	vuetsc	9000
+vue-loader	vueloader	8800
+@vue/cli	vuecli	8500
+@vue/cli-service	vuecliservice	8500
+@vue/compiler-sfc	vuecompilersfc	8800
+@vue/server-renderer	vueserverrenderer	8800
+@vitejs/plugin-vue	vitepluginvue	9000
+eslint-plugin-vue	eslintpluginvue	8800
+Nuxt.js	nuxtjs	8800
+Nuxt 3	nuxt3	9500
+Nuxt Content	nuxtcontent	8800
+Nuxt UI	nuxtui	8800
+Nuxt DevTools	nuxtdevtools	8500
+Nitro	nitro	8800
+h3	h3	8500
+Unhead	unhead	8500
+VueUse	vueuse	9200
+@vueuse/core	vueusecore	9000
+Vue I18n	vuei18n	9000
+vue-i18n	vuei18npackage	8800
+VeeValidate	veevalidate	8800
+FormKit	formkit	8500
+TanStack Query Vue	tanstackqueryvue	8500
+Vue Apollo	vueapollo	8500
+Pinia Colada	piniacolada	8000
+VueUse Motion	vueusemotion	8500
+Vue Draggable	vuedraggable	8500
+Vue Final Modal	vuefinalmodal	8000
+vue-echarts	vueecharts	8500
+Vuetify	vuetify	9000
+Element Plus	elementplus	9200
+Element UI	elementui	8500
+Naive UI	naiveui	9000
+Ant Design Vue	antdv	9000
+Arco Design Vue	arcovue	8500
+TDesign Vue Next	tdesignvue	8500
+Quasar	quasar	8800
+Ionic Vue	ionicvue	8500
+PrimeVue	primevue	8800
+Vant	vant	9000
+NutUI	nutui	8500
+Varlet	varlet	8000
+Floating Vue	floatingvue	8000
+unplugin-vue-components	unpluginvuecomponents	8800
+unplugin-auto-import	unpluginautoimport	8800
+unplugin-vue-router	unpluginvuerouter	8500
+vite-plugin-pages	vitepluginpages	8500
+vite-plugin-vue-layouts	vitepluginvuelayouts	8500
+
+# Vue 核心运行时、组合式 API 与官方包名
+Composition API	compositionapi	9200
+Options API	optionsapi	8800
+Single-File Component	sfc	9000
+<script setup>	scriptsetup	9200
+defineProps	defineprops	9200
+defineEmits	defineemits	9200
+defineExpose	defineexpose	8800
+defineModel	definemodel	8800
+ref	vueref	9200
+reactive	vuereactive	9000
+computed	vuecomputed	9000
+watch	vuewatch	9000
+watchEffect	watcheffect	8800
+provide	vueprovide	8500
+inject	vueinject	8500
+onMounted	onmounted	8800
+onUnmounted	onunmounted	8500
+Teleport	teleport	8800
+Suspense	suspense	8800
+KeepAlive	keepalive	8800
+Transition	vuetransition	8500
+TransitionGroup	transitiongroup	8500
+RouterView	routerview	8800
+RouterLink	routerlink	8800
+@vue/compiler-core	vuecompilercore	8800
+@vue/compiler-dom	vuecompilerdom	8800
+@vue/compiler-ssr	vuecompilerssr	8500
+@vue/reactivity	vuereactivity	9000
+@vue/runtime-core	vueruntimecore	8800
+@vue/runtime-dom	vueruntimedom	8800
+@vue/shared	vueshared	8000
+@vue/devtools-api	vuedevtoolsapi	8500
+@vue/devtools-kit	vuedevtoolskit	8500
+@vue/cli-plugin-babel	vueclibabel	8000
+@vue/cli-plugin-eslint	vueclieslint	8000
+@vue/cli-plugin-router	vueclirouter	8000
+@vue/cli-plugin-typescript	vueclitypescript	8000
+@vue/cli-plugin-unit-jest	vueclijest	7800
+
+# Vue 生态包、Nuxt 官方模块与 SSR 工具链
+vue-router	vuerouterpackage	9000
+pinia	piniapackage	9000
+@pinia/testing	piniatesting	8500
+@pinia/nuxt	pinianuxt	8800
+@pinia/colada	piniacolada	8000
+@vue/test-utils	vuetestutilspackage	9000
+@vueuse/nuxt	vueusenuxt	8800
+@vueuse/integrations	vueuseintegrations	8500
+@vueuse/motion	vueusemotionpackage	8500
+vue-demi	vuedemi	8500
+Vue Macros	vuemacros	8500
+unplugin-vue-macros	unpluginvuemacros	8500
+@intlify/core-base	intlify	8000
+@intlify/unplugin-vue-i18n	unpluginvuei18n	8500
+@nuxt/kit	nuxtkit	8800
+@nuxt/schema	nuxtschema	8500
+@nuxt/content	nuxtcontentpackage	8800
+@nuxt/ui	nuxtuipackage	8800
+@nuxt/image	nuxtimage	8500
+@nuxt/devtools	nuxtdevtoolspackage	8500
+@nuxt/vite-builder	nuxtvitebuilder	8000
+@nuxt/webpack-builder	nuxtwebpackbuilder	7800
+@nuxtjs/i18n	nuxti18n	8800
+@nuxtjs/tailwindcss	nuxttailwind	8800
+@nuxtjs/color-mode	nuxtcolormode	8200
+@nuxtjs/sitemap	nuxtsitemap	8200
+@nuxtjs/robots	nuxtrobots	8200
+@nuxtjs/supabase	nuxtsupabase	8200
+nuxt-security	nuxtsecurity	8500
+Nitro Engine	nitroengine	8500
+Nitropack	nitropack	8500
+
+# Vue UI、数据展示与交互组件
+Reka UI	rekaui	8500
+radix-vue	radixvue	8500
+@headlessui/vue	headlessuivue	8500
+Vue Virtual Scroller	vuevirtualscroller	8500
+vue-virtual-scroller	vuevirtualscrollerpackage	8500
+Vue Flow	vueflow	8500
+vue-flow	vueflowpackage	8500
+Vue Chart.js	vuechartjs	8500
+vue-chartjs	vuechartjspackage	8500
+vue3-toastify	vue3toastify	8000
+Vue Toastification	vuetoastification	8000
+Vue Multiselect	vuemultiselect	8000
+Vue Cal	vuecal	7800
+
+# 后端开发、API 与分布式系统
+server	server	9000
+microservice	microservice	9000
+monolith	monolith	8500
+backend for frontend	bff	8800
+API gateway	apigateway	9000
+REST API	restapi	9200
+RPC	rpc	9000
+gRPC	grpc	9200
+SOAP	soap	8000
+OpenAPI	openapi	9200
+Swagger	swagger	9000
+endpoint	endpoint	9000
+middleware	middleware	9000
+controller	controller	8800
+route	route	8800
+router	router	8800
+request	request	9000
+response	response	9000
+request header	requestheader	8500
+response header	responseheader	8500
+query parameter	queryparameter	8800
+path parameter	pathparameter	8800
+request body	requestbody	8800
+HTTP status code	statuscode	8800
+idempotency	idempotency	8800
+pagination	pagination	8800
+cursor-based pagination	cursorpagination	8500
+webhook	webhook	9000
+event-driven architecture	eventdriven	8800
+publish-subscribe	pubsub	8800
+message broker	messagebroker	8800
+Apache Kafka	kafka	9000
+RabbitMQ	rabbitmq	9000
+NATS	nats	8500
+MQTT	mqtt	8800
+AMQP	amqp	8500
+GraphQL schema	graphqlschema	8800
+GraphQL resolver	graphqlresolver	8800
+GraphQL mutation	graphqlmutation	8800
+GraphQL subscription	graphqlsubscription	8800
+OAuth 2.0	oauth	9200
+OpenID Connect	oidc	9000
+bearer token	bearertoken	8800
+access token	accesstoken	8800
+refresh token	refreshtoken	8800
+rate limit	ratelimit	8800
+circuit breaker	circuitbreaker	8500
+retry	retry	8800
+exponential backoff	exponentialbackoff	8500
+health check	healthcheck	8800
+readiness probe	readinessprobe	8500
+liveness probe	livenessprobe	8500
+structured logging	structuredlogging	8500
+distributed tracing	distributedtracing	8800
+metrics	metrics	8800
+OpenTelemetry	opentelemetry	9000
+Prometheus	prometheus	9000
+Grafana	grafana	9000
+Elasticsearch	elasticsearch	9000
+Logstash	logstash	8500
+Kibana	kibana	8500
+ELK stack	elk	8500
+
+# SQL、数据建模与数据库运维
+relational database	relationaldatabase	9000
+relational database management system	rdbms	9000
+database schema	databaseschema	8800
+database table	dbtable	8800
+row	row	8500
+column	column	8500
+primary key	primarykey	9000
+foreign key	foreignkey	9000
+composite key	compositekey	8500
+unique constraint	uniqueconstraint	8500
+NOT NULL	notnull	8500
+default value	defaultvalue	8500
+database index	index	9000
+B-tree	btree	8500
+hash index	hashindex	8500
+query planner	queryplanner	8500
+query optimization	queryoptimization	8800
+execution plan	executionplan	8800
+SELECT	select	9200
+INSERT	insert	9200
+UPDATE	update	9200
+DELETE	delete	9200
+JOIN	join	9000
+INNER JOIN	innerjoin	8800
+LEFT JOIN	leftjoin	8800
+RIGHT JOIN	rightjoin	8500
+FULL OUTER JOIN	fullouterjoin	8500
+CROSS JOIN	crossjoin	8000
+GROUP BY	groupby	8800
+ORDER BY	orderby	8800
+HAVING	having	8500
+common table expression	cte	8800
+window function	windowfunction	8800
+stored procedure	storedprocedure	8800
+database trigger	dbtrigger	8800
+database view	dbview	8800
+materialized view	materializedview	8500
+transaction	transaction	9000
+isolation level	isolationlevel	8800
+read uncommitted	readuncommitted	8000
+read committed	readcommitted	8500
+repeatable read	repeatableread	8500
+serializable	serializable	8500
+deadlock	deadlock	8800
+database lock	dblock	8500
+optimistic locking	optimisticlocking	8800
+pessimistic locking	pessimisticlocking	8500
+database replication	replication	8800
+primary-replica replication	primaryreplica	8500
+database sharding	sharding	8800
+database partitioning	partitioning	8800
+database migration	dbmigration	9000
+backup	backup	8800
+restore	restore	8800
+connection pool	connectionpool	8800
+ORM	dborm	8800
+SQL injection	sqli	9000
+normalization	normalization	8500
+denormalization	denormalization	8500
+entity-relationship diagram	erd	8500
+
+# 云服务、容器与 DevOps
+cloud computing	cloudcomputing	9000
+cloud-native	cloudnative	9000
+infrastructure as a service	iaas	8800
+platform as a service	paas	8800
+software as a service	saas	8800
+function as a service	faas	8500
+serverless	serverless	9000
+virtual machine	vm	9000
+virtual private cloud	vpc	9000
+subnet	subnet	8800
+availability zone	az	8800
+cloud region	region	8800
+content delivery network	cdn	9000
+object storage	objectstorage	8800
+block storage	blockstorage	8500
+file storage	filestorage	8500
+Amazon S3	s3	9200
+Amazon EC2	ec2	9000
+AWS Lambda	lambda	9000
+Amazon EKS	eks	8800
+Amazon ECS	ecs	8800
+Amazon RDS	rds	8800
+AWS IAM	iam	9000
+Amazon CloudFront	cloudfront	8800
+Google Compute Engine	gce	8800
+Google Kubernetes Engine	gke	8800
+Cloud Run	cloudrun	8800
+Azure Functions	azurefunctions	8800
+Azure Kubernetes Service	aks	8800
+container image	containerimage	8800
+container registry	containerregistry	8800
+Open Container Initiative	oci	8500
+Pod	pod	9000
+Deployment	k8sdeployment	9000
+StatefulSet	statefulset	8800
+DaemonSet	daemonset	8500
+Kubernetes Service	k8sservice	8800
+Ingress	ingress	8800
+ConfigMap	configmap	8800
+Kubernetes Secret	k8ssecret	8800
+Helm	helm	9000
+Kustomize	kustomize	8800
+CI/CD pipeline	cicd	9000
+GitOps	gitops	9000
+Argo CD	argocd	9000
+Flux CD	fluxcd	8500
+infrastructure as code	iac	9000
+configuration management	configurationmanagement	8500
+secret management	secretmanagement	8800
+blue-green deployment	bluegreendeployment	8500
+canary deployment	canarydeployment	8500
+rolling update	rollingupdate	8500
+autoscaling	autoscaling	8800
+horizontal pod autoscaler	hpa	8800
+vertical pod autoscaler	vpa	8500
+resource quota	resourcequota	8500
+network policy	networkpolicy	8500
+# 驼峰命名 API
+addEventListener	addeventlistener	9500
+removeEventListener	removeeventlistener	9200
+querySelector	queryselector	9500
+querySelectorAll	queryselectorall	9500
+getElementById	getelementbyid	9300
+getElementsByClassName	getelementsbyclassname	9000
+requestAnimationFrame	requestanimationframe	9500
+cancelAnimationFrame	cancelanimationframe	9000
+localStorage	localstorage	9500
+sessionStorage	sessionstorage	9500
+JSON.stringify	jsonstringify	9500
+JSON.parse	jsonparse	9500
+Object.assign	objectassign	9300
+Object.entries	objectentries	9300
+Object.keys	objectkeys	9300
+Object.values	objectvalues	9300
+Array.from	arrayfrom	9300
+Array.isArray	arrayisarray	9200
+Promise.all	promiseall	9500
+Promise.allSettled	promiseallsettled	9300
+Promise.race	promiserace	9000
+Promise.resolve	promiseresolve	9000
+AbortController	abortcontroller	9300
+AbortSignal	abortsignal	9000
+FormData	formdata	9300
+URLSearchParams	urlsearchparams	9300
+setTimeout	settimeout	9200
+setInterval	setinterval	9000
+clearTimeout	cleartimeout	8800
+clearInterval	clearinterval	8800
+fetch	fetch	9500
+async function	asyncfunction	9000
+
+# 配置文件、文件扩展名与协议标识
+package.json	pkgjson	9800
+package.json	packagejson	9500
+package-lock.json	packagelock	9300
+pnpm-lock.yaml	pnpmlock	9200
+yarn.lock	yarnlock	9200
+tsconfig.json	tsconfig	9600
+jsconfig.json	jsconfig	9000
+vite.config.ts	viteconfig	9400
+next.config.js	nextconfig	9400
+nuxt.config.ts	nuxtconfig	9000
+webpack.config.js	webpackconfig	9000
+tailwind.config.js	tailwindconfig	9000
+eslint.config.js	eslintconfig	8800
+prettier.config.js	prettierconfig	8800
+README.md	readme	9500
+.gitignore	gitignore	9500
+.gitattributes	gitattributes	8500
+.editorconfig	editorconfig	8800
+.env	env	9500
+.env.local	envlocal	9200
+node_modules	nodemodules	9000
+Dockerfile	dockerfile	9200
+docker-compose.yml	dockercompose	9000
+Makefile	makefile	8800
+Content-Type	contenttype	9000
+application/json	appjson	9000
+application/json	applicationjson	8600
+multipart/form-data	multipart	8800
+text/html	texthtml	8600
+text/plain	textplain	8400
+application/xml	appxml	8400
+localhost	localhost	9500
+127.0.0.1	localhostip	9000
+0.0.0.0	allinterfaces	8500
+
+# 核心缩写与完整术语
+API	api	10000
+application programming interface	api	10000
+application programming interface	applicationprogramminginterface	7500
+SDK	sdk	10000
+software development kit	sdk	9500
+CLI	cli	9800
+command-line interface	cli	9300
+GUI	gui	9600
+graphical user interface	gui	9000
+JWT	jwt	9500
+JSON Web Token	jwt	9000
+SSO	sso	9500
+single sign-on	sso	9500
+LLM	llm	9500
+large language model	llm	9500
+RAG	rag	9500
+retrieval-augmented generation	rag	9500
+REST	rest	9200
+representational state transfer	rest	9000
+HTTP	http	9500
+Hypertext Transfer Protocol	http	9000
+HTTPS	https	9500
+DNS	dns	9200
+Domain Name System	dns	8800
+TCP	tcp	9000
+UDP	udp	8800
+IP	ip	8800
+Internet Protocol	ip	8800
+SSH	ssh	9200
+Secure Shell	ssh	8800
+TLS	tls	9000
+SSL	ssl	8800
+ORM	orm	9000
+object-relational mapping	orm	8600
+OOP	oop	9000
+object-oriented programming	oop	8600
+IDE	ide	9200
+integrated development environment	ide	8600
+CI	ci	9000
+continuous integration	ci	9000
+CD	cd	9000
+continuous delivery	cd	9000
+continuous deployment	cd	8800
+CRUD	crud	9200
+create read update delete	crud	8500
+CORS	cors	9000
+cross-origin resource sharing	cors	8500
+CSRF	csrf	8800
+XSS	xss	8800
+MFA	mfa	8800
+two-factor authentication	2fa	8800
+
+# Git、工程化与常用命令
+Git	git	10000
+GitHub Actions	githubactions	9400
+GitHub Copilot	githubcopilot	9200
+pull request	pr	9500
+pull request	pullrequest	9000
+merge request	mr	9000
+commit	commit	9500
+commit message	commitmessage	8800
+cherry-pick	cherrypick	8800
+rebase	rebase	8800
+stash	stash	8500
+npm	npm	9800
+pnpm	pnpm	9600
+Yarn	yarn	9200
+npx	npx	9200
+Homebrew	homebrew	9000
+curl	curl	9000
+curl	curlcommand	8000
+chmod	chmod	8500
+sudo	sudo	8500
+grep	grep	8500
+ripgrep	rg	8800
+Visual Studio Code	vscode	9500
+VS Code	vscode	9400
+
+# 后端、数据库、云与 AI
+server-side rendering	ssr	9500
+static site generation	ssg	9000
+incremental static regeneration	isr	8800
+WebAssembly	wasm	9000
+Common Gateway Interface	cgi	7200
+reverse proxy	reverseproxy	9000
+load balancer	loadbalancer	8800
+message queue	messagequeue	8800
+rate limiting	ratelimit	8800
+database migration	migration	9000
+ACID	acid	8800
+Amazon Web Services	aws	9200
+Google Cloud	gcp	9000
+Microsoft Azure	azure	9000
+container orchestration	containerorchestration	8500
+continuous deployment	continuousdeployment	8500
+machine learning	ml	9000
+deep learning	dl	8800
+natural language processing	nlp	9000
+generative AI	genai	9200
+prompt engineering	promptengineering	8800
+vector database	vectordatabase	8800
+embedding	embedding	8800
+fine-tuning	finetuning	8600
+inference	inference	8600

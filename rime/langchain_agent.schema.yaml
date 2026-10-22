@@ -1,0 +1,50 @@
+schema:
+  schema_id: langchain_agent
+  name: "LangChain Agent 英文"
+  version: "2026.09.14"
+  description: "LangChain、LangGraph、LangSmith 与 AI Agent 专业英文候选。"
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - table_translator
+    - punct_translator
+  filters:
+    - uniquifier
+
+speller:
+  alphabet: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+translator:
+  dictionary: langchain_agent
+  enable_completion: false
+  enable_sentence: false
+  enable_user_dict: false
+
+key_binder:
+  import_preset: default
+
+punctuator:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+
+selector:
+  bindings:
+    Tab: next_candidate
+    Shift+Tab: previous_candidate
+    ISO_Left_Tab: previous_candidate

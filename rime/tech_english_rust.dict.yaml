@@ -1,0 +1,128 @@
+# Rime dictionary
+# encoding: utf-8
+---
+name: tech_english_rust
+version: "2026.07.17"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# Rust Web / API 框架
+Axum	axum	9200
+Actix Web	actix	9200
+Actix Web	actixweb	9000
+actix-web	actixwebcrate	8800
+Rocket	rocket	8800
+Warp	warp	8800
+Salvo	salvo	8500
+Poem	poem	8500
+Loco	loco	8200
+loco-rs	locors	8200
+Gotham	gotham	7800
+Tide	tide	7800
+Thruster	thruster	7500
+
+# 异步、HTTP、RPC 与 GraphQL
+Tokio	tokio	9500
+async-std	asyncstd	8500
+smol	smol	8000
+Futures	futures	8500
+Mio	mio	8000
+Hyper	hyper	8800
+Tower	tower	8800
+tower-http	towerhttp	8500
+Reqwest	reqwest	9000
+Ureq	ureq	8000
+Tungstenite	tungstenite	8000
+tokio-tungstenite	tokiotungstenite	8000
+Rustls	rustls	8800
+native-tls	nativetls	8000
+Tonic	tonic	8800
+Prost	prost	8500
+Quinn	quinn	8000
+Tarpc	tarpc	7800
+Cap'n Proto	capnp	8000
+async-graphql	asyncgraphql	8800
+Juniper	juniper	8000
+
+# ORM、驱动与连接池
+Diesel	diesel	9000
+SQLx	sqlx	9200
+SeaORM	seaorm	8800
+SeaQuery	seaquery	8500
+RBatis	rbatis	8000
+tokio-postgres	tokiopostgres	8500
+postgres	postgrescrate	8500
+deadpool-postgres	deadpoolpostgres	8000
+mysql_async	mysqlasync	8000
+rusqlite	rusqlite	8500
+libsqlite3-sys	libsqlite3sys	7800
+redis-rs	redisrs	8200
+deadpool-redis	deadpoolredis	8000
+fred	fredredis	7800
+MongoDB Rust Driver	mongodbrust	8200
+mongodb	mongodbcrate	8500
+BSON	bson	8500
+deadpool	deadpool	8000
+bb8	bb8	7800
+r2d2	r2d2	8000
+mobc	mobc	7800
+
+# 序列化、配置与安全
+Serde	serde	9500
+serde_json	serdejson	9000
+Bincode	bincode	8500
+Postcard	postcard	8000
+rmp-serde	rmpserde	8000
+CBOR	cbor	8500
+serde_yaml	serdeyaml	8500
+config-rs	configrs	8000
+Figment	figment	8200
+Dotenvy	dotenvy	8000
+Envy	envy	7800
+jsonwebtoken	jsonwebtokencrate	8500
+Paseto	paseto	8200
+OAuth2	oauth2rust	8500
+axum-login	axumlogin	8200
+Argon2	argon2	8500
+bcrypt	bcryptrust	8200
+scrypt	scryptrust	8000
+ring	ringcrypto	8000
+RustCrypto	rustcrypto	8500
+AES-GCM	aesgcm	8000
+ChaCha20Poly1305	chacha20poly1305	8000
+
+# 消息、可观测性、测试与工程
+rdkafka	rdkafka	8200
+Lapin	lapin	8200
+async-nats	asyncnats	8000
+tracing	tracing	9000
+tracing-subscriber	tracingsubscriber	8500
+env_logger	envlogger	8200
+slog	slog	7800
+OpenTelemetry Rust	otelrust	8500
+metrics-exporter-prometheus	metricsexporterprometheus	7800
+Utoipa	utoipa	8200
+Paperclip	paperclip	7800
+aide	aide	7800
+validator	validatorrust	8200
+Garde	garde	7800
+Askama	askama	8200
+Tera	tera	8000
+Handlebars	handlebarsrust	8000
+Maud	maud	7800
+rstest	rstest	8000
+Mockall	mockall	8000
+Proptest	proptest	8200
+QuickCheck	quickcheck	8000
+wiremock	wiremock	8000
+httpmock	httpmock	7800
+Criterion	criterion	8200
+Divan	divan	7800
+Cargo	cargo	9200
+Clap	clap	8800
+Cargo Watch	cargowatch	8500
+cargo-edit	cargoedit	8200
+cargo-audit	cargoaudit	8200
+cargo-deny	cargodeny	8200
+cargo-nextest	cargonextest	8000

@@ -1,0 +1,97 @@
+# 简体朙月拼音：保留原有技术英文词库，并追加离线中英译词注释。
+patch:
+  translator/dictionary: luna_pinyin.tech
+  switches/@0/states:
+    - 中文
+    - 英文
+  schema/dependencies:
+    - tech_english_table
+    - ai_english
+    - langchain_agent
+    - electronics_english
+    - daily_english
+  engine/segmentors:
+    - ascii_segmentor
+    - matcher
+    - affix_segmentor@tech_english
+    - affix_segmentor@tech_english_vv
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  engine/translators:
+    - punct_translator
+    - script_translator
+    - table_translator@custom_phrase
+    - reverse_lookup_translator
+    - table_translator@tech_english
+    - table_translator@tech_english_vv
+    - table_translator@ai_english
+    - table_translator@langchain_agent
+    - table_translator@electronics_english
+    - table_translator@daily_english
+  # 简体转换后再查英文释义，最后去重；不改变候选排序与学习关系。
+  engine/filters:
+    - simplifier
+    - lua_filter@*qingjian_gloss_filter
+    - lua_filter@*internet_english_filter
+    - uniquifier
+  switches/+:
+    - name: internet_english_disabled
+      reset: 0
+      states: [英文候选, 关闭英文候选]
+    - name: bilingual_gloss_disabled
+      reset: 0
+      states: [英文释义, 关闭英文释义]
+  # 允许只输入前缀本身，否则首个分号会先被标点处理器提交。
+  recognizer/patterns/tech_english: "^;[A-Za-z0-9_]*$"
+  recognizer/patterns/tech_english_vv: "^vv[A-Za-z][A-Za-z0-9_]*$"
+  tech_english:
+    tag: tech_english
+    dictionary: tech_english_table
+    enable_completion: true
+    enable_sentence: false
+    enable_user_dict: false
+    initial_quality: 10000
+    prefix: ";"
+    tips: "〔技术英文〕"
+  tech_english_vv:
+    tag: tech_english_vv
+    dictionary: tech_english_table
+    enable_completion: true
+    enable_sentence: false
+    enable_user_dict: false
+    initial_quality: 10000
+    prefix: "vv"
+    tips: "〔技术英文〕"
+  ai_english:
+    dictionary: ai_english
+    enable_completion: false
+    enable_sentence: false
+    enable_user_dict: false
+    initial_quality: 2.0
+    comment_format:
+      - xform/.*//
+  langchain_agent:
+    dictionary: langchain_agent
+    enable_completion: false
+    enable_sentence: false
+    enable_user_dict: false
+    initial_quality: 2.1
+    comment_format:
+      - xform/.*//
+  electronics_english:
+    dictionary: electronics_english
+    enable_completion: false
+    enable_sentence: false
+    enable_user_dict: false
+    initial_quality: 1.9
+    comment_format:
+      - xform/.*//
+  daily_english:
+    dictionary: daily_english
+    enable_completion: false
+    enable_sentence: false
+    enable_user_dict: false
+    initial_quality: 1.8
+    comment_format:
+      - xform/.*//

@@ -1,0 +1,158 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# AI 产品、模型、框架与核心术语。该表作为拼音方案的副翻译器，
+# 对精确英文编码直接给出规范大小写候选。
+---
+name: ai_english
+version: "2026.07.20"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# OpenAI
+OpenAI	openai	10000
+ChatGPT	chatgpt	10000
+Codex	codex	10000
+ChatGPT Codex	chatgptcodex	9800
+Codex CLI	codexcli	9500
+Codex SDK	codexsdk	9500
+GPT-5-Codex	gpt5codex	9500
+GPT-5	gpt5	9400
+GPT-4o	gpt4o	9200
+o3	o3	9000
+o4-mini	o4mini	8800
+Sora	sora	9000
+DALL·E	dalle	9000
+Whisper	whisper	9000
+OpenAI API	openaiapi	9500
+Responses API	responsesapi	9000
+Agents SDK	agentssdk	9000
+
+# Anthropic 与 Claude
+Anthropic	anthropic	9800
+Claude	claude	10000
+Claude Code	claudecode	9800
+Claude Opus	claudeopus	9300
+Claude Sonnet	claudesonnet	9300
+Claude Haiku	claudehaiku	9000
+Anthropic API	anthropicapi	9200
+
+# Kimi / Moonshot AI
+Kimi	kimi	10000
+Moonshot AI	moonshot	9500
+Moonshot AI	moonshotai	9200
+Kimi K2	kimik2	9200
+Kimi K2.6	kimik26	9200
+Kimi K3	kimik3	9200
+Kimi Code	kimicode	9300
+Kimi Agent	kimiagent	9000
+Kimi Agent Swarm	kimiagentswarm	8800
+
+# Z.ai / ZhipuAI / GLM
+Z.ai	zai	9500
+ZhipuAI	zhipuai	9500
+GLM	glm	10000
+ChatGLM	chatglm	9800
+GLM-5	glm5	9500
+GLM-4	glm4	9200
+GLM-4-9B	glm49b	8800
+GLM-Image	glmimage	9000
+AutoGLM	autoglm	9000
+
+# 主流模型、平台与云服务
+DeepSeek	deepseek	10000
+DeepSeek-V3	deepseekv3	9200
+DeepSeek-R1	deepseekr1	9200
+Qwen	qwen	9800
+Tongyi Qianwen	tongyiqianwen	9000
+Gemini	gemini	9800
+Google AI Studio	googlestaudio	9000
+Vertex AI	vertexai	9000
+Gemma	gemma	9000
+Meta AI	metaai	9000
+Llama	llama	9500
+Llama 3	llama3	9000
+Mistral AI	mistralai	9000
+Mistral	mistral	9200
+Mixtral	mixtral	9000
+Cohere	cohere	8800
+Command R	commandr	8500
+Perplexity	perplexity	9200
+xAI	xai	9000
+Grok	grok	9200
+Microsoft Copilot	copilot	9000
+GitHub Copilot	githubcopilot	9000
+Amazon Bedrock	bedrock	9000
+Amazon SageMaker	sagemaker	8800
+Azure AI Foundry	azureaifoundry	8800
+IBM watsonx	watsonx	8200
+
+# 开源模型工具、Agent 与应用框架
+Hugging Face	huggingface	9500
+Transformers	transformers	9000
+Diffusers	diffusers	8800
+Ollama	ollama	9500
+LM Studio	lmstudio	9200
+llama.cpp	llamacpp	9200
+vLLM	vllm	9200
+SGLang	sglang	8800
+TensorRT-LLM	tensorrtllm	8800
+LiteLLM	litellm	9000
+LangChain	langchain	9500
+LangGraph	langgraph	9200
+LlamaIndex	llamaindex	9200
+Haystack	haystack	8500
+DSPy	dspy	8800
+PydanticAI	pydanticai	8800
+AutoGen	autogen	8800
+CrewAI	crewai	8800
+Semantic Kernel	semantickernel	8800
+Model Context Protocol	mcp	9500
+Model Context Protocol	modelcontextprotocol	9000
+Agent2Agent Protocol	a2a	8800
+OpenAI SDK	openaisdk	9000
+Anthropic SDK	anthropicsdk	8800
+
+# 大模型与 RAG 核心概念
+artificial intelligence	artificialintelligence	8500
+generative AI	genai	9500
+artificial general intelligence	agi	9000
+large language model	llm	9500
+small language model	slm	8800
+multimodal model	multimodal	9000
+vision-language model	vlm	8800
+mixture of experts	moe	9000
+token	token	8800
+tokenizer	tokenizer	8800
+context window	contextwindow	9000
+prompt	prompt	9000
+system prompt	systemprompt	9000
+prompt engineering	promptengineering	8800
+chain of thought	cot	8800
+reasoning model	reasoningmodel	9000
+inference	inference	9000
+pre-training	pretraining	8800
+fine-tuning	finetuning	8800
+supervised fine-tuning	sft	8800
+reinforcement learning from human feedback	rlhf	8800
+direct preference optimization	dpo	8500
+retrieval-augmented generation	rag	9500
+embedding	embedding	9000
+vector database	vectordatabase	8800
+reranking	reranking	8800
+function calling	functioncalling	9000
+tool calling	toolcalling	9000
+structured output	structuredoutput	8800
+JSON Schema	jsonschema	8800
+AI agent	agent	9000
+multi-agent	multiagent	8800
+agentic workflow	agenticworkflow	8800
+benchmark	benchmark	8500
+hallucination	hallucination	8800
+temperature	temperature	8500
+top-p	topp	8200
+top-k	topk	8200
+guardrails	guardrails	8500
+prompt caching	promptcaching	8500
+context caching	contextcaching	8500

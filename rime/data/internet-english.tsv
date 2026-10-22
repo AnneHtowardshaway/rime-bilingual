@@ -1,0 +1,198 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# 小写完整编码<TAB>规范英文<TAB>候选注释；不做前缀匹配。
+github	GitHub	代码托管
+gitlab	GitLab	代码托管
+git	Git	版本控制
+githubactions	GitHub Actions	持续集成
+githubcopilot	GitHub Copilot	编程助手
+bitbucket	Bitbucket	代码托管
+gitee	Gitee	代码托管
+stackoverflow	Stack Overflow	技术问答
+reddit	Reddit	社区
+discord	Discord	社区聊天
+slack	Slack	团队协作
+telegram	Telegram	即时通信
+whatsapp	WhatsApp	即时通信
+wechat	WeChat	即时通信
+youtube	YouTube	视频平台
+twitter	Twitter	社交平台
+instagram	Instagram	社交平台
+facebook	Facebook	社交平台
+linkedin	LinkedIn	职业社交
+tiktok	TikTok	短视频
+spotify	Spotify	音乐平台
+netflix	Netflix	流媒体
+wikipedia	Wikipedia	百科
+google	Google	搜索
+bing	Bing	搜索
+gmail	Gmail	邮件
+outlook	Outlook	邮件
+icloud	iCloud	云服务
+dropbox	Dropbox	云存储
+onedrive	OneDrive	云存储
+notion	Notion	笔记协作
+obsidian	Obsidian	笔记
+figma	Figma	设计协作
+canva	Canva	设计
+trello	Trello	项目协作
+jira	Jira	项目管理
+linear	Linear	项目管理
+zoom	Zoom	视频会议
+teams	Teams	团队协作
+openai	OpenAI	AI
+chatgpt	ChatGPT	AI 助手
+codex	Codex	编程助手
+claude	Claude	AI 助手
+anthropic	Anthropic	AI
+gemini	Gemini	AI 助手
+deepseek	DeepSeek	AI
+qwen	Qwen	AI
+ollama	Ollama	本地模型
+huggingface	Hugging Face	模型社区
+copilot	Copilot	AI 助手
+cursor	Cursor	代码编辑器
+langchain	LangChain	AI 框架
+langgraph	LangGraph	AI 框架
+langsmith	LangSmith	AI 开发工具
+javascript	JavaScript	编程语言
+typescript	TypeScript	编程语言
+python	Python	编程语言
+golang	Golang	编程语言
+rust	Rust	编程语言
+java	Java	编程语言
+kotlin	Kotlin	编程语言
+swift	Swift	编程语言
+php	PHP	编程语言
+ruby	Ruby	编程语言
+lua	Lua	脚本语言
+bash	Bash	Shell
+zsh	Zsh	Shell
+powershell	PowerShell	Shell
+nodejs	Node.js	运行时
+deno	Deno	运行时
+bun	Bun	运行时
+npm	npm	包管理
+pnpm	pnpm	包管理
+yarn	Yarn	包管理
+pip	pip	包管理
+uv	uv	包管理
+homebrew	Homebrew	包管理
+docker	Docker	容器
+kubernetes	Kubernetes	容器编排
+nginx	Nginx	Web 服务
+apache	Apache	Web 服务
+linux	Linux	操作系统
+ubuntu	Ubuntu	操作系统
+debian	Debian	操作系统
+macos	macOS	操作系统
+windows	Windows	操作系统
+android	Android	操作系统
+ios	iOS	操作系统
+chrome	Chrome	浏览器
+firefox	Firefox	浏览器
+safari	Safari	浏览器
+edge	Edge	浏览器
+vscode	VS Code	代码编辑器
+webstorm	WebStorm	开发工具
+pycharm	PyCharm	开发工具
+intellij	IntelliJ IDEA	开发工具
+neovim	Neovim	代码编辑器
+vim	Vim	代码编辑器
+emacs	Emacs	代码编辑器
+xcode	Xcode	开发工具
+iterm	iTerm2	终端
+warp	Warp	终端
+react	React	前端框架
+vue	Vue	前端框架
+vuejs	Vue.js	前端框架
+nextjs	Next.js	Web 框架
+nuxt	Nuxt	Web 框架
+angular	Angular	前端框架
+svelte	Svelte	前端框架
+astro	Astro	Web 框架
+vite	Vite	构建工具
+webpack	webpack	构建工具
+rollup	Rollup	构建工具
+esbuild	esbuild	构建工具
+tailwind	Tailwind CSS	样式框架
+bootstrap	Bootstrap	样式框架
+eslint	ESLint	代码检查
+prettier	Prettier	代码格式化
+vitest	Vitest	测试
+jest	Jest	测试
+playwright	Playwright	浏览器测试
+cypress	Cypress	浏览器测试
+electron	Electron	桌面框架
+tauri	Tauri	桌面框架
+flutter	Flutter	跨平台框架
+fastapi	FastAPI	后端框架
+django	Django	后端框架
+flask	Flask	后端框架
+springboot	Spring Boot	后端框架
+express	Express	后端框架
+mysql	MySQL	数据库
+postgresql	PostgreSQL	数据库
+postgres	PostgreSQL	数据库
+sqlite	SQLite	数据库
+redis	Redis	数据库
+mongodb	MongoDB	数据库
+elasticsearch	Elasticsearch	搜索引擎
+supabase	Supabase	后端服务
+firebase	Firebase	后端服务
+vercel	Vercel	部署平台
+netlify	Netlify	部署平台
+cloudflare	Cloudflare	网络服务
+aws	AWS	云服务
+azure	Azure	云服务
+json	JSON	数据格式
+yaml	YAML	配置格式
+toml	TOML	配置格式
+markdown	Markdown	标记语言
+html	HTML	标记语言
+css	CSS	样式语言
+sql	SQL	查询语言
+graphql	GraphQL	查询语言
+restapi	REST API	接口
+websocket	WebSocket	通信协议
+https	HTTPS	通信协议
+oauth	OAuth	授权协议
+jwt	JWT	令牌
+ssh	SSH	远程连接
+vpn	VPN	网络
+dns	DNS	域名解析
+url	URL	网址
+api	API	接口
+sdk	SDK	开发工具包
+cli	CLI	命令行
+gui	GUI	图形界面
+ide	IDE	开发环境
+mcp	MCP	模型上下文协议
+llm	LLM	大语言模型
+rag	RAG	检索增强生成
+pytorch	PyTorch	机器学习框架
+tensorflow	TensorFlow	机器学习框架
+numpy	NumPy	科学计算
+pandas	pandas	数据分析
+jupyter	Jupyter	交互式计算
+anaconda	Anaconda	Python 环境
+postman	Postman	接口调试
+swagger	Swagger	接口文档
+jenkins	Jenkins	持续集成
+terraform	Terraform	基础设施
+ansible	Ansible	自动化运维
+grafana	Grafana	监控
+prometheus	Prometheus	监控
+sentry	Sentry	错误追踪
+bug	bug	缺陷
+debug	debug	调试
+issue	issue	问题
+commit	commit	提交
+branch	branch	分支
+merge	merge	合并
+rebase	rebase	变基
+pullrequest	pull request	合并请求
+frontend	frontend	前端
+backend	backend	后端
+fullstack	full stack	全栈
+devops	DevOps	开发运维
+opensource	open source	开源

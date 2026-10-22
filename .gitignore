@@ -1,0 +1,13 @@
+.DS_Store
+.cache/
+.deploy-backups/
+.last-backup
+build/
+sync/
+backups/
+*.userdb/
+*.userdb.*
+*.log
+*.bak*
+installation.yaml
+user.yaml

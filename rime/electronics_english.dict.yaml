@@ -1,0 +1,128 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# 消费电子产品、平台与芯片名称。作为中文方案的精确英文候选表使用。
+---
+name: electronics_english
+version: "2026.07.20"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# Apple / Mac
+Apple	apple	9500
+Mac	mac	10000
+MacBook	macbook	10000
+MacBook	book	9600
+MacBook Neo	macbookneo	8800
+MacBook Air	macbookair	9500
+MacBook Pro	macbookpro	9500
+iMac	imac	9300
+Mac mini	macmini	9300
+Mac Studio	macstudio	9300
+Mac Pro	macpro	9000
+Studio Display	studiodisplay	8800
+Pro Display XDR	prodisplayxdr	8500
+macOS	macos	9500
+Apple silicon	applesilicon	9200
+Apple Intelligence	appleintelligence	9000
+M1	applem1	8800
+M2	applem2	8800
+M3	applem3	8800
+M4	applem4	8800
+M4 Max	m4max	8500
+M3 Ultra	m3ultra	8500
+
+# Apple 移动设备与配件
+iPhone	iphone	10000
+iPhone	phone	9000
+iPad	ipad	9800
+iPad Pro	ipadpro	9200
+iPad Air	ipadair	9000
+iPad mini	ipadmini	8800
+Apple Watch	applewatch	9500
+watchOS	watchos	8800
+Apple Vision Pro	visionpro	9200
+visionOS	visionos	8800
+AirPods	airpods	9500
+AirPods Pro	airpodspro	9200
+HomePod	homepod	9000
+Apple TV	appletv	9000
+Apple TV 4K	appletv4k	8800
+Apple Pencil	applepencil	9000
+Magic Keyboard	magickeyboard	8800
+Magic Mouse	magicmouse	8800
+Magic Trackpad	magictrackpad	8800
+AirTag	airtag	9000
+iCloud	icloud	9000
+Face ID	faceid	9000
+Touch ID	touchid	8800
+Siri	siri	9000
+iPadOS	ipados	8800
+tvOS	tvos	8500
+App Store	appstore	9000
+
+# 手机、平板、PC 与智能家居
+Samsung	samsung	9200
+Galaxy	galaxy	9200
+Galaxy S	galaxys	8800
+Galaxy Z	galaxyz	8800
+Galaxy Tab	galaxytab	8500
+Galaxy Watch	galaxywatch	8500
+Galaxy Buds	galaxybuds	8500
+Google Pixel	pixel	9200
+Pixel Watch	pixelwatch	8500
+Pixel Tablet	pixeltablet	8500
+Chromecast	chromecast	8500
+Google Nest	googlenest	8500
+Microsoft Surface	surface	9000
+Surface Pro	surfacepro	8800
+Surface Laptop	surfacelaptop	8800
+Surface Studio	surfacestudio	8500
+ThinkPad	thinkpad	9000
+Lenovo Legion	legion	8500
+Dell XPS	dellxps	8800
+Alienware	alienware	8500
+ASUS ROG	asusrog	8800
+Razer Blade	razerblade	8500
+Logitech	logitech	8500
+
+# 游戏、阅读、XR 与影像设备
+PlayStation	playstation	9000
+PlayStation 5	ps5	9200
+PlayStation Portal	playstationportal	8500
+Xbox	xbox	9000
+Xbox Series X	xboxseriesx	8500
+Nintendo Switch	switch	9000
+Nintendo Switch 2	switch2	8800
+Steam Deck	steamdeck	9000
+Valve Index	valveindex	8000
+Meta Quest	metaquest	9000
+Quest 3	quest3	8800
+Kindle	kindle	9000
+Fire TV	firetv	8500
+DJI	dji	9200
+DJI Mavic	djimavic	8500
+DJI Osmo	djiosmo	8500
+
+# 芯片、硬件形态与连接技术
+Intel	intel	9000
+Intel Core	intelcore	8800
+AMD Ryzen	amdryzen	8800
+Qualcomm	qualcomm	8800
+Snapdragon	snapdragon	9000
+NVIDIA	nvidia	9200
+NVIDIA GeForce	geforce	8800
+NVIDIA RTX	rtx	9000
+OLED	oled	8800
+Mini LED	miniled	8500
+E Ink	eink	8500
+USB-C	usbc	9000
+Thunderbolt	thunderbolt	9000
+Wi-Fi	wifi	9000
+Bluetooth	bluetooth	8800
+smartphone	smartphone	8500
+laptop	laptop	8500
+tablet	tablet	8500
+smartwatch	smartwatch	8500
+wireless earbuds	wirelessearbuds	8200

@@ -1,0 +1,173 @@
+# Rime dictionary
+# encoding: utf-8
+---
+name: tech_english_workflow
+version: "2026.07.16"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# 需求、产品与项目协作
+issue	wenti	100
+ticket	gongdan	100
+task	renwu	100
+feature	gongneng	100
+feature request	gongnengxuqiu	100
+user story	yonghugushi	100
+acceptance criteria	yanshouzhunze	100
+use case	yongli	100
+scope	fanwei	100
+scope creep	fanweimanyan	100
+priority	youxianji	100
+estimation	gusuan	100
+scheduling	paiqi	100
+deadline	jiezhi	100
+blocker	zuse	100
+risk	fengxian	100
+trade-off	quansheng	100
+technical debt	jishuzhai	100
+workaround	linshifangan	100
+long-term solution	changqifangan	100
+
+# Git、代码协作与评审
+Git	git	100
+commit	tijiao	100
+push	tuisong	100
+pull	laxia	100
+merge	hebing	100
+rebase	bianji	100
+pull request	tipr	100
+merge request	imr	100
+code review	daimashencha	100
+diff	chayi	100
+merge conflict	hebingchongtu	100
+cherry-pick	zhaichu	100
+stash	zancun	100
+tag	biaoqian	100
+version control	banbenkongzhi	100
+monorepo	dancangku	100
+branching strategy	fenzhicelue	100
+
+# 开发、测试与交付环境
+local environment	bendihuanjing	100
+development environment	kaifahuanjing	100
+testing environment	ceshihuanjing	100
+staging environment	yufabuhuanjing	100
+production environment	shengchanhuanjing	100
+test case	ceshiyongli	100
+test coverage	ceshifugailv	100
+smoke test	maoyanceshi	100
+regression testing	huiguiceshi	100
+acceptance testing	yanshouceshi	100
+test-driven development	ceshiqudongkaifa	100
+quality assurance	zhiliangbaozheng	100
+defect	quexian	100
+reproduce	fuxian	100
+hotfix	jinjixiufu	100
+canary release	huidufabu	100
+full rollout	quanliangfabu	100
+feature flag	gongnengkaiguan	100
+maintenance	weihu	100
+
+# 线上故障、可靠性与运维
+incident	shigu	100
+outage	zhongduan	100
+on-call	zhiban	100
+root cause analysis	genyinfenxi	100
+postmortem	fupan	100
+runbook	yunxingshouce	100
+escalation	shengji	100
+troubleshooting	paicha	100
+mitigation	huanjiecuoshi	100
+rollback	huigun	100
+degradation	jiangji	100
+circuit breaker	rongduanqi	100
+disaster recovery	zaihaohuifu	100
+high availability	gaokeyongxing	100
+redundancy	rongyu	100
+capacity planning	rongliangguihua	100
+performance bottleneck	xingnengpingjing	100
+service level objective	fuwushuipingmubiao	100
+service level indicator	fuwushuipingzhibiao	100
+
+# 文档、会议与异步沟通
+documentation	wendang	100
+README	readme	100
+API documentation	apiwendang	100
+request for comments	rfc	100
+architecture decision record	adr	100
+architecture diagram	jiagoutu	100
+sequence diagram	shixutu	100
+flowchart	liuchengtu	100
+meeting	huiyi	100
+agenda	yicheng	100
+meeting minutes	huiyijilu	100
+action item	xingdongxiang	100
+alignment	duiqi	100
+handoff	jiaojie	100
+feedback	fankui	100
+asynchronous communication	yibugoutong	100
+knowledge sharing	zhishifenxiang	100
+
+# 数据分析、增长与实验
+event tracking	shijianmaidian	100
+telemetry	yuanchengceshu	100
+data quality	shujuzhiliang	100
+data validation	shujuyanzheng	100
+funnel analysis	loushifenxi	100
+attribution	guiyin	100
+north star metric	beixingzhibiao	100
+experiment	shiyan	100
+A/B test	abceshi	100
+hypothesis	jiashe	100
+sample size	yangbenliang	100
+statistical significance	tongjixianzhuxing	100
+activation	jihuo	100
+conversion	zhuanhua	100
+virality	bingduxing	100
+
+# AI、模型与智能体工程
+prompt engineering	tishicigongcheng	100
+function calling	hanshudiaoyong	100
+context management	shangxiawenguanli	100
+token	lingpai	100
+inference	tuili	100
+fine-tuning	weidiao	100
+model serving	moxingfuwu	100
+multimodal	duomotai	100
+grounding	zhuisuyiju	100
+retrieval augmented generation	jiansuozengqiangshengcheng	100
+agentic workflow	dailigongzuoliu	100
+human in the loop	renzaibihuan	100
+
+# 安全、隐私、合规与全球化
+secret	mishi	100
+credential	pingzheng	100
+access control	fangwenkongzhi	100
+role-based access control	juesefangwenkongzhi	100
+least privilege	zuixiaoquanxian	100
+audit	shenji	100
+data breach	shujuxielou	100
+incident response	shiguxiangying	100
+threat modeling	weixiemoxing	100
+attack surface	gongjimian	100
+personally identifiable information	gerenkebiaoshixinxi	100
+localization	bentihua	100
+internationalization	guojihua	100
+globalization	quanqiuhua	100
+timezone	shiqu	100
+currency	huobi	100
+exchange rate	huilv	100
+refund	tuikuan	100
+
+# 职业发展与团队管理
+resume	jianli	100
+interview	mianshi	100
+job description	gangweimiaoshu	100
+hiring	zhaopin	100
+mentoring	daijiao	100
+performance review	jixiaopinggu	100
+promotion	jinsheng	100
+compensation	xinchou	100
+one-on-one	yiduiyi	100
+team building	tuanduijianshe	100

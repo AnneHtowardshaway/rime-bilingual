@@ -1,0 +1,204 @@
+# Rime dictionary
+# encoding: utf-8
+---
+name: tech_english_business
+version: "2026.07.16"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# 计算机基础与开发工具
+operating system	caozuoxitong	100
+kernel	neihe	100
+command	mingling	100
+command line	minglinghang	100
+terminal	zhongduan	100
+shell	minglingjieshiqi	100
+file system	wenjianxitong	100
+directory	mulu	100
+path	lujing	100
+permission	quanxian	100
+read-only	zhidu	100
+executable	kezhixing	100
+binary	erjinzhi	100
+compiler	bianyiqi	100
+interpreter	jieshiqi	100
+assembler	huibianqi	100
+linker	lianjieqi	100
+debugger	diaoshiqi	100
+integrated development environment	jichengkaifahuanjing	100
+software development kit	ruanjiankaifabao	100
+argument	canshu	100
+flag	biaozhi	100
+environment variable	huanjingbianliang	100
+regular expression	zhengzebiaodashi	100
+syntax	yufa	100
+semantics	yuyi	100
+encoding	bianma	100
+Unicode	unicode	100
+UTF-8	utf8	100
+ASCII	ascii	100
+open source	kaifangyuanma	100
+license	xukezheng	100
+
+# 网络、协议与安全
+domain name	yuming	100
+domain name system	yumingjiexitong	100
+IP address	ipdizhi	100
+TCP	tcp	100
+UDP	udp	100
+port	duankou	100
+proxy	daili	100
+content delivery network	neirongfenfawangluo	100
+bandwidth	daikuan	100
+latency	yanchi	100
+packet	shujubao	100
+encryption	jiami	100
+decryption	jiemi	100
+hashing	sanlie	100
+firewall	fanghuoqiang	100
+intrusion detection	ruqinjiance	100
+malware	eyiruanjian	100
+phishing	diaoyu	100
+ransomware	lesuoruanjian	100
+Transport Layer Security	chuanshucenganquan	100
+Secure Sockets Layer	anquantaijiezi	100
+single sign-on	dandenglu	100
+multi-factor authentication	duoyinsuzheng	100
+zero trust	lingxinren	100
+
+# 数据库、数据工程与云原生
+relational database	guanxishujuku	100
+NoSQL	nosql	100
+query	chaxun	100
+index	suoyin	100
+primary key	zhujian	100
+foreign key	waijian	100
+normalization	guifanhua	100
+replication	fuzhi	100
+sharding	fenpian	100
+backup	beifen	100
+migration	qianyi	100
+data warehouse	shujucangku	100
+data lake	shujuhu	100
+extract transform load	chouquzhuanhuajiazai	100
+data pipeline	shujuguandao	100
+cloud computing	yunjisuan	100
+infrastructure as a service	jichusheshifuwu	100
+platform as a service	pingtaijifuwu	100
+software as a service	ruanjianjifuwu	100
+serverless	wufuwuqi	100
+function as a service	hanshufuwu	100
+container image	rongqijingxiang	100
+orchestration	bianpai	100
+continuous deployment	chixubushu	100
+monitoring	jiankong	100
+alerting	gaojing	100
+
+# 前端、移动端与产品体验
+user interface	yonghujiekou	100
+user experience	yonghutiyan	100
+responsive design	xiangyingsheji	100
+accessibility	kefangwenxing	100
+wireframe	xiankuangtu	100
+component	zujian	100
+state management	zhuangtaiguanli	100
+design system	shejixitong	100
+mobile application	yidongyingyong	100
+progressive web app	jianjinshiwangyeyingyong	100
+app store	yingyongshangdian	100
+push notification	tuisongtongzhi	100
+crash report	bengkuibaogao	100
+
+# 产品、项目与团队协作
+agile	minjie	100
+Scrum	sikailum	100
+Kanban	kanban	100
+sprint	chongci	100
+backlog	daibanshixiang	100
+roadmap	lutu	100
+milestone	lichengbei	100
+deliverable	jiaofuwu	100
+requirement	xuqiu	100
+specification	guige	100
+stakeholder	liyixiangguanzhe	100
+product manager	chanpinjingli	100
+operations	yunying	100
+analytics	fenxi	100
+dashboard	yibiaopan	100
+metric	zhibiao	100
+data-driven	shujuqudong	100
+business intelligence	shangyezhineng	100
+competitive analysis	jingpinfenxi	100
+
+# 互联网商业、产品增长与电商
+business model	shangyemoshi	100
+digital transformation	shuzihuazhuanxing	100
+e-commerce	dianzishangwu	100
+marketplace	pingtaixingdianshang	100
+subscription	dingyue	100
+freemium	mianfeizengzhi	100
+pricing	dingjia	100
+discount	zhekou	100
+revenue	shouru	100
+profit	lirun	100
+gross margin	maoli	100
+cash flow	xianjinliu	100
+invoice	fapiao	100
+payment gateway	zhifutongdao	100
+conversion rate	zhuanhualv	100
+funnel	loudou	100
+customer acquisition	huoke	100
+customer acquisition cost	huokebencheng	100
+customer lifetime value	kehushengmingzhouqijiazhi	100
+return on investment	touzihuibao	100
+key performance indicator	guanjiankpi	100
+objective and key results	okr	100
+daily active users	rihuo	100
+monthly active users	yuehuo	100
+gross merchandise value	gmv	100
+churn	liushi	100
+retention	liucun	100
+engagement	canyudu	100
+cohort	tongqiqun	100
+segmentation	fenqun	100
+target audience	mubiaoyonghu	100
+user persona	yonghuhuaxiang	100
+growth hacking	zengzhangheike	100
+product-market fit	chanpinshichangpipei	100
+minimum viable product	zuixiaokexingchanpin	100
+SaaS	saas	100
+B2B	b2b	100
+B2C	b2c	100
+D2C	d2c	100
+C2C	c2c	100
+KPI	kpi	100
+OKR	okr	100
+DAU	dau	100
+MAU	mau	100
+GMV	gmv	100
+CAC	cac	100
+LTV	ltv	100
+ROI	roi	100
+
+# 数字营销、销售与客户成功
+search engine optimization	sousuoyinqingyouhua	100
+search engine marketing	sousuoyinqingyingxiao	100
+content marketing	neirongyingxiao	100
+campaign	yingxiaohuodong	100
+landing page	luodiye	100
+call to action	xingdonghaozhao	100
+conversion tracking	zhuanhuagenzong	100
+lead	xiaoshousuoyuan	100
+sales pipeline	xiaoshouguandao	100
+customer relationship management	kehuguanxiguanli	100
+customer support	kehuzhichi	100
+service level agreement	fuwushuipingxieyi	100
+onboarding	xinshouyindao	100
+user journey	yonghulujing	100
+privacy	yinsi	100
+compliance	hegui	100
+privacy policy	yinsizhengce	100
+terms of service	fuwutiaokuan	100
+data governance	shujuzhili	100
+consent	tongyi	100

@@ -1,0 +1,155 @@
+# Rime dictionary
+# encoding: utf-8
+---
+name: tech_english_go
+version: "2026.07.17"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# Go 标准库、Web 与微服务框架
+net/http	nethttp	9000
+http.Server	httpserver	8500
+http.Handler	httphandler	8500
+http.ServeMux	httpservemux	8500
+httptest	httptest	8500
+Gin	gin	9200
+Echo	echo	9000
+Fiber	fiber	9000
+Beego	beego	8200
+Buffalo	buffalo	7800
+Iris	iris	8200
+Revel	revel	7800
+GoFrame	goframe	8800
+Chi	chi	8500
+Gorilla Mux	gorillamux	8800
+HttpRouter	httprouter	8500
+BunRouter	bunrouter	7800
+Go kit	gokit	8800
+go-zero	gozero	8800
+Kratos	kratos	8500
+Kitex	kitex	8500
+Hertz	hertz	8200
+Goa	goa	8000
+Go Micro	gomicro	8000
+Dapr Go SDK	daprgo	8200
+Kubernetes client-go	clientgo	8500
+Operator SDK	operatorsdk	8500
+Kubebuilder	kubebuilder	8500
+fasthttp	fasthttp	8500
+valyala/fasthttp	valyalafasthttp	8000
+Resty	resty	8500
+retryablehttp	retryablehttp	8000
+
+# Go 数据库、缓存与迁移
+GORM	gorm	9200
+Ent	entgo	8800
+Bun	bungo	8500
+XORM	xorm	8000
+Beego ORM	beegoorm	7800
+SQLBoiler	sqlboiler	8500
+sqlx	sqlxgo	8800
+sqlc	sqlc	9000
+Squirrel	squirrelgo	8000
+goqu	goqu	8000
+Jet	jetgo	7800
+pgx	pgx	8800
+lib/pq	libpq	8500
+pgxpool	pgxpool	8200
+go-sql-driver/mysql	gosqldrivermysql	8500
+mattn/go-sqlite3	mattngosqlite3	8000
+modernc.org/sqlite	moderncsqlite	8000
+MongoDB Go Driver	mongodbgo	8500
+mongo-driver	mongodrivergo	8000
+go-redis	goredis	8800
+Rueidis	rueidis	8000
+Redigo	redigo	8000
+BadgerDB	badgerdb	8200
+bbolt	bbolt	8200
+BoltDB	boltdb	8000
+Pebble	pebble	8000
+golang-migrate	golangmigrate	8500
+Goose	goose	8200
+Atlas	atlasgo	8200
+
+# RPC、消息、配置与依赖注入
+gRPC-Go	grpcgo	8800
+Connect-Go	connectgo	8500
+Twirp	twirp	8000
+Gorilla WebSocket	gorillawebsocket	8200
+nhooyr/websocket	nhooyrwebsocket	8000
+Coder WebSocket	coderwebsocket	8000
+Melody	melody	7800
+gqlgen	gqlgen	8500
+graphql-go	graphqlgo	8000
+gqlparser	gqlparser	7800
+Sarama	sarama	8500
+kafka-go	kafkago	8500
+NATS.go	natsgo	8200
+Watermill	watermill	8000
+amqp091-go	amqp091go	7800
+RabbitMQ Go Client	rabbitmqgo	8000
+Asynq	asynq	8200
+Machinery	machinery	7800
+River	rivergo	8000
+robfig/cron	robfigcron	8200
+gocron	gocron	8000
+Viper	viper	8500
+Koanf	koanf	8000
+envconfig	envconfiggo	8000
+godotenv	godotenv	8200
+Cleanenv	cleanenv	7800
+Cobra	cobra	8800
+urfave/cli	urfavecli	8000
+Kingpin	kingpin	8000
+Bubble Tea	bubbletea	8200
+Wire	wirego	8500
+Fx	fxgo	8200
+Dig	diggo	8000
+
+# Go 可观测性、安全、测试与工程
+Zap	zap	8800
+Zerolog	zerolog	8500
+Logrus	logrus	8500
+Apex Log	apexlog	7800
+OpenTelemetry-Go	otelgo	8500
+Prometheus client_golang	prometheusgoclient	8200
+Jaeger Client	jaegerclient	8000
+OpenTracing	opentracing	8200
+Zipkin	zipkin	8200
+golang-jwt/jwt	golangjwt	8200
+Goth	goth	7800
+Ory Fosite	oryfosite	7800
+go-playground/validator	goplaygroundvalidator	8200
+ozzo-validation	ozzovalidation	7800
+govalidator	govalidator	7800
+encoding/json	encodingjson	8500
+jsoniter	jsoniter	8200
+easyjson	easyjson	8000
+Sonic	sonicgo	8000
+FlatBuffers	flatbuffers	8200
+BigCache	bigcache	8000
+FreeCache	freecache	8000
+Ristretto	ristretto	8000
+Groupcache	groupcache	8000
+Hystrix-go	hystrixgo	7800
+gobreaker	gobreaker	8000
+go-retry	goretry	7800
+backoff	backoffgo	8000
+Tollbooth	tollbooth	7800
+Uber ratelimit	uberratelimit	7800
+Testify	testify	8800
+GoMock	gomock	8500
+Mockery	mockery	8200
+Ginkgo	ginkgo	8200
+Gomega	gomega	8200
+Testcontainers for Go	testcontainersgo	8200
+Dockertest	dockertest	8000
+pprof	pprof	8500
+benchstat	benchstat	8000
+Go Modules	gomodules	8800
+go mod	gomod	9000
+GoReleaser	goreleaser	8500
+golangci-lint	golangcilint	8800
+Staticcheck	staticcheck	8500
+Air	airgo	8000

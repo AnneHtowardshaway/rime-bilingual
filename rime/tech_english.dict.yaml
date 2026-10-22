@@ -1,0 +1,295 @@
+# Rime dictionary
+# encoding: utf-8
+---
+name: tech_english
+version: "2026.07.16"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# 通用软件工程
+abstraction	chouxiang	100
+algorithm	suanfa	100
+architecture	jiagou	100
+asynchronous	yibu	100
+backend	houduan	100
+bug	quexian	100
+build	goujian	100
+cache	huancun	100
+callback	huidiao	100
+class	lei	100
+client	kehuduan	100
+compile	bianyi	100
+concurrency	bingfa	100
+configuration	peizhi	100
+container	rongqi	100
+database	shujuku	100
+debug	diaoshi	100
+dependency	yilai	100
+deployment	bushu	100
+distributed	fenbu	100
+exception	yichang	100
+framework	kuangjia	100
+frontend	qianduan	100
+function	hanshu	100
+interface	jiekou	100
+library	ku	100
+middleware	zhongjianjian	100
+module	mokuai	100
+package	bao	100
+parameter	canshu	100
+performance	xingneng	100
+process	jincheng	100
+protocol	xieyi	100
+runtime	yunxingshi	100
+service	fuwu	100
+singleton	danli	100
+software	ruanjian	100
+source code	yuandaima	100
+stack	zhan	100
+state	zhuangtai	100
+thread	xiancheng	100
+timeout	timeout	100
+transaction	shiwu	100
+variable	bianliang	100
+version	banben	100
+vulnerability	loudong	100
+
+# 架构、设计与测试
+adapter	shipeiqi	100
+annotation	zhujie	100
+assertion	duanyan	100
+authentication	shenfenyanzheng	100
+authorization	shouquan	100
+benchmark	jizhunceshi	100
+branch	fenzhi	100
+changelog	gengxirizhi	100
+continuous integration	chixujicheng	100
+continuous delivery	chixujiaofu	100
+design pattern	shejimoshi	100
+dependency injection	yilaizhuru	100
+encapsulation	fengzhuang	100
+end-to-end test	duandaoduanceshi	100
+fixture	ceshishuju	100
+integration test	jichengceshi	100
+inversion of control	kongzhifanzhuan	100
+mock	moni	100
+observability	keguancexing	100
+polymorphism	duotai	100
+refactor	chonggou	100
+repository	cangku	100
+scalability	kekuozhanxing	100
+schema	moshidingyi	100
+unit test	danyuanceshi	100
+
+# Web、API 与云原生
+application programming interface	bianchengjiekou	100
+cookie	cookie	100
+cross-origin resource sharing	kuayuziyuangongxiang	100
+endpoint	duandian	100
+GraphQL	graphqier	100
+HTTP	http	100
+HTTPS	https	100
+JSON	json	100
+load balancer	fuzaijunheng	100
+microservice	weifuwu	100
+OAuth	oauth	100
+OpenAPI	openapi	100
+rate limit	xiansulv	100
+request	qingqiu	100
+response	xiangying	100
+REST	reset	100
+server	fuwuqi	100
+session	huihua	100
+token	lingpai	100
+webhook	wangluogouzi	100
+WebSocket	wangluotaojiezi	100
+
+# Java 与 JVM
+Java	java	100
+JVM	javaxuniji	100
+bytecode	zijiema	100
+garbage collection	lajishouji	100
+generics	fanxing	100
+heap	dui	100
+inheritance	jicheng	100
+Java Development Kit	javakaifagongju	100
+Java Runtime Environment	javayunxinghuanjing	100
+Java Virtual Machine	javaxuniji	100
+lambda expression	lambdabiaodashi	100
+method reference	fangfayinyong	100
+overloading	zhongzai	100
+overriding	chongxie	100
+reflection	fanshe	100
+stream	liushi	100
+synchronized	tongbu	100
+virtual machine	xuniji	100
+
+# Java 框架与生态
+Apache Maven	maven	100
+Gradle	gradle	100
+Hibernate	hibernate	100
+Jakarta EE	jakartaee	100
+JUnit	junit	100
+MyBatis	mybatis	100
+Spring	spring	100
+Spring Boot	springboot	100
+Spring Cloud	springcloud	100
+Spring Data	springdata	100
+Spring MVC	springmvc	100
+Spring Security	springsecurity	100
+starter	qidongqi	100
+
+# JavaScript 与 TypeScript
+JavaScript	javascript	100
+TypeScript	typescript	100
+arrow function	jiantouhanshu	100
+bundler	dabaoqi	100
+closure	bibaot	100
+destructuring	jiegou	100
+event loop	shijianxunhuan	100
+event listener	shijianjiantingqi	100
+hoisting	tisheng	100
+promise	chengnuo	100
+prototype	yuanxing	100
+strict mode	yangemoshi	100
+transpiler	zhuanyiqi	100
+type guard	leixingweihu	100
+union type	lianheleixing	100
+
+# JavaScript / TypeScript 框架与工具
+Angular	angular	100
+Astro	astro	100
+Babel	babel	100
+Bun	bun	100
+Deno	deno	100
+ESLint	eslint	100
+Express	express	100
+Jest	jest	100
+Next.js	nextjs	100
+NestJS	nestjs	100
+Node.js	nodejs	100
+Nuxt	nuxt	100
+pnpm	pnpm	100
+React	react	100
+Redux	redux	100
+Svelte	svelte	100
+Tailwind CSS	weibufengcss	100
+Vite	vite	100
+Vue	vue	100
+Webpack	webpack	100
+Yarn	yarn	100
+
+# Python
+Python	python	100
+asyncio	yibutongxin	100
+comprehension	tuidaoshi	100
+context manager	shangxiawenguanliqi	100
+coroutine	xiecheng	100
+dataclass	shujulei	100
+decorator	zhuangshiqi	100
+dictionary	zidian	100
+generator	shengchengqi	100
+global interpreter lock	quanjieshiqisuo	100
+iterator	diedaiqi	100
+keyword argument	guanjianzicanshu	100
+list comprehension	liebiaotuidaoshi	100
+mutable	kebian	100
+namespace	mingmingkongjian	100
+package manager	baoguanliqi	100
+Python Enhancement Proposal	pythonzengqiangjianyi	100
+type hint	leixingzhujie	100
+virtual environment	xunihuangjing	100
+
+# Python 框架与工具
+Celery	celery	100
+Django	django	100
+FastAPI	fastapi	100
+Flask	flask	100
+Jinja	jinja	100
+NumPy	numpy	100
+pandas	pandas	100
+poetry	poetry	100
+Pydantic	pydantic	100
+pytest	pytest	100
+requests	requests	100
+SQLAlchemy	sqlalchemy	100
+uv	uv	100
+uvicorn	uvicorn	100
+
+# Go
+Go	go	100
+Golang	golang	100
+channel	channel	100
+defer	yanchi	100
+error	cuowu	100
+goroutine	goxiecheng	100
+interface type	jiekouleixing	100
+pointer	zhizhen	100
+race condition	jingtaotiaojian	100
+receiver	jieshouqi	100
+select statement	xuanzebiaodashi	100
+slice	qiepian	100
+struct	jiegouti	100
+zero value	lingzhi	100
+
+# Go 框架与工具
+Buffalo	buffalo	100
+Cobra	cobra	100
+Echo	echo	100
+Fiber	fiber	100
+Gin	gin	100
+GORM	gorm	100
+Go modules	gomodules	100
+gRPC	grpc	100
+Kubernetes	kubernetes	100
+
+# Rust
+Rust	rust	100
+borrow	jianyong	100
+borrow checker	jianyongjianchaqi	100
+crate	kuai	100
+enum	meiju	100
+expression	biaodashi	100
+future	weilai	100
+lifetimes	shengmingzhouqi	100
+macro	hong	100
+match	pipei	100
+ownership	suoyouquan	100
+trait	texing	100
+unsafe	buanquan	100
+
+# Rust 框架与工具
+Actix Web	actixweb	100
+Axum	axum	100
+Cargo	cargo	100
+Clippy	clippy	100
+Rocket	rocket	100
+Serde	serde	100
+Tokio	tokio	100
+Warp	warp	100
+
+# AI、Agent 与 RAG
+agent	daili	100
+agent loop	dailixunhuan	100
+chunking	fenkuai	100
+context window	shangxiawenchuangkou	100
+embedding	qianruliang	100
+evaluation	pinggu	100
+guardrail	hulan	100
+hallucination	hujue	100
+large language model	daxingyuyanmoxing	100
+memory	jiyi	100
+model context protocol	moxingshangxiawenxieyi	100
+prompt	tishici	100
+prompt injection	tishiciruzhu	100
+rag	rag	100
+retrieval	suoyingjiansuo	100
+reranking	chongpaixu	100
+semantic search	yuyijiansuo	100
+state machine	zhuangtaiji	100
+structured output	jiegouhuashuchu	100
+system prompt	xitongtishici	100
+tool call	diaoyonggongju	100
+tool function	gongjuhanshu	100
+vector database	xiangliangshujuku	100

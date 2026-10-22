@@ -1,0 +1,171 @@
+# Rime dictionary
+# encoding: utf-8
+---
+name: tech_english_python
+version: "2026.07.17"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# Python Web、API 与应用服务器
+Django	django	9200
+Flask	flask	9000
+Pyramid	pyramid	8000
+Web2py	web2py	7800
+TurboGears	turbogears	7800
+CherryPy	cherrypy	8000
+Django REST Framework	drf	9200
+Django REST Framework	djangorestframework	9000
+Litestar	litestar	8500
+Falcon	falcon	8200
+Connexion	connexion	8000
+Flask-RESTX	flaskrestx	8000
+Flask-RESTful	flaskrestful	8000
+Starlette	starlette	9000
+Sanic	sanic	8500
+Tornado	tornado	8500
+aiohttp	aiohttp	9000
+Quart	quart	8000
+BlackSheep	blacksheep	7800
+Robyn	robyn	7800
+Bottle	bottle	7800
+Responder	responder	7500
+Hug	hug	7500
+Uvicorn	uvicorn	9000
+Hypercorn	hypercorn	8200
+Daphne	daphne	8000
+Granian	granian	8000
+Gunicorn	gunicorn	9000
+Waitress	waitress	8000
+uWSGI	uwsgi	8500
+mod_wsgi	modwsgi	7800
+ASGI	asgi	9000
+WSGI	wsgi	8800
+
+# ORM、驱动与数据服务
+SQLAlchemy	sqlalchemy	9200
+SQLModel	sqlmodel	8800
+Django ORM	djangoorm	8800
+Peewee	peewee	8000
+Tortoise ORM	tortoiseorm	8200
+Pony ORM	ponyorm	7800
+Piccolo ORM	piccoloorm	7800
+Alembic	alembic	8800
+Django Migrations	djangomigrations	8200
+Yoyo Migrations	yoyomigrations	7800
+Psycopg	psycopg	8800
+psycopg2	psycopg2	8500
+asyncpg	asyncpg	8500
+aiopg	aiopg	8000
+PyMySQL	pymysql	8500
+mysqlclient	mysqlclient	8200
+aiomysql	aiomysql	8000
+asyncmy	asyncmy	7800
+sqlite3	sqlite3py	8200
+aiosqlite	aiosqlite	8000
+PyMongo	pymongo	8800
+Motor	motor	8200
+Beanie	beanie	8000
+MongoEngine	mongoengine	8000
+redis-py	redispy	8500
+aioredis	aioredis	8000
+hiredis	hiredis	8000
+elasticsearch-dsl	elasticsearchdsl	8000
+
+# 数据验证、任务、HTTP 与 GraphQL
+Pydantic	pydantic	9200
+Marshmallow	marshmallow	8200
+Cerberus	cerberus	7800
+Voluptuous	voluptuous	7800
+attrs	attrs	8200
+cattrs	cattrs	7800
+orjson	orjson	8800
+ujson	ujson	8200
+msgspec	msgspec	8000
+Pickle	pickle	8000
+Celery	celery	9000
+Dramatiq	dramatiq	8200
+RQ	rq	8200
+Redis Queue	redisqueue	8000
+Huey	huey	8000
+Taskiq	taskiq	8000
+APScheduler	apscheduler	8200
+Celery Beat	celerybeat	8200
+Requests	requests	9000
+HTTPX	httpx	9000
+urllib3	urllib3	8200
+gRPC Python	grpcpython	8500
+Nameko	nameko	7800
+Graphene	graphene	8200
+Strawberry GraphQL	strawberrygraphql	8500
+Ariadne	ariadne	8000
+Tartiflette	tartiflette	7500
+
+# 认证、消息、配置、测试与工程
+Authlib	authlib	8200
+PyJWT	pyjwt	8500
+python-jose	pythonjose	8200
+OAuthLib	oauthlib	8000
+Flask-Login	flasklogin	8000
+Django Allauth	djangoallauth	8200
+Passlib	passlib	8000
+cryptography	cryptographypy	8500
+PyNaCl	pynacl	8000
+argon2-cffi	argon2cffi	8000
+Casbin Python	casbinpy	8000
+Oso	oso	7800
+Django Guardian	djangoguardian	7800
+Kombu	kombu	8000
+Pika	pika	8000
+aio-pika	aiopika	8000
+confluent-kafka	confluentkafka	8200
+kafka-python	kafkapython	8000
+NATS.py	natspy	7800
+Loguru	loguru	8200
+structlog	structlog	8200
+python-json-logger	pythonjsonlogger	8000
+OpenTelemetry Python	otelpython	8500
+Sentry SDK	sentrysdk	8200
+Prometheus Client	prometheusclientpy	8200
+StatsD	statsd	8000
+python-dotenv	pythondotenv	8500
+Dynaconf	dynaconf	8000
+Hydra	hydra	8200
+OmegaConf	omegaconf	8000
+Pydantic Settings	pydanticsettings	8200
+environs	environs	7800
+cachetools	cachetools	8000
+dogpile.cache	dogpilecache	7800
+Flask-Caching	flaskcaching	7800
+dependency-injector	dependencyinjector	8000
+Punq	punq	7500
+Swagger UI	swaggerui	8500
+ReDoc	redoc	8200
+drf-spectacular	drfspectacular	8200
+drf-yasg	drfyasg	8000
+apispec	apispec	7800
+pytest	pytest	9200
+Hypothesis	hypothesis	8500
+tox	tox	8200
+nox	nox	8000
+coverage.py	coveragepy	8200
+pytest-mock	pytestmock	8000
+responses	responsespy	7800
+respx	respx	7800
+freezegun	freezegun	7800
+Faker	faker	8200
+factory_boy	factoryboy	8000
+Model Bakery	modelbakery	7800
+Ruff	ruff	9000
+Black	black	9000
+isort	isort	8200
+Flake8	flake8	8200
+Pylint	pylint	8200
+mypy	mypy	8800
+Pyright	pyright	8800
+Poetry	poetry	9000
+PDM	pdm	8200
+Pipenv	pipenv	8200
+uv	uvpy	9000
+virtualenv	virtualenv	8500
+Conda	conda	8500

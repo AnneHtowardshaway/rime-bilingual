@@ -1,0 +1,360 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# 从 LangChain Docs 与 API Reference MCP 文档整理的 AI Agent 专业英文词典。
+# 输入码统一使用小写字母和数字，短语、类名与函数名去除空格、连字符和下划线。
+---
+name: langchain_agent
+version: "2026.09.14"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# LangChain 生态与产品
+Overview	overview	9800
+LangChain	langchain	10000
+LangGraph	langgraph	10000
+LangSmith	langsmith	10000
+Deep Agents	deepagents	9800
+Managed Deep Agents	manageddeepagents	9800
+OpenWiki	openwiki	9800
+Integrations	integrations	9600
+Learn	learn	9400
+Reference	reference	9600
+Contribute	contribute	9400
+LangGraph Platform	langgraphplatform	9400
+LangSmith Deployment	langsmithdeployment	9200
+LangSmith Studio	langsmithstudio	9200
+LangSmith Playground	langsmithplayground	9000
+LangChain Expression Language	lcel	9400
+LangChain Expression Language	langchainexpressionlanguage	9000
+Model Context Protocol	mcp	9800
+Model Context Protocol	modelcontextprotocol	9400
+Agent-to-Agent Protocol	a2a	9200
+Agent-to-Agent Protocol	agenttoagentprotocol	8800
+
+# Agent 核心架构
+AI agent	agent	9800
+agent loop	agentloop	9700
+agent harness	agentharness	9600
+agent runtime	agentruntime	9500
+agent state	agentstate	9500
+agent executor	agentexecutor	9300
+agent architecture	agentarchitecture	9200
+agent orchestration	agentorchestration	9400
+agent trajectory	agenttrajectory	9000
+agent action	agentaction	9300
+agent step	agentstep	9000
+agent finish	agentfinish	9000
+agent invocation	agentinvocation	9000
+agent response	agentresponse	9000
+agent workflow	agentworkflow	9200
+agentic workflow	agenticworkflow	9500
+agentic system	agenticsystem	9300
+agentic step	agenticstep	9000
+autonomous agent	autonomousagent	9200
+stateful agent	statefulagent	9300
+long-running agent	longrunningagent	9200
+multi-agent	multiagent	9500
+multi-agent system	multiagentsystem	9400
+subagent	subagent	9500
+subagents	subagents	9300
+supervisor	supervisor	9400
+supervisor agent	supervisoragent	9300
+handoff	handoff	9300
+agent handoff	agenthandoff	9200
+routing	routing	9000
+router	router	9000
+context engineering	contextengineering	9600
+context management	contextmanagement	9200
+context schema	contextschema	9000
+dynamic prompt	dynamicprompt	9200
+system prompt	systemprompt	9400
+prompt template	prompttemplate	9200
+prompt injection	promptinjection	9300
+
+# 模型、消息与工具调用
+chat model	chatmodel	9400
+model provider	modelprovider	9000
+model profile	modelprofile	9000
+model request	modelrequest	9200
+model response	modelresponse	9200
+dynamic model	dynamicmodel	9000
+model fallback	modelfallback	9000
+fallback model	fallbackmodel	8800
+message history	messagehistory	9400
+system message	systemmessage	9200
+human message	humanmessage	9200
+AI message	aimessage	9400
+tool message	toolmessage	9400
+content block	contentblock	9000
+tool calling	toolcalling	9700
+tool call	toolcall	9600
+tool call ID	toolcallid	9300
+tool result	toolresult	9300
+tool error	toolerror	9200
+tool execution	toolexecution	9400
+tool binding	toolbinding	9200
+tool schema	toolschema	9200
+tool decorator	tooldecorator	9000
+tool runtime	toolruntime	9500
+tool context	toolcontext	9200
+tool selection	toolselection	9200
+dynamic tools	dynamictools	9000
+parallel tool calls	paralleltoolcalls	9200
+function calling	functioncalling	9500
+
+# 中间件、控制与安全
+middleware	middleware	9700
+agent middleware	agentmiddleware	9500
+model middleware	modelmiddleware	9200
+tool middleware	toolmiddleware	9200
+middleware stack	middlewarestack	9000
+middleware hook	middlewarehook	9000
+before model	beforemodel	9000
+after model	aftermodel	9000
+wrap model call	wrapmodelcall	9000
+wrap tool call	wraptoolcall	9000
+guardrail	guardrail	9500
+guardrails	guardrails	9600
+human-in-the-loop	hitl	9700
+human-in-the-loop	humanintheloop	9500
+human approval	humanapproval	9300
+approval workflow	approvalworkflow	9200
+sensitive operation	sensitiveoperation	9000
+policy enforcement	policyenforcement	9000
+deterministic policy	deterministicpolicy	8800
+PII detection	piidetection	9200
+PII middleware	piimiddleware	9200
+steering	steering	9000
+interrupt	interrupt	9600
+resume	resume	9400
+interrupt ID	interruptid	9200
+interrupt payload	interruptpayload	9000
+resumable execution	resumableexecution	9200
+retry policy	retrypolicy	9200
+rate limiting	ratelimiting	9000
+timeout	timeout	8800
+recursion limit	recursionlimit	9000
+
+# LangGraph 图与运行时
+StateGraph	stategraph	9800
+CompiledStateGraph	compiledstategraph	9400
+MessagesState	messagesstate	9600
+ToolNode	toolnode	9600
+tools_condition	toolscondition	9500
+Command	command	9400
+Send	send	9000
+START	start	9000
+END	end	9000
+graph state	graphstate	9500
+state schema	stateschema	9200
+shared state	sharedstate	9200
+state update	stateupdate	9200
+partial state	partialstate	9000
+state reducer	statereducer	9300
+reducer function	reducerfunction	9000
+graph node	graphnode	9400
+graph edge	graphedge	9400
+conditional edge	conditionaledge	9300
+entry point	entrypoint	9000
+finish point	finishpoint	8800
+control flow	controlflow	9300
+conditional routing	conditionalrouting	9200
+graph execution	graphexecution	9300
+graph compilation	graphcompilation	9000
+compiled graph	compiledgraph	9000
+subgraph	subgraph	9300
+functional API	functionalapi	9000
+Graph API	graphapi	9200
+Pregel	pregel	9000
+superstep	superstep	9000
+stream mode	streammode	9200
+token streaming	tokenstreaming	9300
+event streaming	eventstreaming	9200
+stream event	streamevent	9000
+stream chunk	streamchunk	9000
+asynchronous streaming	asyncstreaming	9000
+
+# 持久化、线程与记忆
+persistence	persistence	9500
+durable execution	durableexecution	9600
+checkpoint	checkpoint	9600
+checkpointer	checkpointer	9700
+checkpoint saver	checkpointsaver	9300
+InMemorySaver	inmemorysaver	9600
+MemorySaver	memorysaver	9400
+state snapshot	statesnapshot	9300
+thread	thread	9200
+thread ID	threadid	9500
+thread state	threadstate	9200
+conversation state	conversationstate	9200
+short-term memory	shorttermmemory	9600
+long-term memory	longtermmemory	9600
+semantic memory	semanticmemory	9300
+episodic memory	episodicmemory	9300
+procedural memory	proceduralmemory	9300
+memory store	memorystore	9400
+in-memory store	inmemorystore	9200
+persistent store	persistentstore	9200
+namespace	namespace	9000
+memory namespace	memorynamespace	9000
+memory management	memorymanagement	9200
+message trimming	messagetrimming	9000
+message deletion	messagedeletion	8800
+conversation summary	conversationsummary	9000
+
+# RAG、检索与知识库
+retrieval-augmented generation	rag	9800
+retrieval-augmented generation	retrievalaugmentedgeneration	9400
+retrieval	retrieval	9500
+retriever	retriever	9500
+retrieval chain	retrievalchain	9200
+document loader	documentloader	9300
+document splitter	documentsplitter	9200
+text splitter	textsplitter	9300
+recursive text splitter	recursivetextsplitter	9000
+document chunk	documentchunk	9200
+chunking	chunking	9400
+chunk overlap	chunkoverlap	9000
+embedding	embedding	9500
+embedding model	embeddingmodel	9300
+vector store	vectorstore	9500
+vector database	vectordatabase	9400
+similarity search	similaritysearch	9300
+semantic search	semanticsearch	9400
+hybrid search	hybridsearch	9200
+keyword search	keywordsearch	9000
+metadata filter	metadatafilter	9200
+relevance score	relevancescore	9200
+reranker	reranker	9300
+reranking	reranking	9200
+indexing	indexing	9000
+knowledge base	knowledgebase	9300
+grounding	grounding	9200
+context retrieval	contextretrieval	9200
+
+# 结构化输出与数据验证
+structured output	structuredoutput	9700
+structured response	structuredresponse	9500
+response format	responseformat	9300
+output schema	outputschema	9300
+schema validation	schemavalidation	9400
+strict validation	strictvalidation	9200
+native structured output	nativestructuredoutput	9200
+provider strategy	providerstrategy	9500
+tool strategy	toolstrategy	9500
+ProviderStrategy	providerstrategy	9600
+ToolStrategy	toolstrategy	9600
+Pydantic	pydantic	9400
+BaseModel	basemodel	9200
+TypedDict	typeddict	9200
+dataclass	dataclass	9000
+JSON Schema	jsonschema	9500
+field validation	fieldvalidation	9000
+schema inference	schemainference	9000
+serialization	serialization	9000
+deserialization	deserialization	8800
+
+# LangChain 与 LangGraph Python API
+create_agent	createagent	10000
+init_chat_model	initchatmodel	9600
+AgentState	agentstate	9600
+AgentMiddleware	agentmiddleware	9600
+ModelRequest	modelrequest	9500
+ModelResponse	modelresponse	9500
+ToolRuntime	toolruntime	9700
+Runnable	runnable	9500
+RunnableConfig	runnableconfig	9500
+RunnableLambda	runnablelambda	9200
+RunnableSequence	runnablesequence	9200
+RunnableParallel	runnableparallel	9200
+RunnablePassthrough	runnablepassthrough	9000
+ChatPromptTemplate	chatprompttemplate	9400
+MessagesPlaceholder	messagesplaceholder	9200
+AIMessage	aimessage	9600
+HumanMessage	humanmessage	9500
+SystemMessage	systemmessage	9500
+ToolMessage	toolmessage	9600
+BaseTool	basetool	9300
+StructuredTool	structuredtool	9300
+InjectedState	injectedstate	9000
+InjectedStore	injectedstore	9000
+add_messages	addmessages	9400
+StateSnapshot	statesnapshot	9400
+GraphInterrupt	graphinterrupt	9300
+CheckpointMetadata	checkpointmetadata	9000
+BaseCheckpointSaver	basecheckpointsaver	9000
+
+# ReAct、规划与多 Agent 模式
+ReAct	react	9600
+reasoning and acting	reasoningandacting	9200
+plan and execute	planandexecute	9200
+planning agent	planningagent	9300
+task decomposition	taskdecomposition	9300
+reflection	reflection	9200
+self-reflection	selfreflection	9200
+critic agent	criticagent	9000
+worker agent	workeragent	9000
+specialist agent	specialistagent	9000
+delegation	delegation	9300
+parallel execution	parallelexecution	9200
+sequential execution	sequentialexecution	9000
+hierarchical agent	hierarchicalagent	9000
+network architecture	networkarchitecture	8800
+custom workflow	customworkflow	9000
+deterministic step	deterministicstep	9200
+task queue	taskqueue	9000
+
+# LangSmith 可观测性、评测与反馈
+observability	observability	9600
+tracing	tracing	9600
+trace	trace	9400
+trace ID	traceid	9200
+run	run	9000
+run ID	runid	9200
+span	span	9200
+run tree	runtree	9000
+callback	callback	9000
+callback handler	callbackhandler	9000
+telemetry	telemetry	8800
+monitoring	monitoring	9300
+agent monitoring	agentmonitoring	9200
+evaluation	evaluation	9600
+evaluator	evaluator	9500
+LLM-as-a-judge	llmasajudge	9500
+human evaluation	humanevaluation	9200
+online evaluation	onlineevaluation	9300
+offline evaluation	offlineevaluation	9300
+pairwise evaluation	pairwiseevaluation	9000
+trajectory evaluation	trajectoryevaluation	9200
+dataset	dataset	9300
+dataset example	datasetexample	9000
+experiment	experiment	9300
+experiment result	experimentresult	9000
+feedback	feedback	9300
+feedback score	feedbackscore	9000
+annotation queue	annotationqueue	9200
+reference output	referenceoutput	9000
+expected output	expectedoutput	9000
+regression test	regressiontest	9000
+benchmark dataset	benchmarkdataset	9000
+
+# MCP 与 Agent 工具集成
+MCP server	mcpserver	9600
+MCP client	mcpclient	9500
+MCP tool	mcptool	9500
+MCP resource	mcpresource	9300
+MCP prompt	mcpprompt	9000
+MCP transport	mcptransport	9200
+streamable HTTP	streamablehttp	9400
+standard input output	stdio	9200
+JSON-RPC	jsonrpc	9400
+tool discovery	tooldiscovery	9200
+resource discovery	resourcediscovery	9000
+session initialization	sessioninitialization	9000
+capability negotiation	capabilitynegotiation	9000
+OAuth	oauth	9200
+bearer token	bearertoken	9000
+remote MCP server	remotemcpserver	9200
+local MCP server	localmcpserver	9000

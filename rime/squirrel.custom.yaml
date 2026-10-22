@@ -1,0 +1,48 @@
+# 青简风格：中文候选为主体，英文译词在 4K 屏上保持清晰易读。
+patch:
+  style/candidate_list_layout: stacked
+  style/text_orientation: horizontal
+  style/inline_preedit: true
+  style/candidate_format: "[label]. [candidate]   [comment]"
+  style/font_face: "PingFang SC"
+  style/font_point: 17
+  style/label_font_face: "Helvetica Neue"
+  style/label_font_point: 12
+  style/comment_font_face: "Helvetica Neue"
+  style/comment_font_point: 16
+  style/line_spacing: 5
+  style/spacing: 8
+  style/corner_radius: 9
+  style/hilited_corner_radius: 6
+  style/border_height: 6
+  style/border_width: 8
+  style/color_scheme: qingjian_learning_light
+  style/color_scheme_dark: qingjian_learning_dark
+
+  preset_color_schemes/qingjian_learning_light:
+    name: "青简学习·浅色"
+    author: "Local adaptation inspired by qingjian-team/qingjian"
+    back_color: 0xF7F7F7
+    border_color: 0xE1E1E1
+    text_color: 0x666666
+    candidate_text_color: 0x202020
+    label_color: 0x999999
+    comment_text_color: 0x505050
+    hilited_candidate_back_color: 0xEDE4D8
+    hilited_candidate_text_color: 0x171717
+    hilited_candidate_label_color: 0x6F6254
+    hilited_comment_text_color: 0x40362C
+
+  preset_color_schemes/qingjian_learning_dark:
+    name: "青简学习·深色"
+    author: "Local adaptation inspired by qingjian-team/qingjian"
+    back_color: 0x252525
+    border_color: 0x3B3B3B
+    text_color: 0xB8B8B8
+    candidate_text_color: 0xF1F1F1
+    label_color: 0x8C8C8C
+    comment_text_color: 0xD8D8D8
+    hilited_candidate_back_color: 0x4A4036
+    hilited_candidate_text_color: 0xFFFFFF
+    hilited_candidate_label_color: 0xD4C4B2
+    hilited_comment_text_color: 0xF2E6D8
