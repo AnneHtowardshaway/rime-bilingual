@@ -24,9 +24,11 @@ static void require(bool condition, const std::string& message) {
   if (!condition) throw std::runtime_error(message);
 }
 using Candidates = std::vector<std::pair<std::string, std::string>>;
-static Candidates query(RimeApi* api, RimeSessionId session, const std::string& code) {
+static Candidates query(RimeApi* api, RimeSessionId session, const std::string& code,
+                        bool direct = false) {
   api->clear_composition(session);
-  api->simulate_key_sequence(session, code.c_str());
+  if (direct) require(api->set_input(session, code.c_str()), "无法设置查询编码：" + code);
+  else api->simulate_key_sequence(session, code.c_str());
   RIME_STRUCT(RimeContext, context);
   require(api->get_context(session, &context), "无法读取候选：" + code);
   Candidates result;
@@ -110,8 +112,15 @@ static int run(int argc, char** argv) {
         {"python", "Python"}, {"vscode", "VS Code"}, {"openai", "OpenAI"},
         {"kubernetes", "Kubernetes"}, {"nginx", "Nginx"}, {"markdown", "Markdown"},
         {"zai", "Z.ai"}, {"mergerequest", "Merge Request"},
+        {"gofmtprintf", "fmt.Printf"}, {"serdejson", "serde_json"},
+        {"jspromiseallsettled", "Promise.allSettled"}, {"tsreadonlytype", "Readonly"},
+        {"pyasynciogather", "asyncio.gather"}, {"javacompletablefuture", "CompletableFuture"},
+        {"pyexecutor", "concurrent.futures.ThreadPoolExecutor"},
+        {"rustmapnew", "HashMap::new"}, {"tsasconst", "as const"},
       };
       for (auto& item : cases) {
+        std::printf("TYPE %s / %s\n", argv[2], item.first);
+        std::fflush(stdout);
         auto candidates = query(api, session, item.first);
         size_t index = candidates.size() == 1 ? 0 : 1;
         require(!candidates.empty() && candidates[index].first == item.second,
@@ -123,7 +132,10 @@ static int run(int argc, char** argv) {
         for (auto& candidate : candidates) if (candidate.first == item.second) count++;
         require(count == 1, "英文候选重复：" + std::string(item.first));
         // 点号和空格必须作为候选文本整体提交，不能重新解释成标点或选词键。
-        if (code == "zai" || code == "mergerequest") {
+        if (code == "zai" || code == "mergerequest" || code == "gofmtprintf"
+            || code == "serdejson" || code == "jspromiseallsettled" || code == "tsreadonlytype"
+            || code == "pyasynciogather" || code == "javacompletablefuture"
+            || code == "pyexecutor" || code == "rustmapnew" || code == "tsasconst") {
           api->process_key(session, '2', 0);
           RIME_STRUCT(RimeCommit, phrase_commit);
           require(api->get_commit(session, &phrase_commit), "数字 2 没有提交：" + code);

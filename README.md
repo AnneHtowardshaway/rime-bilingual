@@ -10,9 +10,9 @@
 | `github` | 第二候选为 `GitHub` | 按数字 **2** |
 | `docker` | 出现规范英文候选 `Docker` | 选择该候选 |
 
-内置 **215 个常用英文编码**，包括 GitHub、GitLab、Docker、ChatGPT、Kimi、GLM、JavaScript、VS Code 等；英文候选和英文释义都可以单独关闭。
+内置 **3495 个英文编码**：215 个互联网常用编码，以及 3280 个编程编码（含语言别名）。覆盖 Go、Rust、JS、TS、Python、Java 的标准库、常用库和 API；英文候选和英文释义都可以单独关闭。
 
-**直接跳到：** [安装](#安装) · [安装后怎么用](#安装后怎么用) · [中文学习与私人短语](#中文学习与私人短语) · [字号与开关](#字号与开关) · [恢复原配置](#恢复原配置) · [常见问题](#常见问题)
+**直接跳到：** [安装](#安装) · [安装后怎么用](#安装后怎么用) · [编程英文怎么输](#编程英文怎么输) · [中文学习与私人短语](#中文学习与私人短语) · [字号与开关](#字号与开关) · [恢复原配置](#恢复原配置) · [常见问题](#常见问题)
 
 ## 安装
 
@@ -97,6 +97,46 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -Previe
 **看到英文候选和英文释义，就可以正常使用了。** 不需要运行开发测试或继续调整配置。
 
 英文词使用完整小写编码，例如 `github`、`chatgpt`；输入 `zai` 可选 `Z.ai`，输入 `mergerequest` 可选 `Merge Request`，编码中不加点号或空格。项目只做精确匹配，不做英文前缀联想；未命中的输入沿用原候选顺序。若原方案只有这个英文一个候选，则只保留一个规范英文候选。
+
+## 编程英文怎么输
+
+**万象、朙月都可以在普通中文模式下使用。** 输入完整小写编码，通常按 **2** 选中英文；若原方案没有其他候选，则英文会单独显示。`go`、`js`、`ts` 也可直接选出语言名称。
+
+| 语言 | 覆盖内容举例 | 输入编码 → 英文候选 |
+| --- | --- | --- |
+| Go | fmt、context、sync、net/http、Gin、GORM、Viper、Testify | `gofmtprintf` → `fmt.Printf`；`waitgroup` → `WaitGroup` |
+| Rust | Vec、HashMap、Option、Result、Tokio、Serde、Reqwest、Rayon | `serdejson` → `serde_json`；`rustmapnew` → `HashMap::new` |
+| JavaScript | Promise、Node.js、Axios、Lodash、RxJS、Vue/React API | `jsallsettled` → `Promise.allSettled`；`usestate` → `useState` |
+| TypeScript | Partial、Record、Readonly、Awaited、TSConfig、Zod、类型工具 | `tsreadonlytype` → `Readonly`；`tsasconst` → `as const` |
+| Python | pathlib、asyncio、collections、NumPy、pandas、Pydantic、pytest | `pygather` → `asyncio.gather`；`pyexecutor` → `concurrent.futures.ThreadPoolExecutor` |
+| Java | 集合、Stream、并发、时间、JDBC、Jackson、Guava、Spring | `arraylist` → `ArrayList`；`javafuture` → `CompletableFuture` |
+
+编码中不输入点号、下划线、冒号或空格，选中后会完整输出这些符号。较长的 API 提供简短别名，例如上面的 `pyexecutor`。`pythonsqlite` 可以输出带数字的 `sqlite3`。
+
+**同名词用明确的语言编码区分大小写**：例如 `gomap` 输出 `map`，`jsmap` 输出 `Map`；`axios` 输出库名 `Axios`，`jsaxios` 输出模块名 `axios`。只匹配完整编码，输入一半不会提前插入英文。
+
+编程编码清单见 [programming-english.tsv](rime/data/programming-english.tsv)。朙月还保留 `;` / `vv` 技术英文入口及其前缀补全。
+
+<details>
+<summary>词条来源与维护方法</summary>
+
+语言词库位于 `rime/tech_english_*.dict.yaml`。本轮补充按官方资料核对库名、类型、模块与 API 符号，仅收录术语及名称，不复制文档正文：
+
+- [Go 标准库](https://pkg.go.dev/std)、[Rust 标准库](https://doc.rust-lang.org/std/)
+- [JavaScript 标准对象](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)、[Node.js API](https://nodejs.org/api/)
+- [TypeScript 工具类型](https://www.typescriptlang.org/docs/handbook/utility-types.html)、[TSConfig](https://www.typescriptlang.org/tsconfig/)
+- [Python 标准库](https://docs.python.org/3/library/)、[Java 标准库](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/module-summary.html)
+- [React](https://react.dev/reference/react)、[Vue](https://vuejs.org/api/reactivity-core.html)、[Axios](https://axios-http.com/docs/intro)、[Lodash](https://lodash.com/docs/)、[Zod](https://zod.dev/)
+
+维护者修改语言词库后，运行以下命令更新供两套方案共用的词表：
+
+```sh
+python3 scripts/build-programming-vocabulary.py
+```
+
+生成器沿用码表权重选择同码候选，保留互联网词表中的既有规范拼写。普通中文入口只收录纯字母编码，单字母编码及含数字的编码不会自动加入。跨词表重复编码、生成结果不同步等问题会由自动检查拦截。安装者使用仓库内已生成的文件，无需额外安装 Python。
+
+</details>
 
 ## 中文学习与私人短语
 

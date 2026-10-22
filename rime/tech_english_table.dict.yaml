@@ -5,7 +5,7 @@
 # table_translator@tech_english 挂载，以英文前缀 `;` 触发。
 ---
 name: tech_english_table
-version: "2026.07.17"
+version: "2026.10.22"
 sort: by_weight
 use_preset_vocabulary: false
 import_tables:
@@ -13,6 +13,8 @@ import_tables:
   - tech_english_python
   - tech_english_go
   - tech_english_java
+  - tech_english_javascript
+  - tech_english_typescript
 ...
 
 # 语言、框架与产品名
@@ -750,3 +752,39 @@ vector database	vectordatabase	8800
 embedding	embedding	8800
 fine-tuning	finetuning	8600
 inference	inference	8600
+
+# 基础编程术语、数据处理与工程常用词
+variable	variable	9200
+parameter	parameter	9200
+argument	argument	9200
+encode	encode	9200
+decode	decode	9200
+marshal	marshal	9200
+unmarshal	unmarshal	9200
+body	body	9200
+payload	payload	9200
+status	status	9200
+cancel	cancel	9200
+abort	abort	9200
+signal	signal	9200
+mount	mount	9200
+unmount	unmount	9200
+dependency	dependency	9200
+injection	injection	9200
+factory	factory	9200
+adapter	adapter	9200
+builder	builder	9200
+singleton	singleton	9200
+strategy	strategy	9200
+decorator	decorator	9200
+facade	facade	9200
+state	state	9200
+eventbus	eventbus	9200
+handler	handler	9200
+repository	repository	9200
+session	session	9200
+cache	cache	9200
+reader	reader	9200
+writer	writer	9200
+scheduler	scheduler	9200
+dispatcher	dispatcher	9200

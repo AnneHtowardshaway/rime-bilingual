@@ -2,6 +2,8 @@
 set -eu
 project_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 cd "$project_root"
+python3 tests/vocabulary_generator_spec.py
+python3 scripts/build-programming-vocabulary.py --check
 python3 tests/run_lua.py
 for script in scripts/*.sh; do sh -n "$script"; done
 sh tests/rollback_spec.sh

@@ -6,7 +6,7 @@ param([string]$UserDir = $env:RIME_USER_DIR)
 $target = Resolve-RimeDirectory $UserDir
 foreach ($relative in @('weasel.custom.yaml', 'default.custom.yaml', 'wanxiang.custom.yaml',
     'luna_pinyin_simp.custom.yaml', 'lua/internet_english_filter.lua', 'lua/qingjian_gloss_filter.lua',
-    'data/internet-english.tsv', 'data/qingjian-glossary-en.tsv',
+    'data/internet-english.tsv', 'data/programming-english.tsv', 'data/qingjian-glossary-en.tsv',
     'build/wanxiang.schema.yaml', 'build/luna_pinyin_simp.schema.yaml', 'build/weasel.yaml')) {
     if (-not (Test-Path -LiteralPath (Join-Path $target $relative) -PathType Leaf)) { throw "Missing installed/built file: $relative" }
 }

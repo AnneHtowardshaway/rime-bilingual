@@ -4,20 +4,22 @@ local M = {}
 
 function M.init(env)
   env.words = {}
-  local filename = rime_api.get_user_data_dir() .. "/data/internet-english.tsv"
-  local file = io.open(filename, "r")
-  if not file then
-    log.error("[internet_english_filter] 无法读取词表: " .. filename)
-    return
-  end
-  for line in file:lines() do
-    line = line:gsub("^\239\187\191", ""):gsub("\r$", "")
-    local code, text, comment = line:match("^([a-z][a-z0-9]*)\t([^\t]+)\t?(.*)$")
-    if code then
-      env.words[code] = { text = text, comment = comment }
+  for _, name in ipairs({ "internet-english.tsv", "programming-english.tsv" }) do
+    local filename = rime_api.get_user_data_dir() .. "/data/" .. name
+    local file = io.open(filename, "r")
+    if not file then
+      log.error("[internet_english_filter] 无法读取词表: " .. filename)
+    else
+      for line in file:lines() do
+        line = line:gsub("^\239\187\191", ""):gsub("\r$", "")
+        local code, text, comment = line:match("^([a-z]+)\t([^\t]+)\t?(.*)$")
+        if code and not env.words[code] then
+          env.words[code] = { text = text, comment = comment }
+        end
+      end
+      file:close()
     end
   end
-  file:close()
 end
 
 function M.func(input, env)

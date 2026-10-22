@@ -1,0 +1,221 @@
+# Rime dictionary
+# encoding: utf-8
+# SPDX-License-Identifier: GPL-3.0-or-later
+---
+name: tech_english_typescript
+version: "2026.10.22"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# 内置工具类型与类型操作
+Partial	partial	9200
+Partial	tspartial	9200
+Required	required	9200
+Required	tsrequired	9200
+Readonly	readonlytype	9200
+Readonly	tsreadonlytype	9200
+Record	tsrecord	9200
+Pick	pick	9200
+Pick	tspick	9200
+Omit	omit	9200
+Omit	tsomit	9200
+Exclude	exclude	9200
+Exclude	tsexclude	9200
+Extract	extract	9200
+Extract	tsextract	9200
+NonNullable	nonnullable	9200
+NonNullable	tsnonnullable	9200
+ReturnType	returntype	9200
+ReturnType	tsreturntype	9200
+Parameters	parameters	9200
+Parameters	tsparameters	9200
+ConstructorParameters	constructorparameters	9200
+ConstructorParameters	tsconstructorparameters	9200
+InstanceType	instancetype	9200
+InstanceType	tsinstancetype	9200
+ThisParameterType	thisparametertype	9200
+ThisParameterType	tsthisparametertype	9200
+OmitThisParameter	omitthisparameter	9200
+OmitThisParameter	tsomitthisparameter	9200
+ThisType	thistype	9200
+ThisType	tsthistype	9200
+Awaited	awaited	9200
+Awaited	tsawaited	9200
+NoInfer	noinfer	9200
+NoInfer	tsnoinfer	9200
+Uppercase	uppercase	9200
+Uppercase	tsuppercase	9200
+Lowercase	lowercase	9200
+Lowercase	tslowercase	9200
+Capitalize	capitalize	9200
+Capitalize	tscapitalize	9200
+Uncapitalize	uncapitalize	9200
+Uncapitalize	tsuncapitalize	9200
+keyof	keyof	9200
+keyof	tskeyof	9200
+typeof	typeof	9200
+typeof	tstypeof	9200
+infer	infer	9200
+infer	tsinfer	9200
+satisfies	satisfies	9200
+satisfies	tssatisfies	9200
+declare	declare	9200
+declare	tsdeclare	9200
+namespace	namespace	9200
+namespace	tsnamespace	9200
+module	module	9200
+module	tsmodule	9200
+interface	tsinterface	9200
+type	tstype	9200
+readonly	readonly	9200
+readonly	tsreadonly	9200
+abstract	abstract	9200
+abstract	tsabstract	9200
+implements	implements	9200
+implements	tsimplements	9200
+private	private	9200
+private	tsprivate	9200
+protected	protected	9200
+protected	tsprotected	9200
+public	public	9200
+public	tspublic	9200
+static	static	9200
+static	tsstatic	9200
+override	override	9200
+override	tsoverride	9200
+unknown	unknown	9200
+unknown	tsunknown	9200
+never	never	9200
+never	tsnever	9200
+any	tsany	9200
+void	tsvoid	9200
+number	tsnumber	9200
+string	tsstring	9200
+boolean	tsboolean	9200
+bigint	tsbigint	9200
+symbol	tssymbol	9200
+unique symbol	uniquesymbol	9200
+unique symbol	tsuniquesymbol	9200
+as const	asconst	9200
+as const	tsasconst	9200
+type alias	typealias	9200
+type alias	tstypealias	9200
+type guard	typeguard	9200
+type guard	tstypeguard	9200
+type predicate	typepredicate	9200
+type predicate	tstypepredicate	9200
+discriminated union	discriminatedunion	9200
+discriminated union	tsdiscriminatedunion	9200
+mapped type	mappedtype	9200
+mapped type	tsmappedtype	9200
+conditional type	conditionaltype	9200
+conditional type	tsconditionaltype	9200
+indexed access type	indexedaccesstype	9200
+indexed access type	tsindexedaccesstype	9200
+template literal type	templateliteraltype	9200
+template literal type	tstemplateliteraltype	9200
+intersection type	intersectiontype	9200
+intersection type	tsintersectiontype	9200
+union type	uniontype	9200
+union type	tsuniontype	9200
+generic constraint	genericconstraint	9200
+generic constraint	tsgenericconstraint	9200
+type inference	typeinference	9200
+type inference	tstypeinference	9200
+type narrowing	typenarrowing	9200
+type narrowing	tstypenarrowing	9200
+type assertion	typeassertion	9200
+type assertion	tstypeassertion	9200
+satisfies operator	satisfiesoperator	9200
+satisfies operator	tssatisfiesoperator	9200
+
+# 编译器、类型定义、验证与基础工具
+tsc	tsc	9200
+tsserver	tsserver	9200
+tsconfig.json	tsconfigjson	9200
+compilerOptions	compileroptions	9200
+compilerOptions	tscompileroptions	9200
+strict	strict	9200
+strict	tsstrict	9200
+strictNullChecks	strictnullchecks	9200
+strictNullChecks	tsstrictnullchecks	9200
+noImplicitAny	noimplicitany	9200
+noImplicitAny	tsnoimplicitany	9200
+noUncheckedIndexedAccess	nouncheckedindexedaccess	9200
+noUncheckedIndexedAccess	tsnouncheckedindexedaccess	9200
+exactOptionalPropertyTypes	exactoptionalpropertytypes	9200
+exactOptionalPropertyTypes	tsexactoptionalpropertytypes	9200
+moduleResolution	moduleresolution	9200
+moduleResolution	tsmoduleresolution	9200
+esModuleInterop	esmoduleinterop	9200
+esModuleInterop	tsesmoduleinterop	9200
+allowSyntheticDefaultImports	allowsyntheticdefaultimports	9200
+allowSyntheticDefaultImports	tsallowsyntheticdefaultimports	9200
+skipLibCheck	skiplibcheck	9200
+skipLibCheck	tsskiplibcheck	9200
+isolatedModules	isolatedmodules	9200
+isolatedModules	tsisolatedmodules	9200
+verbatimModuleSyntax	verbatimmodulesyntax	9200
+verbatimModuleSyntax	tsverbatimmodulesyntax	9200
+declaration	declaration	9200
+declaration	tsdeclaration	9200
+declarationMap	declarationmap	9200
+declarationMap	tsdeclarationmap	9200
+sourceMap	tssourcemap	9200
+incremental	incremental	9200
+incremental	tsincremental	9200
+composite	composite	9200
+composite	tscomposite	9200
+paths	tspaths	9200
+baseUrl	baseurl	9200
+baseUrl	tsbaseurl	9200
+target	target	9200
+target	tstarget	9200
+lib	tsliboption	9200
+TypeScript Compiler API	typescriptcompilerapi	9200
+TypeScript Compiler API	tstypescriptcompilerapi	9200
+ts-morph	tsmorph	9200
+ts-node	tsnode	9200
+tslib	tslib	9200
+tsup	tsup	9200
+TypeDoc	typedoc	9200
+TypeDoc	tstypedoc	9200
+DefinitelyTyped	definitelytyped	9200
+DefinitelyTyped	tsdefinitelytyped	9200
+type-fest	typefest	9200
+type-fest	tstypefest	9200
+ts-essentials	tsessentials	9200
+utility-types	utilitytypes	9200
+utility-types	tsutilitytypes	9200
+expect-type	expecttype	9200
+expect-type	tsexpecttype	9200
+tsd	tsd	9200
+ts-pattern	tspattern	9200
+io-ts	iots	9200
+io-ts	tsiots	9200
+fp-ts	fpts	9200
+fp-ts	tsfpts	9200
+Effect	effect	9200
+Effect	tseffect	9200
+typedoc-plugin-markdown	typedocpluginmarkdown	9200
+typedoc-plugin-markdown	tstypedocpluginmarkdown	9200
+typescript-eslint	typescripteslint	9200
+typescript-eslint	tstypescripteslint	9200
+typescript-language-server	typescriptlanguageserver	9200
+typescript-language-server	tstypescriptlanguageserver	9200
+vue-tsc	tsvuetsc	9200
+Volar	tsvolar	9200
+svelte-check	sveltecheck	9200
+svelte-check	tssveltecheck	9200
+TSConfig	tsconfigpreset	9200
+z.infer	zinfer	9200
+z.infer	tszinfer	9200
+z.input	zinput	9200
+z.input	tszinput	9200
+z.output	zoutput	9200
+z.output	tszoutput	9200
+z.ZodType	zzodtype	9200
+z.ZodType	tszzodtype	9200
+z.ZodError	zzoderror	9200
+z.ZodError	tszzoderror	9200

@@ -36,9 +36,11 @@ local function environment(code, options)
     schema = { config = { get_int = function() return nil end } } } }, segment
 end
 local english = dofile(root .. "/rime/lua/internet_english_filter.lua")
+local loaded = environment("github")
+english.init(loaded)
 local function run(code, texts, options, change)
   local env, segment = environment(code, options)
-  english.init(env)
+  env.words = loaded.words
   if change then change(env.engine.context, segment) end
   local candidates = {}
   for _, text in ipairs(texts) do
@@ -55,7 +57,11 @@ result = run("github", { "GitHub", "Git湖北", "Git" })
 equal(result[1].text, "Git湖北"); equal(result[2].text, "GitHub")
 equal(run("github", { "GitHub" })[1].text, "GitHub")
 equal(run("github", {})[1].text, "GitHub")
-for _, item in ipairs({ { "zai", "Z.ai" }, { "mergerequest", "Merge Request" } }) do
+for _, item in ipairs({ { "zai", "Z.ai" }, { "mergerequest", "Merge Request" },
+    { "gofmtprintf", "fmt.Printf" }, { "rusthashmap", "HashMap" },
+    { "serdejson", "serde_json" }, { "promiseallsettled", "Promise.allSettled" },
+    { "tsreadonlytype", "Readonly" }, { "pyasynciogather", "asyncio.gather" },
+    { "javacompletablefuture", "CompletableFuture" } }) do
   result = run(item[1], { "原候选", item[2]:lower(), "后续候选" })
   equal(result[1].text, "原候选"); equal(result[2].text, item[2])
   equal(result[2]._end, #item[1]); equal(#result, 3)
@@ -77,13 +83,15 @@ end), 1)
 local env = environment("github")
 english.init(env)
 local seen = {}
-for line in io.lines(root .. "/rime/data/internet-english.tsv") do
-  if line ~= "" and line:sub(1, 1) ~= "#" then
-    local code, text, comment = line:match("^([a-z]+)\t([^\t]+)\t([^\t]+)$")
-    assert(code and text and comment, "词表格式不正确：" .. line)
-    assert(not seen[code], "重复编码：" .. code)
-    assert(text == text:match("^%s*(.-)%s*$"), "英文前后有空格：" .. code)
-    seen[code] = true
+for _, name in ipairs({ "internet-english.tsv", "programming-english.tsv" }) do
+  for line in io.lines(root .. "/rime/data/" .. name) do
+    if line ~= "" and line:sub(1, 1) ~= "#" then
+      local code, text, comment = line:match("^([a-z]+)\t([^\t]+)\t([^\t]+)$")
+      assert(code and text and comment, "词表格式不正确：" .. line)
+      assert(not seen[code], "跨词表重复编码：" .. code)
+      assert(text == text:match("^%s*(.-)%s*$"), "英文前后有空格：" .. code)
+      seen[code] = true
+    end
   end
 end
 local count = 0
