@@ -11,6 +11,7 @@ function M.init(env)
     return
   end
   for line in file:lines() do
+    line = line:gsub("^\239\187\191", ""):gsub("\r$", "")
     local code, text, comment = line:match("^([a-z][a-z0-9]*)\t([^\t]+)\t?(.*)$")
     if code then
       env.words[code] = { text = text, comment = comment }

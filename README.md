@@ -10,7 +10,7 @@
 | `github` | 第二候选为 `GitHub` | 按数字 **2** |
 | `docker` | 出现规范英文候选 `Docker` | 选择该候选 |
 
-内置 **198 个常用英文编码**，包括 GitHub、GitLab、Docker、ChatGPT、JavaScript、VS Code 等；英文候选和英文释义都可以单独关闭。
+内置 **215 个常用英文编码**，包括 GitHub、GitLab、Docker、ChatGPT、Kimi、GLM、JavaScript、VS Code 等；英文候选和英文释义都可以单独关闭。
 
 **直接跳到：** [安装](#安装) · [安装后怎么用](#安装后怎么用) · [中文学习与私人短语](#中文学习与私人短语) · [字号与开关](#字号与开关) · [恢复原配置](#恢复原配置) · [常见问题](#常见问题)
 
@@ -136,7 +136,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -Previe
 星澜工作室	xinglangongzuoshi	1000
 ```
 
-保存后，对输入法执行「重新部署」。同一编码有多条私人短语时，权重较大的优先。该文件不会被本项目安装或回滚覆盖，也已加入 Git 忽略规则；个人信息不要加入公开词表。格式参考 [Rime 官方短语示例](https://gist.github.com/lotem/5440677)。
+保存后，对输入法执行「重新部署」。同一编码有多条私人短语时，权重较大的优先。**这个文件需要手动填写；自动学习的词保存在用户学习数据库中。** 该文件不会被本项目安装或回滚覆盖，也已加入 Git 忽略规则；个人信息不要加入公开词表。格式参考 [Rime 官方短语示例](https://gist.github.com/lotem/5440677)。
 
 ## 字号与开关
 
@@ -199,11 +199,15 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\rollback.ps1
 
 如果小狼毫配置了自定义用户目录，备份保存在那个目录的 `backups` 文件夹。每次备份以 `qingjian-learning-` 开头，后面带时间戳；脚本会打印本次备份的完整位置。
 
-已有 `luna_pinyin.tech.dict.yaml` 聚合词库会保留，避免丢失私有词库导入。安装清单中的其他同名文件会先备份再替换；两个平台不会互相覆盖 `squirrel.custom.yaml` 和 `weasel.custom.yaml`。
+已有 `luna_pinyin.tech.dict.yaml` 聚合词库会保留，也不纳入此次回滚，避免丢失安装后新增的私有词库导入。安装清单中的其他同名文件会先备份再替换；两个平台不会互相覆盖 `squirrel.custom.yaml` 和 `weasel.custom.yaml`。同一份备份只能回滚一次。
 
 </details>
 
 ## 常见问题
+
+### 会自动更新到 GitHub 新版吗？
+
+不会。需要更新时，重新下载本项目并运行对应系统的安装命令。日常选词和组词会自动更新本机学习数据库，私人短语则由你手动维护；这些本地内容不会自动上传到 GitHub。
 
 ### 已经安装，为什么看不到英文？
 
@@ -266,7 +270,7 @@ docker	Docker	容器
 <details>
 <summary>给开发者：检查与回归测试</summary>
 
-普通用户不需要运行这些命令。静态检查只核对已安装文件、编译配置和模型校验值，不能代替真实候选测试。
+普通用户不需要运行这些命令。静态检查只核对已安装文件、编译配置和模型校验值，不能代替真实候选测试。真实引擎回归会逐项检查整张英文词表，并验证中文学习、私人短语和排序。
 
 **macOS：**
 

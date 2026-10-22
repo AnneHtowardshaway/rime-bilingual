@@ -48,6 +48,18 @@ gemini	Gemini	AI 助手
 deepseek	DeepSeek	AI
 qwen	Qwen	AI
 zai	Z.ai	AI 平台
+kimi	Kimi	AI 助手
+moonshot	Moonshot AI	AI
+zhipuai	ZhipuAI	AI
+glm	GLM	大语言模型
+chatglm	ChatGLM	大语言模型
+grok	Grok	AI 助手
+xai	xAI	AI
+perplexity	Perplexity	AI 搜索
+llama	Llama	大语言模型
+mistral	Mistral	大语言模型
+lmstudio	LM Studio	本地模型
+vllm	vLLM	模型推理
 ollama	Ollama	本地模型
 huggingface	Hugging Face	模型社区
 copilot	Copilot	AI 助手
@@ -55,6 +67,11 @@ cursor	Cursor	代码编辑器
 langchain	LangChain	AI 框架
 langgraph	LangGraph	AI 框架
 langsmith	LangSmith	AI 开发工具
+llamaindex	LlamaIndex	AI 框架
+autogen	AutoGen	AI 框架
+crewai	CrewAI	AI 框架
+dspy	DSPy	AI 框架
+pydanticai	PydanticAI	AI 框架
 javascript	JavaScript	编程语言
 typescript	TypeScript	编程语言
 python	Python	编程语言

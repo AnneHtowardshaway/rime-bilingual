@@ -23,6 +23,10 @@ case "$backup_dir" in
 esac
 
 manifest="$backup_dir/deployed-files.txt"
+if [ -f "$backup_dir/.rolled-back" ]; then
+  printf '错误：这份备份已回滚，不能重复执行。\n' >&2
+  exit 1
+fi
 if [ ! -f "$manifest" ]; then
   printf '错误：备份缺少部署清单：%s\n' "$manifest" >&2
   exit 1
@@ -38,7 +42,7 @@ while IFS= read -r relative_path; do
 done < "$manifest"
 
 # 先保留当前安装文件，再恢复部署前版本；回滚本身仍可追溯。
-rollback_stamp=$(date '+%Y%m%d-%H%M%S')
+rollback_stamp="$(date '+%Y%m%d-%H%M%S')-$$"
 installed_dir="$backup_dir/rolled-back-$rollback_stamp"
 
 while IFS= read -r relative_path; do
@@ -58,6 +62,8 @@ while IFS= read -r relative_path; do
     cp -p "$backup_dir/previous/$relative_path" "$rime_dir/$relative_path"
   fi
 done < "$manifest"
+
+touch "$backup_dir/.rolled-back"
 
 if [ "${RIME_SKIP_RELOAD:-0}" != '1' ]; then
   squirrel_bin='/Library/Input Methods/Squirrel.app/Contents/MacOS/Squirrel'

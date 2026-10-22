@@ -4,6 +4,7 @@ project_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 cd "$project_root"
 python3 tests/run_lua.py
 for script in scripts/*.sh; do sh -n "$script"; done
+sh tests/rollback_spec.sh
 
 if [ "${1:-}" = '--unit' ]; then exit 0; fi
 if [ "$(uname -s)" != Darwin ]; then
@@ -35,6 +36,7 @@ EOF
 mkdir -p "$sandbox/private.userdb"
 printf 'private learning sentinel\n' > "$sandbox/private.userdb/sentinel"
 RIME_USER_DIR="$sandbox" RIME_SKIP_RELOAD=1 RIME_FONT_PRESET=compact scripts/deploy.sh > "$sandbox/deploy.log"
+printf '\n# private import added after installation\n' >> "$sandbox/luna_pinyin.tech.dict.yaml"
 for schema in luna_pinyin_simp wanxiang; do
   "$cache/rime-engine" "$sandbox" "$schema" > "$sandbox/$schema.log" 2>&1 || {
     cat "$sandbox/$schema.log"; exit 1;
@@ -46,11 +48,14 @@ RIME_USER_DIR="$sandbox" scripts/verify.sh
 grep -Fq 'style/font_point: 15' "$sandbox/squirrel.custom.yaml"
 grep -Fq -- '-- existing custom extension' "$sandbox/rime.lua"
 grep -Fq -- '- private_user' "$sandbox/luna_pinyin.tech.dict.yaml"
+grep -Fq -- '# private import added after installation' "$sandbox/luna_pinyin.tech.dict.yaml"
 RIME_USER_DIR="$sandbox" RIME_SKIP_RELOAD=1 scripts/rollback.sh
 test "$(cat "$sandbox/default.custom.yaml")" = '原配置'
 test "$(cat "$sandbox/private.userdb/sentinel")" = 'private learning sentinel'
 test "$(cat "$sandbox/custom_phrase.txt")" = "$(printf '星澜工作室\txinglangongzuoshi\t1000')"
 test ! -e "$sandbox/lua/internet_english_filter.lua"
 grep -Fq -- '- private_user' "$sandbox/luna_pinyin.tech.dict.yaml"
+grep -Fq -- '# private import added after installation' "$sandbox/luna_pinyin.tech.dict.yaml"
 grep -Fq -- '-- existing custom extension' "$sandbox/rime.lua"
 printf '全部测试通过；真实引擎、部署与回滚记录：%s\n' "$sandbox"
+sh tests/install_spec.sh

@@ -117,4 +117,39 @@ gloss.func(stream({ wrapped }), env)
 equal(output[1].text, "岚"); equal(output[1]:get_genuine(), original)
 equal(output[1].quality, 9); equal(output[1].start, 0); equal(output[1]._end, 3)
 equal(output[1].comment, "lan  n. storm")
+-- Windows 编辑器常用 UTF-8 BOM 和 CRLF；不能因此丢掉首条词或带入回车。
+local real_open = io.open
+local function mock_lines(lines)
+  io.open = function()
+    return {
+      lines = function()
+        local index = 0
+        return function() index = index + 1; return lines[index] end
+      end,
+      close = function() end,
+    }
+  end
+end
+mock_lines({ "\239\187\191github\tGitHub\t代码托管\r" })
+env = environment("github")
+english.init(env)
+equal(env.words.github.text, "GitHub"); equal(env.words.github.comment, "代码托管")
+local fresh_gloss = dofile(root .. "/rime/lua/qingjian_gloss_filter.lua")
+mock_lines({ "\239\187\191开发\tv. develop\tv. exploit\r" })
+env = environment("kaifa")
+fresh_gloss.init(env)
+equal(env.glossary["开发"], "v. develop · v. exploit")
+io.open = real_open
+
+-- 资源暂时缺失不能把空词表永久缓存；下次初始化应能恢复。
+fresh_gloss = dofile(root .. "/rime/lua/qingjian_gloss_filter.lua")
+local real_error = log.error
+local missing_logged = false
+log.error = function() missing_logged = true end
+io.open = function() return nil, "simulated missing file" end
+fresh_gloss.init(env)
+equal(next(env.glossary), nil); equal(missing_logged, true)
+io.open = real_open; log.error = real_error
+fresh_gloss.init(env)
+equal(env.glossary["开发"], "v. develop · v. exploit")
 print("Lua 回归通过：" .. count .. " 个英文编码、去重、范围、开关与释义配置")

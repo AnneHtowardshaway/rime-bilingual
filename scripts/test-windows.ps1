@@ -60,6 +60,7 @@ Assert-Test ($theme.Contains('style/font_point: 15') -and $theme.Contains('style
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'squirrel.custom.yaml')) -eq 'existing macOS configuration') 'Do not install or overwrite the macOS theme'
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'rime.lua')) -eq '-- existing private extension') 'Preserve rime.lua'
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'luna_pinyin.tech.dict.yaml')).Contains('# private imports retained')) 'Preserve aggregate dictionary'
+Add-Content -LiteralPath (Join-Path $sandbox 'luna_pinyin.tech.dict.yaml') -Value '# private import added after installation' -Encoding UTF8
 
 # Reject a corrupt manifest before restoring any otherwise valid path.
 $backup = [IO.File]::ReadAllText($marker, $script:Utf8)
@@ -125,6 +126,7 @@ if ($Engine) {
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'default.custom.yaml')) -eq $original) 'Restore original settings'
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'private.userdb/sentinel')) -eq 'private learning data') 'Preserve user learning data'
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'custom_phrase.txt'), $script:Utf8) -eq $privatePhrase) 'Preserve private phrases on installation and rollback'
+Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'luna_pinyin.tech.dict.yaml'), $script:Utf8).Contains('# private import added after installation')) 'Rollback preserves private imports added after installation'
 Assert-Test (-not (Test-Path -LiteralPath (Join-Path $sandbox 'lua/internet_english_filter.lua'))) 'Remove newly installed files on rollback'
 Assert-Rejected { & (Join-Path $PSScriptRoot 'rollback.ps1') -UserDir $sandbox -SkipDeploy } 'Reject repeated rollback'
 Write-Host "Windows installer/rollback tests passed. PowerShell $($PSVersionTable.PSVersion). Sandbox: $sandbox"

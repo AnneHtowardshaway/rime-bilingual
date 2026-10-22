@@ -3,11 +3,12 @@
 #include "rime_api.h"
 #ifdef _WIN32
 #include <windows.h>
-#include <filesystem>
 #else
 #include <dlfcn.h>
 #endif
 #include <atomic>
+#include <filesystem>
+#include <fstream>
 #include <cstdio>
 #include <stdexcept>
 #include <string>
@@ -37,6 +38,7 @@ static Candidates query(RimeApi* api, RimeSessionId session, const std::string& 
   return result;
 }
 #include "learning_spec.h"
+#include "vocabulary_spec.h"
 static int run(int argc, char** argv) {
   if (argc < 3) { std::fprintf(stderr, "用法：rime-engine USER_DIR SCHEMA [INPUT]\n"); return 2; }
   RimeApi* api = nullptr;
@@ -101,6 +103,7 @@ static int run(int argc, char** argv) {
       for (size_t i = 0; i < candidates.size(); i++)
         std::printf("%zu. %s [%s]\n", i + 1, candidates[i].first.c_str(), candidates[i].second.c_str());
     } else {
+      vocabulary_spec(api, session, argv[1], argv[2]);
       const std::pair<const char*, const char*> cases[] = {
         {"github", "GitHub"}, {"gitlab", "GitLab"}, {"docker", "Docker"},
         {"chatgpt", "ChatGPT"}, {"javascript", "JavaScript"}, {"typescript", "TypeScript"},

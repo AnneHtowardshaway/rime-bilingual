@@ -57,7 +57,21 @@ find "$wanxiang_source/lua" "$wanxiang_source/dicts" -type f -print \
 printf '%s\n' 'wanxiang-lts-zh-hans.gram' >> "$manifest_source"
 
 find "$project_root/rime" -type f ! -name rime.lua ! -name weasel.custom.yaml ! -name custom_phrase.txt -print \
-  | sed "s#^$project_root/rime/##" >> "$manifest_source"
+  | sed "s#^$project_root/rime/##" | while IFS= read -r relative_path; do
+    # 已有私人聚合词库不属于此次更新，也不能在回滚时恢复成旧版本。
+    if [ "$relative_path" = 'luna_pinyin.tech.dict.yaml' ] && [ -f "$rime_dir/$relative_path" ]; then
+      continue
+    fi
+    printf '%s\n' "$relative_path"
+  done >> "$manifest_source"
+
+# 避免 cp 将文件误复制到同名目录中，并在覆盖前报告冲突。
+while IFS= read -r relative_path; do
+  if [ -d "$rime_dir/$relative_path" ]; then
+    printf '错误：目标文件位置存在同名目录：%s\n' "$rime_dir/$relative_path" >&2
+    exit 1
+  fi
+done < "$manifest_source"
 
 printf '目标目录：%s\n字号：%s\n以下文件会被安装或替换（已有文件会先备份）：\n' "$rime_dir" "$font_preset"
 LC_ALL=C sort -u "$manifest_source"
@@ -76,6 +90,9 @@ while IFS= read -r relative_path; do
     cp -p "$rime_dir/$relative_path" "$backup_dir/previous/$relative_path"
   fi
 done < "$manifest"
+
+# 先登记恢复入口，中途复制失败也可以直接运行回滚。
+printf '%s\n' "$backup_dir" > "$rime_dir/backups/.rime-bilingual-last-backup"
 
 while IFS= read -r relative_path; do
   mkdir -p "$rime_dir/$(dirname -- "$relative_path")"
@@ -122,8 +139,6 @@ if [ "$font_preset" = 'compact' ]; then
       -e 's#style/line_spacing: 5#style/line_spacing: 3#' \
       "$project_root/rime/squirrel.custom.yaml" > "$rime_dir/squirrel.custom.yaml"
 fi
-
-printf '%s\n' "$backup_dir" > "$rime_dir/backups/.rime-bilingual-last-backup"
 
 if [ "${RIME_SKIP_RELOAD:-0}" != '1' ]; then
   "$squirrel_bin" --reload

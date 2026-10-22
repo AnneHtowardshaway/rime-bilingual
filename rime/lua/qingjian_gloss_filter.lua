@@ -20,11 +20,11 @@ local function load_glossary(max_senses)
 
   if file == nil then
     log.error("[qingjian_gloss_filter] 无法读取释义表: " .. path .. "; " .. tostring(open_error))
-    glossary_cache[max_senses] = glossary
     return glossary
   end
 
   for line in file:lines() do
+    line = line:gsub("^\239\187\191", ""):gsub("\r$", "")
     if line ~= "" and line:sub(1, 1) ~= "#" then
       local fields = {}
       for field in line:gmatch("[^\t]+") do

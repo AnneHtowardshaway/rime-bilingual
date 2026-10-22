@@ -12,7 +12,11 @@ param(
 $target = Resolve-RimeDirectory $UserDir
 if (-not $Preview -and -not $SkipDeploy) { $WeaselDir = Assert-DeploymentTarget $target $WeaselDir }
 $resources = Get-WanxiangResources
-$payload = @(Get-PayloadFiles $resources)
+# An existing private aggregate is not installed, backed up or restored by this update.
+$payload = @(Get-PayloadFiles $resources | Where-Object {
+    $_.Relative -ne 'luna_pinyin.tech.dict.yaml' -or
+    -not (Test-Path -LiteralPath (Get-SafeChildPath $target $_.Relative) -PathType Leaf)
+})
 $relativePaths = @($payload | ForEach-Object { $_.Relative } | Sort-Object -Unique)
 if ($relativePaths.Count -ne $payload.Count) { throw 'Duplicate payload paths.' }
 foreach ($item in $payload) {
