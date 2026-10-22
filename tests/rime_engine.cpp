@@ -39,6 +39,7 @@ static Candidates query(RimeApi* api, RimeSessionId session, const std::string& 
 static int run(int argc, char** argv) {
   if (argc < 3) { std::fprintf(stderr, "用法：rime-engine USER_DIR SCHEMA [INPUT]\n"); return 2; }
   RimeApi* api = nullptr;
+  const char* stage = "load engine";
   try {
 #ifdef _WIN32
     const wchar_t* installation = _wgetenv(L"RIME_TEST_WEASEL_DIR");
@@ -69,18 +70,28 @@ static int run(int argc, char** argv) {
     traits.min_log_level = 2;
     const char* modules[] = {"default", "lua", "grammar", nullptr};
     traits.modules = modules;
+    traits.log_dir = "";
+#ifdef _WIN32
+    traits.prebuilt_data_dir = shared.c_str();
+#endif
+    stage = "setup";
     api->setup(&traits);
     api->set_notification_handler(notify, nullptr);
-    api->initialize(&traits);
+    stage = "initialize";
+    api->initialize(nullptr);
     // 查询模式不重新部署，可检查已编译的真实安装副本。
+    stage = "compile schemas";
     if (argc == 3 && api->start_maintenance(True)) api->join_maintenance_thread();
     require(!deployment_failed, "Rime 方案编译失败，请查看隔离目录日志");
+    stage = "compile frontend";
     if (argc == 3)
       require(api->deploy_config_file(frontend, "config_version"), "候选窗口配置编译失败");
+    stage = "select schema";
     auto session = api->create_session();
     require(session, "无法创建会话");
     require(api->select_schema(session, argv[2]), "无法选择方案");
     api->set_option(session, "ascii_mode", False);
+    stage = "query and commit";
     if (argc > 3) {
       auto candidates = query(api, session, argv[3]);
       std::printf("%s / %s\n", argv[2], argv[3]);
@@ -141,7 +152,7 @@ static int run(int argc, char** argv) {
     api->finalize();
     return 0;
   } catch (const std::exception& error) {
-    std::fprintf(stderr, "FAIL %s\n", error.what());
+    std::fprintf(stderr, "FAIL [%s] %s\n", stage, error.what());
     if (api) api->finalize();
     return 1;
   }
