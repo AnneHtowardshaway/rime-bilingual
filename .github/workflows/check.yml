@@ -11,3 +11,17 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y lua5.4
       - name: Lua regression and shell syntax
         run: sh scripts/test.sh --unit
+  windows:
+    runs-on: windows-2022
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        shell: [powershell, pwsh]
+    defaults:
+      run:
+        shell: ${{ matrix.shell }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Native Windows installation, candidates and rollback
+        run: ./scripts/test-windows.ps1 -Engine

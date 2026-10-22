@@ -1,0 +1,48 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Windows 小狼毫：竖排中文候选，右侧显示英文释义。
+patch:
+  style/horizontal: false
+  style/vertical_text: false
+  style/inline_preedit: true
+  style/font_face: "Microsoft YaHei, Segoe UI Emoji"
+  style/label_font_face: "Segoe UI"
+  style/comment_font_face: "Segoe UI, Microsoft YaHei"
+  style/font_point: 17
+  style/label_font_point: 12
+  style/comment_font_point: 16
+  style/label_format: "%s."
+  style/color_scheme: bilingual_light
+  style/color_scheme_dark: bilingual_dark
+  style/layout/margin_x: 10
+  style/layout/margin_y: 8
+  style/layout/candidate_spacing: 8
+  style/layout/hilite_spacing: 6
+  style/layout/hilite_padding: 4
+  style/layout/corner_radius: 9
+  style/layout/round_corner: 6
+  preset_color_schemes/bilingual_light:
+    name: "中英伴学·浅色"
+    author: "Rime Bilingual"
+    back_color: 0xF7F7F7
+    border_color: 0xE1E1E1
+    text_color: 0x666666
+    candidate_text_color: 0x202020
+    label_color: 0x999999
+    comment_text_color: 0x505050
+    hilited_candidate_back_color: 0xEDE4D8
+    hilited_candidate_text_color: 0x171717
+    hilited_label_color: 0x6F6254
+    hilited_comment_text_color: 0x40362C
+  preset_color_schemes/bilingual_dark:
+    name: "中英伴学·深色"
+    author: "Rime Bilingual"
+    back_color: 0x252525
+    border_color: 0x3B3B3B
+    text_color: 0xB8B8B8
+    candidate_text_color: 0xF1F1F1
+    label_color: 0x8C8C8C
+    comment_text_color: 0xD8D8D8
+    hilited_candidate_back_color: 0x4A4036
+    hilited_candidate_text_color: 0xFFFFFF
+    hilited_label_color: 0xD4C4B2
+    hilited_comment_text_color: 0xF2E6D8

@@ -1,7 +1,12 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-// 使用鼠须管实际携带的 librime 与插件，在隔离目录中编译并验证候选。
+// 使用鼠须管或小狼毫携带的真实 librime，在隔离目录中编译并验证候选。
 #include "rime_api.h"
+#ifdef _WIN32
+#include <windows.h>
+#include <filesystem>
+#else
 #include <dlfcn.h>
+#endif
 #include <atomic>
 #include <cstdio>
 #include <stdexcept>
@@ -31,10 +36,20 @@ static Candidates query(RimeApi* api, RimeSessionId session, const std::string& 
   api->free_context(&context);
   return result;
 }
-int main(int argc, char** argv) {
+static int run(int argc, char** argv) {
   if (argc < 3) { std::fprintf(stderr, "用法：rime-engine USER_DIR SCHEMA [INPUT]\n"); return 2; }
   RimeApi* api = nullptr;
   try {
+#ifdef _WIN32
+    const wchar_t* installation = _wgetenv(L"RIME_TEST_WEASEL_DIR");
+    require(installation && *installation, "RIME_TEST_WEASEL_DIR 未设置");
+    std::filesystem::path directory(installation);
+    auto library = LoadLibraryW((directory / L"rime.dll").c_str());
+    require(library, "无法加载 Windows rime.dll");
+    auto entry = reinterpret_cast<RimeApi* (*)()>(GetProcAddress(library, "rime_get_api"));
+    std::string shared = (directory / L"data").u8string();
+    const char* frontend = "weasel.yaml";
+#else
     const std::string frameworks = "/Library/Input Methods/Squirrel.app/Contents/Frameworks";
     void* library = dlopen((frameworks + "/librime.1.dylib").c_str(), RTLD_NOW | RTLD_GLOBAL);
     require(library, "无法加载 librime");
@@ -42,14 +57,17 @@ int main(int argc, char** argv) {
       require(dlopen((frameworks + "/rime-plugins/librime-" + name + ".dylib").c_str(),
                      RTLD_NOW | RTLD_GLOBAL), "无法加载插件：" + std::string(name));
     auto entry = reinterpret_cast<RimeApi* (*)()>(dlsym(library, "rime_get_api"));
+    std::string shared = "/Library/Input Methods/Squirrel.app/Contents/SharedSupport";
+    const char* frontend = "squirrel.yaml";
+#endif
     require(entry, "librime 缺少 API 入口");
     api = entry();
     RIME_STRUCT(RimeTraits, traits);
-    traits.shared_data_dir = "/Library/Input Methods/Squirrel.app/Contents/SharedSupport";
+    traits.shared_data_dir = shared.c_str();
     traits.user_data_dir = argv[1];
     traits.app_name = "rime.bilingual-test";
     traits.min_log_level = 2;
-    const char* modules[] = {"default", "lua", "octagram", "predict", nullptr};
+    const char* modules[] = {"default", "lua", "grammar", nullptr};
     traits.modules = modules;
     api->setup(&traits);
     api->set_notification_handler(notify, nullptr);
@@ -58,7 +76,7 @@ int main(int argc, char** argv) {
     if (argc == 3 && api->start_maintenance(True)) api->join_maintenance_thread();
     require(!deployment_failed, "Rime 方案编译失败，请查看隔离目录日志");
     if (argc == 3)
-      require(api->deploy_config_file("squirrel.yaml", "config_version"), "候选窗口配置编译失败");
+      require(api->deploy_config_file(frontend, "config_version"), "候选窗口配置编译失败");
     auto session = api->create_session();
     require(session, "无法创建会话");
     require(api->select_schema(session, argv[2]), "无法选择方案");
@@ -128,3 +146,22 @@ int main(int argc, char** argv) {
     return 1;
   }
 }
+
+#ifdef _WIN32
+int wmain(int argc, wchar_t** wide_argv) {
+  SetConsoleOutputCP(CP_UTF8);
+  std::vector<std::string> arguments;
+  for (int i = 0; i < argc; i++) {
+    int size = WideCharToMultiByte(CP_UTF8, 0, wide_argv[i], -1, nullptr, 0, nullptr, nullptr);
+    std::string value(size, '\0');
+    WideCharToMultiByte(CP_UTF8, 0, wide_argv[i], -1, value.data(), size, nullptr, nullptr);
+    value.pop_back();
+    arguments.push_back(std::move(value));
+  }
+  std::vector<char*> argv;
+  for (auto& value : arguments) argv.push_back(value.data());
+  return run(argc, argv.data());
+}
+#else
+int main(int argc, char** argv) { return run(argc, argv); }
+#endif

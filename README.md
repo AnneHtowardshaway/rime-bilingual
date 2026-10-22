@@ -1,8 +1,8 @@
-# 鼠须管中英伴学 · Rime Bilingual
+# 鼠须管 / 小狼毫中英伴学 · Rime Bilingual
 
 输入中文，在候选词旁看到英文释义；输入常用英文，直接选择规范英文候选。
 
-基于 macOS [鼠须管 Squirrel](https://github.com/rime/squirrel)，适配万象拼音与朙月拼音·简化字。英文释义使用青简的离线词表，运行时无需联网。
+支持 macOS [鼠须管 Squirrel](https://github.com/rime/squirrel) 与 Windows [小狼毫 Weasel](https://github.com/rime/weasel)，适配万象拼音与朙月拼音·简化字。英文释义使用青简的离线词表，运行时无需联网。
 
 ```text
 中文模式输入 github：
@@ -23,11 +23,13 @@
 - 保留朙月拼音的 `;github` / `vvgithub` 技术英文入口及现有专业词典。
 - 安装前预览、覆盖前备份、按文件清单回滚；不收集输入内容。
 
-这是 Rime 配置与 Lua 扩展，不是独立输入法。首版支持 macOS 鼠须管；Windows 小狼毫、Linux 平台尚未验证。没有云端翻译、译词一键替换或学习计数功能。
+这是 Rime 配置与 Lua 扩展，不是独立输入法。Windows 安装脚本面向 Windows 10/11、小狼毫 0.17.4 及以上，兼容系统自带 Windows PowerShell 5.1 与 PowerShell 7。Windows ARM64、Linux 桌面平台尚未验证。没有云端翻译、译词一键替换或学习计数功能。
 
-2026-10-22 本机验证环境：macOS 26.5.2、鼠须管 1.1.2、librime 1.16.0。已通过真实引擎候选、数字键上屏、隔离安装与回滚测试；暂未完成原生候选窗口的自动截图验收。
+2026-10-22 本机验证环境：macOS 26.5.2、鼠须管 1.1.2、librime 1.16.0。Windows CI 在 Windows Server 2022 x64 上，使用官方小狼毫 0.17.4 的 `rime.dll` 持续验证 PowerShell 5.1/7 安装、真实引擎候选、数字键上屏与回滚，结果见 [Actions](https://github.com/AnneHtowardshaway/rime-bilingual/actions)。原生候选窗口外观、Windows 桌面应用和 ARM64 仍需实机验收。
 
 ## 安装
+
+### macOS 鼠须管
 
 先安装并启用[鼠须管](https://github.com/rime/squirrel/releases)，然后克隆仓库：
 
@@ -55,6 +57,44 @@ RIME_FONT_PRESET=compact ./scripts/deploy.sh
 默认 `large` 使用候选 17pt / 注释 16pt；`compact` 使用候选 15pt / 注释 12pt。
 
 **覆盖范围：** 脚本会安装仓库配置、通用专业词库及固定版本万象资源；包括替换方案列表、候选样式及两个中文方案的补丁。请先看 `--dry-run` 输出。已有 `rime.lua`、用户学习数据库和安装清单之外的私有词库文件不会被覆盖；已有 `luna_pinyin.tech.dict.yaml` 聚合词库也会保留，以免丢失私有导入。其余同名文件会先备份再替换。
+
+### Windows 小狼毫
+
+先安装并启用[官方小狼毫](https://github.com/rime/weasel/releases)，然后克隆仓库，或在 GitHub 选择 **Code → Download ZIP** 并解压。在项目目录打开 PowerShell：
+
+```powershell
+# 安装预览；首次会下载约 34 MiB Base 包与约 400 MiB 模型
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -Preview
+
+# 备份、安装并调用小狼毫重新部署
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1
+
+# 笔记本紧凑字号（候选 15pt、注释 12pt）
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -FontPreset compact
+```
+
+这里的执行策略参数仅对当前 PowerShell 进程有效，不修改系统策略。不需要安装 Python、Git Bash 或 WSL；也不需要管理员权限来写入自己的输入法用户目录。
+
+脚本优先读取小狼毫在 `HKCU\Software\Rime\Weasel` 登记的 `RimeUserDir`，未自定义时使用 `%APPDATA%\Rime`。小狼毫安装路径从注册表检测；检测不到时可显式指定：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -WeaselDir 'C:\Program Files\Rime\weasel-0.17.4'
+```
+
+只调用现有 `WeaselDeployer.exe /deploy`，不修改输入法注册表、系统输入源或执行策略。Windows 安装 `weasel.custom.yaml`，macOS 安装 `squirrel.custom.yaml`；两边不会覆盖另一平台的主题。用户数据库、已有 `rime.lua` 和聚合词库的保护规则与 macOS 相同。
+
+等待重新部署完成，切换到小狼毫中文模式，在方案选单选择“万象拼音”或“朙月拼音·简化字”。输入 `github`，第二候选应为 `GitHub`，按 `2` 上屏。英文释义使用 Segoe UI，中文使用系统自带微软雅黑，支持浅色与深色主题。
+
+检查和回滚：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\verify.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\rollback.ps1
+```
+
+备份保存在用户目录的 `backups\qingjian-learning-时间戳\`，回滚只恢复清单中的文件，并保留撤回版本。Windows 和 macOS 的最近备份记录各自独立。
+
+如需准备隔离目录，可使用 `-UserDir 'D:\Rime Test' -SkipDeploy`；三个 Windows 脚本均支持 `-UserDir` 或 `RIME_USER_DIR`。**小狼毫的 `/deploy` 始终针对注册目录**，所以自定义测试目录必须加 `-SkipDeploy`，避免误部署正在使用的输入法。脚本会拒绝符号链接或目录联接，以免安装、回滚越过目标目录。
 
 ## 使用与自定义
 
@@ -93,7 +133,20 @@ docker	Docker	容器
 ./scripts/rollback.sh
 ```
 
-完整测试使用已安装鼠须管的 librime、Lua 与语法模型插件，并需要 Xcode Command Line Tools 的 `clang++`。首次额外下载固定版本的 Rime API 头文件并校验。测试不会写入正在使用的输入法目录。Linux CI 运行 Lua 与脚本检查；它不代表 macOS 候选窗口验收。
+以上为 macOS 命令。完整测试使用已安装鼠须管的 librime、Lua 与语法模型插件，并需要 Xcode Command Line Tools 的 `clang++`。首次额外下载固定版本的 Rime API 头文件并校验。测试不会写入正在使用的输入法目录。Linux CI 运行 Lua 与脚本检查。
+
+Windows 开发测试（隔离目录包含空格与中文）：
+
+```powershell
+# 脚本解析、真实资源校验、安装预览、备份、回滚及目录保护
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\test-windows.ps1
+
+# 同时编译 C++ 测试程序，使用真实 Windows rime.dll 验证候选及上屏
+# 需要 Visual Studio C++ Build Tools 和 7-Zip，CI 已提供
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\test-windows.ps1 -Engine
+```
+
+引擎测试只解压、校验官方小狼毫安装包，不运行安装程序，不注册输入法，不触发正式输入法部署。自动测试不能代替 Windows 10/11 中记事本、浏览器及不同 DPI 下的候选窗口验收。
 
 备份位于 `$HOME/Library/Rime/backups/qingjian-learning-时间戳/`。回滚只恢复安装清单涉及的文件，被撤回的版本也会保留。备份记录按目标目录存储，测试安装不会改写真实输入法的回滚记录。
 
@@ -107,7 +160,8 @@ docker	Docker	容器
 - `rime/data/qingjian-glossary-en.tsv`：上游青简离线释义数据。
 - `rime/*.custom.yaml`：方案与候选窗口配置。
 - `rime/*.dict.yaml`：技术英文、AI、日常与电子领域词条。
-- `scripts/`：下载、安装、检查、回滚及测试。
+- `scripts/*.sh`：macOS 下载、安装、检查、回滚及测试。
+- `scripts/*.ps1`：Windows 安装、路径检测、校验、回滚及测试。
 - `tests/`：Lua 回归与真实 librime 测试。
 - `third_party/`：第三方来源与原始许可证。
 

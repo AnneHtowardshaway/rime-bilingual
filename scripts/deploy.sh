@@ -56,7 +56,7 @@ find "$wanxiang_source/lua" "$wanxiang_source/dicts" -type f -print \
   | sed "s#^$wanxiang_source/##" >> "$manifest_source"
 printf '%s\n' 'wanxiang-lts-zh-hans.gram' >> "$manifest_source"
 
-find "$project_root/rime" -type f ! -name rime.lua -print \
+find "$project_root/rime" -type f ! -name rime.lua ! -name weasel.custom.yaml -print \
   | sed "s#^$project_root/rime/##" >> "$manifest_source"
 
 printf '目标目录：%s\n字号：%s\n以下文件会被安装或替换（已有文件会先备份）：\n' "$rime_dir" "$font_preset"
@@ -113,7 +113,7 @@ while IFS= read -r relative_path; do
   fi
   cp -p "$project_root/rime/$relative_path" "$rime_dir/$relative_path"
 done <<EOF
-$(find "$project_root/rime" -type f ! -name rime.lua -print | sed "s#^$project_root/rime/##")
+$(find "$project_root/rime" -type f ! -name rime.lua ! -name weasel.custom.yaml -print | sed "s#^$project_root/rime/##")
 EOF
 
 if [ "$font_preset" = 'compact' ]; then

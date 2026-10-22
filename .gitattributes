@@ -1,0 +1,7 @@
+*.sh text eol=lf
+*.ps1 text eol=lf
+*.lua text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.tsv text eol=lf
+*.cpp text eol=lf
