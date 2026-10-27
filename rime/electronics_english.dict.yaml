@@ -27,11 +27,17 @@ macOS	macos	9500
 Apple silicon	applesilicon	9200
 Apple Intelligence	appleintelligence	9000
 M1	applem1	8800
+M1	applemone	8800
 M2	applem2	8800
+M2	applemtwo	8800
 M3	applem3	8800
+M3	applemthree	8800
 M4	applem4	8800
+M4	applemfour	8800
 M4 Max	m4max	8500
+M4 Max	mfourmax	8500
 M3 Ultra	m3ultra	8500
+M3 Ultra	mthreeultra	8500
 
 # Apple 移动设备与配件
 iPhone	iphone	10000
@@ -49,6 +55,7 @@ AirPods Pro	airpodspro	9200
 HomePod	homepod	9000
 Apple TV	appletv	9000
 Apple TV 4K	appletv4k	8800
+Apple TV 4K	appletvfourk	8800
 Apple Pencil	applepencil	9000
 Magic Keyboard	magickeyboard	8800
 Magic Mouse	magicmouse	8800
@@ -90,15 +97,18 @@ Logitech	logitech	8500
 # 游戏、阅读、XR 与影像设备
 PlayStation	playstation	9000
 PlayStation 5	ps5	9200
+PlayStation 5	psfive	9200
 PlayStation Portal	playstationportal	8500
 Xbox	xbox	9000
 Xbox Series X	xboxseriesx	8500
 Nintendo Switch	switch	9000
 Nintendo Switch 2	switch2	8800
+Nintendo Switch 2	switchtwo	8800
 Steam Deck	steamdeck	9000
 Valve Index	valveindex	8000
 Meta Quest	metaquest	9000
 Quest 3	quest3	8800
+Quest 3	questthree	8800
 Kindle	kindle	9000
 Fire TV	firetv	8500
 DJI	dji	9200

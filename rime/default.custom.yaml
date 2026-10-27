@@ -1,8 +1,7 @@
-# 万象拼音为日常主方案，保留明月拼音简体供对比和回退。
+# 日常只使用万象拼音，英文词库及专用入口统一挂载在该方案。
 patch:
   schema_list:
     - schema: wanxiang
-    - schema: luna_pinyin_simp
   menu/page_size: 6
   switcher/hotkeys:
     - Control+grave

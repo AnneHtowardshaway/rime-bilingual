@@ -27,19 +27,28 @@ sandbox=$(mktemp -d "$cache/run.XXXXXX")
 printf '原配置\n' > "$sandbox/default.custom.yaml"
 printf '%s\n' '-- existing custom extension' > "$sandbox/rime.lua"
 printf '星澜工作室\txinglangongzuoshi\t1000\n' > "$sandbox/custom_phrase.txt"
-awk '/^\.\.\.$/ { print "  - private_user" } { print }' rime/luna_pinyin.tech.dict.yaml > "$sandbox/luna_pinyin.tech.dict.yaml"
+cat > "$sandbox/luna_pinyin.tech.dict.yaml" <<'EOF'
+---
+name: luna_pinyin.tech
+import_tables:
+  - luna_pinyin
+  # existing private imports
+  - private_user
+...
+EOF
 cat > "$sandbox/private_user.dict.yaml" <<'EOF'
 ---
 name: private_user
 version: "1"
 sort: by_weight
 ...
+PRIVATE_SENTINEL	privateword	1000
 EOF
 mkdir -p "$sandbox/private.userdb"
 printf 'private learning sentinel\n' > "$sandbox/private.userdb/sentinel"
 RIME_USER_DIR="$sandbox" RIME_SKIP_RELOAD=1 RIME_FONT_PRESET=compact scripts/deploy.sh > "$sandbox/deploy.log"
 printf '\n# private import added after installation\n' >> "$sandbox/luna_pinyin.tech.dict.yaml"
-for schema in luna_pinyin_simp wanxiang; do
+for schema in wanxiang; do
   "$cache/rime-engine" "$sandbox" "$schema" > "$sandbox/$schema.log" 2>&1 || {
     cat "$sandbox/$schema.log"; exit 1;
   }
@@ -50,6 +59,8 @@ RIME_USER_DIR="$sandbox" scripts/verify.sh
 grep -Fq 'style/font_point: 15' "$sandbox/squirrel.custom.yaml"
 grep -Fq -- '-- existing custom extension' "$sandbox/rime.lua"
 grep -Fq -- '- private_user' "$sandbox/luna_pinyin.tech.dict.yaml"
+grep -Fq -- '- private_user' "$sandbox/bilingual_english.dict.yaml"
+! grep -Eq '^  - luna_pinyin$' "$sandbox/bilingual_english.dict.yaml"
 grep -Fq -- '# private import added after installation' "$sandbox/luna_pinyin.tech.dict.yaml"
 RIME_USER_DIR="$sandbox" RIME_SKIP_RELOAD=1 scripts/rollback.sh
 test "$(cat "$sandbox/default.custom.yaml")" = '原配置'

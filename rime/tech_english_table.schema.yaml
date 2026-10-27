@@ -42,7 +42,7 @@ speller:
   alphabet: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_"
 
 translator:
-  dictionary: tech_english_table
+  dictionary: bilingual_english
   enable_completion: true
   enable_sentence: false
   enable_user_dict: false

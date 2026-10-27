@@ -202,3 +202,25 @@ function Copy-PayloadFile([string]$Source, [string]$Destination) {
     [IO.Directory]::CreateDirectory([IO.Path]::GetDirectoryName($Destination)) | Out-Null
     Copy-Item -LiteralPath $Source -Destination $Destination -Force
 }
+
+function Merge-EnglishImports([string]$Destination, [string[]]$PreviousFiles) {
+    $content = [IO.File]::ReadAllText($Destination, $script:Utf8)
+    $pattern = '(?m)^import_tables:\r?\n((?:(?:[ \t]+-[^\r\n]*|[ \t]*#[^\r\n]*|[ \t]*)\r?\n)*)'
+    $imports = New-Object 'System.Collections.Generic.List[string]'
+    foreach ($file in @($Destination) + $PreviousFiles) {
+        if (-not (Test-Path -LiteralPath $file -PathType Leaf)) { continue }
+        $match = [regex]::Match([IO.File]::ReadAllText($file, $script:Utf8), $pattern)
+        foreach ($row in ($match.Groups[1].Value -split '\r?\n')) {
+            if ($row -notmatch '^[ \t]+-[ \t]+') { continue }
+            $name = ($row -replace '^[ \t]+-[ \t]+', '' -replace '[ \t]*#.*$', '').Trim()
+            if ($name -ne 'luna_pinyin' -and $name -match '^[a-zA-Z0-9_.-]+$' -and -not $imports.Contains($name)) {
+                $imports.Add($name)
+            }
+        }
+    }
+    $match = [regex]::Match($content, $pattern)
+    if (-not $match.Success) { throw 'Missing English aggregate import table.' }
+    $rows = ($imports | ForEach-Object { "  - $_`n" }) -join ''
+    $group = $match.Groups[1]
+    Write-Utf8File $Destination ($content.Remove($group.Index, $group.Length).Insert($group.Index, $rows))
+}

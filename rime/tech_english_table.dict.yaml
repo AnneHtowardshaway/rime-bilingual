@@ -1,8 +1,8 @@
 # Rime dictionary
 # encoding: utf-8
 #
-# 独立技术英文码表。由 luna_pinyin_simp.custom.yaml 中的
-# table_translator@tech_english 挂载，以英文前缀 `;` 触发。
+# 独立编程英文码表。万象通过 bilingual_english 聚合词库挂载，
+# 并以英文前缀 `;` / `vv` 触发补全。
 ---
 name: tech_english_table
 version: "2026.10.22"

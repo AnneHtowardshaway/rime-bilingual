@@ -18,10 +18,15 @@ ChatGPT Codex	chatgptcodex	9800
 Codex CLI	codexcli	9500
 Codex SDK	codexsdk	9500
 GPT-5-Codex	gpt5codex	9500
+GPT-5-Codex	gptfivecodex	9500
 GPT-5	gpt5	9400
+GPT-5	gptfive	9400
 GPT-4o	gpt4o	9200
+GPT-4o	gptfouro	9200
 o3	o3	9000
+o3	othree	9000
 o4-mini	o4mini	8800
+o4-mini	ofourmini	8800
 Sora	sora	9000
 DALL·E	dalle	9000
 Whisper	whisper	9000
@@ -43,8 +48,11 @@ Kimi	kimi	10000
 Moonshot AI	moonshot	9500
 Moonshot AI	moonshotai	9200
 Kimi K2	kimik2	9200
+Kimi K2	kimiktwo	9200
 Kimi K2.6	kimik26	9200
+Kimi K2.6	kimiktwosix	9200
 Kimi K3	kimik3	9200
+Kimi K3	kimikthree	9200
 Kimi Code	kimicode	9300
 Kimi Agent	kimiagent	9000
 Kimi Agent Swarm	kimiagentswarm	8800
@@ -55,24 +63,31 @@ ZhipuAI	zhipuai	9500
 GLM	glm	10000
 ChatGLM	chatglm	9800
 GLM-5	glm5	9500
+GLM-5	glmfive	9500
 GLM-4	glm4	9200
+GLM-4	glmfour	9200
 GLM-4-9B	glm49b	8800
+GLM-4-9B	glmfournineb	8800
 GLM-Image	glmimage	9000
 AutoGLM	autoglm	9000
 
 # 主流模型、平台与云服务
 DeepSeek	deepseek	10000
 DeepSeek-V3	deepseekv3	9200
+DeepSeek-V3	deepseekvthree	9200
 DeepSeek-R1	deepseekr1	9200
+DeepSeek-R1	deepseekrone	9200
 Qwen	qwen	9800
 Tongyi Qianwen	tongyiqianwen	9000
 Gemini	gemini	9800
 Google AI Studio	googlestaudio	9000
+Google AI Studio	googleaistudio	9000
 Vertex AI	vertexai	9000
 Gemma	gemma	9000
 Meta AI	metaai	9000
 Llama	llama	9500
 Llama 3	llama3	9000
+Llama 3	llamathree	9000
 Mistral AI	mistralai	9000
 Mistral	mistral	9200
 Mixtral	mixtral	9000
@@ -111,6 +126,7 @@ Semantic Kernel	semantickernel	8800
 Model Context Protocol	mcp	9500
 Model Context Protocol	modelcontextprotocol	9000
 Agent2Agent Protocol	a2a	8800
+Agent2Agent Protocol	atwoa	8800
 OpenAI SDK	openaisdk	9000
 Anthropic SDK	anthropicsdk	8800
 

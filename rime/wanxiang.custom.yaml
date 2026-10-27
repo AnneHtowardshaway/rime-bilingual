@@ -1,6 +1,41 @@
 # 万象 Base 本地补丁：保留上游排序链，在去重前追加青简英文释义。
 patch:
   menu/page_size: 6
+  schema/dependencies/+:
+    - tech_english_table
+  engine/segmentors:
+    - ascii_segmentor
+    - matcher
+    - affix_segmentor@tech_english
+    - affix_segmentor@tech_english_vv
+    - abc_segmentor
+    - affix_segmentor@wanxiang_reverse
+    - affix_segmentor@add_user_dict
+    - punct_segmentor
+    - fallback_segmentor
+  engine/translators/+:
+    - table_translator@tech_english
+    - table_translator@tech_english_vv
+  recognizer/patterns/tech_english: "^;[A-Za-z0-9_]*$"
+  recognizer/patterns/tech_english_vv: "^vv[A-Za-z][A-Za-z0-9_]*$"
+  tech_english:
+    tag: tech_english
+    dictionary: bilingual_english
+    enable_completion: true
+    enable_sentence: false
+    enable_user_dict: false
+    initial_quality: 10000
+    prefix: ";"
+    tips: "〔技术英文〕"
+  tech_english_vv:
+    tag: tech_english_vv
+    dictionary: bilingual_english
+    enable_completion: true
+    enable_sentence: false
+    enable_user_dict: false
+    initial_quality: 10000
+    prefix: "vv"
+    tips: "〔技术英文〕"
   # 使用 Rime 原生词频学习；固定短语保存在用户目录，不随仓库安装覆盖。
   translator/enable_user_dict: true
   custom_phrase/initial_quality: 99
@@ -12,7 +47,7 @@ patch:
     - lua_filter@*wanxiang.super_comment_preedit
     - lua_filter@*wanxiang.super_replacer
     - lua_filter@*wanxiang.super_filter
-    - lua_filter@*wanxiang.super_english*F
+    - lua_filter@*bilingual_english_format
     - lua_filter@*wanxiang.super_sequence*F
     - lua_filter@*qingjian_gloss_filter
     - lua_filter@*internet_english_filter

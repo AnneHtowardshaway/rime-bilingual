@@ -94,6 +94,22 @@ static int run(int argc, char** argv) {
     stage = "select schema";
     auto session = api->create_session();
     require(session, "无法创建会话");
+    RimeSchemaList schemas{};
+    require(api->get_schema_list(&schemas), "无法读取方案列表");
+    bool only_wanxiang = schemas.size == 1 && std::string(schemas.list[0].schema_id) == "wanxiang";
+    api->free_schema_list(&schemas);
+    require(only_wanxiang, "方案列表仍包含旧方案");
+    if (argc > 3 && std::string(argv[3]) == "--check-default") {
+      RIME_STRUCT(RimeStatus, status);
+      require(api->get_status(session, &status), "无法读取默认方案");
+      std::string selected = status.schema_id ? status.schema_id : "";
+      api->free_status(&status);
+      require(selected == "wanxiang", "升级后默认方案仍是：" + selected);
+      api->destroy_session(session);
+      api->finalize();
+      std::printf("PASS 升级后自动选择万象，选单仅含万象\n");
+      return 0;
+    }
     require(api->select_schema(session, argv[2]), "无法选择方案");
     api->set_option(session, "ascii_mode", False);
     stage = "query and commit";
@@ -117,6 +133,13 @@ static int run(int argc, char** argv) {
         {"pyasynciogather", "asyncio.gather"}, {"javacompletablefuture", "CompletableFuture"},
         {"pyexecutor", "concurrent.futures.ThreadPoolExecutor"},
         {"rustmapnew", "HashMap::new"}, {"tsasconst", "as const"},
+        {"claudecode", "Claude Code"}, {"toolcalling", "tool calling"},
+        {"structuredoutput", "structured output"}, {"vectorstore", "vector store"},
+        {"hello", "hello"}, {"thankyou", "thank you"}, {"book", "book"},
+        {"phone", "phone"}, {"macbook", "MacBook"}, {"iphone", "iPhone"},
+        {"dalle", "DALL·E"}, {"googleaistudio", "Google AI Studio"},
+        {"deepseekvthree", "DeepSeek-V3"}, {"mfourmax", "M4 Max"},
+        {"hi", "hi"}, {"ok", "ok"},
       };
       for (auto& item : cases) {
         std::printf("TYPE %s / %s\n", argv[2], item.first);
@@ -169,13 +192,25 @@ static int run(int argc, char** argv) {
       api->set_option(session, "internet_english_disabled", True);
       auto disabled = query(api, session, "github");
       require(disabled.size() < 2 || disabled[1].second != "代码托管", "英文开关失效");
-      if (std::string(argv[2]) == "luna_pinyin_simp") {
-        api->set_option(session, "internet_english_disabled", False);
-        auto prefixed = query(api, session, ";github");
-        require(!prefixed.empty() && prefixed[0].first == "GitHub", "分号入口回归");
-        prefixed = query(api, session, "vvgithub");
-        require(!prefixed.empty() && prefixed[0].first == "GitHub", "vv 入口回归");
+      for (bool disabled_option : {false, true}) {
+        api->set_option(session, "internet_english_disabled", disabled_option);
+        for (auto prefix : {";", "vv"}) {
+          for (const auto& item : std::vector<std::pair<std::string, std::string>>{
+              {"github", "GitHub"}, {"usesta", "useState"},
+              {"serdejson", "serde_json"}, {"claudecode", "Claude Code"},
+              {"thankyou", "thank you"}, {"macbook", "MacBook"},
+              {"privateword", "PRIVATE_SENTINEL"}}) {
+            auto code = std::string(prefix) + item.first;
+            auto prefixed = query(api, session, code);
+            require(!prefixed.empty() && prefixed[0].first == item.second,
+                    "英文专用入口或补全失败：" + code);
+            api->process_key(session, ' ', 0);
+            require(committed_text(api, session) == item.second,
+                    "英文专用入口完整上屏失败：" + code);
+          }
+        }
       }
+      api->set_option(session, "internet_english_disabled", False);
       std::printf("PASS %s：选择、数字键提交、中文释义、开关与旧入口\n", argv[2]);
       learning_spec(api, session, argv[2]);
     }

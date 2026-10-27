@@ -100,6 +100,30 @@ for code, word in pairs(env.words) do
   equal(result[2].text, word.text); equal(#result, 3)
   count = count + 1
 end
+local formatted = 0
+package.loaded["wanxiang/super_english"] = { F = {
+  init = function(env) env.format_initialized = true end,
+  fini = function(env) env.format_initialized = false end,
+  func = function(input)
+    formatted = formatted + 1
+    for candidate in input:iter() do yield(candidate) end
+  end,
+} }
+local format = dofile(root .. "/rime/lua/bilingual_english_format.lua")
+local format_env, format_segment = environment("github")
+format.init(format_env)
+equal(format_env.format_initialized, true)
+for _, tag in ipairs({ "abc", "tech_english", "tech_english_vv" }) do
+  format_segment.has_tag = function(_, value) return value == tag end
+  output = {}
+  local original = Candidate("table", 0, 6, "useState", "")
+  format.func(stream({ original }), format_env)
+  equal(output[1], original)
+end
+equal(formatted, 1)
+format.fini(format_env)
+equal(format_env.format_initialized, false)
+
 local gloss = dofile(root .. "/rime/lua/qingjian_gloss_filter.lua")
 local function run_gloss(maximum, disabled)
   local env = environment("kaifa", { bilingual_gloss_disabled = disabled })

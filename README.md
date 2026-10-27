@@ -2,7 +2,7 @@
 
 **用中文输入，顺便看英文释义；遇到常用英文，直接选词。**
 
-适用于 macOS **鼠须管**和 Windows **小狼毫**，支持万象拼音与朙月拼音·简化字。安装后保持中文输入模式即可使用，输入过程完全离线。
+适用于 macOS **鼠须管**和 Windows **小狼毫**，使用万象拼音。安装后保持中文输入模式即可使用，输入过程完全离线。
 
 | 中文模式下输入 | 你会看到 | 怎么输入上屏 |
 | --- | --- | --- |
@@ -10,7 +10,9 @@
 | `github` | 第二候选为 `GitHub` | 按数字 **2** |
 | `docker` | 出现规范英文候选 `Docker` | 选择该候选 |
 
-内置 **3495 个英文编码**：215 个互联网常用编码，以及 3280 个编程编码（含语言别名）。覆盖 Go、Rust、JS、TS、Python、Java 的标准库、常用库和 API；英文候选和英文释义都可以单独关闭。
+内置 **4240 个英文编码**：215 个互联网常用编码，以及 4025 个编程、AI、日常和设备编码（含别名）。覆盖 Go、Rust、JS、TS、Python、Java，以及 AI 工具、Agent 术语、日常交流和设备名称；英文候选和英文释义都可以单独关闭。
+
+现已只保留万象作为日常方案。升级后，朙月不再出现在方案选单；已有朙月文件、私人词库和学习数据库不会被删除。
 
 **直接跳到：** [安装](#安装) · [安装后怎么用](#安装后怎么用) · [编程英文怎么输](#编程英文怎么输) · [中文学习与私人短语](#中文学习与私人短语) · [字号与开关](#字号与开关) · [恢复原配置](#恢复原配置) · [常见问题](#常见问题)
 
@@ -90,17 +92,17 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -Previe
 
 1. 切换到鼠须管或小狼毫，保持**中文模式**。
 2. 按 **F4**，或 **Control + 重音符键**（通常位于数字 1 左侧），打开方案选单。
-3. 选择「**万象拼音**」或「**朙月拼音·简化字**」。
+3. 选择「**万象拼音**」。
 4. 输入 `github`，确认第二候选为 **GitHub**，按 **2** 输出。
 5. 再输入 `kaifa`，查看「开发」旁的英文释义。
 
 **看到英文候选和英文释义，就可以正常使用了。** 不需要运行开发测试或继续调整配置。
 
-英文词使用完整小写编码，例如 `github`、`chatgpt`；输入 `zai` 可选 `Z.ai`，输入 `mergerequest` 可选 `Merge Request`，编码中不加点号或空格。项目只做精确匹配，不做英文前缀联想；未命中的输入沿用原候选顺序。若原方案只有这个英文一个候选，则只保留一个规范英文候选。
+英文词使用完整小写编码，例如 `github`、`chatgpt`；输入 `zai` 可选 `Z.ai`，输入 `mergerequest` 可选 `Merge Request`，编码中不加点号或空格。定制的第二候选规则只做精确匹配；万象自带英文联想和 `;` / `vv` 补全仍可使用。未命中的输入沿用原候选顺序。若原方案只有这个英文一个候选，则只保留一个规范英文候选。
 
 ## 编程英文怎么输
 
-**万象、朙月都可以在普通中文模式下使用。** 输入完整小写编码，通常按 **2** 选中英文；若原方案没有其他候选，则英文会单独显示。`go`、`js`、`ts` 也可直接选出语言名称。
+**编程、AI、日常和设备词库统一接入万象。** 输入完整小写编码，通常按 **2** 选中英文；若原方案没有其他候选，则英文会单独显示。`go`、`js`、`ts` 也可直接选出语言名称。
 
 | 语言 | 覆盖内容举例 | 输入编码 → 英文候选 |
 | --- | --- | --- |
@@ -111,11 +113,13 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -Previe
 | Python | pathlib、asyncio、collections、NumPy、pandas、Pydantic、pytest | `pygather` → `asyncio.gather`；`pyexecutor` → `concurrent.futures.ThreadPoolExecutor` |
 | Java | 集合、Stream、并发、时间、JDBC、Jackson、Guava、Spring | `arraylist` → `ArrayList`；`javafuture` → `CompletableFuture` |
 
+常用主题示例：`claudecode` → `Claude Code`、`toolcalling` → `tool calling`、`thankyou` → `thank you`、`macbook` → `MacBook`、`googleaistudio` → `Google AI Studio`。旧数字编码保留在专用词库，同时提供纯字母别名，如 `deepseekvthree` → `DeepSeek-V3`、`mfourmax` → `M4 Max`。
+
 编码中不输入点号、下划线、冒号或空格，选中后会完整输出这些符号。较长的 API 提供简短别名，例如上面的 `pyexecutor`。`pythonsqlite` 可以输出带数字的 `sqlite3`。
 
-**同名词用明确的语言编码区分大小写**：例如 `gomap` 输出 `map`，`jsmap` 输出 `Map`；`axios` 输出库名 `Axios`，`jsaxios` 输出模块名 `axios`。只匹配完整编码，输入一半不会提前插入英文。
+**同名词用明确的语言编码区分大小写**：例如 `gomap` 输出 `map`，`jsmap` 输出 `Map`；`axios` 输出库名 `Axios`，`jsaxios` 输出模块名 `axios`。定制第二候选只匹配完整编码，输入一半不会提前插入该候选。
 
-编程编码清单见 [programming-english.tsv](rime/data/programming-english.tsv)。朙月还保留 `;` / `vv` 技术英文入口及其前缀补全。
+编程编码清单见 [programming-english.tsv](rime/data/programming-english.tsv)。万象同时提供 `;` / `vv` 英文入口及其前缀补全，例如 `;usesta` / `vvusesta` 补全为 `useState`，`;claudecode` 输出 `Claude Code`。这些入口也覆盖 AI、日常与设备词库。
 
 <details>
 <summary>词条来源与维护方法</summary>
@@ -128,19 +132,19 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -Previe
 - [Python 标准库](https://docs.python.org/3/library/)、[Java 标准库](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/module-summary.html)
 - [React](https://react.dev/reference/react)、[Vue](https://vuejs.org/api/reactivity-core.html)、[Axios](https://axios-http.com/docs/intro)、[Lodash](https://lodash.com/docs/)、[Zod](https://zod.dev/)
 
-维护者修改语言词库后，运行以下命令更新供两套方案共用的词表：
+维护者修改语言词库后，运行以下命令更新供万象使用的词表：
 
 ```sh
 python3 scripts/build-programming-vocabulary.py
 ```
 
-生成器沿用码表权重选择同码候选，保留互联网词表中的既有规范拼写。普通中文入口只收录纯字母编码，单字母编码及含数字的编码不会自动加入。跨词表重复编码、生成结果不同步等问题会由自动检查拦截。安装者使用仓库内已生成的文件，无需额外安装 Python。
+生成器沿用编程码表权重选择同码候选，保留互联网与既有编程编码的规范拼写。新增主题词按日常、AI、Agent、设备的顺序补齐未占用编码，因此 `book` / `phone` 保留普通单词，设备名使用 `macbook` / `iphone`。普通中文入口只收录纯字母编码，单字母编码及含数字的编码不会自动加入。跨词表重复编码、生成结果不同步等问题会由自动检查拦截。安装者使用仓库内已生成的文件，无需额外安装 Python。
 
 </details>
 
 ## 中文学习与私人短语
 
-两套方案都启用 **Rime 本地用户词库学习**。经常选择的中文词会参与词频调整；学习记录保存在输入法用户目录，不会上传到 GitHub。万象与朙月分别积累学习记录，切换方案不代表已学词条会自动共享。
+万象启用 **Rime 本地用户词库学习**。经常选择的中文词会参与词频调整；学习记录保存在输入法用户目录，不会上传到 GitHub。旧朙月的学习数据库会保留，但不会自动合并到万象。
 
 ### 缺少的词，先逐字组出来
 
@@ -159,11 +163,11 @@ python3 scripts/build-programming-vocabulary.py
 | `Control + k` | 向后移动一位 |
 | `Control + l` | 清除该候选在当前编码下的手动排序 |
 
-这组快捷键只用于万象。常用英文仍按本项目的规则出现在第二项，手动排序不会改变这个规则。
+常用英文仍按本项目的规则出现在第二项，手动排序不会改变这个规则。
 
 ### 姓名、项目名：使用私人短语
 
-在**输入法用户目录**新建 UTF-8 纯文本文件 `custom_phrase.txt`；两套方案共用此文件，完整编码命中时优先显示。不要将它放进下载的项目文件夹。
+在**输入法用户目录**新建 UTF-8 纯文本文件 `custom_phrase.txt`；万象使用此文件，完整编码命中时优先显示。不要将它放进下载的项目文件夹。
 
 | 系统 | 文件位置 |
 | --- | --- |
@@ -189,7 +193,7 @@ python3 scripts/build-programming-vocabulary.py
 | 英文候选 / 关闭英文候选 | 是否插入本项目的常用英文候选 |
 | 英文释义 / 关闭英文释义 | 是否在中文候选旁显示英文释义 |
 
-关闭英文候选后，原方案自带的英文词条仍可能显示。朙月拼音还保留 `;github` / `vvgithub` 这类技术英文入口。
+关闭英文候选后，原方案自带的英文词条仍可能显示。万象的 `;github` / `vvgithub` 专用英文入口仍可使用。
 
 ### 字太大，换成紧凑字号
 
@@ -239,7 +243,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\rollback.ps1
 
 如果小狼毫配置了自定义用户目录，备份保存在那个目录的 `backups` 文件夹。每次备份以 `qingjian-learning-` 开头，后面带时间戳；脚本会打印本次备份的完整位置。
 
-已有 `luna_pinyin.tech.dict.yaml` 聚合词库会保留，也不纳入此次回滚，避免丢失安装后新增的私有词库导入。安装清单中的其他同名文件会先备份再替换；两个平台不会互相覆盖 `squirrel.custom.yaml` 和 `weasel.custom.yaml`。同一份备份只能回滚一次。
+已有 `luna_pinyin.tech.dict.yaml` 聚合词库会保留，也不纳入此次回滚。安装器会将其私人词库导入接到万象的 `;` / `vv` 英文入口，后续更新也会保留 `bilingual_english.dict.yaml` 中的额外导入；朙月中文主词库不会被带入。安装清单中的其他同名文件会先备份再替换；两个平台不会互相覆盖 `squirrel.custom.yaml` 和 `weasel.custom.yaml`。同一份备份只能回滚一次。
 
 </details>
 
@@ -251,7 +255,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\rollback.ps1
 
 ### 已经安装，为什么看不到英文？
 
-先确认三件事：正在使用鼠须管或小狼毫的**中文模式**；选中的是「万象拼音」或「朙月拼音·简化字」；输入的是完整小写编码 `github`，而不是 `githu`。再检查方案选单里的英文候选、英文释义是否被关闭。
+先确认三件事：正在使用鼠须管或小狼毫的**中文模式**；选中的是「万象拼音」；输入的是完整小写编码 `github`，而不是 `githu`。再检查方案选单里的英文候选、英文释义是否被关闭。
 
 如果还没有生效，等待重新部署结束后重试；若安装命令报错，先按错误信息处理，不要把“复制了文件”当作部署成功。
 
@@ -297,7 +301,7 @@ docker	Docker	容器
 
 三列分别为：**完整小写编码、规范英文、候选注释**。编码只使用小写英文字母，不重复；数字键用于选词，所以不使用 `k8s` 这样的编码。请勿将个人短语、手机号、账号或内部项目名称放进公开词表。
 
-默认最多显示两个英文义项。需要调整时，在对应的 `rime/wanxiang.custom.yaml` 或 `rime/luna_pinyin_simp.custom.yaml` 的 `patch:` 下加入：
+默认最多显示两个英文义项。需要调整时，在 `rime/wanxiang.custom.yaml` 的 `patch:` 下加入：
 
 ```yaml
   bilingual_gloss/max_senses: 1
@@ -310,7 +314,7 @@ docker	Docker	容器
 <details>
 <summary>给开发者：检查与回归测试</summary>
 
-普通用户不需要运行这些命令。静态检查只核对已安装文件、编译配置和模型校验值，不能代替真实候选测试。真实引擎回归会逐项检查整张英文词表，并验证中文学习、私人短语和排序。
+普通用户不需要运行这些命令。静态检查只核对已安装文件、编译配置和模型校验值，不能代替真实候选测试。真实引擎回归会逐项检查整张英文词表，并验证专用入口补全与上屏、中文学习、私人短语和排序。
 
 **macOS：**
 
@@ -330,7 +334,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\test-windows.ps1
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\test-windows.ps1 -Engine
 ```
 
-最后一条还需 Visual Studio C++ Build Tools 和可从命令行调用的 7-Zip。它只解压、校验官方小狼毫安装包，使用其 `rime.dll` 测试两个方案的候选和上屏，不运行安装程序、不注册输入法。
+最后一条还需 Visual Studio C++ Build Tools 和可从命令行调用的 7-Zip。它只解压、校验官方小狼毫安装包，使用其 `rime.dll` 测试万象方案的候选和上屏，不运行安装程序、不注册输入法。
 
 文件操作测试覆盖含空格、中文的目录；Windows 原生引擎测试覆盖系统码页可表示的非 ASCII 路径。
 

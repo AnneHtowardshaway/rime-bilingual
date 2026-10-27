@@ -46,6 +46,10 @@ foreach ($item in $payload) {
     if ($item.Relative -eq 'luna_pinyin.tech.dict.yaml' -and (Test-Path -LiteralPath $destination -PathType Leaf)) { continue }
     Copy-PayloadFile $item.Source $destination
 }
+Merge-EnglishImports (Join-Path $target 'bilingual_english.dict.yaml') @(
+    (Join-Path $backup 'previous/bilingual_english.dict.yaml'),
+    (Join-Path $target 'luna_pinyin.tech.dict.yaml')
+)
 if ($FontPreset -eq 'compact') {
     $file = Join-Path $target 'weasel.custom.yaml'
     $content = [IO.File]::ReadAllText($file, $script:Utf8)

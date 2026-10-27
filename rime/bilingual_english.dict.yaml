@@ -1,0 +1,26 @@
+# Rime dictionary
+# encoding: utf-8
+# 万象的 ; / vv 英文入口。旧技术词库只在专用入口中参与补全，避免干扰中文组句。
+---
+name: bilingual_english
+version: "2026.10.27"
+sort: by_weight
+use_preset_vocabulary: false
+# Rime 码表编译只读取直接导入的词条，语言词库也必须在这里列出。
+import_tables:
+  - tech_english_table
+  - tech_english_rust
+  - tech_english_python
+  - tech_english_go
+  - tech_english_java
+  - tech_english_javascript
+  - tech_english_typescript
+  - tech_english
+  - tech_english_programming
+  - tech_english_business
+  - tech_english_workflow
+  - ai_english
+  - langchain_agent
+  - daily_english
+  - electronics_english
+...

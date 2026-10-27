@@ -3,7 +3,6 @@ set -eu
 
 rime_dir=${RIME_USER_DIR:-"$HOME/Library/Rime"}
 built_wanxiang="$rime_dir/build/wanxiang.schema.yaml"
-built_luna="$rime_dir/build/luna_pinyin_simp.schema.yaml"
 built_theme="$rime_dir/build/squirrel.yaml"
 model="$rime_dir/wanxiang-lts-zh-hans.gram"
 expected_model_sha256='9eedac1d836f3fdafb61b162035c8937253aedc106be40b2b957d9ab64e9ed89'
@@ -18,6 +17,7 @@ for path in \
   "$rime_dir/dicts/jichu.dict.yaml" \
   "$rime_dir/lua/qingjian_gloss_filter.lua" \
   "$rime_dir/lua/internet_english_filter.lua" \
+  "$rime_dir/lua/bilingual_english_format.lua" \
   "$rime_dir/data/internet-english.tsv" \
   "$rime_dir/data/programming-english.tsv" \
   "$rime_dir/data/qingjian-glossary-en.tsv" \
@@ -25,7 +25,8 @@ for path in \
   "$rime_dir/langchain_agent.schema.yaml" \
   "$model" \
   "$built_wanxiang" \
-  "$built_luna" \
+  "$rime_dir/bilingual_english.dict.yaml" \
+  "$rime_dir/build/bilingual_english.table.bin" \
   "$built_theme"
 do
   test -f "$path"
@@ -48,14 +49,15 @@ awk '
   END { exit !(sequence < gloss && gloss < english && english < unique) }
 ' "$built_wanxiang"
 
-grep -Fq 'lua_filter@*qingjian_gloss_filter' "$built_luna"
-grep -Fq 'lua_filter@*internet_english_filter' "$built_luna"
-grep -Fq 'states: ["中文", "英文"]' "$built_luna"
+grep -Fq 'affix_segmentor@tech_english' "$built_wanxiang"
+grep -Fq 'table_translator@tech_english_vv' "$built_wanxiang"
+grep -Fq 'dictionary: bilingual_english' "$built_wanxiang"
+grep -Fq 'lua_filter@*bilingual_english_format' "$built_wanxiang"
 grep -Fq 'qingjian_learning_light' "$built_theme"
 grep -Fq 'qingjian_learning_dark' "$built_theme"
 
 grep -Fq -- '- schema: wanxiang' "$rime_dir/default.custom.yaml"
-grep -Fq -- '- schema: luna_pinyin_simp' "$rime_dir/default.custom.yaml"
+test "$(grep -c -- '- schema:' "$rime_dir/default.custom.yaml")" = 1
 
 for term in Overview LangChain LangGraph LangSmith 'Deep Agents' 'Managed Deep Agents' OpenWiki Integrations Learn Reference Contribute StateGraph ToolNode create_agent checkpointer ToolRuntime; do
   grep -Fq "${term}$(printf '\t')" "$rime_dir/langchain_agent.dict.yaml"

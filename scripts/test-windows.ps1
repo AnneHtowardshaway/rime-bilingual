@@ -30,8 +30,9 @@ Write-Utf8File (Join-Path $sandbox 'rime.lua') '-- existing private extension'
 $privatePhrase = -join ([char[]](0x661F, 0x6F9C, 0x5DE5, 0x4F5C, 0x5BA4))
 $privatePhrase += "`txinglangongzuoshi`t1000`n"
 Write-Utf8File (Join-Path $sandbox 'custom_phrase.txt') $privatePhrase
-$aggregate = [IO.File]::ReadAllText((Join-Path $script:ProjectRoot 'rime/luna_pinyin.tech.dict.yaml'), $script:Utf8)
+$aggregate = "---`nname: luna_pinyin.tech`nimport_tables:`n  - luna_pinyin`n  # existing private imports`n  - private_user`n...`n"
 Write-Utf8File (Join-Path $sandbox 'luna_pinyin.tech.dict.yaml') ($aggregate + "`n# private imports retained`n")
+Write-Utf8File (Join-Path $sandbox 'private_user.dict.yaml') "---`nname: private_user`nversion: '1'`nsort: by_weight`n...`nPRIVATE_SENTINEL`tprivateword`t1000`n"
 Write-Utf8File (Join-Path $sandbox 'private.userdb/sentinel') 'private learning data'
 Write-Utf8File (Join-Path $sandbox 'squirrel.custom.yaml') 'existing macOS configuration'
 $marker = Join-Path $sandbox 'backups/.rime-bilingual-windows-last-backup'
@@ -60,6 +61,9 @@ Assert-Test ($theme.Contains('style/font_point: 15') -and $theme.Contains('style
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'squirrel.custom.yaml')) -eq 'existing macOS configuration') 'Do not install or overwrite the macOS theme'
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'rime.lua')) -eq '-- existing private extension') 'Preserve rime.lua'
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'luna_pinyin.tech.dict.yaml')).Contains('# private imports retained')) 'Preserve aggregate dictionary'
+$englishAggregate = [IO.File]::ReadAllText((Join-Path $sandbox 'bilingual_english.dict.yaml'), $script:Utf8)
+Assert-Test ($englishAggregate.Contains('  - private_user')) 'Migrate private imports to the English entry'
+Assert-Test ($englishAggregate -notmatch '(?m)^  - luna_pinyin\r?$') 'Do not import the old Chinese dictionary'
 Add-Content -LiteralPath (Join-Path $sandbox 'luna_pinyin.tech.dict.yaml') -Value '# private import added after installation' -Encoding UTF8
 
 # Reject a corrupt manifest before restoring any otherwise valid path.
@@ -114,7 +118,7 @@ if ($Engine) {
     Move-Item -LiteralPath $sandbox -Destination $engineDirectory
     try {
         $env:RIME_TEST_WEASEL_DIR = $weasel
-        foreach ($schema in @('luna_pinyin_simp', 'wanxiang')) {
+        foreach ($schema in @('wanxiang')) {
             & $binary $engineDirectory $schema
             if ($LASTEXITCODE -ne 0) { throw "Real Windows engine test failed: $schema" }
             & $binary $engineDirectory $schema --check-learning

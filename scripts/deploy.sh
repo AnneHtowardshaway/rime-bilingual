@@ -28,7 +28,7 @@ manifest="$backup_dir/deployed-files.txt"
 manifest_source=$(mktemp "${TMPDIR:-/tmp}/rime-deploy-manifest.XXXXXX")
 
 cleanup() {
-  rm -f "$manifest_source"
+  rm -f "$manifest_source" "$manifest_source.imports"
 }
 trap cleanup EXIT HUP INT TERM
 
@@ -132,6 +132,31 @@ while IFS= read -r relative_path; do
 done <<EOF
 $(find "$project_root/rime" -type f ! -name rime.lua ! -name weasel.custom.yaml ! -name custom_phrase.txt -print | sed "s#^$project_root/rime/##")
 EOF
+
+# 将旧技术聚合词库及已有英文聚合中的私人导入带到专用入口，不导入朙月中文主词库。
+set -- "$project_root/rime/bilingual_english.dict.yaml"
+for source_file in "$backup_dir/previous/bilingual_english.dict.yaml" "$rime_dir/luna_pinyin.tech.dict.yaml"; do
+  if [ -f "$source_file" ]; then set -- "$@" "$source_file"; fi
+done
+awk '
+  FNR == 1 { imports = 0 }
+  /^import_tables:/ { imports = 1; next }
+  /^\.\.\.$/ { imports = 0 }
+  imports && /^[ \t]+-[ \t]+/ {
+    name = $0
+    sub(/^[ \t]+-[ \t]+/, "", name)
+    sub(/[ \t]*#.*/, "", name)
+    sub(/[ \t\r]+$/, "", name)
+    if (name != "luna_pinyin" && name ~ /^[a-zA-Z0-9_.-]+$/ && !seen[name]++)
+      print "  - " name
+  }
+' "$@" > "$manifest_source.imports"
+awk '
+  FNR == NR { imports = imports $0 "\n"; next }
+  /^import_tables:/ { print; printf "%s", imports; replacing = 1; next }
+  replacing && /^[ \t]+-/ { next }
+  { replacing = 0; print }
+' "$manifest_source.imports" "$project_root/rime/bilingual_english.dict.yaml" > "$rime_dir/bilingual_english.dict.yaml"
 
 if [ "$font_preset" = 'compact' ]; then
   sed -e 's#style/font_point: 17#style/font_point: 15#' \

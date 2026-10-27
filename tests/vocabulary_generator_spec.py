@@ -19,6 +19,8 @@ class VocabularyGeneratorSpec(unittest.TestCase):
         builder.RIME = self.rime
         (self.rime / "data").mkdir()
         (self.rime / "data/internet-english.tsv").write_text("github\tGitHub\t代码托管\n", encoding="utf-8")
+        for name in builder.SUPPLEMENTS:
+            self.dictionary(name, "")
 
     def tearDown(self):
         self.temporary.cleanup()
@@ -50,6 +52,20 @@ class VocabularyGeneratorSpec(unittest.TestCase):
         self.dictionary("tech_english_go", "", ["tech_english_table"])
         with self.assertRaisesRegex(ValueError, "循环"):
             builder.render()
+
+    def test_supplements_preserve_programming_and_daily_words(self):
+        self.dictionary("tech_english_table", "UPDATE\tupdate\t100\nOk\tok\t9999\n")
+        self.dictionary("daily_english", "book\tbook\t100\nupdate\tupdate\t100\nhi\thi\t100\nok\tok\t100\n")
+        self.dictionary("electronics_english", "MacBook\tbook\t9999\nMacBook\tmacbook\t9999\n")
+        self.dictionary("ai_english", "DALL·E\tdalle\t100\n")
+        result = builder.render()
+        self.assertIn("update\tUPDATE\t", result)
+        self.assertIn("book\tbook\t日常英语", result)
+        self.assertIn("macbook\tMacBook\t设备", result)
+        self.assertIn("dalle\tDALL·E\tAI", result)
+        self.assertIn("hi\thi\t日常英语", result)
+        self.assertIn("ok\tok\t日常英语", result)
+        self.assertNotIn("\nbook\tMacBook\t", result)
 
     def test_private_path_import_is_rejected(self):
         self.dictionary("tech_english_table", "", ["../private"])
