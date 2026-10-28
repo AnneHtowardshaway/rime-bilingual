@@ -13,7 +13,15 @@ patch:
     - affix_segmentor@add_user_dict
     - punct_segmentor
     - fallback_segmentor
-  engine/translators/+:
+  engine/translators:
+    - punct_translator
+    - script_translator
+    - lua_translator@*wanxiang.shijian
+    - table_translator@custom_phrase
+    - lua_translator@*wanxiang.super_english*T
+    - table_translator@wanxiang_mixedcode
+    - reverse_lookup_translator@wanxiang_reverse
+    - script_translator@add_user_dict
     - table_translator@tech_english
     - table_translator@tech_english_vv
   recognizer/patterns/tech_english: "^;[A-Za-z0-9_]*$"

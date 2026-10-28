@@ -1,52 +1,131 @@
 -- 为中文候选追加英文词性和译词。
--- 释义在组件初始化时一次性载入，逐键查询只进行哈希表查找。
+-- 释义在组件初始化时一次性载入紧凑文本缓冲区，逐候选用二分查找避免海量 Lua 对象触发 GC 卡顿。
 
 local M = {}
-local glossary_cache = nil
+local glossary_cache = {}
+local cached_raw_data = nil
+local cached_path = nil
+local cached_open = nil
 
 local function trim(value)
-  return (value:gsub("^%s+", ""):gsub("%s+$", ""))
+  return (value:gsub("^[ \t\r\n]+", ""):gsub("[ \t\r\n]+$", ""))
+end
+
+local function normalize_glossary(content)
+  content = content:gsub("^\239\187\191", "")
+  if content:find("\r", 1, true) then
+    content = content:gsub("\r\n?", "\n")
+  end
+  while content:sub(1, 1) == "#" do
+    local newline = content:find("\n", 1, true)
+    content = newline and content:sub(newline + 1) or ""
+  end
+  if content:find("\n#", 1, true) then
+    content = content:gsub("\n#[^\n]*", "")
+  end
+  if content:find("\n\n", 1, true) then
+    content = content:gsub("\n+", "\n")
+  end
+  return (content:gsub("^\n+", ""):gsub("\n+$", ""))
+end
+
+local function format_senses(rest, max_senses)
+  local senses = {}
+  for field in rest:gmatch("[^\t]+") do
+    field = trim(field)
+    if field ~= "" then
+      senses[#senses + 1] = field
+      if #senses >= max_senses then
+        break
+      end
+    end
+  end
+  if #senses == 0 then
+    return nil
+  end
+  return table.concat(senses, " · ")
+end
+
+local function lookup_gloss(data, word, max_senses)
+  if data == "" or type(word) ~= "string" or word == "" then
+    return nil
+  end
+  local lo = 1
+  local hi = #data
+  while lo <= hi do
+    local mid = math.floor((lo + hi) / 2)
+    local line_start = mid
+    while line_start > lo and data:byte(line_start - 1) ~= 10 do
+      line_start = line_start - 1
+    end
+    local line_end = data:find("\n", line_start, true) or (#data + 1)
+    local tab = data:find("\t", line_start, true)
+    if not tab or tab >= line_end then
+      return nil
+    end
+    local key = data:sub(line_start, tab - 1)
+    if data:byte(line_start) <= 32 or data:byte(tab - 1) <= 32 then
+      key = trim(key)
+    end
+    if key == word then
+      return format_senses(data:sub(tab + 1, line_end - 1), max_senses)
+    elseif key < word then
+      lo = line_end + 1
+    else
+      hi = line_start - 2
+    end
+  end
+  return nil
+end
+
+local function load_raw_data(path)
+  if cached_raw_data ~= nil and cached_path == path and cached_open == io.open then
+    return cached_raw_data
+  end
+
+  local file, open_error = io.open(path, "r")
+  if file == nil then
+    log.error("[qingjian_gloss_filter] 无法读取释义表: " .. path .. "; " .. tostring(open_error))
+    return nil
+  end
+
+  local content
+  if type(file.read) == "function" then
+    content = file:read("*a") or ""
+  else
+    local lines = {}
+    for line in file:lines() do
+      lines[#lines + 1] = line
+    end
+    content = table.concat(lines, "\n")
+  end
+  file:close()
+
+  cached_raw_data = normalize_glossary(content)
+  cached_path = path
+  cached_open = io.open
+  glossary_cache = {}
+  log.info("[qingjian_gloss_filter] 已载入离线中英释义表")
+  return cached_raw_data
 end
 
 local function load_glossary(max_senses)
-  glossary_cache = glossary_cache or {}
+  local path = rime_api.get_user_data_dir() .. "/data/qingjian-glossary-en.tsv"
+  local raw_data = load_raw_data(path)
+  if raw_data == nil or raw_data == "" then
+    return {}
+  end
+
   if glossary_cache[max_senses] ~= nil then
     return glossary_cache[max_senses]
   end
 
-  local glossary = {}
-  local path = rime_api.get_user_data_dir() .. "/data/qingjian-glossary-en.tsv"
-  local file, open_error = io.open(path, "r")
-
-  if file == nil then
-    log.error("[qingjian_gloss_filter] 无法读取释义表: " .. path .. "; " .. tostring(open_error))
-    return glossary
-  end
-
-  for line in file:lines() do
-    line = line:gsub("^\239\187\191", ""):gsub("\r$", "")
-    if line ~= "" and line:sub(1, 1) ~= "#" then
-      local fields = {}
-      for field in line:gmatch("[^\t]+") do
-        fields[#fields + 1] = trim(field)
-      end
-
-      local word = fields[1]
-      if word ~= nil and word ~= "" and fields[2] ~= nil then
-        local senses = { fields[2] }
-        for index = 3, max_senses + 1 do
-          if fields[index] ~= nil and fields[index] ~= "" then
-            senses[#senses + 1] = fields[index]
-          end
-        end
-        glossary[word] = table.concat(senses, " · ")
-      end
-    end
-  end
-
-  file:close()
+  local glossary = setmetatable({ [false] = true }, {
+    __index = function(_, word)
+      return lookup_gloss(raw_data, word, max_senses)
+    end,
+  })
   glossary_cache[max_senses] = glossary
-  log.info("[qingjian_gloss_filter] 已载入离线中英释义表")
   return glossary
 end
 

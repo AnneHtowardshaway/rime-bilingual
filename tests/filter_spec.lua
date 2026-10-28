@@ -184,4 +184,28 @@ equal(next(env.glossary), nil); equal(missing_logged, true)
 io.open = real_open; log.error = real_error
 fresh_gloss.init(env)
 equal(env.glossary["开发"], "v. develop · v. exploit")
+equal(env.glossary["㕮"], "v. chew")
+equal(env.glossary["鿏"], "n. plow")
+equal(env.glossary["你"], "pron. you")
+equal(env.glossary["㿠"], "adj. bright")
+equal(env.glossary["不存在的词条"], nil)
+equal(env.glossary[""], nil)
+
+-- 模拟 librime-lua 每次按键销毁多个 LuaTranslation 时触发的全量 GC，防止常驻大表导致卡顿。
+gloss = nil
+loaded = nil
+english.init(env)
+collectgarbage("collect")
+local heap_kb = collectgarbage("count")
+assert(heap_kb < 10240, "Lua 常驻堆过大：" .. tostring(heap_kb) .. " KB")
+local gc_start = os.clock()
+for _ = 1, 20 do
+  collectgarbage("collect")
+end
+local gc_elapsed_ms = (os.clock() - gc_start) * 1000
+assert(gc_elapsed_ms < 15, "20 次全量 GC 耗时过长：" .. tostring(gc_elapsed_ms) .. " ms")
+english.fini(env)
+equal(env.words, nil)
+fresh_gloss.fini(env)
+equal(env.glossary, nil)
 print("Lua 回归通过：" .. count .. " 个英文编码、去重、范围、开关与释义配置")
