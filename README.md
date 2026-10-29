@@ -16,6 +16,13 @@
 
 **直接跳到：** [安装](#安装) · [安装后怎么用](#安装后怎么用) · [编程英文怎么输](#编程英文怎么输) · [中文学习与私人短语](#中文学习与私人短语) · [本地管理](#本地管理菜单) · [备份迁移](#个人数据备份与迁移) · [字号与开关](#字号与开关) · [恢复原配置](#恢复原配置) · [常见问题](#常见问题)
 
+第一次使用，建议按自己的系统阅读完整教程；下面保留安装和功能速查。
+
+| 完整教程 | 内容 |
+| --- | --- |
+| [macOS 鼠须管使用教程](docs/macos.md) | 安装启用、日常输入、本地管理、个人设置、完整备份迁移、更新与回滚 |
+| [Windows 小狼毫使用教程](docs/windows.md) | 安装启用、PowerShell 操作、本地管理、个人设置、设置迁移、更新与故障处理 |
+
 ## 安装
 
 这是输入法的配置与扩展。**请先安装对应的 Rime 输入法，再安装本项目。**
@@ -33,6 +40,8 @@
 只需阅读自己系统对应的一节。
 
 ### macOS 鼠须管
+
+需要系统设置、可选 Python 或迁移的逐步操作，见 [macOS 完整教程](docs/macos.md)。
 
 1. 安装并启用鼠须管，确认能正常输入中文。
 2. **[下载本项目 ZIP](https://github.com/AnneHtowardshaway/rime-bilingual/archive/refs/heads/main.zip)**，解压。打开后应能看到 `README.md` 和 `scripts` 文件夹。
@@ -59,6 +68,8 @@
 </details>
 
 ### Windows 小狼毫
+
+需要输入法启用、PowerShell、可选 Python 或迁移的逐步操作，见 [Windows 完整教程](docs/windows.md)。
 
 1. 安装并启用小狼毫，确认能正常输入中文。
 2. **[下载本项目 ZIP](https://github.com/AnneHtowardshaway/rime-bilingual/archive/refs/heads/main.zip)**，解压。打开后应能看到 `README.md` 和 `scripts` 文件夹。
@@ -202,7 +213,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\manage.ps1
 
 菜单支持查看、搜索、新增、精准删除、导入和导出常用语；修改前会保存原文件备份。相同编码可以对应多条短语，重复导入不会重复添加；更新已有权重需要显式选择 `--update`。常用语修改后，选择菜单中的「应用更改」请求输入法重新部署。
 
-也可以直接使用命令，例如：
+也可以直接使用命令，以下命令均从解压后的项目根目录运行。
+
+**macOS：**
 
 ```sh
 ./scripts/manage.sh phrases add "星澜工作室" xinglangongzuoshi
@@ -211,11 +224,24 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\manage.ps1
 ./scripts/manage.sh apply
 ```
 
+**Windows PowerShell：**
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\manage.ps1 phrases add "星澜工作室" xinglangongzuoshi
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\manage.ps1 phrases search 工作室
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\manage.ps1 phrases remove xinglangongzuoshi --text "星澜工作室"
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\manage.ps1 apply
+```
+
+可选管理工具需要可执行的 Python。如果 `py -3 --version` 正常，但 Windows 入口仍提示找不到 Python，可直接运行 `py -3 -X utf8 .\scripts\manage.py` 打开同一菜单；后面可接相同的 `phrases`、`data` 或 `apply` 参数。安装和检测步骤见 [Windows 教程](docs/windows.md#可选安装-python-并打开管理菜单)。
+
 ### 个人数据备份与迁移
 
 管理菜单还支持生成本地 `.rime-personal.zip` 迁移包，包含常用语、两个平台的个人样式文件和 `user.yaml` 偏好。完整模式另包含当前万象的中文学习、手动排序、上下文调频及英文学习数据库的原生快照（存在时收录）。额外导入的私人 `.dict.yaml` 文件需要单独保管，不在此包中。
 
-完整备份与恢复学习记录前，先切换到系统输入法并退出鼠须管／小狼毫服务；工具不会自动结束输入法进程，也不会复制运行中的数据库。只备份常用语和设置可以使用 `--settings-only`。恢复时会合并常用语与同名学习库，已有个人设置默认保留；显式加 `--replace-settings` 才会替换，并保留恢复前副本。
+完整备份前，以及任何恢复操作前（包括 `restore --settings-only`），先切换到系统输入法并退出鼠须管／小狼毫服务。仅切换输入源或切成英文不代表服务已退出。工具不会自动结束输入法进程，也不会复制运行中的数据库；仅执行 `backup --settings-only` 无需退出。具体退出与重新启动步骤见 [macOS 教程](docs/macos.md#8-备份换机与恢复) 和 [Windows 教程](docs/windows.md#备份与换机迁移)。
+
+恢复时会合并常用语与同名学习库，同词同码保留目标已有权重；已有个人设置默认保留。显式加 `--replace-settings` 才会替换冲突的 `user.yaml` 和个人样式文件，并保留恢复前副本。此参数不会清空或覆盖合并后的常用语。
 
 **macOS 示例：**
 
@@ -228,7 +254,15 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\manage.ps1
 
 默认备份保存在输入法用户目录的 `backups` 下。换机时先安装本项目，再恢复个人数据，最后重新启动输入法并应用更改。迁移包包含私人内容，请自行保管。
 
-Windows 的常用语和设置迁移同样可用：将菜单入口后加 `data backup --settings-only` 或 `data restore "备份包路径" --settings-only`。自动处理学习快照还需要兼容的 `rime_dict_manager`，可通过 `RIME_DICT_MANAGER` 指定已有程序；Windows 原生学习恢复仍需实机验证。
+**Windows 的常用语与设置迁移：**
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\manage.ps1 data backup --settings-only
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\manage.ps1 data inspect "C:\实际备份目录\backup.rime-personal.zip"
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\manage.ps1 data restore "C:\实际备份目录\backup.rime-personal.zip" --settings-only
+```
+
+把示例路径换成备份命令打印的完整路径；恢复前仍需退出小狼毫服务。自动处理学习快照需要兼容的 `rime_dict_manager`，可通过 `RIME_DICT_MANAGER` 指定已有程序；`WeaselDeployer.exe` 不能作为它的替代。Windows 原生学习恢复仍需实机验证，详见 [Windows 教程](docs/windows.md)。
 
 ## 字号与开关
 
@@ -319,6 +353,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\rollback.ps1
 ### 会自动更新到 GitHub 新版吗？
 
 不会。需要更新时，重新下载本项目并运行对应系统的安装命令。日常选词和组词会自动更新本机学习数据库，私人短语则由你手动维护；这些本地内容不会自动上传到 GitHub。
+
+更新前，将直接写在仓库管理的 `*.custom.yaml` 中的个人样式移到 `*.personal.yaml`。正常更新会保留私人短语、个人文件和学习库；无需先卸载输入法。安装生成的 `qingjian-learning-*` 备份用于撤回配置，个人数据迁移包用于备份、换机，两者的范围不同。
 
 ### 已经安装，为什么看不到英文？
 
