@@ -12,4 +12,4 @@
 - 更早版本已安装模型的 SHA-256：`8f1b2d3ed2b2755fdd445f6ab103eff613052080b62a0c049f4b166043a16ac4`；两个平台的检查脚本继续识别上述旧模型，不强制改写现有安装。
 - 许可证：CC BY 4.0，完整文本见本目录 `LICENSE`。
 
-项目不将语法模型纳入 Git；两个平台的下载脚本均从上述官方 Release 获取固定资产并校验 SHA-256，缓存到 `.cache/wanxiang/models/676604065/`。上游若删除固定资产，下载会报错，不自动切换到新模型。
+`v17.10.3` 属于 `rime-wanxiang` 的 Base 方案包，模型则来自 `rime-wanxiang-data` 的 `LTS` 发布；手动下载请用[官方 LTS 模型链接](https://github.com/amzxyz/rime-wanxiang-data/releases/download/LTS/wanxiang-lts-zh-hans.gram)，不要套用方案包版本号。该 LTS 地址内容可能更新，自动安装仍获取上述固定资产并校验 SHA-256，缓存到 `.cache/wanxiang/models/676604065/`，不将模型纳入 Git；若固定资产被删除则报错，不自动切换模型或跳过校验。

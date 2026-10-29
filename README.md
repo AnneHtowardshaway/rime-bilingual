@@ -468,7 +468,7 @@ Windows 桌面应用、候选窗口外观与高 DPI 效果仍需实机验收；W
 
 安装目录默认是 macOS 的 `~/Library/Rime`，或小狼毫登记的用户目录（通常为 `%APPDATA%\Rime`）。Windows 从 `HKCU\Software\Rime\Weasel` 读取 `RimeUserDir`，安装目录自动检测，也可用 `-WeaselDir` 或 `RIME_WEASEL_DIR` 指定。
 
-万象 Base 固定为 `v17.10.3`，语法模型使用固定 GitHub 资产 ID 和 SHA-256 校验，缓存放在 `.cache/wanxiang/`。具体版本及校验值见 [资源署名说明](third_party/wanxiang/ATTRIBUTION.md)。
+`v17.10.3` 是 `rime-wanxiang` 的 Base 方案包版本；语法模型属于 `rime-wanxiang-data` 的 `LTS` 发布，手动下载请用[官方 LTS 模型链接](https://github.com/amzxyz/rime-wanxiang-data/releases/download/LTS/wanxiang-lts-zh-hans.gram)，不要将地址中的 `LTS` 换成方案包版本号。手动 LTS 地址内容可能更新，自动安装仍按固定 GitHub 资产 ID 和 SHA-256 锁定并校验，缓存放在 `.cache/wanxiang/`；具体版本及校验值见[资源署名说明](third_party/wanxiang/ATTRIBUTION.md)。
 
 不要将整个输入法用户目录上传到 GitHub。仓库忽略构建缓存、模型缓存、备份、同步数据、用户数据库和本机安装信息。
 
