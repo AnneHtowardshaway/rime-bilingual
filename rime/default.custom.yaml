@@ -6,6 +6,10 @@ patch:
   switcher/hotkeys:
     - Control+grave
     - F4
+  switcher/save_options/+:
+    - internet_english_disabled
+    - bilingual_gloss_disabled
+    - bilingual_compact
   punctuator/full_shape:
     __include: punctuation:/full_shape
   punctuator/half_shape:

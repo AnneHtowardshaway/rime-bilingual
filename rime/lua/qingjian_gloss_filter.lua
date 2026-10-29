@@ -3,8 +3,8 @@
 
 local M = {}
 local glossary_cache = {}
-local cached_raw_data = nil
-local cached_path = nil
+local raw_cache = {}
+local cached_dir = nil
 local cached_open = nil
 
 local function trim(value)
@@ -79,8 +79,8 @@ local function lookup_gloss(data, word, max_senses)
 end
 
 local function load_raw_data(path)
-  if cached_raw_data ~= nil and cached_path == path and cached_open == io.open then
-    return cached_raw_data
+  if raw_cache[path] ~= nil then
+    return raw_cache[path]
   end
 
   local file, open_error = io.open(path, "r")
@@ -101,54 +101,68 @@ local function load_raw_data(path)
   end
   file:close()
 
-  cached_raw_data = normalize_glossary(content)
-  cached_path = path
-  cached_open = io.open
+  raw_cache[path] = normalize_glossary(content)
   glossary_cache = {}
   log.info("[qingjian_gloss_filter] 已载入离线中英释义表")
-  return cached_raw_data
+  return raw_cache[path]
 end
 
 local function load_glossary(max_senses)
-  local path = rime_api.get_user_data_dir() .. "/data/qingjian-glossary-en.tsv"
-  local raw_data = load_raw_data(path)
-  if raw_data == nil or raw_data == "" then
-    return {}
+  local dir = rime_api.get_user_data_dir()
+  if cached_dir ~= dir or cached_open ~= io.open then
+    raw_cache = {}
+    glossary_cache = {}
+    cached_dir = dir
+    cached_open = io.open
+  end
+  local raw_data = load_raw_data(dir .. "/data/qingjian-glossary-en.tsv") or ""
+  local technical_data = load_raw_data(dir .. "/data/technical-glossary-en.tsv") or ""
+  if raw_data == "" and technical_data == "" then
+    return {}, {}
   end
 
-  if glossary_cache[max_senses] ~= nil then
-    return glossary_cache[max_senses]
+  local function view(maximum)
+    if glossary_cache[maximum] == nil then
+      glossary_cache[maximum] = setmetatable({ [false] = true }, {
+        __index = function(_, word)
+          return lookup_gloss(technical_data, word, maximum)
+            or lookup_gloss(raw_data, word, maximum)
+        end,
+      })
+    end
+    return glossary_cache[maximum]
   end
-
-  local glossary = setmetatable({ [false] = true }, {
-    __index = function(_, word)
-      return lookup_gloss(raw_data, word, max_senses)
-    end,
-  })
-  glossary_cache[max_senses] = glossary
-  return glossary
+  return view(max_senses), view(1)
 end
 
 function M.init(env)
   local maximum = env.engine.schema.config:get_int("bilingual_gloss/max_senses") or 2
-  env.glossary = load_glossary(math.max(1, math.min(4, maximum)))
+  env.glossary, env.compact_glossary = load_glossary(math.max(1, math.min(4, maximum)))
 end
 
 function M.fini(env)
   env.glossary = nil
+  env.compact_glossary = nil
 end
 
 function M.func(input, env)
-  if env.engine.context:get_option("bilingual_gloss_disabled") then
+  local context = env.engine.context
+  if context:get_option("bilingual_gloss_disabled") then
     for candidate in input:iter() do yield(candidate) end
     return
   end
+  local compact = context:get_option("bilingual_compact")
+  local glossary = compact and env.compact_glossary or env.glossary
   for candidate in input:iter() do
-    local gloss = env.glossary[candidate.text]
+    local gloss = glossary[candidate.text]
 
     if gloss == nil then
       yield(candidate)
     else
+      if compact then
+        local cutoff = utf8.offset(gloss, 29)
+        if cutoff and cutoff <= #gloss then gloss = gloss:sub(1, cutoff - 1) .. "…" end
+      end
       local comment = candidate.comment or ""
       if comment ~= "" then
         comment = comment .. "  " .. gloss

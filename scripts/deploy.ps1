@@ -26,6 +26,7 @@ foreach ($item in $payload) {
 }
 Write-Host "Target: $target`nFont: $FontPreset`nFiles to install/replace (existing files will be backed up):"
 $relativePaths | ForEach-Object { Write-Host $_ }
+Write-Host 'Personal configuration (*.personal.yaml) is excluded from installation and rollback.'
 if ($Preview) { Write-Host 'Preview complete. No input-method files changed; download cache may have been populated.'; return }
 
 $stamp = (Get-Date -Format 'yyyyMMdd-HHmmss') + '-' + [Guid]::NewGuid().ToString('N').Substring(0, 8)
@@ -60,4 +61,8 @@ $manifest.State = 'installed'
 Write-Utf8File (Join-Path $backup 'deployed-files.json') ($manifest | ConvertTo-Json -Depth 4)
 if (-not $SkipDeploy) { Invoke-WeaselDeployment $WeaselDir }
 Write-Host "Installed Wanxiang Base $script:WanxiangVersion and bilingual extensions.`nBackup: $backup"
+Write-Host "Personal styles and app rules belong under patch: in $(Join-Path $target 'weasel.personal.yaml')."
+if (Test-Path -LiteralPath (Join-Path $backup 'previous/weasel.custom.yaml') -PathType Leaf) {
+    Write-Host "Previous window settings: $(Join-Path $backup 'previous/weasel.custom.yaml'). Move only your own style or app_options changes into the personal file."
+}
 if ($SkipDeploy) { Write-Host 'Native Weasel deployment was skipped. Compile the target before running verify.ps1.' }

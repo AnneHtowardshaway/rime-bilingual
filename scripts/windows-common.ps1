@@ -166,7 +166,8 @@ function Get-PayloadFiles($Resources) {
     [PSCustomObject]@{ Relative = 'wanxiang-lts-zh-hans.gram'; Source = $Resources.Model }
     $local = Join-Path $script:ProjectRoot 'rime'
     Get-ChildItem -LiteralPath $local -Recurse -File | Where-Object {
-        $_.Name -notin @('squirrel.custom.yaml', 'rime.lua', 'custom_phrase.txt')
+        $_.Name -notin @('squirrel.custom.yaml', 'rime.lua', 'custom_phrase.txt') -and
+        $_.Name -notlike '*.personal.yaml'
     } | ForEach-Object {
         [PSCustomObject]@{ Relative = $_.FullName.Substring($local.Length + 1).Replace('\', '/'); Source = $_.FullName }
     }

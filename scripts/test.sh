@@ -3,6 +3,10 @@ set -eu
 project_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 cd "$project_root"
 python3 tests/vocabulary_generator_spec.py
+python3 tests/phrases_spec.py
+python3 tests/rime_native_spec.py
+python3 tests/personal_data_spec.py
+python3 tests/manage_spec.py
 python3 scripts/build-programming-vocabulary.py --check
 python3 tests/run_lua.py
 for script in scripts/*.sh; do sh -n "$script"; done
@@ -47,6 +51,7 @@ EOF
 mkdir -p "$sandbox/private.userdb"
 printf 'private learning sentinel\n' > "$sandbox/private.userdb/sentinel"
 RIME_USER_DIR="$sandbox" RIME_SKIP_RELOAD=1 RIME_FONT_PRESET=compact scripts/deploy.sh > "$sandbox/deploy.log"
+cp tests/data/input-experience.tsv "$sandbox/data/input-experience.tsv"
 printf '\n# private import added after installation\n' >> "$sandbox/luna_pinyin.tech.dict.yaml"
 for schema in wanxiang; do
   "$cache/rime-engine" "$sandbox" "$schema" > "$sandbox/$schema.log" 2>&1 || {
@@ -54,6 +59,7 @@ for schema in wanxiang; do
   }
   cat "$sandbox/$schema.log"
   "$cache/rime-engine" "$sandbox" "$schema" --check-learning
+  "$cache/rime-engine" "$sandbox" "$schema" --check-options
 done
 RIME_USER_DIR="$sandbox" scripts/verify.sh
 grep -Fq 'style/font_point: 15' "$sandbox/squirrel.custom.yaml"

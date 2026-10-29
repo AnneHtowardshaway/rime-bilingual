@@ -56,7 +56,7 @@ find "$wanxiang_source/lua" "$wanxiang_source/dicts" -type f -print \
   | sed "s#^$wanxiang_source/##" >> "$manifest_source"
 printf '%s\n' 'wanxiang-lts-zh-hans.gram' >> "$manifest_source"
 
-find "$project_root/rime" -type f ! -name rime.lua ! -name weasel.custom.yaml ! -name custom_phrase.txt -print \
+find "$project_root/rime" -type f ! -name rime.lua ! -name weasel.custom.yaml ! -name custom_phrase.txt ! -name '*.personal.yaml' -print \
   | sed "s#^$project_root/rime/##" | while IFS= read -r relative_path; do
     # 已有私人聚合词库不属于此次更新，也不能在回滚时恢复成旧版本。
     if [ "$relative_path" = 'luna_pinyin.tech.dict.yaml' ] && [ -f "$rime_dir/$relative_path" ]; then
@@ -75,6 +75,7 @@ done < "$manifest_source"
 
 printf '目标目录：%s\n字号：%s\n以下文件会被安装或替换（已有文件会先备份）：\n' "$rime_dir" "$font_preset"
 LC_ALL=C sort -u "$manifest_source"
+printf '个人配置 *.personal.yaml 不在安装与回滚清单中，已有内容会保留。\n'
 if [ "$dry_run" = '1' ]; then
   printf '预览结束，未修改输入法目录。下载缓存可能已更新。\n'
   exit 0
@@ -130,7 +131,7 @@ while IFS= read -r relative_path; do
   fi
   cp -p "$project_root/rime/$relative_path" "$rime_dir/$relative_path"
 done <<EOF
-$(find "$project_root/rime" -type f ! -name rime.lua ! -name weasel.custom.yaml ! -name custom_phrase.txt -print | sed "s#^$project_root/rime/##")
+$(find "$project_root/rime" -type f ! -name rime.lua ! -name weasel.custom.yaml ! -name custom_phrase.txt ! -name '*.personal.yaml' -print | sed "s#^$project_root/rime/##")
 EOF
 
 # 将旧技术聚合词库及已有英文聚合中的私人导入带到专用入口，不导入朙月中文主词库。
@@ -171,3 +172,7 @@ fi
 
 printf '部署完成：万象 Base %s + 简体 LTS 语法模型。\n备份目录：%s\n' \
   "$wanxiang_version" "$backup_dir"
+printf '个人样式与应用规则请写入：%s/squirrel.personal.yaml 的 patch: 下。\n' "$rime_dir"
+if [ -f "$backup_dir/previous/squirrel.custom.yaml" ]; then
+  printf '旧窗口配置已备份：%s/previous/squirrel.custom.yaml；请只迁移自己的样式或 app_options 修改到个人文件。\n' "$backup_dir"
+fi

@@ -35,7 +35,26 @@ Write-Utf8File (Join-Path $sandbox 'luna_pinyin.tech.dict.yaml') ($aggregate + "
 Write-Utf8File (Join-Path $sandbox 'private_user.dict.yaml') "---`nname: private_user`nversion: '1'`nsort: by_weight`n...`nPRIVATE_SENTINEL`tprivateword`t1000`n"
 Write-Utf8File (Join-Path $sandbox 'private.userdb/sentinel') 'private learning data'
 Write-Utf8File (Join-Path $sandbox 'squirrel.custom.yaml') 'existing macOS configuration'
+$personalContent = "patch:`n  style/font_point: 14`n"
+foreach ($personalFile in @('squirrel.personal.yaml', 'weasel.personal.yaml')) {
+    Write-Utf8File (Join-Path $sandbox $personalFile) $personalContent
+}
 $marker = Join-Path $sandbox 'backups/.rime-bilingual-windows-last-backup'
+
+# A personal file accidentally placed in the installation source is never payload.
+$resources = Get-WanxiangResources
+$payloadFixture = Join-Path $cache ('personal-payload-' + [Guid]::NewGuid().ToString('N'))
+foreach ($personalFile in @('squirrel.personal.yaml', 'weasel.personal.yaml')) {
+    Write-Utf8File (Join-Path $payloadFixture "rime/$personalFile") 'must never install'
+}
+$originalProjectRoot = $script:ProjectRoot
+try {
+    $script:ProjectRoot = $payloadFixture
+    $fixturePayload = @(Get-PayloadFiles $resources)
+    Assert-Test (-not @($fixturePayload | Where-Object { $_.Relative -like '*.personal.yaml' }).Count) 'Exclude personal configuration from the payload'
+} finally {
+    $script:ProjectRoot = $originalProjectRoot
+}
 
 Assert-Rejected { Get-SafeChildPath $sandbox '../escape' } 'Reject parent traversal'
 Assert-Rejected { Get-SafeChildPath $sandbox 'dir\..\escape' } 'Reject Windows traversal'
@@ -55,10 +74,14 @@ if ($env:OS -eq 'Windows_NT') {
 Assert-Test (-not (Test-Path -LiteralPath $marker)) 'Preview must not create a backup or overwrite settings'
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'default.custom.yaml')) -eq $original) 'Preview preserves configuration'
 & (Join-Path $PSScriptRoot 'deploy.ps1') -UserDir $sandbox -SkipDeploy -FontPreset compact
+Copy-PayloadFile (Join-Path $script:ProjectRoot 'tests/data/input-experience.tsv') (Join-Path $sandbox 'data/input-experience.tsv')
 Assert-Test (Test-Path -LiteralPath $marker -PathType Leaf) 'Backup pointer exists'
 $theme = [IO.File]::ReadAllText((Join-Path $sandbox 'weasel.custom.yaml'), $script:Utf8)
 Assert-Test ($theme.Contains('style/font_point: 15') -and $theme.Contains('style/comment_font_point: 12')) 'Compact Windows font preset'
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'squirrel.custom.yaml')) -eq 'existing macOS configuration') 'Do not install or overwrite the macOS theme'
+foreach ($personalFile in @('squirrel.personal.yaml', 'weasel.personal.yaml')) {
+    Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox $personalFile), $script:Utf8) -eq $personalContent) 'Preserve personal configuration on installation'
+}
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'rime.lua')) -eq '-- existing private extension') 'Preserve rime.lua'
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'luna_pinyin.tech.dict.yaml')).Contains('# private imports retained')) 'Preserve aggregate dictionary'
 $englishAggregate = [IO.File]::ReadAllText((Join-Path $sandbox 'bilingual_english.dict.yaml'), $script:Utf8)
@@ -71,6 +94,11 @@ $backup = [IO.File]::ReadAllText($marker, $script:Utf8)
 $manifestFile = Join-Path $backup 'deployed-files.json'
 $validManifest = [IO.File]::ReadAllText($manifestFile, $script:Utf8)
 $manifest = $validManifest | ConvertFrom-Json
+Assert-Test (-not @($manifest.Files | Where-Object { $_ -like '*.personal.yaml' }).Count) 'Personal configuration is not part of rollback'
+foreach ($personalFile in @('squirrel.personal.yaml', 'weasel.personal.yaml')) {
+    Assert-Test (-not (Test-Path -LiteralPath (Join-Path $backup "previous/$personalFile"))) 'Do not back up personal files as installation payload'
+    Write-Utf8File (Join-Path $sandbox $personalFile) ($personalContent + "# edited after installation`n")
+}
 # Exercise an older backup that listed the untouched private aggregate.
 $manifest.Files += 'luna_pinyin.tech.dict.yaml'
 Write-Utf8File (Join-Path $backup 'previous/luna_pinyin.tech.dict.yaml') $aggregate
@@ -123,6 +151,8 @@ if ($Engine) {
             if ($LASTEXITCODE -ne 0) { throw "Real Windows engine test failed: $schema" }
             & $binary $engineDirectory $schema --check-learning
             if ($LASTEXITCODE -ne 0) { throw "User dictionary persistence test failed: $schema" }
+            & $binary $engineDirectory $schema --check-options
+            if ($LASTEXITCODE -ne 0) { throw "Bilingual options persistence test failed: $schema" }
         }
         & (Join-Path $PSScriptRoot 'verify.ps1') -UserDir $engineDirectory
     } finally {
@@ -134,6 +164,9 @@ if ($Engine) {
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'default.custom.yaml')) -eq $original) 'Restore original settings'
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'private.userdb/sentinel')) -eq 'private learning data') 'Preserve user learning data'
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'custom_phrase.txt'), $script:Utf8) -eq $privatePhrase) 'Preserve private phrases on installation and rollback'
+foreach ($personalFile in @('squirrel.personal.yaml', 'weasel.personal.yaml')) {
+    Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox $personalFile), $script:Utf8) -eq ($personalContent + "# edited after installation`n")) 'Rollback preserves personal configuration edited after installation'
+}
 Assert-Test ([IO.File]::ReadAllText((Join-Path $sandbox 'luna_pinyin.tech.dict.yaml'), $script:Utf8).Contains('# private import added after installation')) 'Rollback preserves private imports added after installation'
 Assert-Test (-not (Test-Path -LiteralPath (Join-Path $sandbox 'lua/internet_english_filter.lua'))) 'Remove newly installed files on rollback'
 Assert-Rejected { & (Join-Path $PSScriptRoot 'rollback.ps1') -UserDir $sandbox -SkipDeploy } 'Reject repeated rollback'

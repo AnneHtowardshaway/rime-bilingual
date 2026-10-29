@@ -1,6 +1,10 @@
 # 万象 Base 本地补丁：保留上游排序链，在去重前追加青简英文释义。
 patch:
   menu/page_size: 6
+  speller/algebra:
+    __patch:
+      - wanxiang_algebra:/base/全拼
+      - bilingual_algebra:/corrections
   schema/dependencies/+:
     - tech_english_table
   engine/segmentors:
@@ -62,8 +66,8 @@ patch:
     - uniquifier
   switches/+:
     - name: internet_english_disabled
-      reset: 0
       states: [英文候选, 关闭英文候选]
     - name: bilingual_gloss_disabled
-      reset: 0
       states: [英文释义, 关闭英文释义]
+    - name: bilingual_compact
+      states: [伴学显示, 简洁显示]

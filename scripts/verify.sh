@@ -13,6 +13,7 @@ for path in \
   "$rime_dir/default.custom.yaml" \
   "$rime_dir/wanxiang.schema.yaml" \
   "$rime_dir/wanxiang.custom.yaml" \
+  "$rime_dir/bilingual_algebra.yaml" \
   "$rime_dir/wanxiang.dict.yaml" \
   "$rime_dir/lua/wanxiang/wanxiang.lua" \
   "$rime_dir/dicts/jichu.dict.yaml" \
@@ -22,10 +23,12 @@ for path in \
   "$rime_dir/data/internet-english.tsv" \
   "$rime_dir/data/programming-english.tsv" \
   "$rime_dir/data/qingjian-glossary-en.tsv" \
+  "$rime_dir/data/technical-glossary-en.tsv" \
   "$rime_dir/langchain_agent.dict.yaml" \
   "$rime_dir/langchain_agent.schema.yaml" \
   "$model" \
   "$built_wanxiang" \
+  "$rime_dir/build/default.yaml" \
   "$rime_dir/bilingual_english.dict.yaml" \
   "$rime_dir/build/bilingual_english.table.bin" \
   "$built_theme"
@@ -59,6 +62,9 @@ grep -Fq 'qingjian_learning_dark' "$built_theme"
 
 grep -Fq -- '- schema: wanxiang' "$rime_dir/default.custom.yaml"
 test "$(grep -c -- '- schema:' "$rime_dir/default.custom.yaml")" = 1
+for option in internet_english_disabled bilingual_gloss_disabled bilingual_compact; do
+  grep -Fq -- "- $option" "$rime_dir/build/default.yaml"
+done
 
 for term in Overview LangChain LangGraph LangSmith 'Deep Agents' 'Managed Deep Agents' OpenWiki Integrations Learn Reference Contribute StateGraph ToolNode create_agent checkpointer ToolRuntime; do
   grep -Fq "${term}$(printf '\t')" "$rime_dir/langchain_agent.dict.yaml"

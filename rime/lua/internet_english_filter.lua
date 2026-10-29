@@ -1,5 +1,5 @@
 -- SPDX-License-Identifier: GPL-3.0-or-later
--- 仅在完整英文编码精确命中时插入第二候选，不参与拼音组句。
+-- 仅在当前段的完整英文编码精确命中时插入第二候选，不参与拼音组句。
 local M = {}
 local words_cache = nil
 local cached_dir = nil
@@ -117,12 +117,21 @@ end
 function M.func(input, env)
   local context = env.engine.context
   local segment = context.composition:back()
-  local code = context.input
-  local word = env.words[code]
-  if not word or context:get_option("ascii_mode")
+  local input_end = #context.input
+  if context:get_option("ascii_mode")
       or context:get_option("internet_english_disabled")
-      or not segment or segment.start ~= 0 or segment._end ~= #code
-      or context.caret_pos ~= #code or not segment:has_tag("abc") then
+      or not segment or segment.start < 0 or segment.start >= segment._end
+      or segment._end ~= input_end or context.caret_pos ~= input_end
+      or not segment:has_tag("abc") then
+    for candidate in input:iter() do yield(candidate) end
+    return
+  end
+
+  -- 中文前段已选但尚未上屏时，当前段的坐标仍指向整串原始编码。
+  local start, finish = segment.start, segment._end
+  local code = context.input:sub(start + 1, finish)
+  local word = env.words[code]
+  if not word then
     for candidate in input:iter() do yield(candidate) end
     return
   end
@@ -131,12 +140,12 @@ function M.func(input, env)
   for candidate in input:iter() do
     -- 丢弃同词的上游候选，避免其权重或用户调频改变固定位置。
     if candidate.text:lower() == word.text:lower()
-        and candidate.start == 0 and candidate._end == #code then
+        and candidate.start == start and candidate._end == finish then
       -- 固定位置的候选统一在下方生成。
     else
       yield(candidate)
       if not inserted then
-        local english = Candidate("internet_english", 0, #code,
+        local english = Candidate("internet_english", start, finish,
           word.text, word.comment)
         english.preedit = code
         yield(english)
@@ -146,7 +155,9 @@ function M.func(input, env)
   end
   -- 没有其他候选时仍允许直接输出英文。
   if not inserted then
-    yield(Candidate("internet_english", 0, #code, word.text, word.comment))
+    local english = Candidate("internet_english", start, finish, word.text, word.comment)
+    english.preedit = code
+    yield(english)
   end
 end
 

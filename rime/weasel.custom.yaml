@@ -46,3 +46,7 @@ patch:
     hilited_candidate_text_color: 0xFFFFFF
     hilited_label_color: 0xD4C4B2
     hilited_comment_text_color: 0xF2E6D8
+
+  __patch:
+    __merge:
+      __include: weasel.personal:/patch?

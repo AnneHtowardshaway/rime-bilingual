@@ -1,0 +1,6 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# 全拼的相邻字母换位容错；保留正确拼写，不放宽声母或韵母读音。
+corrections:
+  __append:
+    # ian → ain：tian/tain、jian/jain 等；上游已有 iang/ing 的错序规则。
+    - derive/^([bpmdtnljqx])ian$/$1ain/

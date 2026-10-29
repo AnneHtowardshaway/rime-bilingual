@@ -12,3 +12,6 @@ backups/
 installation.yaml
 user.yaml
 custom_phrase.txt
+*.personal.yaml
+__pycache__/
+*.rime-personal.zip

@@ -14,7 +14,7 @@
 
 现已只保留万象作为日常方案。升级后，朙月不再出现在方案选单；已有朙月文件、私人词库和学习数据库不会被删除。
 
-**直接跳到：** [安装](#安装) · [安装后怎么用](#安装后怎么用) · [编程英文怎么输](#编程英文怎么输) · [中文学习与私人短语](#中文学习与私人短语) · [字号与开关](#字号与开关) · [恢复原配置](#恢复原配置) · [常见问题](#常见问题)
+**直接跳到：** [安装](#安装) · [安装后怎么用](#安装后怎么用) · [编程英文怎么输](#编程英文怎么输) · [中文学习与私人短语](#中文学习与私人短语) · [本地管理](#本地管理菜单) · [备份迁移](#个人数据备份与迁移) · [字号与开关](#字号与开关) · [恢复原配置](#恢复原配置) · [常见问题](#常见问题)
 
 ## 安装
 
@@ -100,6 +100,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -Previe
 
 英文词使用完整小写编码，例如 `github`、`chatgpt`；输入 `zai` 可选 `Z.ai`，输入 `mergerequest` 可选 `Merge Request`，编码中不加点号或空格。定制的第二候选规则只做精确匹配；万象自带英文联想和 `;` / `vv` 补全仍可使用。未命中的输入沿用原候选顺序。若原方案只有这个英文一个候选，则只保留一个规范英文候选。
 
+也可以在同一次输入中接续中文和技术英文。例如输入 `woyonggithub`，先选择「我用」，再按 **2**，即可完整输出「我用GitHub」；`woyonggofmtprintf` 同样可以输出「我用fmt.Printf」。需要先选择前面的中文，末尾英文使用完整编码。
+
 ## 编程英文怎么输
 
 **编程、AI、日常和设备词库统一接入万象。** 输入完整小写编码，通常按 **2** 选中英文；若原方案没有其他候选，则英文会单独显示。`go`、`js`、`ts` 也可直接选出语言名称。
@@ -180,7 +182,53 @@ python3 scripts/build-programming-vocabulary.py
 星澜工作室	xinglangongzuoshi	1000
 ```
 
-保存后，对输入法执行「重新部署」。同一编码有多条私人短语时，权重较大的优先。**这个文件需要手动填写；自动学习的词保存在用户学习数据库中。** 该文件不会被本项目安装或回滚覆盖，也已加入 Git 忽略规则；个人信息不要加入公开词表。格式参考 [Rime 官方短语示例](https://gist.github.com/lotem/5440677)。
+保存后，对输入法执行「重新部署」。同一编码有多条私人短语时，权重较大的优先。**固定短语也可通过下面的本地管理菜单维护；自动学习的词保存在用户学习数据库中。** 该文件不会被本项目安装或回滚覆盖，也已加入 Git 忽略规则；个人信息不要加入公开词表。格式参考 [Rime 官方短语示例](https://gist.github.com/lotem/5440677)。
+
+### 本地管理菜单
+
+不想手写 Tab，可以使用可选的本地管理工具。它需要 **Python 3.8 或更新版本**，只用标准库，无需安装第三方包；普通输入法安装仍无需 Python。
+
+**macOS：** 双击项目中的 `scripts/manage.command`，或在终端运行：
+
+```sh
+./scripts/manage.sh
+```
+
+**Windows：** 在项目目录的 PowerShell 中运行：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\manage.ps1
+```
+
+菜单支持查看、搜索、新增、精准删除、导入和导出常用语；修改前会保存原文件备份。相同编码可以对应多条短语，重复导入不会重复添加；更新已有权重需要显式选择 `--update`。常用语修改后，选择菜单中的「应用更改」请求输入法重新部署。
+
+也可以直接使用命令，例如：
+
+```sh
+./scripts/manage.sh phrases add "星澜工作室" xinglangongzuoshi
+./scripts/manage.sh phrases search 工作室
+./scripts/manage.sh phrases remove xinglangongzuoshi --text "星澜工作室"
+./scripts/manage.sh apply
+```
+
+### 个人数据备份与迁移
+
+管理菜单还支持生成本地 `.rime-personal.zip` 迁移包，包含常用语、两个平台的个人样式文件和 `user.yaml` 偏好。完整模式另包含当前万象的中文学习、手动排序、上下文调频及英文学习数据库的原生快照（存在时收录）。额外导入的私人 `.dict.yaml` 文件需要单独保管，不在此包中。
+
+完整备份与恢复学习记录前，先切换到系统输入法并退出鼠须管／小狼毫服务；工具不会自动结束输入法进程，也不会复制运行中的数据库。只备份常用语和设置可以使用 `--settings-only`。恢复时会合并常用语与同名学习库，已有个人设置默认保留；显式加 `--replace-settings` 才会替换，并保留恢复前副本。
+
+**macOS 示例：**
+
+```sh
+./scripts/manage.sh data backup
+./scripts/manage.sh data backup --settings-only
+./scripts/manage.sh data inspect "/path/to/backup.rime-personal.zip"
+./scripts/manage.sh data restore "/path/to/backup.rime-personal.zip"
+```
+
+默认备份保存在输入法用户目录的 `backups` 下。换机时先安装本项目，再恢复个人数据，最后重新启动输入法并应用更改。迁移包包含私人内容，请自行保管。
+
+Windows 的常用语和设置迁移同样可用：将菜单入口后加 `data backup --settings-only` 或 `data restore "备份包路径" --settings-only`。自动处理学习快照还需要兼容的 `rime_dict_manager`，可通过 `RIME_DICT_MANAGER` 指定已有程序；Windows 原生学习恢复仍需实机验证。
 
 ## 字号与开关
 
@@ -192,8 +240,11 @@ python3 scripts/build-programming-vocabulary.py
 | --- | --- |
 | 英文候选 / 关闭英文候选 | 是否插入本项目的常用英文候选 |
 | 英文释义 / 关闭英文释义 | 是否在中文候选旁显示英文释义 |
+| 伴学显示 / 简洁显示 | 伴学显示完整义项；简洁只显示一个义项，长释义以省略号收尾 |
 
 关闭英文候选后，原方案自带的英文词条仍可能显示。万象的 `;github` / `vvgithub` 专用英文入口仍可使用。
+
+从方案选单切换上述开关或显示档后，状态会保存在本机，重启输入法后继续沿用。默认使用伴学显示。
 
 ### 字太大，换成紧凑字号
 
@@ -214,6 +265,22 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -FontPr
 ```
 
 想恢复大字号，重新运行对应系统的默认安装命令。浅色和深色主题会随系统外观切换。
+
+### 保留自己的应用与外观设置
+
+在输入法用户目录创建 `squirrel.personal.yaml`（macOS）或 `weasel.personal.yaml`（Windows），将个人的应用偏好、字号和样式写在其中。个人文件最后生效，安装和回滚都会保留它；不要放进下载的项目文件夹。
+
+例如，macOS 希望 VS Code 初始使用中文，并调整释义字号：
+
+```yaml
+patch:
+  app_options/com.microsoft.VSCode/ascii_mode: false
+  style/comment_font_point: 12
+```
+
+Windows 的应用规则使用进程文件名，例如 `app_options/code.exe/ascii_mode: false`。保存后对输入法执行「重新部署」即可，不必重新安装整套词库。
+
+原先直接写在 `squirrel.custom.yaml` 或 `weasel.custom.yaml` 的个人设置，需要将想保留的应用和样式项目手动移入个人文件；安装前的旧配置仍会备份。
 
 ## 恢复原配置
 
@@ -309,12 +376,16 @@ docker	Docker	容器
 
 支持 1–4 项，以词表实际内容为限。修改后重新运行对应系统的安装命令。
 
+常用编程和 AI 中文词优先使用 `rime/data/technical-glossary-en.tsv` 的专业释义，例如「回调」显示 `n. callback`。未收录的词继续使用青简原始释义；调整专业释义时，保持中文词条唯一并按 UTF-8 字节顺序排序。
+
 </details>
 
 <details>
 <summary>给开发者：检查与回归测试</summary>
 
 普通用户不需要运行这些命令。静态检查只核对已安装文件、编译配置和模型校验值，不能代替真实候选测试。真实引擎回归会逐项检查整张英文词表，并验证专用入口补全与上屏、中文学习、私人短语和排序。
+
+中文体验语料在 `tests/data/input-experience.tsv`，覆盖日常整句、工作消息、简拼和错序拼写；本地全拼纠错规则在 `rime/bilingual_algebra.yaml`。例如 `jintainkaihui` 可容错为「今天开会」。它只补充明确的字母换位，不默认启用模糊音。
 
 **macOS：**
 

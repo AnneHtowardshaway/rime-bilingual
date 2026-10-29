@@ -1,0 +1,51 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# 常用编程与 AI 释义优先表；按 UTF-8 字节序排列，每列一个义项。
+上下文窗口	n. context window
+云原生	adj. cloud-native
+令牌	n. token
+依赖注入	n. dependency injection
+内存泄漏	n. memory leak
+分词	n. tokenization
+前端	n. frontend
+协程	n. coroutine
+单例	n. singleton
+反射	n. reflection
+反序列化	n. deserialization
+后端	n. backend
+向量数据库	n. vector database
+回归	n. regression	v. return
+回调	n. callback
+垃圾回收	n. garbage collection
+多智能体	adj. multi-agent
+多模态	adj. multimodal
+大语言模型	n. large language model
+实现	v. implement	v. realize
+容器	n. container
+容器编排	n. container orchestration
+工作流	n. workflow
+工具调用	n. tool calling
+幂等	adj. idempotent
+并发	n. concurrency
+并行	n. parallelism
+幻觉	n. hallucination
+序列化	n. serialization
+延迟	n. latency	v. delay
+异步	adj. asynchronous
+微服务	n. microservice
+微调	n. fine-tuning
+懒加载	n. lazy loading
+持久化	n. persistence
+推理	n. inference	n. reasoning
+提示词	n. prompt
+智能体	n. agent
+检索增强生成	n. retrieval-augmented generation
+死锁	n. deadlock
+热重载	n. hot reloading
+熔断器	n. circuit breaker
+知识库	n. knowledge base
+竞态条件	n. race condition
+类型推断	n. type inference
+自动补全	n. autocompletion
+词嵌入	n. embedding
+量化	n. quantization
+闭包	n. closure

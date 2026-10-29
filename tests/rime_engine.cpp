@@ -41,6 +41,8 @@ static Candidates query(RimeApi* api, RimeSessionId session, const std::string& 
 }
 #include "learning_spec.h"
 #include "vocabulary_spec.h"
+#include "options_spec.h"
+#include "input_experience_spec.h"
 static int run(int argc, char** argv) {
   if (argc < 3) { std::fprintf(stderr, "用法：rime-engine USER_DIR SCHEMA [INPUT]\n"); return 2; }
   RimeApi* api = nullptr;
@@ -115,6 +117,8 @@ static int run(int argc, char** argv) {
     stage = "query and commit";
     if (argc > 3 && std::string(argv[3]) == "--check-learning") {
       learning_persistence_spec(api, session, argv[2]);
+    } else if (argc > 3 && std::string(argv[3]) == "--check-options") {
+      options_persistence_spec(api, session, argv[2]);
     } else if (argc > 3) {
       auto candidates = query(api, session, argv[3]);
       std::printf("%s / %s\n", argv[2], argv[3]);
@@ -122,6 +126,8 @@ static int run(int argc, char** argv) {
         std::printf("%zu. %s [%s]\n", i + 1, candidates[i].first.c_str(), candidates[i].second.c_str());
     } else {
       vocabulary_spec(api, session, argv[1], argv[2]);
+      input_experience_spec(api, session, argv[1], argv[2]);
+      mixed_english_spec(api, session, argv[2]);
       const std::pair<const char*, const char*> cases[] = {
         {"github", "GitHub"}, {"gitlab", "GitLab"}, {"docker", "Docker"},
         {"chatgpt", "ChatGPT"}, {"javascript", "JavaScript"}, {"typescript", "TypeScript"},
@@ -186,6 +192,7 @@ static int run(int argc, char** argv) {
       auto chinese = query(api, session, "kaifa");
       require(!chinese.empty() && chinese[0].first == "开发", "中文首选变化");
       require(chinese[0].second.find("develop") != std::string::npos, "中文英文释义缺失");
+      technical_glossary_spec(api, session, argv[2]);
       api->set_option(session, "bilingual_gloss_disabled", True);
       chinese = query(api, session, "kaifa");
       require(chinese[0].second.find("develop") == std::string::npos, "释义开关失效");
@@ -213,6 +220,7 @@ static int run(int argc, char** argv) {
       api->set_option(session, "internet_english_disabled", False);
       std::printf("PASS %s：选择、数字键提交、中文释义、开关与旧入口\n", argv[2]);
       learning_spec(api, session, argv[2]);
+      options_spec(api, session, argv[2]);
     }
     api->destroy_session(session);
     api->finalize();
