@@ -67,6 +67,21 @@ class VocabularyGeneratorSpec(unittest.TestCase):
         self.assertIn("ok\tok\t日常英语", result)
         self.assertNotIn("\nbook\tMacBook\t", result)
 
+    def test_computer_dictionary_has_distinct_terms_and_compatible_codes(self):
+        # 检查公开词库实际接入生成链，避免新增文件存在却无法精确选词。
+        builder.RIME = ROOT / "rime"
+        body = (builder.RIME / "tech_english_computer.dict.yaml").read_text().split("\n...\n", 1)[1]
+        rows = [line.split("\t") for line in body.splitlines() if line and not line.startswith("#")]
+        self.assertEqual(len({row[0].casefold() for row in rows}), 300)
+        self.assertEqual(len({row[1] for row in rows}), 600)
+        result = builder.render()
+        for text, code, weight in rows:
+            self.assertIn("\n" + code + "\t" + text + "\t", result)
+        for code, text in (("hashmap", "HashMap"), ("linkedlist", "LinkedList"), ("book", "book")):
+            self.assertIn("\n" + code + "\t" + text + "\t", result)
+        aggregate = (builder.RIME / "bilingual_english.dict.yaml").read_text()
+        self.assertIn("  - tech_english_computer\n", aggregate)
+
     def test_private_path_import_is_rejected(self):
         self.dictionary("tech_english_table", "", ["../private"])
         with self.assertRaisesRegex(ValueError, "非法"):

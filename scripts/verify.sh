@@ -24,6 +24,7 @@ for path in \
   "$rime_dir/data/programming-english.tsv" \
   "$rime_dir/data/qingjian-glossary-en.tsv" \
   "$rime_dir/data/technical-glossary-en.tsv" \
+  "$rime_dir/tech_english_computer.dict.yaml" \
   "$rime_dir/langchain_agent.dict.yaml" \
   "$rime_dir/langchain_agent.schema.yaml" \
   "$model" \

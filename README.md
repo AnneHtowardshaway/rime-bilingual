@@ -10,7 +10,7 @@
 | `github` | 第二候选为 `GitHub` | 按数字 **2** |
 | `docker` | 出现规范英文候选 `Docker` | 选择该候选 |
 
-内置 **4240 个英文编码**：215 个互联网常用编码，以及 4025 个编程、AI、日常和设备编码（含别名）。覆盖 Go、Rust、JS、TS、Python、Java，以及 AI 工具、Agent 术语、日常交流和设备名称；英文候选和英文释义都可以单独关闭。
+内置 **4840 个英文编码**：215 个互联网常用编码，以及 4625 个计算机、编程、AI、日常和设备编码（含别名）。覆盖 Go、Rust、JS、TS、Python、Java，以及 AI 工具、Agent 术语、日常交流和设备名称；英文候选和英文释义都可以单独关闭。
 
 现已只保留万象作为日常方案。升级后，朙月不再出现在方案选单；已有朙月文件、私人词库和学习数据库不会被删除。
 
@@ -154,6 +154,26 @@ python3 scripts/build-programming-vocabulary.py
 生成器沿用编程码表权重选择同码候选，保留互联网与既有编程编码的规范拼写。新增主题词按日常、AI、Agent、设备的顺序补齐未占用编码，因此 `book` / `phone` 保留普通单词，设备名使用 `macbook` / `iphone`。普通中文入口只收录纯字母编码，单字母编码及含数字的编码不会自动加入。跨词表重复编码、生成结果不同步等问题会由自动检查拦截。安装者使用仓库内已生成的文件，无需额外安装 Python。
 
 </details>
+
+### 计算机专业英语：300 个术语
+
+新增 300 个独立术语、600 个英文全拼／中文拼音编码，覆盖算法、类型与面向对象、操作系统、网络安全、数据库与分布式、工程测试。别名不重复计为术语。
+
+| 输入编码（任选一种） | 英文候选 |
+| --- | --- |
+| `algorithm` / `suanfa` | algorithm |
+| `datastructure` / `shujujiegou` | data structure |
+| `binarysearch` / `erfenchazhao` | binary search |
+| `recursion` / `digui` | recursion |
+| `polymorphism` / `duotai` | polymorphism |
+| `concurrency` / `bingfa` | concurrency |
+| `authentication` / `shenfenrenzheng` | authentication |
+
+普通中文模式输入完整编码，英文通常位于第二项；仅有该英文候选时位于第一项。`;authenticat` 或 `vvauthenticat` 可以补全 authentication。输入 `woyongsuanfa`，先选「我用」，再按 2 可输出「我用algorithm」。
+
+已有 `hashmap` → `HashMap` 等语言 API 编码保留；通用 hash map 使用 `cshashmap` 或 `haxiyingshe`。完整词条与中文含义见 [计算机专业词库](rime/tech_english_computer.dict.yaml)，每条仍为词语、编码、权重三列。中文伴学专业释义增加 53 条，总计 102 条。
+
+术语名称参考 [NIST 算法与数据结构词典](https://xlinux.nist.gov/dads/terms.html)、[Oracle Java 术语表](https://www.oracle.com/java/technologies/glossary.html)、[PostgreSQL 术语表](https://www.postgresql.org/docs/current/glossary.html)和 [NIST 安全术语表](https://csrc.nist.gov/glossary)。这里只收录术语名称，中文说明为本项目整理，不复制定义正文。
 
 ## 中文学习与私人短语
 

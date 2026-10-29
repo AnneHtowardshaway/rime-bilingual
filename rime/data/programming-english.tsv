@@ -5,6 +5,9 @@ abort	abort	编程 · 技术英文
 abortcontroller	AbortController	编程 · 技术英文
 abortsignal	AbortSignal	编程 · 技术英文
 abstract	abstract	TS · 类型与工具
+abstractdatatype	abstract data type	计算机 · 专业英语
+abstraction	abstraction	计算机 · 专业英语
+abstractsyntaxtree	abstract syntax tree	计算机 · 专业英语
 accesstoken	access token	编程 · 技术英文
 account	account	日常英语
 acid	ACID	编程 · 技术英文
@@ -19,6 +22,9 @@ adapter	adapter	编程 · 技术英文
 addeventlistener	addEventListener	编程 · 技术英文
 addmessages	add_messages	Agent · 框架与术语
 address	address	日常英语
+addressresolution	address resolution	计算机 · 专业英语
+adjacencylist	adjacency list	计算机 · 专业英语
+adjacencymatrix	adjacency matrix	计算机 · 专业英语
 aesgcm	AES-GCM	Rust · 库与 API
 aftermodel	after model	Agent · 框架与术语
 afternoon	afternoon	日常英语
@@ -65,6 +71,8 @@ airtag	AirTag	设备 · 产品名称
 ajv	Ajv	JS · 库与 API
 aks	Azure Kubernetes Service	编程 · 技术英文
 alembic	Alembic	Python · 库与 API
+algebraicdatatype	algebraic data type	计算机 · 专业英语
+algorithm	algorithm	计算机 · 专业英语
 alibabadruid	Alibaba Druid	Java · 库与 API
 alienware	Alienware	设备 · 产品名称
 alipay	Alipay	日常英语
@@ -72,8 +80,10 @@ allinterfaces	0.0.0.0	编程 · 技术英文
 allowsyntheticdefaultimports	allowSyntheticDefaultImports	TS · 类型与工具
 alpinejs	Alpine.js	JS · 库与 API
 amdryzen	AMD Ryzen	设备 · 产品名称
+amortizedanalysis	amortized analysis	计算机 · 专业英语
 amqp	AMQP	编程 · 技术英文
 annotationqueue	annotation queue	Agent · 框架与术语
+anquanbianjie	security boundary	计算机 · 专业英语
 answer	answer	日常英语
 antbuild	Ant	Java · 库与 API
 antd	Ant Design	编程 · 技术英文
@@ -155,6 +165,7 @@ assertions	Assertions	Java · 库与 API
 assertionsassertequals	Assertions.assertEquals	Java · 库与 API
 assertj	AssertJ	Java · 库与 API
 asusrog	ASUS ROG	设备 · 产品名称
+asymmetricencryption	asymmetric encryption	计算机 · 专业英语
 async	async	Rust · 库与 API
 asyncfunction	async function	编程 · 技术英文
 asyncgraphql	async-graphql	Rust · 库与 API
@@ -176,16 +187,25 @@ asyncstreaming	asynchronous streaming	Agent · 框架与术语
 asyncsubject	AsyncSubject	JS · 库与 API
 asynq	Asynq	Go · 库与 API
 atlasgo	Atlas	Go · 库与 API
+atleastoncedelivery	at-least-once delivery	计算机 · 专业英语
+atmostoncedelivery	at-most-once delivery	计算机 · 专业英语
 atomic	atomic	Go · 库与 API
 atomicbool	AtomicBool	Rust · 库与 API
 atomicinteger	AtomicInteger	Java · 库与 API
+atomicity	atomicity	计算机 · 专业英语
 atomiclong	AtomicLong	Java · 库与 API
+atomicoperation	atomic operation	计算机 · 专业英语
 atomicreference	AtomicReference	Java · 库与 API
 atomics	Atomics	JS · 库与 API
 atomicusize	AtomicUsize	Rust · 库与 API
+attacksurface	attack surface	计算机 · 专业英语
+attributebasedaccesscontrol	attribute-based access control	计算机 · 专业英语
 attrs	attrs	Python · 库与 API
 atwoa	Agent2Agent Protocol	AI · 工具与术语
+authentication	authentication	计算机 · 专业英语
 authlib	Authlib	Python · 库与 API
+authoritativenameserver	authoritative name server	计算机 · 专业英语
+authorization	authorization	计算机 · 专业英语
 autoglm	AutoGLM	AI · 工具与术语
 autonomousagent	autonomous agent	Agent · 框架与术语
 autoprefixer	Autoprefixer	编程 · 技术英文
@@ -208,10 +228,15 @@ azureaifoundry	Azure AI Foundry	AI · 工具与术语
 azurefunctions	Azure Functions	编程 · 技术英文
 babel	Babel	编程 · 技术英文
 backoffgo	backoff	Go · 库与 API
+backpressure	backpressure	计算机 · 专业英语
+backtracking	backtracking	计算机 · 专业英语
 backup	backup	编程 · 技术英文
 badgerdb	BadgerDB	Go · 库与 API
 bag	bag	日常英语
+balancedtree	balanced tree	计算机 · 专业英语
 banana	banana	日常英语
+banguanbi	half-close	计算机 · 专业英语
+baocundian	savepoint	计算机 · 专业英语
 basecheckpointsaver	BaseCheckpointSaver	Agent · 框架与术语
 basemodel	BaseModel	Agent · 框架与术语
 basetool	BaseTool	Agent · 框架与术语
@@ -228,11 +253,14 @@ beego	Beego	Go · 库与 API
 beegoorm	Beego ORM	Go · 库与 API
 beforemodel	before model	Agent · 框架与术语
 behaviorsubject	BehaviorSubject	JS · 库与 API
+beiya	backpressure	计算机 · 专业英语
 bem	BEM	编程 · 技术英文
 benchmark	benchmark	AI · 工具与术语
 benchmarkdataset	benchmark dataset	Agent · 框架与术语
 benchstat	benchstat	Go · 库与 API
 bff	backend for frontend	编程 · 技术英文
+bianjiezhifenxi	boundary value analysis	计算机 · 专业英语
+bianyiceshi	mutation testing	计算机 · 专业英语
 biconsumer	BiConsumer	Java · 库与 API
 bifunction	BiFunction	Java · 库与 API
 big	big	日常英语
@@ -240,15 +268,23 @@ bigcache	BigCache	Go · 库与 API
 bigdecimal	BigDecimal	Java · 库与 API
 bigint	BigInt	JS · 库与 API
 biginteger	BigInteger	Java · 库与 API
+bijiaobingjiaohuan	compare-and-swap	计算机 · 专业英语
 bimap	BiMap	Java · 库与 API
 binaryheap	BinaryHeap	Rust · 库与 API
 binaryoperator	BinaryOperator	Java · 库与 API
+binarysearch	binary search	计算机 · 专业英语
+binarysearchtree	binary search tree	计算机 · 专业英语
+binarytree	binary tree	计算机 · 专业英语
 bincode	Bincode	Rust · 库与 API
+bingchaji	disjoint set	计算机 · 专业英语
+bingfa	concurrency	计算机 · 专业英语
+bingxing	parallelism	计算机 · 专业英语
 birthday	birthday	日常英语
 black	Black	Python · 库与 API
 blacksheep	BlackSheep	Python · 库与 API
 blob	Blob	JS · 库与 API
 blockstorage	block storage	编程 · 技术英文
+bloomfilter	Bloom filter	计算机 · 专业英语
 bluegreendeployment	blue-green deployment	编程 · 技术英文
 bluetooth	bluetooth	日常英语
 body	body	编程 · 技术英文
@@ -261,8 +297,12 @@ borrowmut	BorrowMut	Rust · 库与 API
 bottle	Bottle	Python · 库与 API
 bottleneck	Bottleneck	JS · 库与 API
 bouncycastle	Bouncy Castle	Java · 库与 API
+boundaryvalueanalysis	boundary value analysis	计算机 · 专业英语
 box	Box	Rust · 库与 API
+branchcoverage	branch coverage	计算机 · 专业英语
+branchprediction	branch prediction	计算机 · 专业英语
 bread	bread	日常英语
+breadthfirstsearch	breadth-first search	计算机 · 专业英语
 breakfast	breakfast	日常英语
 breakpoint	breakpoint	编程 · 技术英文
 browser	browser	编程 · 技术英文
@@ -271,28 +311,38 @@ btree	B-tree	编程 · 技术英文
 btreemap	BTreeMap	Rust · 库与 API
 btreeset	BTreeSet	Rust · 库与 API
 bubbletea	Bubble Tea	Go · 库与 API
+bucketsort	bucket sort	计算机 · 专业英语
+bufenyingyong	partial application	计算机 · 专业英语
 buffalo	Buffalo	Go · 库与 API
 buffer	Buffer	JS · 库与 API
+buffercache	buffer cache	计算机 · 专业英语
 bufferedreader	BufferedReader	Java · 库与 API
 bufferedwriter	BufferedWriter	Java · 库与 API
+bufferoverflow	buffer overflow	计算机 · 专业英语
 bufio	bufio	Go · 库与 API
 bufionewscanner	bufio.NewScanner	Go · 库与 API
 bufioscanner	bufio.Scanner	Go · 库与 API
 bufreader	BufReader	Rust · 库与 API
 bufwriter	BufWriter	Rust · 库与 API
 builder	builder	编程 · 技术英文
+bukebianxing	immutability	计算机 · 专业英语
+bukechongfudu	nonrepeatable read	计算机 · 专业英语
+bulongguolvqi	Bloom filter	计算机 · 专业英语
 bungo	Bun	Go · 库与 API
 bunrouter	BunRouter	Go · 库与 API
 bus	bus	日常英语
 busy	busy	日常英语
 buy	buy	日常英语
 bytebuffer	ByteBuffer	Java · 库与 API
+byteorder	byte order	计算机 · 专业英语
 bytes	bytes	Go · 库与 API
 bytesbuffer	bytes.Buffer	Go · 库与 API
 bytesnewbuffer	bytes.NewBuffer	Go · 库与 API
 cache	cache	编程 · 技术英文
 cacheapi	Cache API	编程 · 技术英文
 cachebuilder	CacheBuilder	Java · 库与 API
+cachecoherence	cache coherence	计算机 · 专业英语
+cachelocality	cache locality	计算机 · 专业英语
 cachetools	cachetools	Python · 库与 API
 caffeine	Caffeine	Java · 库与 API
 cairolang	Cairo	编程 · 技术英文
@@ -304,6 +354,7 @@ callbackhandler	callback handler	Agent · 框架与术语
 canarydeployment	canary deployment	编程 · 技术英文
 cancel	cancel	编程 · 技术英文
 cancelanimationframe	cancelAnimationFrame	编程 · 技术英文
+capabilitybasedsecurity	capability-based security	计算机 · 专业英语
 capabilitynegotiation	capability negotiation	Agent · 框架与术语
 capitalize	Capitalize	TS · 类型与工具
 capnp	Cap'n Proto	Rust · 库与 API
@@ -320,6 +371,7 @@ casbinpy	Casbin Python	Python · 库与 API
 cash	cash	日常英语
 catch	catch	JS · 库与 API
 cattrs	cattrs	Python · 库与 API
+causalconsistency	causal consistency	计算机 · 专业英语
 cbor	CBOR	Rust · 库与 API
 cdi	CDI	Java · 库与 API
 cdn	content delivery network	编程 · 技术英文
@@ -328,17 +380,22 @@ celerybeat	Celery Beat	Python · 库与 API
 cell	Cell	Rust · 库与 API
 center	center	日常英语
 cerberus	Cerberus	Python · 库与 API
+certificateauthority	certificate authority	计算机 · 专业英语
 cgi	Common Gateway Interface	编程 · 技术英文
 chakraui	Chakra UI	编程 · 技术英文
 change	change	日常英语
+changliangzhedie	constant folding	计算机 · 专业英语
+chaosengineering	chaos engineering	计算机 · 专业英语
 character	Character	Java · 库与 API
 charger	charger	日常英语
 charset	Charset	Java · 库与 API
 chartjs	Chart.js	JS · 库与 API
+charupaixu	insertion sort	计算机 · 专业英语
 chat	chat	日常英语
 chatgptcodex	ChatGPT Codex	AI · 工具与术语
 chatmodel	chat model	Agent · 框架与术语
 chatprompttemplate	ChatPromptTemplate	Agent · 框架与术语
+chaxunzhixing	query execution	计算机 · 专业英语
 check	check	日常英语
 checkpoint	checkpoint	Agent · 框架与术语
 checkpointer	checkpointer	Agent · 框架与术语
@@ -349,18 +406,28 @@ cheerio	Cheerio	JS · 库与 API
 cherrypick	cherry-pick	编程 · 技术英文
 cherrypy	CherryPy	Python · 库与 API
 chi	Chi	Go · 库与 API
+chijiuxing	durability	计算机 · 专业英语
 child	child	日常英语
 childprocessexec	child_process.exec	JS · 库与 API
 childprocessspawn	child_process.spawn	JS · 库与 API
 chmod	chmod	编程 · 技术英文
 choice	choice	日常英语
+chongchuan	retransmission	计算机 · 专业英语
+chongfanggongji	replay attack	计算机 · 专业英语
 choose	choose	日常英语
+chouxiang	abstraction	计算机 · 专业英语
+chouxiangshujuleixing	abstract data type	计算机 · 专业英语
+chouxiangyufashu	abstract syntax tree	计算机 · 专业英语
 chromecast	Chromecast	设备 · 产品名称
 chrono	chrono	Rust · 库与 API
+chunhanshu	pure function	计算机 · 专业英语
 chunking	chunking	Agent · 框架与术语
 chunkoverlap	chunk overlap	Agent · 框架与术语
 cicd	CI/CD pipeline	编程 · 技术英文
+cifafenxi	lexical analysis	计算机 · 专业英语
 circuitbreaker	circuit breaker	编程 · 技术英文
+circuitswitching	circuit switching	计算机 · 专业英语
+circularbuffer	circular buffer	计算机 · 专业英语
 clap	Clap	Rust · 库与 API
 clapparser	clap::Parser	Rust · 库与 API
 class	Class	Java · 库与 API
@@ -392,6 +459,7 @@ cmp	cmp	Go · 库与 API
 cmpcompare	cmp.Compare	Go · 库与 API
 cobol	COBOL	编程 · 技术英文
 cobra	Cobra	Go · 库与 API
+codecoverage	code coverage	计算机 · 专业英语
 coderwebsocket	Coder WebSocket	Go · 库与 API
 codesplitting	code splitting	编程 · 技术英文
 codexcli	Codex CLI	AI · 工具与术语
@@ -399,6 +467,7 @@ codexsdk	Codex SDK	AI · 工具与术语
 coffee	coffee	日常英语
 coffeescript	CoffeeScript	编程 · 技术英文
 cohere	Cohere	AI · 工具与术语
+cohesion	cohesion	计算机 · 专业英语
 cold	cold	日常英语
 colleague	colleague	日常英语
 collection	Collection	Java · 库与 API
@@ -420,6 +489,7 @@ comlink	Comlink	JS · 库与 API
 command	Command	Agent · 框架与术语
 commandr	Command R	AI · 工具与术语
 commitmessage	commit message	编程 · 技术英文
+commitprotocol	commit protocol	计算机 · 专业英语
 commonlisp	Common Lisp	编程 · 技术英文
 commonscodec	Apache Commons Codec	Java · 库与 API
 commonscollections	Apache Commons Collections	Java · 库与 API
@@ -427,9 +497,11 @@ commonsio	Apache Commons IO	Java · 库与 API
 commonslang	Apache Commons Lang	Java · 库与 API
 commonslogging	Apache Commons Logging	Java · 库与 API
 commonstext	Apache Commons Text	Java · 库与 API
+commonsubexpressionelimination	common subexpression elimination	计算机 · 专业英语
 company	company	日常英语
 comparable	Comparable	Java · 库与 API
 comparator	Comparator	Java · 库与 API
+compareandswap	compare-and-swap	计算机 · 专业英语
 compiledgraph	compiled graph	Agent · 框架与术语
 compiledstategraph	CompiledStateGraph	Agent · 框架与术语
 compileroptions	compilerOptions	TS · 类型与工具
@@ -440,10 +512,12 @@ complete	complete	日常英语
 completionstage	CompletionStage	Java · 库与 API
 composite	composite	TS · 类型与工具
 compositekey	composite key	编程 · 技术英文
+composition	composition	计算机 · 专业英语
 compositionapi	Composition API	编程 · 技术英文
 computed	computed	JS · 库与 API
 computer	computer	日常英语
 concatmap	concatMap	JS · 库与 API
+concurrency	concurrency	计算机 · 专业英语
 concurrentfutures	concurrent.futures	Python · 库与 API
 concurrentfuturesprocesspoolexecutor	concurrent.futures.ProcessPoolExecutor	Python · 库与 API
 concurrentfuturesthreadpoolexecutor	concurrent.futures.ThreadPoolExecutor	Python · 库与 API
@@ -452,19 +526,26 @@ conda	Conda	Python · 库与 API
 conditionaledge	conditional edge	Agent · 框架与术语
 conditionalrouting	conditional routing	Agent · 框架与术语
 conditionaltype	conditional type	TS · 类型与工具
+conditionvariable	condition variable	计算机 · 专业英语
 configmap	ConfigMap	编程 · 技术英文
 configrs	config-rs	Rust · 库与 API
 configurationmanagement	configuration management	编程 · 技术英文
 confirm	confirm	日常英语
 confluentkafka	confluent-kafka	Python · 库与 API
+congestioncontrol	congestion control	计算机 · 专业英语
 connectgo	Connect-Go	Go · 库与 API
 connection	Connection	Java · 库与 API
+connectionmultiplexing	connection multiplexing	计算机 · 专业英语
 connectionpool	connection pool	编程 · 技术英文
 connexion	Connexion	Python · 库与 API
+consensus	consensus	计算机 · 专业英语
+consistency	consistency	计算机 · 专业英语
+consistenthashing	consistent hashing	计算机 · 专业英语
 console	console	JS · 库与 API
 consoleerror	console.error	JS · 库与 API
 consolelog	console.log	JS · 库与 API
 const	const	JS · 库与 API
+constantfolding	constant folding	计算机 · 专业英语
 constructor	constructor	JS · 库与 API
 constructorparameters	ConstructorParameters	TS · 类型与工具
 consumer	Consumer	Java · 库与 API
@@ -479,18 +560,24 @@ contextbackground	context.Background	Go · 库与 API
 contextcaching	context caching	AI · 工具与术语
 contextcontext	context.Context	Go · 库与 API
 contextengineering	context engineering	Agent · 框架与术语
+contextfreegrammar	context-free grammar	计算机 · 专业英语
 contextlib	contextlib	Python · 库与 API
 contextlibcontextmanager	contextlib.contextmanager	Python · 库与 API
 contextmanagement	context management	Agent · 框架与术语
 contextretrieval	context retrieval	Agent · 框架与术语
 contextschema	context schema	Agent · 框架与术语
+contextswitch	context switch	计算机 · 专业英语
 contextvars	contextvars	Python · 库与 API
 contextwindow	context window	AI · 工具与术语
 contextwithcancel	context.WithCancel	Go · 库与 API
 contextwithtimeout	context.WithTimeout	Go · 库与 API
+continuation	continuation	计算机 · 专业英语
 continuousdeployment	continuous deployment	编程 · 技术英文
+contracttesting	contract testing	计算机 · 专业英语
+contravariance	contravariance	计算机 · 专业英语
 contribute	Contribute	Agent · 框架与术语
 controlflow	control flow	Agent · 框架与术语
+controlflowgraph	control flow graph	计算机 · 专业英语
 controller	controller	编程 · 技术英文
 conversationstate	conversation state	Agent · 框架与术语
 conversationsummary	conversation summary	Agent · 框架与术语
@@ -498,10 +585,14 @@ cookie	cookie	编程 · 技术英文
 cookieparser	cookie-parser	JS · 库与 API
 copy	Copy	Rust · 库与 API
 copyonwritearraylist	CopyOnWriteArrayList	Java · 库与 API
+coroutine	coroutine	计算机 · 专业英语
 correct	correct	日常英语
 cors	CORS	编程 · 技术英文
 cot	chain of thought	AI · 工具与术语
 countdownlatch	CountDownLatch	Java · 库与 API
+countingsort	counting sort	计算机 · 专业英语
+coupling	coupling	计算机 · 专业英语
+covariance	covariance	计算机 · 专业英语
 coveragepy	coverage.py	Python · 库与 API
 cow	Cow	Rust · 库与 API
 cplusplus	C++	编程 · 技术英文
@@ -514,16 +605,24 @@ createroot	createRoot	JS · 库与 API
 createvue	create-vue	编程 · 技术英文
 criterion	Criterion	Rust · 库与 API
 criticagent	critic agent	Agent · 框架与术语
+criticalsection	critical section	计算机 · 专业英语
 crossbeam	crossbeam	Rust · 库与 API
 crossjoin	CROSS JOIN	编程 · 技术英文
 crud	CRUD	编程 · 技术英文
+cryptographichash	cryptographic hash	计算机 · 专业英语
 cryptographypy	cryptography	Python · 库与 API
 cryptorand	crypto/rand	Go · 库与 API
 cryptorandomuuid	crypto.randomUUID	JS · 库与 API
 cryptosha	crypto/sha256	Go · 库与 API
 crystal	Crystal	编程 · 技术英文
 csharp	C#	编程 · 技术英文
+cshashmap	hash map	计算机 · 专业英语
+cshashtable	hash table	计算机 · 专业英语
+cslinkedlist	linked list	计算机 · 专业英语
+cspriorityqueue	priority queue	计算机 · 专业英语
 csr	client-side rendering	编程 · 技术英文
+csreadwritelock	read-write lock	计算机 · 专业英语
+csreentrantlock	reentrant lock	计算机 · 专业英语
 csrf	CSRF	编程 · 技术英文
 cssgrid	CSS Grid	编程 · 技术英文
 cssinjs	CSS-in-JS	编程 · 技术英文
@@ -532,6 +631,7 @@ csv	csv	Python · 库与 API
 cte	common table expression	编程 · 技术英文
 curl	curl	编程 · 技术英文
 curlcommand	curl	编程 · 技术英文
+currying	currying	计算机 · 专业英语
 cursorpagination	cursor-based pagination	编程 · 技术英文
 customelement	custom element	编程 · 技术英文
 customer	customer	日常英语
@@ -539,8 +639,12 @@ customevent	CustomEvent	JS · 库与 API
 customref	customRef	JS · 库与 API
 customworkflow	custom workflow	Agent · 框架与术语
 cyclicbarrier	CyclicBarrier	Java · 库与 API
+cyclomaticcomplexity	cyclomatic complexity	计算机 · 专业英语
 daemonset	DaemonSet	编程 · 技术英文
+daimafugailv	code coverage	计算机 · 专业英语
+daishushujuleixing	algebraic data type	计算机 · 专业英语
 dalle	DALL·E	AI · 工具与术语
+danglingpointer	dangling pointer	计算机 · 专业英语
 daphne	Daphne	Python · 库与 API
 daprgo	Dapr Go SDK	Go · 库与 API
 dart	Dart	编程 · 技术英文
@@ -555,6 +659,7 @@ dataclassesfield	dataclasses.field	Python · 库与 API
 dataset	dataset	Agent · 框架与术语
 datasetexample	dataset example	Agent · 框架与术语
 datasource	DataSource	Java · 库与 API
+datastructure	data structure	计算机 · 专业英语
 dataview	DataView	JS · 库与 API
 date	Date	JS · 库与 API
 datefns	date-fns	JS · 库与 API
@@ -570,6 +675,7 @@ dborm	ORM	编程 · 技术英文
 dbtable	database table	编程 · 技术英文
 dbtrigger	database trigger	编程 · 技术英文
 dbview	database view	编程 · 技术英文
+deadcodeelimination	dead code elimination	计算机 · 专业英语
 deadline	deadline	日常英语
 deadlock	deadlock	编程 · 技术英文
 deadpool	deadpool	Rust · 库与 API
@@ -584,12 +690,15 @@ declare	declare	TS · 类型与工具
 decode	decode	编程 · 技术英文
 decodeuricomponent	decodeURIComponent	JS · 库与 API
 decorator	decorator	编程 · 技术英文
+deduplication	deduplication	计算机 · 专业英语
 deepagents	Deep Agents	Agent · 框架与术语
 deepseekrone	DeepSeek-R1	AI · 工具与术语
 deepseekvthree	DeepSeek-V3	AI · 工具与术语
 def	def	Python · 库与 API
 default	Default	Rust · 库与 API
+defaultgateway	default gateway	计算机 · 专业英语
 defaultvalue	default value	编程 · 技术英文
+defenseindepth	defense in depth	计算机 · 专业英语
 defer	defer	Go · 库与 API
 definecomponent	defineComponent	JS · 库与 API
 defineemits	defineEmits	编程 · 技术英文
@@ -602,9 +711,12 @@ delete	DELETE	编程 · 技术英文
 delivery	delivery	日常英语
 dellxps	Dell XPS	设备 · 产品名称
 delphi	Delphi	编程 · 技术英文
+dengjialeihuafen	equivalence partitioning	计算机 · 专业英语
 denormalization	denormalization	编程 · 技术英文
 dependency	dependency	编程 · 技术英文
+dependencyinjection	dependency injection	计算机 · 专业英语
 dependencyinjector	dependency-injector	Python · 库与 API
+depthfirstsearch	depth-first search	计算机 · 专业英语
 deque	Deque	Java · 库与 API
 deref	Deref	Rust · 库与 API
 derefmut	DerefMut	Rust · 库与 API
@@ -614,9 +726,11 @@ deserializer	deserializer	JS · 库与 API
 desk	desk	日常英语
 destructuring	destructuring	JS · 库与 API
 detail	detail	日常英语
+deterministicbuild	deterministic build	计算机 · 专业英语
 deterministicpolicy	deterministic policy	Agent · 框架与术语
 deterministicstep	deterministic step	Agent · 框架与术语
 dexie	Dexie	JS · 库与 API
+dianlujiaohuan	circuit switching	计算机 · 专业英语
 dictionary	dictionary	日常英语
 diesel	Diesel	Rust · 库与 API
 different	different	日常英语
@@ -624,15 +738,27 @@ difficult	difficult	日常英语
 diffusers	Diffusers	AI · 工具与术语
 digestutils	DigestUtils	Java · 库与 API
 diggo	Dig	Go · 库与 API
+digitalsignature	digital signature	计算机 · 专业英语
+digui	recursion	计算机 · 专业英语
+diguijiexiqi	recursive resolver	计算机 · 专业英语
 dinner	dinner	日常英语
+directedgraph	directed graph	计算机 · 专业英语
+directmemoryaccess	direct memory access	计算机 · 专业英语
+dirtyread	dirty read	计算机 · 专业英语
 discount	discount	日常英语
+discretionaryaccesscontrol	discretionary access control	计算机 · 专业英语
 discriminatedunion	discriminated union	TS · 类型与工具
+disjointset	disjoint set	计算机 · 专业英语
 dislike	dislike	日常英语
 dispatcher	dispatcher	编程 · 技术英文
 display	Display	Rust · 库与 API
 distinctuntilchanged	distinctUntilChanged	JS · 库与 API
 distributedtracing	distributed tracing	编程 · 技术英文
+diubao	packet loss	计算机 · 专业英语
+diushigengxin	lost update	计算机 · 专业英语
 divan	Divan	Rust · 库与 API
+divideandconquer	divide and conquer	计算机 · 专业英语
+dizhijiexi	address resolution	计算机 · 专业英语
 djangoallauth	Django Allauth	Python · 库与 API
 djangoguardian	Django Guardian	Python · 库与 API
 djangomigrations	Django Migrations	Python · 库与 API
@@ -655,10 +781,14 @@ docusaurus	Docusaurus	编程 · 技术英文
 dogpilecache	dogpile.cache	Python · 库与 API
 dom	DOM	编程 · 技术英文
 dompurify	DOMPurify	JS · 库与 API
+dongtaifenxi	dynamic analysis	计算机 · 专业英语
+dongtaiguihua	dynamic programming	计算机 · 专业英语
+dongtaileixing	dynamic typing	计算机 · 专业英语
 door	door	日常英语
 dotenvy	Dotenvy	Rust · 库与 API
 double	Double	Java · 库与 API
 doubleendediterator	DoubleEndedIterator	Rust · 库与 API
+doudongyanchi	jitter	计算机 · 专业英语
 douyin	Douyin	日常英语
 download	download	日常英语
 dpo	direct preference optimization	AI · 工具与术语
@@ -670,13 +800,28 @@ drive	drive	日常英语
 drivermanager	DriverManager	Java · 库与 API
 drop	Drop	Rust · 库与 API
 dropwizard	Dropwizard	Java · 库与 API
+duanxu	endianness	计算机 · 专业英语
 dubbo	Apache Dubbo	Java · 库与 API
+duichenjiami	symmetric encryption	计算机 · 专业英语
+duipaixu	heap sort	计算机 · 专业英语
+duitouzuse	head-of-line blocking	计算机 · 专业英语
+duixiangzuhe	composition	计算机 · 专业英语
+duobanbenbingfakongzhi	multiversion concurrency control	计算机 · 专业英语
+duochongjicheng	multiple inheritance	计算机 · 专业英语
+duotai	polymorphism	计算机 · 专业英语
+duoxingqiuzhi	lazy evaluation	计算机 · 专业英语
+durability	durability	计算机 · 专业英语
 durableexecution	durable execution	Agent · 框架与术语
 duration	Duration	Rust · 库与 API
+duxiesuo	read-write lock	计算机 · 专业英语
 dynaconf	Dynaconf	Python · 库与 API
+dynamicanalysis	dynamic analysis	计算机 · 专业英语
 dynamicmodel	dynamic model	Agent · 框架与术语
+dynamicprogramming	dynamic programming	计算机 · 专业英语
 dynamicprompt	dynamic prompt	Agent · 框架与术语
 dynamictools	dynamic tools	Agent · 框架与术语
+dynamictyping	dynamic typing	计算机 · 专业英语
+eagerevaluation	eager evaluation	计算机 · 专业英语
 easy	easy	日常英语
 easyjson	easyjson	Go · 库与 API
 easymock	EasyMock	Java · 库与 API
@@ -706,12 +851,14 @@ embedding	embedding	编程 · 技术英文
 embeddingmodel	embedding model	Agent · 框架与术语
 embedfs	embed.FS	Go · 库与 API
 emotioncss	Emotion	编程 · 技术英文
+encapsulation	encapsulation	计算机 · 专业英语
 encode	encode	编程 · 技术英文
 encodeuricomponent	encodeURIComponent	JS · 库与 API
 encodingcsv	encoding/csv	Go · 库与 API
 encodingjson	encoding/json	Go · 库与 API
 encodingxml	encoding/xml	Go · 库与 API
 end	END	Agent · 框架与术语
+endianness	endianness	计算机 · 专业英语
 endpoint	endpoint	编程 · 技术英文
 entgo	Ent	Go · 库与 API
 entrypoint	entry point	Agent · 框架与术语
@@ -725,8 +872,12 @@ envlocal	.env.local	编程 · 技术英文
 envlogger	env_logger	Rust · 库与 API
 envy	Envy	Rust · 库与 API
 episodicmemory	episodic memory	Agent · 框架与术语
+equivalencepartitioning	equivalence partitioning	计算机 · 专业英语
 eraser	eraser	日常英语
+erchashu	binary tree	计算机 · 专业英语
+erchasousuoshu	binary search tree	计算机 · 专业英语
 erd	entity-relationship diagram	编程 · 技术英文
+erfenchazhao	binary search	计算机 · 专业英语
 erlang	Erlang	编程 · 技术英文
 err	Err	Rust · 库与 API
 errgroup	errgroup	Go · 库与 API
@@ -735,6 +886,7 @@ errors	errors	Go · 库与 API
 errorsas	errors.As	Go · 库与 API
 errorsis	errors.Is	Go · 库与 API
 errorsnew	errors.New	Go · 库与 API
+escapeanalysis	escape analysis	计算机 · 专业英语
 eslintconfig	eslint.config.js	编程 · 技术英文
 eslintpluginvue	eslint-plugin-vue	编程 · 技术英文
 esmoduleinterop	esModuleInterop	TS · 类型与工具
@@ -748,6 +900,8 @@ eventemitter	EventEmitter	JS · 库与 API
 eventsource	EventSource	JS · 库与 API
 eventstreaming	event streaming	Agent · 框架与术语
 eventtarget	EventTarget	JS · 库与 API
+eventualconsistency	eventual consistency	计算机 · 专业英语
+exactlyonceprocessing	exactly-once processing	计算机 · 专业英语
 exactoptionalpropertytypes	exactOptionalPropertyTypes	TS · 类型与工具
 exactsizeiterator	ExactSizeIterator	Rust · 库与 API
 example	example	日常英语
@@ -777,22 +931,35 @@ facade	facade	编程 · 技术英文
 faceid	Face ID	设备 · 产品名称
 factory	factory	编程 · 技术英文
 factoryboy	factory_boy	Python · 库与 API
+fadingrenshu	quorum	计算机 · 专业英语
 faker	Faker	Python · 库与 API
 falcon	Falcon	Python · 库与 API
 fallbackmodel	fallback model	Agent · 框架与术语
+falsesharing	false sharing	计算机 · 专业英语
 family	family	日常英语
+fangfafenpai	method dispatch	计算机 · 专业英语
 far	far	日常英语
 fast	fast	日常英语
 fasthttp	fasthttp	Go · 库与 API
 fastify	Fastify	JS · 库与 API
+faultinjection	fault injection	计算机 · 专业英语
 favorite	favorite	日常英语
 feedback	feedback	日常英语
 feedbackscore	feedback score	Agent · 框架与术语
+feiduichenjiami	asymmetric encryption	计算机 · 专业英语
+fencingtoken	fencing token	计算机 · 专业英语
+fengzhuang	encapsulation	计算机 · 专业英语
+fenwicktree	Fenwick tree	计算机 · 专业英语
+fenzhi	divide and conquer	计算机 · 专业英语
+fenzhifugailv	branch coverage	计算机 · 专业英语
+fenzhiyuce	branch prediction	计算机 · 专业英语
+fenzujiaohuan	packet switching	计算机 · 专业英语
 fetch	fetch	编程 · 技术英文
 fiber	Fiber	Go · 库与 API
 fieldvalidation	field validation	Agent · 框架与术语
 figment	Figment	Rust · 库与 API
 file	File	Rust · 库与 API
+filedescriptor	file descriptor	计算机 · 专业英语
 filepath	filepath	Go · 库与 API
 filepathjoin	filepath.Join	Go · 库与 API
 filepathwalkdir	filepath.WalkDir	Go · 库与 API
@@ -801,6 +968,7 @@ files	Files	Java · 库与 API
 filesreadstring	Files.readString	Java · 库与 API
 filestorage	file storage	编程 · 技术英文
 fileswritestring	Files.writeString	Java · 库与 API
+filesystem	file system	计算机 · 专业英语
 fileutils	FileUtils	Java · 库与 API
 filter	filter	Python · 库与 API
 finalizationregistry	FinalizationRegistry	JS · 库与 API
@@ -810,6 +978,7 @@ fine	fine	日常英语
 finetuning	fine-tuning	编程 · 技术英文
 finish	finish	日常英语
 finishpoint	finish point	Agent · 框架与术语
+finitestatemachine	finite state machine	计算机 · 专业英语
 firetv	Fire TV	设备 · 产品名称
 fishshell	Fish	编程 · 技术英文
 flaskcaching	Flask-Caching	Python · 库与 API
@@ -822,6 +991,7 @@ flexbox	Flexbox	编程 · 技术英文
 flight	flight	日常英语
 floatingui	Floating UI	JS · 库与 API
 floatingvue	Floating Vue	编程 · 技术英文
+flowcontrol	flow control	计算机 · 专业英语
 flux	Flux	Java · 库与 API
 fluxcd	Flux CD	编程 · 技术英文
 flyway	Flyway	Java · 库与 API
@@ -838,12 +1008,14 @@ foreignkey	foreign key	编程 · 技术英文
 forkjoin	forkJoin	JS · 库与 API
 forkjoinpool	ForkJoinPool	Java · 库与 API
 forkjointask	ForkJoinTask	Java · 库与 API
+formalverification	formal verification	计算机 · 专业英语
 formatter	Formatter	Java · 库与 API
 formdata	FormData	编程 · 技术英文
 formkit	FormKit	编程 · 技术英文
 forth	Forth	编程 · 技术英文
 fortran	Fortran	编程 · 技术英文
 forwardref	forwardRef	JS · 库与 API
+forwardsecrecy	forward secrecy	计算机 · 专业英语
 fpts	fp-ts	TS · 类型与工具
 fractions	fractions	Python · 库与 API
 fredredis	fred	Rust · 库与 API
@@ -862,6 +1034,9 @@ fsreadtostring	fs::read_to_string	Rust · 库与 API
 fswrite	fs::write	Rust · 库与 API
 fswritefile	fs.writeFile	JS · 库与 API
 fswritefilesync	fs.writeFileSync	JS · 库与 API
+fuhaobiao	symbol table	计算机 · 专业英语
+fuhaolianjie	symbolic link	计算机 · 专业英语
+fuhaozhixing	symbolic execution	计算机 · 专业英语
 fulfilled	fulfilled	JS · 库与 API
 fullouterjoin	FULL OUTER JOIN	编程 · 技术英文
 func	func	Go · 库与 API
@@ -877,6 +1052,7 @@ future	Future	Rust · 库与 API
 futures	Futures	Rust · 库与 API
 futuresfutureext	futures::FutureExt	Rust · 库与 API
 futuresstreamext	futures::StreamExt	Rust · 库与 API
+fuzztesting	fuzz testing	计算机 · 专业英语
 fxgo	Fx	Go · 库与 API
 galaxy	Galaxy	设备 · 产品名称
 galaxybuds	Galaxy Buds	设备 · 产品名称
@@ -885,11 +1061,15 @@ galaxytab	Galaxy Tab	设备 · 产品名称
 galaxywatch	Galaxy Watch	设备 · 产品名称
 galaxyz	Galaxy Z	设备 · 产品名称
 game	game	日常英语
+gaojiehanshu	higher-order function	计算机 · 专业英语
+garbagecollection	garbage collection	计算机 · 专业英语
 garde	Garde	Rust · 库与 API
 gce	Google Compute Engine	编程 · 技术英文
 gcp	Google Cloud	编程 · 技术英文
 gdscript	GDScript	编程 · 技术英文
 geforce	NVIDIA GeForce	设备 · 产品名称
+gelilingpai	fencing token	计算机 · 专业英语
+gelixing	isolation	计算机 · 专业英语
 gemma	Gemma	AI · 工具与术语
 genai	generative AI	编程 · 技术英文
 generator	generator	JS · 库与 API
@@ -1009,6 +1189,12 @@ gomutex	Mutex	Go · 库与 API
 gonet	net	Go · 库与 API
 gonetdial	net.Dial	Go · 库与 API
 goneturl	net/url	Go · 库与 API
+gonggongzibiaodashixiaochu	common subexpression elimination	计算机 · 专业英语
+gongjimian	attack surface	计算机 · 专业英语
+gongshi	consensus	计算机 · 专业英语
+gongxiangneicun	shared memory	计算机 · 专业英语
+gongyaojichusheshi	public key infrastructure	计算机 · 专业英语
+gongzuoji	working set	计算机 · 专业英语
 good	good	日常英语
 goodmorning	Good morning	日常英语
 goodnight	Good night	日常英语
@@ -1106,6 +1292,7 @@ gptfivecodex	GPT-5-Codex	AI · 工具与术语
 gptfouro	GPT-4o	AI · 工具与术语
 gqlgen	gqlgen	Go · 库与 API
 gqlparser	gqlparser	Go · 库与 API
+gracefulshutdown	graceful shutdown	计算机 · 专业英语
 gradle	Gradle	Java · 库与 API
 granian	Granian	Python · 库与 API
 graphapi	Graph API	Agent · 框架与术语
@@ -1123,6 +1310,7 @@ graphqlschema	GraphQL schema	编程 · 技术英文
 graphqlsubscription	GraphQL subscription	编程 · 技术英文
 graphstate	graph state	Agent · 框架与术语
 great	great	日常英语
+greedyalgorithm	greedy algorithm	计算机 · 专业英语
 grep	grep	编程 · 技术英文
 grizzly	Grizzly	Java · 库与 API
 groovy	Groovy	编程 · 技术英文
@@ -1137,20 +1325,26 @@ grpcpython	gRPC Python	Python · 库与 API
 gsap	GSAP	JS · 库与 API
 gson	Gson	Java · 库与 API
 gsonbuilder	GsonBuilder	Java · 库与 API
+guangduyouxiansousuo	breadth-first search	计算机 · 专业英语
+guanzhudianfenli	separation of concerns	计算机 · 专业英语
 guardrail	guardrail	Agent · 框架与术语
 guardrails	guardrails	AI · 工具与术语
 guava	Google Guava	Java · 库与 API
 guavacache	Guava Cache	Java · 库与 API
 guavalib	Guava	Java · 库与 API
+guibingpaixu	merge sort	计算机 · 专业英语
 gunicorn	Gunicorn	Python · 库与 API
+guzhangzhuru	fault injection	计算机 · 专业英语
 gzip	gzip	Python · 库与 API
 hacklang	Hack	编程 · 技术英文
+halfclose	half-close	计算机 · 专业英语
 hallucination	hallucination	AI · 工具与术语
 hamcrest	Hamcrest	Java · 库与 API
 handlebarsrust	Handlebars	Rust · 库与 API
 handler	handler	编程 · 技术英文
 handoff	handoff	Agent · 框架与术语
 happy	happy	日常英语
+hardlink	hard link	计算机 · 专业英语
 hasattr	hasattr	Python · 库与 API
 hashindex	hash index	编程 · 技术英文
 hashlib	hashlib	Python · 库与 API
@@ -1160,12 +1354,18 @@ hashset	HashSet	Rust · 库与 API
 hashtable	Hashtable	Java · 库与 API
 haskell	Haskell	编程 · 技术英文
 having	HAVING	编程 · 技术英文
+haxibiao	hash table	计算机 · 专业英语
+haxiyingshe	hash map	计算机 · 专业英语
 haystack	Haystack	AI · 工具与术语
 headers	Headers	JS · 库与 API
 headlessui	Headless UI	编程 · 技术英文
 headlessuivue	@headlessui/vue	编程 · 技术英文
+headoflineblocking	head-of-line blocking	计算机 · 专业英语
 health	health	日常英语
 healthcheck	health check	编程 · 技术英文
+heap	heap	计算机 · 专业英语
+heapsort	heap sort	计算机 · 专业英语
+heleixing	sum type	计算机 · 专业英语
 helidon	Helidon	Java · 库与 API
 hello	hello	日常英语
 helm	Helm	编程 · 技术英文
@@ -1178,6 +1378,7 @@ hibernate	Hibernate ORM	Java · 库与 API
 hibernatereactive	Hibernate Reactive	Java · 库与 API
 hibernatevalidator	Hibernate Validator	Java · 库与 API
 hierarchicalagent	hierarchical agent	Agent · 框架与术语
+higherorderfunction	higher-order function	计算机 · 专业英语
 highlightjs	Highlight.js	JS · 库与 API
 hikaricp	HikariCP	Java · 库与 API
 hiredis	hiredis	Python · 库与 API
@@ -1185,10 +1386,12 @@ hitl	human-in-the-loop	Agent · 框架与术语
 hmr	hot module replacement	编程 · 技术英文
 home	home	日常英语
 homepod	HomePod	设备 · 产品名称
+hongheishu	red-black tree	计算机 · 专业英语
 hono	Hono	JS · 库与 API
 hospital	hospital	日常英语
 hot	hot	日常英语
 hotel	hotel	日常英语
+houzhuishuzu	suffix array	计算机 · 专业英语
 hoverflyjava	Hoverfly Java	Java · 库与 API
 hpa	horizontal pod autoscaler	编程 · 技术英文
 htmx	htmx	JS · 库与 API
@@ -1209,12 +1412,25 @@ httptest	httptest	Go · 库与 API
 httpx	HTTPX	Python · 库与 API
 httpxasyncclient	httpx.AsyncClient	Python · 库与 API
 httpxclient	httpx.Client	Python · 库与 API
+huadongchuangkou	sliding window	计算机 · 专业英语
+huanchongquhuancun	buffer cache	计算机 · 专业英语
+huanchongquyichu	buffer overflow	计算机 · 专业英语
+huancunjubuxing	cache locality	计算机 · 专业英语
+huancunyizhixing	cache coherence	计算机 · 专业英语
+huandu	phantom read	计算机 · 专业英语
+huanxinghuanchongqu	circular buffer	计算机 · 专业英语
+huchi	mutual exclusion	计算机 · 专业英语
 huey	Huey	Python · 库与 API
 hug	Hug	Python · 库与 API
+huiguiceshi	regression testing	计算机 · 专业英语
+huigun	rollback	计算机 · 专业英语
+huisu	backtracking	计算机 · 专业英语
 humanapproval	human approval	Agent · 框架与术语
 humanevaluation	human evaluation	Agent · 框架与术语
 humanintheloop	human-in-the-loop	Agent · 框架与术语
 humanmessage	HumanMessage	Agent · 框架与术语
+hundungongcheng	chaos engineering	计算机 · 专业英语
+huosuo	livelock	计算机 · 专业英语
 hutool	Hutool	Java · 库与 API
 hybridsearch	hybrid search	Agent · 框架与术语
 hydra	Hydra	Python · 库与 API
@@ -1230,11 +1446,13 @@ iam	AWS IAM	编程 · 技术英文
 idb	idb	JS · 库与 API
 idea	idea	日常英语
 idempotency	idempotency	编程 · 技术英文
+idempotentoperation	idempotent operation	计算机 · 专业英语
 iframe	iframe	编程 · 技术英文
 illegalargumentexception	IllegalArgumentException	Java · 库与 API
 illegalstateexception	IllegalStateException	Java · 库与 API
 imac	iMac	设备 · 产品名称
 immer	Immer	JS · 库与 API
+immutability	immutability	计算机 · 专业英语
 immutablelist	ImmutableList	Java · 库与 API
 immutablemap	ImmutableMap	Java · 库与 API
 immutables	Immutables	Java · 库与 API
@@ -1247,6 +1465,7 @@ importlib	importlib	Python · 库与 API
 importlibresources	importlib.resources	Python · 库与 API
 includes	includes	JS · 库与 API
 incremental	incremental	TS · 类型与工具
+incrementalcompilation	incremental compilation	计算机 · 专业英语
 index	database index	编程 · 技术英文
 indexedaccesstype	indexed access type	TS · 类型与工具
 indexeddb	IndexedDB	编程 · 技术英文
@@ -1254,29 +1473,41 @@ indexing	indexing	Agent · 框架与术语
 infer	infer	TS · 类型与工具
 inference	inference	编程 · 技术英文
 infinity	Infinity	JS · 库与 API
+informationhiding	information hiding	计算机 · 专业英语
 ingress	Ingress	编程 · 技术英文
+inheritance	inheritance	计算机 · 专业英语
 initchatmodel	init_chat_model	Agent · 框架与术语
 inject	inject	JS · 库与 API
 injectedstate	InjectedState	Agent · 框架与术语
 injectedstore	InjectedStore	Agent · 框架与术语
 injection	injection	编程 · 技术英文
+inlining	inlining	计算机 · 专业英语
 inmemorysaver	InMemorySaver	Agent · 框架与术语
 inmemorystore	in-memory store	Agent · 框架与术语
 innerjoin	INNER JOIN	编程 · 技术英文
+inode	inode	计算机 · 专业英语
 inputstream	InputStream	Java · 库与 API
+inputvalidation	input validation	计算机 · 专业英语
 insert	INSERT	编程 · 技术英文
+insertionsort	insertion sort	计算机 · 专业英语
 inspect	inspect	Python · 库与 API
 install	install	日常英语
 instancetype	InstanceType	TS · 类型与工具
 instant	Instant	Rust · 库与 API
+instructionpipeline	instruction pipeline	计算机 · 专业英语
+instructionset	instruction set	计算机 · 专业英语
 integer	Integer	Java · 库与 API
+integeroverflow	integer overflow	计算机 · 专业英语
 integrations	Integrations	Agent · 框架与术语
 intel	Intel	设备 · 产品名称
 intelcore	Intel Core	设备 · 产品名称
 interceptor	interceptor	JS · 库与 API
 interface	interface	Go · 库与 API
+intermediaterepresentation	intermediate representation	计算机 · 专业英语
 internet	internet	日常英语
+interprocesscommunication	interprocess communication	计算机 · 专业英语
 interrupt	interrupt	Agent · 框架与术语
+interrupthandler	interrupt handler	计算机 · 专业英语
 interruptid	interrupt ID	Agent · 框架与术语
 interruptpayload	interrupt payload	Agent · 框架与术语
 intersectiontype	intersection type	TS · 类型与工具
@@ -1306,6 +1537,7 @@ isinstance	isinstance	Python · 库与 API
 isize	isize	Rust · 库与 API
 isnan	isNaN	JS · 库与 API
 isolatedmodules	isolatedModules	TS · 类型与工具
+isolation	isolation	计算机 · 专业英语
 isolationlevel	isolation level	编程 · 技术英文
 isort	isort	Python · 库与 API
 isr	incremental static regeneration	编程 · 技术英文
@@ -1542,12 +1774,29 @@ jdbi	Jdbi	Java · 库与 API
 jedis	Jedis	Java · 库与 API
 jetgo	Jet	Go · 库与 API
 jetty	Eclipse Jetty	Java · 库与 API
+jianchayushiyongshicha	time-of-check to time-of-use	计算机 · 专业英语
+jiaquantu	weighted graph	计算机 · 专业英语
+jie	starvation	计算机 · 专业英语
+jiegouleixing	structural typing	计算机 · 专业英语
+jileixing	product type	计算机 · 专业英语
+jinchengdiaodu	process scheduling	计算机 · 专业英语
+jinchengjiantongxin	interprocess communication	计算机 · 专业英语
+jingtaifenxi	static analysis	计算机 · 专业英语
+jingtaileixing	static typing	计算机 · 专业英语
+jingtatiaojian	race condition	计算机 · 专业英语
+jiqieqiuzhi	eager evaluation	计算机 · 专业英语
+jishupaixu	counting sort	计算机 · 专业英语
+jishupaixufa	radix sort	计算机 · 专业英语
+jishuzhaiwu	technical debt	计算机 · 专业英语
+jitter	jitter	计算机 · 专业英语
+jiyihua	memoization	计算机 · 专业英语
 jjwt	JJWT	Java · 库与 API
 jmockit	JMockit	Java · 库与 API
 joblib	Joblib	Python · 库与 API
 joi	Joi	JS · 库与 API
 join	JOIN	编程 · 技术英文
 jooq	jOOQ	Java · 库与 API
+journaling	journaling	计算机 · 专业英语
 jpa	JPA	Java · 库与 API
 js	JavaScript	编程 · 技术英文
 jsabortcontroller	AbortController	JS · 库与 API
@@ -1937,6 +2186,7 @@ jszobject	z.object	JS · 库与 API
 jszod	Zod	JS · 库与 API
 jszsafeparse	z.safeParse	JS · 库与 API
 jszstring	z.string	JS · 库与 API
+juesefangwenkongzhi	role-based access control	计算机 · 专业英语
 julia	Julia	编程 · 技术英文
 juniper	Juniper	Rust · 库与 API
 junitjupiter	JUnit Jupiter	Java · 库与 API
@@ -1944,10 +2194,16 @@ kafka	Apache Kafka	编程 · 技术英文
 kafkaclients	Apache Kafka Clients	Java · 库与 API
 kafkago	kafka-go	Go · 库与 API
 kafkapython	kafka-python	Python · 库与 API
+kebianxing	mutability	计算机 · 专业英语
+kechongrusuo	reentrant lock	计算机 · 专业英语
 keepalive	KeepAlive	编程 · 技术英文
+kefuxiangoujian	reproducible build	计算机 · 专业英语
+kelihua	currying	计算机 · 专业英语
+kernelmode	kernel mode	计算机 · 专业英语
 key	key	日常英语
 keyboard	keyboard	日常英语
 keycloak	Keycloak	Java · 库与 API
+keyexchange	key exchange	计算机 · 专业英语
 keyof	keyof	TS · 类型与工具
 keywordsearch	keyword search	Agent · 框架与术语
 kibana	Kibana	编程 · 技术英文
@@ -1964,11 +2220,20 @@ knowledgebase	knowledge base	Agent · 框架与术语
 koa	Koa	JS · 库与 API
 koanf	Koanf	Go · 库与 API
 kombu	Kombu	Python · 库与 API
+kongjianfuzadu	space complexity	计算机 · 专业英语
+kongjianjubuxing	spatial locality	计算机 · 专业英语
+kongzhiliutu	control flow graph	计算机 · 专业英语
+kongzhizhen	null pointer	计算机 · 专业英语
 kratos	Kratos	Go · 库与 API
 kryo	Kryo	Java · 库与 API
+kuaisupaixu	quick sort	计算机 · 专业英语
+kuaizhaogeli	snapshot isolation	计算机 · 专业英语
 kubebuilder	Kubebuilder	Go · 库与 API
 kustomize	Kustomize	编程 · 技术英文
+lajihuishou	garbage collection	计算机 · 专业英语
 lambda	AWS Lambda	编程 · 技术英文
+lamportclock	Lamport clock	计算机 · 专业英语
+lanboteshizhong	Lamport clock	计算机 · 专业英语
 langchainexpressionlanguage	LangChain Expression Language	Agent · 框架与术语
 langgraphplatform	LangGraph Platform	Agent · 框架与术语
 langsmithdeployment	LangSmith Deployment	Agent · 框架与术语
@@ -1977,24 +2242,46 @@ langsmithstudio	LangSmith Studio	Agent · 框架与术语
 lapin	Lapin	Rust · 库与 API
 laptop	laptop	设备 · 产品名称
 laravel	Laravel	编程 · 技术英文
+latency	latency	计算机 · 专业英语
+lazyevaluation	lazy evaluation	计算机 · 专业英语
 lazyloading	lazy loading	编程 · 技术英文
 lazylock	LazyLock	Rust · 库与 API
 lcel	LangChain Expression Language	Agent · 框架与术语
+leaderelection	leader election	计算机 · 专业英语
 learn	learn	日常英语
+lease	lease	计算机 · 专业英语
+leastprivilege	least privilege	计算机 · 专业英语
 leave	leave	日常英语
 left	left	日常英语
 leftjoin	LEFT JOIN	编程 · 技术英文
 legion	Lenovo Legion	设备 · 产品名称
+leijicheng	inheritance	计算机 · 专业英语
+leixinganquan	type safety	计算机 · 专业英语
+leixingcachu	type erasure	计算机 · 专业英语
+leixingjiancha	type checking	计算机 · 专业英语
 len	len	Python · 库与 API
 lesscss	Less	编程 · 技术英文
 lettuce	Lettuce	Java · 库与 API
+lexicalanalysis	lexical analysis	计算机 · 专业英语
+lianbiao	linked list	计算机 · 专业英语
+liangjieduansuo	two-phase locking	计算机 · 专业英语
+liangjieduantijiao	two-phase commit	计算机 · 专业英语
+lianjieduolufuyong	connection multiplexing	计算机 · 专业英语
+lianjieshiyouhua	link-time optimization	计算机 · 专业英语
 libpq	lib/pq	Go · 库与 API
 lighthouse	Lighthouse	编程 · 技术英文
 like	like	日常英语
+linearizability	linearizability	计算机 · 专业英语
+lingdaozhexuanju	leader election	计算机 · 专业英语
+lingkaobei	zero-copy	计算机 · 专业英语
+linjiebiao	adjacency list	计算机 · 专业英语
+linjiejuzhen	adjacency matrix	计算机 · 专业英语
+linjiequ	critical section	计算机 · 专业英语
 link	link	日常英语
 linkedhashmap	LinkedHashMap	Java · 库与 API
 linkedhashset	LinkedHashSet	Java · 库与 API
 linkedlist	LinkedList	Rust · 库与 API
+linktimeoptimization	link-time optimization	计算机 · 专业英语
 liquibase	Liquibase	Java · 库与 API
 lisp	Lisp	编程 · 技术英文
 list	List	Java · 库与 API
@@ -2003,7 +2290,9 @@ lists	Lists	Java · 库与 API
 lit	Lit	JS · 库与 API
 litellm	LiteLLM	AI · 工具与术语
 litestar	Litestar	Python · 库与 API
+liuliangkongzhi	flow control	计算机 · 专业英语
 live	live	日常英语
+livelock	livelock	计算机 · 专业英语
 livenessprobe	liveness probe	编程 · 技术英文
 llamacpp	llama.cpp	AI · 工具与术语
 llamathree	Llama 3	AI · 工具与术语
@@ -2017,6 +2306,7 @@ localhostip	127.0.0.1	编程 · 技术英文
 localmcpserver	local MCP server	Agent · 框架与术语
 localstorage	localStorage	编程 · 技术英文
 lock	Lock	Java · 库与 API
+lockfree	lock-free	计算机 · 专业英语
 loco	Loco	Rust · 库与 API
 locors	loco-rs	Rust · 库与 API
 lodash	Lodash	JS · 库与 API
@@ -2030,6 +2320,7 @@ logback	Logback	Java · 库与 API
 logger	Logger	Java · 库与 API
 loggerfactory	LoggerFactory	Java · 库与 API
 logging	logging	Python · 库与 API
+logicalclock	logical clock	计算机 · 专业英语
 login	login	日常英语
 logitech	Logitech	设备 · 产品名称
 logolang	Logo	编程 · 技术英文
@@ -2042,10 +2333,17 @@ lombok	Lombok	Java · 库与 API
 long	Long	Java · 库与 API
 longrunningagent	long-running agent	Agent · 框架与术语
 longtermmemory	long-term memory	Agent · 框架与术语
+loopinvariant	loop invariant	计算机 · 专业英语
+loopunrolling	loop unrolling	计算机 · 专业英语
+lostupdate	lost update	计算机 · 专业英语
 love	love	日常英语
 lowercase	Lowercase	TS · 类型与工具
+lujingmtufaxian	path MTU discovery	计算机 · 专业英语
 lunch	lunch	日常英语
+lunzhuandiaodu	round-robin scheduling	计算机 · 专业英语
+luojishizhong	logical clock	计算机 · 专业英语
 luxon	Luxon	JS · 库与 API
+luyoubiao	routing table	计算机 · 专业英语
 lxml	lxml	Python · 库与 API
 mac	Mac	设备 · 产品名称
 macbook	MacBook	设备 · 产品名称
@@ -2063,6 +2361,9 @@ make	make	Go · 库与 API
 makefile	Makefile	编程 · 技术英文
 manageddeepagents	Managed Deep Agents	Agent · 框架与术语
 manager	manager	日常英语
+mandatoryaccesscontrol	mandatory access control	计算机 · 专业英语
+maninthemiddleattack	man-in-the-middle attack	计算机 · 专业英语
+manqidong	slow start	计算机 · 专业英语
 map	Map	Java · 库与 API
 mapof	Map.of	Java · 库与 API
 mappedtype	mapped type	TS · 类型与工具
@@ -2082,6 +2383,7 @@ matlab	MATLAB	编程 · 技术英文
 matplotlib	matplotlib	Python · 库与 API
 maud	Maud	Rust · 库与 API
 maven	Apache Maven	Java · 库与 API
+maximumtransmissionunit	maximum transmission unit	计算机 · 专业英语
 maybe	maybe	日常英语
 mcpclient	MCP client	Agent · 框架与术语
 mcpprompt	MCP prompt	Agent · 框架与术语
@@ -2096,7 +2398,14 @@ meetingroom	meeting room	日常英语
 meituan	Meituan	日常英语
 melody	Melody	Go · 库与 API
 memo	memo	JS · 库与 API
+memoization	memoization	计算机 · 专业英语
+memoryalignment	memory alignment	计算机 · 专业英语
+memoryallocation	memory allocation	计算机 · 专业英语
+memorybarrier	memory barrier	计算机 · 专业英语
+memoryfragmentation	memory fragmentation	计算机 · 专业英语
 memorymanagement	memory management	Agent · 框架与术语
+memorymappedfile	memory-mapped file	计算机 · 专业英语
+memorymodel	memory model	计算机 · 专业英语
 memorynamespace	memory namespace	Agent · 框架与术语
 memorysaver	MemorySaver	Agent · 框架与术语
 memorystore	memory store	Agent · 框架与术语
@@ -2104,11 +2413,14 @@ memreplace	mem::replace	Rust · 库与 API
 memtake	mem::take	Rust · 库与 API
 menu	menu	日常英语
 mergemap	mergeMap	JS · 库与 API
+mergesort	merge sort	计算机 · 专业英语
 message	message	日常英语
+messageauthenticationcode	message authentication code	计算机 · 专业英语
 messagebroker	message broker	编程 · 技术英文
 messagechannel	MessageChannel	JS · 库与 API
 messagedeletion	message deletion	Agent · 框架与术语
 messagehistory	message history	Agent · 框架与术语
+messagepassing	message passing	计算机 · 专业英语
 messageport	MessagePort	JS · 库与 API
 messagequeue	message queue	编程 · 技术英文
 messagesplaceholder	MessagesPlaceholder	Agent · 框架与术语
@@ -2117,6 +2429,7 @@ messagetrimming	message trimming	Agent · 框架与术语
 metaai	Meta AI	AI · 工具与术语
 metadatafilter	metadata filter	Agent · 框架与术语
 metaquest	Meta Quest	设备 · 产品名称
+methoddispatch	method dispatch	计算机 · 专业英语
 metrics	metrics	编程 · 技术英文
 metricsexporterprometheus	metrics-exporter-prometheus	Rust · 库与 API
 mfa	MFA	编程 · 技术英文
@@ -2128,14 +2441,20 @@ microservice	microservice	编程 · 技术英文
 middleware	middleware	编程 · 技术英文
 middlewarehook	middleware hook	Agent · 框架与术语
 middlewarestack	middleware stack	Agent · 框架与术语
+midengcaozuo	idempotent operation	计算机 · 专业英语
 migration	database migration	编程 · 技术英文
 milk	milk	日常英语
+mimaxuehaxi	cryptographic hash	计算机 · 专业英语
+mingchengjiexi	name resolution	计算机 · 专业英语
+mingyileixing	nominal typing	计算机 · 专业英语
 miniled	Mini LED	设备 · 产品名称
+minimumspanningtree	minimum spanning tree	计算机 · 专业英语
 mio	Mio	Rust · 库与 API
 mistake	mistake	日常英语
 mistralai	Mistral AI	AI · 工具与术语
 mitt	Mitt	JS · 库与 API
 mixtral	Mixtral	AI · 工具与术语
+miyaojiaohuan	key exchange	计算机 · 专业英语
 mobc	mobc	Rust · 库与 API
 mobilefirst	mobile-first	编程 · 技术英文
 mockall	Mockall	Rust · 库与 API
@@ -2146,6 +2465,7 @@ mockitowhen	Mockito.when	Java · 库与 API
 mockmvc	MockMvc	Java · 库与 API
 mockserver	MockServer	Java · 库与 API
 modelbakery	Model Bakery	Python · 库与 API
+modelchecking	model checking	计算机 · 专业英语
 modelcontextprotocol	Model Context Protocol	AI · 工具与术语
 modelfallback	model fallback	Agent · 框架与术语
 modelmiddleware	model middleware	Agent · 框架与术语
@@ -2158,6 +2478,7 @@ module	module	TS · 类型与工具
 moduleresolution	moduleResolution	TS · 类型与工具
 modwsgi	mod_wsgi	Python · 库与 API
 moe	mixture of experts	AI · 工具与术语
+mohuceshi	fuzz testing	计算机 · 专业英语
 momentjs	Moment.js	JS · 库与 API
 mongo	MongoDB	编程 · 技术英文
 mongodbcrate	mongodb	Rust · 库与 API
@@ -2170,9 +2491,11 @@ mono	Mono	Java · 库与 API
 monolith	monolith	编程 · 技术英文
 month	month	日常英语
 moonshotai	Moonshot AI	AI · 工具与术语
+morenwangguan	default gateway	计算机 · 专业英语
 moreobjects	MoreObjects	Java · 库与 API
 morgan	Morgan	JS · 库与 API
 morning	morning	日常英语
+moshipipei	pattern matching	计算机 · 专业英语
 motion	Motion	JS · 库与 API
 motor	Motor	Python · 库与 API
 mount	mount	编程 · 技术英文
@@ -2180,6 +2503,7 @@ mouse	mouse	日常英语
 move	move	Rust · 库与 API
 movelang	Move	编程 · 技术英文
 movie	movie	日常英语
+moxingjiance	model checking	计算机 · 专业英语
 mpsc	mpsc	Rust · 库与 API
 mqtt	MQTT	编程 · 技术英文
 msgspec	msgspec	Python · 库与 API
@@ -2191,10 +2515,15 @@ multiagentsystem	multi-agent system	Agent · 框架与术语
 multimap	Multimap	Java · 库与 API
 multimodal	multimodal model	AI · 工具与术语
 multipart	multipart/form-data	编程 · 技术英文
+multipleinheritance	multiple inheritance	计算机 · 专业英语
 multiprocessing	multiprocessing	Python · 库与 API
+multiversionconcurrencycontrol	multiversion concurrency control	计算机 · 专业英语
 music	music	日常英语
 mut	mut	Rust · 库与 API
+mutability	mutability	计算机 · 专业英语
+mutationtesting	mutation testing	计算机 · 专业英语
 mutex	Mutex	Rust · 库与 API
+mutualexclusion	mutual exclusion	计算机 · 专业英语
 mybatis	MyBatis	Java · 库与 API
 mybatisplus	MyBatis-Plus	Java · 库与 API
 mybatisspring	MyBatis-Spring	Java · 库与 API
@@ -2208,9 +2537,11 @@ naiveui	Naive UI	编程 · 技术英文
 name	name	日常英语
 namedparameterjdbctemplate	NamedParameterJdbcTemplate	Java · 库与 API
 nameko	Nameko	Python · 库与 API
+nameresolution	name resolution	计算机 · 专业英语
 namespace	namespace	TS · 类型与工具
 nan	NaN	JS · 库与 API
 nanoid	nanoid	JS · 库与 API
+naolie	split brain	计算机 · 专业英语
 nativestructuredoutput	native structured output	Agent · 框架与术语
 nativetls	native-tls	Rust · 库与 API
 nats	NATS	编程 · 技术英文
@@ -2219,14 +2550,28 @@ natspy	NATS.py	Python · 库与 API
 navigablemap	NavigableMap	Java · 库与 API
 navigator	navigator	JS · 库与 API
 near	near	日常英语
+neicundoudong	thrashing	计算机 · 专业英语
+neicunduiqi	memory alignment	计算机 · 专业英语
+neicunfenpei	memory allocation	计算机 · 专业英语
+neicunmoxing	memory model	计算机 · 专业英语
+neicunpingzhang	memory barrier	计算机 · 专业英语
+neicunsuipian	memory fragmentation	计算机 · 专业英语
+neicunyingshewenjian	memory-mapped file	计算机 · 专业英语
+neihetai	kernel mode	计算机 · 专业英语
+neiju	cohesion	计算机 · 专业英语
+neilian	inlining	计算机 · 专业英语
+nenglianquan	capability-based security	计算机 · 专业英语
 net	net	Go · 库与 API
 netdial	net.Dial	Go · 库与 API
 netflixdgs	Netflix DGS	Java · 库与 API
 nethttp	net/http	Go · 库与 API
 netty	Netty	Java · 库与 API
 neturl	net/url	Go · 库与 API
+networkaddresstranslation	network address translation	计算机 · 专业英语
 networkarchitecture	network architecture	Agent · 框架与术语
+networkpartition	network partition	计算机 · 专业英语
 networkpolicy	network policy	编程 · 技术英文
+networktopology	network topology	计算机 · 专业英语
 never	never	TS · 类型与工具
 new	new	日常英语
 news	news	日常英语
@@ -2234,6 +2579,7 @@ next	Next.js	编程 · 技术英文
 nextconfig	next.config.js	编程 · 技术英文
 nexttick	nextTick	JS · 库与 API
 nhooyrwebsocket	nhooyr/websocket	Go · 库与 API
+nibian	contravariance	计算机 · 专业英语
 nice	nice	日常英语
 nim	Nim	编程 · 技术英文
 nimbusjosejwt	Nimbus JOSE + JWT	Java · 库与 API
@@ -2260,8 +2606,11 @@ nodeutil	node:util	JS · 库与 API
 nodeworkerthreads	node:worker_threads	JS · 库与 API
 noimplicitany	noImplicitAny	TS · 类型与工具
 noinfer	NoInfer	TS · 类型与工具
+nominaltyping	nominal typing	计算机 · 专业英语
+nonce	nonce	计算机 · 专业英语
 none	None	Rust · 库与 API
 nonnullable	NonNullable	TS · 类型与工具
+nonrepeatableread	nonrepeatable read	计算机 · 专业英语
 normalization	normalization	编程 · 技术英文
 note	note	日常英语
 notebook	notebook	日常英语
@@ -2273,6 +2622,7 @@ nox	nox	Python · 库与 API
 npx	npx	编程 · 技术英文
 null	null	JS · 库与 API
 nullishcoalescing	nullish coalescing	JS · 库与 API
+nullpointer	null pointer	计算机 · 专业英语
 nullpointerexception	NullPointerException	Java · 库与 API
 number	Number	Java · 库与 API
 numpyarray	numpy.array	Python · 库与 API
@@ -2363,6 +2713,7 @@ opentelemetry	OpenTelemetry	编程 · 技术英文
 opentracing	OpenTracing	Go · 库与 API
 openwiki	OpenWiki	Agent · 框架与术语
 operator	operator	Python · 库与 API
+operatoroverloading	operator overloading	计算机 · 专业英语
 operatorsdk	Operator SDK	Go · 库与 API
 optimisticlocking	optimistic locking	编程 · 技术英文
 option	Option	Rust · 库与 API
@@ -2394,6 +2745,8 @@ oteljava	OpenTelemetry Java	Java · 库与 API
 otelpython	OpenTelemetry Python	Python · 库与 API
 otelrust	OpenTelemetry Rust	Rust · 库与 API
 othree	o3	AI · 工具与术语
+ouhe	coupling	计算机 · 专业英语
+outputencoding	output encoding	计算机 · 专业英语
 outputschema	output schema	Agent · 框架与术语
 outputstream	OutputStream	Java · 库与 API
 override	override	TS · 类型与工具
@@ -2403,7 +2756,12 @@ paas	platform as a service	编程 · 技术英文
 package	package	Go · 库与 API
 packagejson	package.json	编程 · 技术英文
 packagelock	package-lock.json	编程 · 技术英文
+packetloss	packet loss	计算机 · 专业英语
+packetswitching	packet switching	计算机 · 专业英语
 page	page	日常英语
+pagefault	page fault	计算机 · 专业英语
+pagereplacement	page replacement	计算机 · 专业英语
+pagetable	page table	计算机 · 专业英语
 pagination	pagination	编程 · 技术英文
 pairwiseevaluation	pairwise evaluation	Agent · 框架与术语
 pandasconcat	pandas.concat	Python · 库与 API
@@ -2414,6 +2772,7 @@ panic	panic	Go · 库与 API
 paper	paper	日常英语
 paperclip	Paperclip	Rust · 库与 API
 parallelexecution	parallel execution	Agent · 框架与术语
+parallelism	parallelism	计算机 · 专业英语
 paralleltoolcalls	parallel tool calls	Agent · 框架与术语
 parameter	parameter	编程 · 技术英文
 parameters	Parameters	TS · 类型与工具
@@ -2424,6 +2783,7 @@ parse	parse	JS · 库与 API
 parsefloat	parseFloat	JS · 库与 API
 parseint	parseInt	JS · 库与 API
 partial	Partial	TS · 类型与工具
+partialapplication	partial application	计算机 · 专业英语
 partialstate	partial state	Agent · 框架与术语
 partitioning	database partitioning	编程 · 技术英文
 pascal	Pascal	编程 · 技术英文
@@ -2442,10 +2802,12 @@ pathlib	pathlib	Python · 库与 API
 pathlibpath	pathlib.Path	Python · 库与 API
 pathlibpathreadtext	pathlib.Path.read_text	Python · 库与 API
 pathlibpathwritetext	pathlib.Path.write_text	Python · 库与 API
+pathmtudiscovery	path MTU discovery	计算机 · 专业英语
 pathparameter	path parameter	编程 · 技术英文
 pathresolve	path.resolve	JS · 库与 API
 paths	Paths	Java · 库与 API
 pattern	Pattern	Java · 库与 API
+patternmatching	pattern matching	计算机 · 专业英语
 pay	pay	日常英语
 payara	Payara Server	Java · 库与 API
 payload	payload	编程 · 技术英文
@@ -2464,9 +2826,11 @@ persistentstore	persistent store	Agent · 框架与术语
 pessimisticlocking	pessimistic locking	编程 · 技术英文
 pgx	pgx	Go · 库与 API
 pgxpool	pgxpool	Go · 库与 API
+phantomread	phantom read	计算机 · 专业英语
 phone	phone	日常英语
 phonenumber	phone number	日常英语
 photo	photo	日常英语
+physicalmemory	physical memory	计算机 · 专业英语
 piccoloorm	Piccolo ORM	Python · 库与 API
 pick	Pick	TS · 类型与工具
 pickle	Pickle	Python · 库与 API
@@ -2475,6 +2839,7 @@ piimiddleware	PII middleware	Agent · 框架与术语
 pika	Pika	Python · 库与 API
 pillow	Pillow	Python · 库与 API
 pin	Pin	Rust · 库与 API
+pinghengshu	balanced tree	计算机 · 专业英语
 pinia	Pinia	编程 · 技术英文
 piniacolada	Pinia Colada	编程 · 技术英文
 pinianuxt	@pinia/nuxt	编程 · 技术英文
@@ -2509,6 +2874,7 @@ polars	Polars	Python · 库与 API
 polarsdataframe	polars.DataFrame	Python · 库与 API
 policyenforcement	policy enforcement	Agent · 框架与术语
 poll	Poll	Rust · 库与 API
+polymorphism	polymorphism	计算机 · 专业英语
 ponyorm	Pony ORM	Python · 库与 API
 pool	Pool	Go · 库与 API
 pop	pop	JS · 库与 API
@@ -2520,6 +2886,7 @@ pprof	pprof	Go · 库与 API
 practice	practice	日常英语
 preconditions	Preconditions	Java · 库与 API
 predicate	Predicate	Java · 库与 API
+preemption	preemption	计算机 · 专业英语
 pregel	Pregel	Agent · 框架与术语
 preparedstatement	PreparedStatement	Java · 库与 API
 presentation	presentation	日常英语
@@ -2532,12 +2899,16 @@ primaryreplica	primary-replica replication	编程 · 技术英文
 primevue	PrimeVue	编程 · 技术英文
 print	print	Python · 库与 API
 priority	priority	日常英语
+priorityinversion	priority inversion	计算机 · 专业英语
 priorityqueue	PriorityQueue	Java · 库与 API
 prismjs	Prism.js	JS · 库与 API
 private	private	TS · 类型与工具
+privilegeescalation	privilege escalation	计算机 · 专业英语
 problem	problem	日常英语
 proceduralmemory	procedural memory	Agent · 框架与术语
+processscheduling	process scheduling	计算机 · 专业英语
 prodisplayxdr	Pro Display XDR	设备 · 产品名称
+producttype	product type	计算机 · 专业英语
 profile	profile	日常英语
 project	project	日常英语
 projectreactor	Project Reactor	Java · 库与 API
@@ -2559,6 +2930,7 @@ promptinjection	prompt injection	Agent · 框架与术语
 prompttemplate	prompt template	Agent · 框架与术语
 properties	Properties	Java · 库与 API
 property	property	Python · 库与 API
+propertybasedtesting	property-based testing	计算机 · 专业英语
 proptest	Proptest	Rust · 库与 API
 prost	Prost	Rust · 库与 API
 protected	protected	TS · 类型与工具
@@ -2571,10 +2943,12 @@ proxy	Proxy	JS · 库与 API
 psfive	PlayStation 5	设备 · 产品名称
 psycopg	Psycopg	Python · 库与 API
 public	public	TS · 类型与工具
+publickeyinfrastructure	public key infrastructure	计算机 · 专业英语
 pubsub	publish-subscribe	编程 · 技术英文
 pulsarclient	Apache Pulsar Client	Java · 库与 API
 punq	Punq	Python · 库与 API
 puppeteer	Puppeteer	编程 · 技术英文
+purefunction	pure function	计算机 · 专业英语
 purescript	PureScript	编程 · 技术英文
 push	push	JS · 库与 API
 pwa	Progressive Web App	编程 · 技术英文
@@ -2783,11 +3157,22 @@ pyyield	yield	Python · 库与 API
 pyzip	zip	Python · 库与 API
 pyzipfile	zipfile	Python · 库与 API
 pyzoneinfo	zoneinfo	Python · 库与 API
+qiahaoyicichuli	exactly-once processing	计算机 · 专业英语
+qiangzhan	preemption	计算机 · 专业英语
+qiangzhifangwenkongzhi	mandatory access control	计算机 · 专业英语
+qianxiangbaomi	forward secrecy	计算机 · 专业英语
+qiyueceshi	contract testing	计算机 · 专业英语
 qualcomm	Qualcomm	设备 · 产品名称
+quanfuzadu	cyclomatic complexity	计算机 · 专业英语
+quanweiyumingfuwuqi	authoritative name server	计算机 · 专业英语
+quanxiantisheng	privilege escalation	计算机 · 专业英语
 quarkus	Quarkus	Java · 库与 API
 quart	Quart	Python · 库与 API
 quasar	Quasar	编程 · 技术英文
+quchong	deduplication	计算机 · 专业英语
+quedingxinggoujian	deterministic build	计算机 · 专业英语
 querydsl	Querydsl	Java · 库与 API
+queryexecution	query execution	计算机 · 专业英语
 queryoptimization	query optimization	编程 · 技术英文
 queryparameter	query parameter	编程 · 技术英文
 queryplanner	query planner	编程 · 技术英文
@@ -2799,12 +3184,17 @@ question	question	日常英语
 questthree	Quest 3	设备 · 产品名称
 queue	queue	Python · 库与 API
 queuemicrotask	queueMicrotask	JS · 库与 API
+queyeyichang	page fault	计算机 · 专业英语
 quickcheck	QuickCheck	Rust · 库与 API
+quicksort	quick sort	计算机 · 专业英语
 quinn	Quinn	Rust · 库与 API
+quorum	quorum	计算机 · 专业英语
 rabbitmq	RabbitMQ	编程 · 技术英文
 rabbitmqgo	RabbitMQ Go Client	Go · 库与 API
 rabbitmqjavaclient	RabbitMQ Java Client	Java · 库与 API
+racecondition	race condition	计算机 · 专业英语
 racket	Racket	编程 · 技术英文
+radixsort	radix sort	计算机 · 专业英语
 radixui	Radix UI	编程 · 技术英文
 radixvue	radix-vue	编程 · 技术英文
 rails	Ruby on Rails	编程 · 技术英文
@@ -2849,9 +3239,12 @@ receive	receive	日常英语
 recompile	re.compile	Python · 库与 API
 record	Record	Java · 库与 API
 recover	recover	Go · 库与 API
+recursion	recursion	计算机 · 专业英语
 recursionlimit	recursion limit	Agent · 框架与术语
+recursiveresolver	recursive resolver	计算机 · 专业英语
 recursivetask	RecursiveTask	Java · 库与 API
 recursivetextsplitter	recursive text splitter	Agent · 框架与术语
+redblacktree	red-black tree	计算机 · 专业英语
 redigo	Redigo	Go · 库与 API
 redispy	redis-py	Python · 库与 API
 redisqueue	Redis Queue	Python · 库与 API
@@ -2866,7 +3259,9 @@ reentrantreadwritelock	ReentrantReadWriteLock	Java · 库与 API
 ref	ref	JS · 库与 API
 refcell	RefCell	Rust · 库与 API
 reference	Reference	Agent · 框架与术语
+referencecounting	reference counting	计算机 · 专业英语
 referenceoutput	reference output	Agent · 框架与术语
+referentialtransparency	referential transparency	计算机 · 专业英语
 refindall	re.findall	Python · 库与 API
 reflect	reflect	Go · 库与 API
 reflection	reflection	Agent · 框架与术语
@@ -2877,6 +3272,8 @@ regex	regex	Rust · 库与 API
 regexp	RegExp	JS · 库与 API
 region	cloud region	编程 · 技术英文
 regressiontest	regression test	Agent · 框架与术语
+regressiontesting	regression testing	计算机 · 专业英语
+regularlanguage	regular language	计算机 · 专业英语
 reject	reject	JS · 库与 API
 rejected	rejected	JS · 库与 API
 rekaui	Reka UI	编程 · 技术英文
@@ -2887,11 +3284,13 @@ remotemcpserver	remote MCP server	Agent · 框架与术语
 removeeventlistener	removeEventListener	编程 · 技术英文
 repeatableread	repeatable read	编程 · 技术英文
 replace	replace	JS · 库与 API
+replayattack	replay attack	计算机 · 专业英语
 replaysubject	ReplaySubject	JS · 库与 API
 replication	database replication	编程 · 技术英文
 reply	reply	日常英语
 report	report	日常英语
 repository	repository	编程 · 技术英文
+reproduciblebuild	reproducible build	计算机 · 专业英语
 request	request	编程 · 技术英文
 requestanimationframe	requestAnimationFrame	编程 · 技术英文
 requestbody	request body	编程 · 技术英文
@@ -2931,6 +3330,7 @@ resultset	ResultSet	Java · 库与 API
 resultunwrap	Result::unwrap	Rust · 库与 API
 resumableexecution	resumable execution	Agent · 框架与术语
 resume	resume	Agent · 框架与术语
+retransmission	retransmission	计算机 · 专业英语
 retrieval	retrieval	Agent · 框架与术语
 retrievalaugmentedgeneration	retrieval-augmented generation	Agent · 框架与术语
 retrievalchain	retrieval chain	Agent · 框架与术语
@@ -2958,14 +3358,19 @@ robfigcron	robfig/cron	Go · 库与 API
 robyn	Robyn	Python · 库与 API
 rocket	Rocket	Rust · 库与 API
 rocketmq	Apache RocketMQ	Java · 库与 API
+rolebasedaccesscontrol	role-based access control	计算机 · 专业英语
+rollback	rollback	计算机 · 专业英语
 rollingupdate	rolling update	编程 · 技术英文
 room	room	日常英语
+roundrobinscheduling	round-robin scheduling	计算机 · 专业英语
+roundtriptime	round-trip time	计算机 · 专业英语
 route	route	编程 · 技术英文
 router	router	编程 · 技术英文
 routerlink	RouterLink	编程 · 技术英文
 routerview	RouterView	编程 · 技术英文
 routervue	Vue Router	编程 · 技术英文
 routing	routing	Agent · 框架与术语
+routingtable	routing table	计算机 · 专业英语
 row	row	编程 · 技术英文
 rpc	RPC	编程 · 技术英文
 rsocket	RSocket	Java · 库与 API
@@ -3135,17 +3540,22 @@ rxjs	RxJS	JS · 库与 API
 saas	software as a service	编程 · 技术英文
 sagemaker	Amazon SageMaker	AI · 工具与术语
 sale	sale	日常英语
+salt	salt	计算机 · 专业英语
 salvo	Salvo	Rust · 库与 API
 same	same	日常英语
 samsung	Samsung	设备 · 产品名称
+sanciwoshou	three-way handshake	计算机 · 专业英语
+sandboxing	sandboxing	计算机 · 专业英语
 sanic	Sanic	Python · 库与 API
 sanitizehtml	sanitize-html	JS · 库与 API
+sanjieduantijiao	three-phase commit	计算机 · 专业英语
 sarama	Sarama	Go · 库与 API
 sass	Sass	编程 · 技术英文
 satisfies	satisfies	TS · 类型与工具
 satisfiesoperator	satisfies operator	TS · 类型与工具
 satoken	Sa-Token	Java · 库与 API
 save	save	日常英语
+savepoint	savepoint	计算机 · 专业英语
 scala	Scala	编程 · 技术英文
 schedule	schedule	日常英语
 scheduledexecutorservice	ScheduledExecutorService	Java · 库与 API
@@ -3167,10 +3577,13 @@ search	search	日常英语
 seata	Seata	Java · 库与 API
 secretmanagement	secret management	编程 · 技术英文
 secrets	secrets	Python · 库与 API
+securityboundary	security boundary	计算机 · 专业英语
 seek	Seek	Rust · 库与 API
 seeyou	see you	日常英语
+segmenttree	segment tree	计算机 · 专业英语
 select	SELECT	编程 · 技术英文
 selfreflection	self-reflection	Agent · 框架与术语
+semanticanalysis	semantic analysis	计算机 · 专业英语
 semantichtml	semantic HTML	编程 · 技术英文
 semantickernel	Semantic Kernel	AI · 工具与术语
 semanticmemory	semantic memory	Agent · 框架与术语
@@ -3180,7 +3593,10 @@ send	Send	Rust · 库与 API
 sensitiveoperation	sensitive operation	Agent · 框架与术语
 sentinel	Sentinel	Java · 库与 API
 sentrysdk	Sentry SDK	Python · 库与 API
+separationofconcerns	separation of concerns	计算机 · 专业英语
+sequentialconsistency	sequential consistency	计算机 · 专业英语
 sequentialexecution	sequential execution	Agent · 框架与术语
+sequentialscan	sequential scan	计算机 · 专业英语
 serde	Serde	Rust · 库与 API
 serdedeserialize	serde::Deserialize	Rust · 库与 API
 serdejson	serde_json	Rust · 库与 API
@@ -3213,26 +3629,52 @@ shadcn	shadcn/ui	编程 · 技术英文
 shadowdom	Shadow DOM	编程 · 技术英文
 shallowreactive	shallowReactive	JS · 库与 API
 shallowref	shallowRef	JS · 库与 API
+shangxiawenqiehuan	context switch	计算机 · 专业英语
+shangxiawenwuguanwenfa	context-free grammar	计算机 · 专业英语
 sharding	database sharding	编程 · 技术英文
 share	share	日常英语
 sharedarraybuffer	SharedArrayBuffer	JS · 库与 API
+sharedmemory	shared memory	计算机 · 专业英语
 sharedstate	shared state	Agent · 框架与术语
 sharedworker	SharedWorker	编程 · 技术英文
+shaxianggeli	sandboxing	计算机 · 专业英语
 shell	Shell	编程 · 技术英文
+shenduyouxiansousuo	depth-first search	计算机 · 专业英语
+shenfenrenzheng	authentication	计算机 · 专业英语
+shengchengshu	spanning tree	计算机 · 专业英语
+shengcunshijian	time to live	计算机 · 专业英语
+shifanghoushiyong	use-after-free	计算机 · 专业英语
 shift	shift	JS · 库与 API
+shijianfuzadu	time complexity	计算机 · 专业英语
+shijianjubuxing	temporal locality	计算机 · 专业英语
 shiro	Apache Shiro	Java · 库与 API
 shirt	shirt	日常英语
 shoes	shoes	日常英语
 shopping	shopping	日常英语
+shortestpath	shortest path	计算机 · 专业英语
 shorttermmemory	short-term memory	Agent · 框架与术语
+shouquan	authorization	计算机 · 专业英语
 shower	shower	日常英语
+shuchubianma	output encoding	计算机 · 专业英语
+shujudui	heap	计算机 · 专业英语
+shujujiegou	data structure	计算机 · 专业英语
+shujuzhan	stack	计算机 · 专业英语
+shunxusaomiao	sequential scan	计算机 · 专业英语
+shunxuyizhixing	sequential consistency	计算机 · 专业英语
+shurujiaoyan	input validation	计算机 · 专业英语
 shutil	shutil	Python · 库与 API
+shuxingceshi	property-based testing	计算机 · 专业英语
+shuxingfangwenkongzhi	attribute-based access control	计算机 · 专业英语
+shuzhuangshuzu	Fenwick tree	计算机 · 专业英语
+shuziqianming	digital signature	计算机 · 专业英语
+sidaimaxiaochu	dead code elimination	计算机 · 专业英语
 signal	signal	编程 · 技术英文
 similaritysearch	similarity search	Agent · 框架与术语
 singleflight	singleflight	Go · 库与 API
 singleton	singleton	编程 · 技术英文
 siri	Siri	设备 · 产品名称
 skiplibcheck	skipLibCheck	TS · 类型与工具
+skiplist	skip list	计算机 · 专业英语
 sklearn	scikit-learn	Python · 库与 API
 sklearnmodelselectiontraintestsplit	sklearn.model_selection.train_test_split	Python · 库与 API
 sklearnpipelinepipeline	sklearn.pipeline.Pipeline	Python · 库与 API
@@ -3241,20 +3683,24 @@ slice	slice	JS · 库与 API
 slices	slices	Go · 库与 API
 slicescontains	slices.Contains	Go · 库与 API
 slicessort	slices.Sort	Go · 库与 API
+slidingwindow	sliding window	计算机 · 专业英语
 slm	small language model	AI · 工具与术语
 slog	slog	Rust · 库与 API
 slogerror	slog.Error	Go · 库与 API
 sloginfo	slog.Info	Go · 库与 API
 sloglogger	slog.Logger	Go · 库与 API
 slow	slow	日常英语
+slowstart	slow start	计算机 · 专业英语
 small	small	日常英语
 smallryeopenapi	SmallRye OpenAPI	Java · 库与 API
 smalltalk	Smalltalk	编程 · 技术英文
 smartphone	smartphone	设备 · 产品名称
+smartpointer	smart pointer	计算机 · 专业英语
 smartwatch	smartwatch	设备 · 产品名称
 smol	smol	Rust · 库与 API
 snack	snack	日常英语
 snapdragon	Snapdragon	设备 · 产品名称
+snapshotisolation	snapshot isolation	计算机 · 专业英语
 soap	SOAP	编程 · 技术英文
 socket	socket	Python · 库与 API
 socketio	Socket.IO	JS · 库与 API
@@ -3272,11 +3718,16 @@ sorted	sorted	Python · 库与 API
 sortedmap	SortedMap	Java · 库与 API
 sourcemap	source map	编程 · 技术英文
 spa	single-page application	编程 · 技术英文
+spacecomplexity	space complexity	计算机 · 专业英语
 span	span	Agent · 框架与术语
+spanningtree	spanning tree	计算机 · 专业英语
 sparkjava	Spark Java	Java · 库与 API
+spatiallocality	spatial locality	计算机 · 专业英语
 specialistagent	specialist agent	Agent · 框架与术语
+spinlock	spinlock	计算机 · 专业英语
 splice	splice	JS · 库与 API
 split	split	JS · 库与 API
+splitbrain	split brain	计算机 · 专业英语
 spliterator	Spliterator	Java · 库与 API
 spotbugs	SpotBugs	Java · 库与 API
 spread	spread	JS · 库与 API
@@ -3328,24 +3779,29 @@ ssg	static site generation	编程 · 技术英文
 ssl	SSL	编程 · 技术英文
 sso	SSO	编程 · 技术英文
 ssr	server-side rendering	编程 · 技术英文
+stack	stack	计算机 · 专业英语
 stampedlock	StampedLock	Java · 库与 API
 standardcharsets	StandardCharsets	Java · 库与 API
 starlette	Starlette	Python · 库与 API
 start	start	日常英语
 starttransition	startTransition	JS · 库与 API
+starvation	starvation	计算机 · 专业英语
 stash	stash	编程 · 技术英文
 state	state	编程 · 技术英文
 statefulagent	stateful agent	Agent · 框架与术语
 statefulset	StatefulSet	编程 · 技术英文
 stategraph	StateGraph	Agent · 框架与术语
 statement	Statement	Java · 库与 API
+statementcoverage	statement coverage	计算机 · 专业英语
 statereducer	state reducer	Agent · 框架与术语
 stateschema	state schema	Agent · 框架与术语
 statesnapshot	StateSnapshot	Agent · 框架与术语
 stateupdate	state update	Agent · 框架与术语
 static	static	TS · 类型与工具
+staticanalysis	static analysis	计算机 · 专业英语
 staticcheck	Staticcheck	Go · 库与 API
 staticmethod	staticmethod	Python · 库与 API
+statictyping	static typing	计算机 · 专业英语
 station	station	日常英语
 statistics	statistics	Python · 库与 API
 statsd	StatsD	Python · 库与 API
@@ -3395,6 +3851,7 @@ stringssplit	strings.Split	Go · 库与 API
 stringutils	StringUtils	Java · 库与 API
 struct	struct	Go · 库与 API
 structlog	structlog	Python · 库与 API
+structuraltyping	structural typing	计算机 · 专业英语
 structuredclone	structuredClone	JS · 库与 API
 structuredlogging	structured logging	编程 · 技术英文
 structuredoutput	structured output	AI · 工具与术语
@@ -3402,20 +3859,26 @@ structuredresponse	structured response	Agent · 框架与术语
 structuredtool	StructuredTool	Agent · 框架与术语
 studiodisplay	Studio Display	设备 · 产品名称
 styledcomponents	Styled Components	编程 · 技术英文
+suanfa	algorithm	计算机 · 专业英语
 subagent	subagent	Agent · 框架与术语
 subagents	subagents	Agent · 框架与术语
 subgraph	subgraph	Agent · 框架与术语
 subject	Subject	JS · 库与 API
 submit	submit	日常英语
 subnet	subnet	编程 · 技术英文
+subnetmask	subnet mask	计算机 · 专业英语
 subprocess	subprocess	Python · 库与 API
 subprocessrun	subprocess.run	Python · 库与 API
 subscribe	subscribe	JS · 库与 API
 subscription	Subscription	JS · 库与 API
+subtyping	subtyping	计算机 · 专业英语
 subway	subway	日常英语
 successful	successful	日常英语
 sudo	sudo	编程 · 技术英文
+suffixarray	suffix array	计算机 · 专业英语
+sumtype	sum type	计算机 · 专业英语
 sunny	sunny	日常英语
+suoyinjiedian	inode	计算机 · 专业英语
 super	super	Python · 库与 API
 superagent	SuperAgent	JS · 库与 API
 superjson	SuperJSON	JS · 库与 API
@@ -3438,6 +3901,10 @@ switch	Nintendo Switch	设备 · 产品名称
 switchmap	switchMap	JS · 库与 API
 switchtwo	Nintendo Switch 2	设备 · 产品名称
 symbol	Symbol	JS · 库与 API
+symbolicexecution	symbolic execution	计算机 · 专业英语
+symboliclink	symbolic link	计算机 · 专业英语
+symboltable	symbol table	计算机 · 专业英语
+symmetricencryption	symmetric encryption	计算机 · 专业英语
 sympy	SymPy	Python · 库与 API
 sync	sync	Go · 库与 API
 syncatomic	sync/atomic	Go · 库与 API
@@ -3447,23 +3914,30 @@ synconce	sync.Once	Go · 库与 API
 syncpool	sync.Pool	Go · 库与 API
 syncrwmutex	sync.RWMutex	Go · 库与 API
 syncwaitgroup	sync.WaitGroup	Go · 库与 API
+syntaxanalysis	syntax analysis	计算机 · 专业英语
 syntaxerror	SyntaxError	JS · 库与 API
 sys	sys	Python · 库与 API
 system	System	Java · 库与 API
+systemcall	system call	计算机 · 专业英语
 systemmessage	SystemMessage	Agent · 框架与术语
 systemprompt	system prompt	AI · 工具与术语
 systemtime	SystemTime	Rust · 库与 API
 table	table	日常英语
 tablet	tablet	设备 · 产品名称
+tailcall	tail call	计算机 · 专业英语
+tailrecursion	tail recursion	计算机 · 专业英语
 tailwindconfig	tailwind.config.js	编程 · 技术英文
 tailwindmerge	tailwind-merge	JS · 库与 API
 takecare	take care	日常英语
 takeuntil	takeUntil	JS · 库与 API
+tanhuanfenxi	amortized analysis	计算机 · 专业英语
 tanstackquery	TanStack Query	编程 · 技术英文
 tanstackqueryvue	TanStack Query Vue	编程 · 技术英文
 tanstacktable	TanStack Table	JS · 库与 API
 tanstackvirtual	TanStack Virtual	JS · 库与 API
+tanxinsuanfa	greedy algorithm	计算机 · 专业英语
 taobao	Taobao	日常英语
+taoyifenxi	escape analysis	计算机 · 专业英语
 tarfile	tarfile	Python · 库与 API
 target	target	TS · 类型与工具
 tarpc	Tarpc	Rust · 库与 API
@@ -3477,12 +3951,14 @@ tcp	TCP	编程 · 技术英文
 tdesignvue	TDesign Vue Next	编程 · 技术英文
 tea	tea	日常英语
 team	team	日常英语
+technicaldebt	technical debt	计算机 · 专业英语
 telemetry	telemetry	Agent · 框架与术语
 teleport	Teleport	编程 · 技术英文
 temperature	temperature	AI · 工具与术语
 tempfile	tempfile	Rust · 库与 API
 templateliteral	template literal	JS · 库与 API
 templateliteraltype	template literal type	TS · 类型与工具
+temporallocality	temporal locality	计算机 · 专业英语
 tenacity	Tenacity	Python · 库与 API
 tensorrtllm	TensorRT-LLM	AI · 工具与术语
 tera	Tera	Rust · 库与 API
@@ -3509,29 +3985,43 @@ thinkpad	ThinkPad	设备 · 产品名称
 thiserror	thiserror	Rust · 库与 API
 thisparametertype	ThisParameterType	TS · 类型与工具
 thistype	ThisType	TS · 类型与工具
+thrashing	thrashing	计算机 · 专业英语
 thread	Thread	Java · 库与 API
 threadid	thread ID	Agent · 框架与术语
 threading	threading	Python · 库与 API
 threadlocal	ThreadLocal	Java · 库与 API
+threadlocalstorage	thread-local storage	计算机 · 专业英语
+threadpool	thread pool	计算机 · 专业英语
 threadpoolexecutor	ThreadPoolExecutor	Java · 库与 API
+threadsafety	thread safety	计算机 · 专业英语
 threadspawn	thread::spawn	Rust · 库与 API
 threadstate	thread state	Agent · 框架与术语
+threatmodel	threat model	计算机 · 专业英语
 threejs	Three.js	JS · 库与 API
+threephasecommit	three-phase commit	计算机 · 专业英语
+threewayhandshake	three-way handshake	计算机 · 专业英语
 thrift	Apache Thrift	编程 · 技术英文
 throttle	throttle	JS · 库与 API
+throughput	throughput	计算机 · 专业英语
 throwable	Throwable	Java · 库与 API
 thruster	Thruster	Rust · 库与 API
 thunderbolt	Thunderbolt	设备 · 产品名称
+tiaobiao	skip list	计算机 · 专业英语
+tiaojianbianliang	condition variable	计算机 · 专业英语
 ticker	Ticker	Go · 库与 API
 ticket	ticket	日常英语
 tide	Tide	Rust · 库与 API
+tijiaoxieyi	commit protocol	计算机 · 专业英语
 time	time	Go · 库与 API
+timecomplexity	time complexity	计算机 · 专业英语
 timeduration	time.Duration	Go · 库与 API
 timenewticker	time.NewTicker	Go · 库与 API
 timenow	time.Now	Go · 库与 API
+timeofchecktotimeofuse	time-of-check to time-of-use	计算机 · 专业英语
 timeout	timeout	Agent · 框架与术语
 timer	Timer	Go · 库与 API
 timesleep	time.Sleep	Go · 库与 API
+timetolive	time to live	计算机 · 专业英语
 timeunit	TimeUnit	Java · 库与 API
 tls	TLS	编程 · 技术英文
 today	today	日常英语
@@ -3548,6 +4038,7 @@ tollbooth	Tollbooth	Go · 库与 API
 tomcat	Apache Tomcat	Java · 库与 API
 tomllib	tomllib	Python · 库与 API
 tomorrow	tomorrow	日常英语
+tongpaixu	bucket sort	计算机 · 专业英语
 tongyiqianwen	Tongyi Qianwen	AI · 工具与术语
 tonic	Tonic	Rust · 库与 API
 tonight	tonight	日常英语
@@ -3570,6 +4061,7 @@ toolscondition	tools_condition	Agent · 框架与术语
 toolselection	tool selection	Agent · 框架与术语
 toolstrategy	ToolStrategy	Agent · 框架与术语
 topk	top-k	AI · 工具与术语
+topologicalsort	topological sort	计算机 · 专业英语
 topp	top-p	AI · 工具与术语
 torchnnmodule	torch.nn.Module	Python · 库与 API
 torchoptimadam	torch.optim.Adam	Python · 库与 API
@@ -3604,6 +4096,7 @@ travel	travel	日常英语
 treemap	TreeMap	Java · 库与 API
 treeset	TreeSet	Java · 库与 API
 treeshaking	tree shaking	编程 · 技术英文
+trie	trie	计算机 · 专业英语
 triggerref	triggerRef	JS · 库与 API
 trim	trim	JS · 库与 API
 trip	trip	日常英语
@@ -3731,15 +4224,21 @@ tszoutput	z.output	TS · 类型与工具
 tszzoderror	z.ZodError	TS · 类型与工具
 tszzodtype	z.ZodType	TS · 类型与工具
 tungstenite	Tungstenite	Rust · 库与 API
+tuntuliang	throughput	计算机 · 专业英语
+tuopupaixu	topological sort	计算机 · 专业英语
 turbogears	TurboGears	Python · 库与 API
 turbopack	Turbopack	编程 · 技术英文
 tvos	tvOS	设备 · 产品名称
 twirp	Twirp	Go · 库与 API
+twophasecommit	two-phase commit	计算机 · 专业英语
+twophaselocking	two-phase locking	计算机 · 专业英语
 typealias	type alias	TS · 类型与工具
 typeassertion	type assertion	TS · 类型与工具
+typechecking	type checking	计算机 · 专业英语
 typeddict	TypedDict	Agent · 框架与术语
 typedoc	TypeDoc	TS · 类型与工具
 typedocpluginmarkdown	typedoc-plugin-markdown	TS · 类型与工具
+typeerasure	type erasure	计算机 · 专业英语
 typeerror	TypeError	JS · 库与 API
 typefest	type-fest	TS · 类型与工具
 typeguard	type guard	TS · 类型与工具
@@ -3749,6 +4248,7 @@ typeof	typeof	TS · 类型与工具
 typepredicate	type predicate	TS · 类型与工具
 typer	Typer	Python · 库与 API
 typereference	TypeReference	Java · 库与 API
+typesafety	type safety	计算机 · 专业英语
 typescriptcompilerapi	TypeScript Compiler API	TS · 类型与工具
 typescripteslint	typescript-eslint	TS · 类型与工具
 typescriptlanguageserver	typescript-language-server	TS · 类型与工具
@@ -3774,6 +4274,7 @@ underscore	Underscore	JS · 库与 API
 understand	understand	日常英语
 undertow	Undertow	Java · 库与 API
 undici	Undici	JS · 库与 API
+undirectedgraph	undirected graph	计算机 · 专业英语
 unhead	Unhead	编程 · 技术英文
 uniontype	union type	TS · 类型与工具
 uniqueconstraint	unique constraint	编程 · 技术英文
@@ -3809,6 +4310,7 @@ urlsearchparams	URLSearchParams	编程 · 技术英文
 urlvalues	url.Values	Go · 库与 API
 usbc	USB-C	设备 · 产品名称
 useactionstate	useActionState	JS · 库与 API
+useafterfree	use-after-free	计算机 · 专业英语
 usecallback	useCallback	JS · 库与 API
 usecontext	useContext	JS · 库与 API
 usedebugvalue	useDebugValue	JS · 库与 API
@@ -3821,6 +4323,7 @@ usememo	useMemo	JS · 库与 API
 useoptimistic	useOptimistic	JS · 库与 API
 usereducer	useReducer	JS · 库与 API
 useref	useRef	JS · 库与 API
+usermode	user mode	计算机 · 专业英语
 username	username	日常英语
 usestate	useState	JS · 库与 API
 usesyncexternalstore	useSyncExternalStore	JS · 库与 API
@@ -3842,6 +4345,7 @@ valveindex	Valve Index	设备 · 产品名称
 valyalafasthttp	valyala/fasthttp	Go · 库与 API
 vant	Vant	编程 · 技术英文
 variable	variable	编程 · 技术英文
+variance	variance	计算机 · 专业英语
 varlet	Varlet	编程 · 技术英文
 vavr	Vavr	Java · 库与 API
 vba	VBA	编程 · 技术英文
@@ -3851,6 +4355,7 @@ vec	Vec	Rust · 库与 API
 vecdeque	VecDeque	Rust · 库与 API
 vecmacro	vec!	Rust · 库与 API
 vecnew	Vec::new	Rust · 库与 API
+vectorclock	vector clock	计算机 · 专业英语
 vectordatabase	vector database	编程 · 技术英文
 vectorstore	vector store	Agent · 框架与术语
 veevalidate	VeeValidate	编程 · 技术英文
@@ -3861,6 +4366,7 @@ video	video	日常英语
 viewport	viewport	编程 · 技术英文
 viper	Viper	Go · 库与 API
 virtualenv	virtualenv	Python · 库与 API
+virtualmemory	virtual memory	计算机 · 专业英语
 visionos	visionOS	设备 · 产品名称
 visionpro	Apple Vision Pro	设备 · 产品名称
 visit	visit	日常英语
@@ -3935,6 +4441,7 @@ vuex	Vuex	编程 · 技术英文
 vuexstore	Vuex	编程 · 技术英文
 vyper	Vyper	编程 · 技术英文
 wait	wait	日常英语
+waitfree	wait-free	计算机 · 专业英语
 waitgroup	WaitGroup	Go · 库与 API
 waitgroupgo	WaitGroup.Go	Go · 库与 API
 waitress	Waitress	Python · 库与 API
@@ -3942,6 +4449,10 @@ waker	Waker	Rust · 库与 API
 walk	walk	日常英语
 walkdir	walkdir	Rust · 库与 API
 wallet	wallet	日常英语
+wangfanshijian	round-trip time	计算机 · 专业英语
+wangluodizhizhuanhuan	network address translation	计算机 · 专业英语
+wangluofenqu	network partition	计算机 · 专业英语
+wangluotuopu	network topology	计算机 · 专业英语
 warnings	warnings	Python · 库与 API
 wasm	WebAssembly	编程 · 技术英文
 watch	watch	JS · 库与 API
@@ -3969,7 +4480,15 @@ webvitals	Web Vitals	编程 · 技术英文
 webworker	Web Worker	编程 · 技术英文
 wechatpay	WeChat Pay	日常英语
 week	week	日常英语
+weidiaoyong	tail call	计算机 · 专业英语
+weidigui	tail recursion	计算机 · 专业英语
+weightedgraph	weighted graph	计算机 · 专业英语
+weigongxiang	false sharing	计算机 · 专业英语
+weixiemoxing	threat model	计算机 · 专业英语
 welcome	welcome	日常英语
+wenjianmiaoshufu	file descriptor	计算机 · 专业英语
+wenjianrizhijilu	journaling	计算机 · 专业英语
+wenjianxitong	file system	计算机 · 专业英语
 where	where	Rust · 库与 API
 whisper	Whisper	AI · 工具与术语
 wifi	wifi	日常英语
@@ -3985,43 +4504,124 @@ withdefaults	withDefaults	JS · 库与 API
 worker	Worker	JS · 库与 API
 workeragent	worker agent	Agent · 框架与术语
 workfromhome	work from home	日常英语
+workingset	working set	计算机 · 专业英语
 wrapmodelcall	wrap model call	Agent · 框架与术语
 wraptoolcall	wrap tool call	Agent · 框架与术语
 writablestream	WritableStream	JS · 库与 API
 write	Write	Rust · 库与 API
+writeaheadlogging	write-ahead logging	计算机 · 专业英语
 writer	writer	编程 · 技术英文
+writeskew	write skew	计算机 · 专业英语
 wrong	wrong	日常英语
 wsgi	WSGI	Python · 库与 API
+wudengdai	wait-free	计算机 · 专业英语
+wulineicun	physical memory	计算机 · 专业英语
+wusuo	lock-free	计算机 · 专业英语
+wuxiangtu	undirected graph	计算机 · 专业英语
 xbox	Xbox	设备 · 产品名称
 xboxseriesx	Xbox Series X	设备 · 产品名称
+xianchenganquan	thread safety	计算机 · 专业英语
+xianchengbendicunchu	thread-local storage	计算机 · 专业英语
+xianchengchi	thread pool	计算机 · 专业英语
+xianduanshu	segment tree	计算机 · 专业英语
+xiangliangshizhong	vector clock	计算机 · 专业英语
+xianxingyizhixing	linearizability	计算机 · 专业英语
 xiaohongshu	Xiaohongshu	日常英语
+xiaoxichuandi	message passing	计算机 · 专业英语
+xiaoxirenzhengma	message authentication code	计算机 · 专业英语
+xiebian	covariance	计算机 · 专业英语
+xiecheng	coroutine	计算机 · 专业英语
+xiepianxie	write skew	计算机 · 专业英语
+xingbian	variance	计算机 · 专业英语
+xingshihuayanzheng	formal verification	计算机 · 专业英语
+xinxiyincang	information hiding	计算机 · 专业英语
+xitongdiaoyong	system call	计算机 · 专业英语
 xlsxwriter	XlsxWriter	Python · 库与 API
 xml	XML	编程 · 技术英文
 xorm	XORM	Go · 库与 API
 xss	XSS	编程 · 技术英文
+xuankongzhizhen	dangling pointer	计算机 · 专业英语
+xunhuanbubianliang	loop invariant	计算机 · 专业英语
+xunhuanzhankai	loop unrolling	计算机 · 专业英语
+xunineicun	virtual memory	计算机 · 专业英语
+xuyan	continuation	计算机 · 专业英语
+yanchi	latency	计算机 · 专业英语
+yanzhi	salt	计算机 · 专业英语
 yarnlock	yarn.lock	编程 · 技术英文
 year	year	日常英语
+yebiao	page table	计算机 · 专业英语
+yemianzhihuan	page replacement	计算机 · 专业英语
 yes	yes	日常英语
 yesterday	yesterday	日常英语
+yicixingshuzhi	nonce	计算机 · 专业英语
 yield	yield	JS · 库与 API
+yilaizhuru	dependency injection	计算机 · 专业英语
+yinglianjie	hard link	计算机 · 专业英语
+yinguoyizhixing	causal consistency	计算机 · 专业英语
+yinyongjishu	reference counting	计算机 · 专业英语
+yinyongtoumingxing	referential transparency	计算机 · 专业英语
+yizhixing	consistency	计算机 · 专业英语
+yizhixinghaxi	consistent hashing	计算机 · 专业英语
+yonghutai	user mode	计算机 · 专业英语
+yongsaikongzhi	congestion control	计算机 · 专业英语
+youxianduilie	priority queue	计算机 · 专业英语
+youxiangtu	directed graph	计算机 · 专业英语
+youxianjifanzhuan	priority inversion	计算机 · 专业英语
+youxianzhuangtaiji	finite state machine	计算机 · 专业英语
+youyaguanbi	graceful shutdown	计算机 · 专业英语
 yoyomigrations	Yoyo Migrations	Python · 库与 API
+yuanzicaozuo	atomic operation	计算机 · 专业英语
+yuanzixing	atomicity	计算机 · 专业英语
+yufafenxi	syntax analysis	计算机 · 专业英语
+yujufugailv	statement coverage	计算机 · 专业英语
+yunsuanfuzhongzai	operator overloading	计算机 · 专业英语
 yup	Yup	JS · 库与 API
+yuxierizhi	write-ahead logging	计算机 · 专业英语
+yuyifenxi	semantic analysis	计算机 · 专业英语
+zangdu	dirty read	计算机 · 专业英语
 zap	Zap	Go · 库与 API
 zarray	z.array	JS · 库与 API
+zengliangbianyi	incremental compilation	计算机 · 专业英语
+zerocopy	zero-copy	计算机 · 专业英语
 zerolog	Zerolog	Go · 库与 API
+zhengshubanfajigou	certificate authority	计算机 · 专业英语
+zhengshuyichu	integer overflow	计算机 · 专业英语
+zhengzeyuyan	regular language	计算机 · 专业英语
+zhiduoyicitoudi	at-most-once delivery	计算机 · 专业英语
+zhijieneicunfangwen	direct memory access	计算机 · 专业英语
+zhilingji	instruction set	计算机 · 专业英语
+zhilingliushuixian	instruction pipeline	计算机 · 专业英语
+zhinengzhizhen	smart pointer	计算机 · 专业英语
+zhishaoyicitoudi	at-least-once delivery	计算机 · 专业英语
+zhongduanchulichengxu	interrupt handler	计算机 · 专业英语
+zhongjianbiaoshi	intermediate representation	计算机 · 专业英语
+zhongjianrengongji	man-in-the-middle attack	计算机 · 专业英语
+zidianshu	trie	计算机 · 专业英语
 zig	Zig	编程 · 技术英文
+zijiexu	byte order	计算机 · 专业英语
+zileixing	subtyping	计算机 · 专业英语
 zinfer	z.infer	TS · 类型与工具
 zinput	z.input	TS · 类型与工具
 zip	zip	Python · 库与 API
 zipfile	zipfile	Python · 库与 API
 zipkin	Zipkin	Go · 库与 API
+ziwangyanma	subnet mask	计算机 · 专业英语
+zixuansuo	spinlock	计算机 · 专业英语
+zizhufangwenkongzhi	discretionary access control	计算机 · 专业英语
 zobject	z.object	JS · 库与 API
 zod	Zod	JS · 库与 API
 zoneddatetime	ZonedDateTime	Java · 库与 API
 zoneinfo	zoneinfo	Python · 库与 API
+zongshenfangyu	defense in depth	计算机 · 专业英语
 zoutput	z.output	TS · 类型与工具
 zsafeparse	z.safeParse	JS · 库与 API
 zstring	z.string	JS · 库与 API
+zuidachuanshudanyuan	maximum transmission unit	计算机 · 专业英语
+zuiduanlujing	shortest path	计算机 · 专业英语
+zuixiaoquanxian	least privilege	计算机 · 专业英语
+zuixiaoshengchengshu	minimum spanning tree	计算机 · 专业英语
+zuizhongyizhixing	eventual consistency	计算机 · 专业英语
 zustand	Zustand	编程 · 技术英文
+zuyue	lease	计算机 · 专业英语
 zzoderror	z.ZodError	TS · 类型与工具
 zzodtype	z.ZodType	TS · 类型与工具

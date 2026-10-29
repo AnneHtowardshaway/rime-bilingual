@@ -5,7 +5,7 @@ param([string]$UserDir = $env:RIME_USER_DIR)
 . (Join-Path $PSScriptRoot 'windows-common.ps1')
 $target = Resolve-RimeDirectory $UserDir
 foreach ($relative in @('weasel.custom.yaml', 'default.custom.yaml', 'wanxiang.custom.yaml', 'bilingual_algebra.yaml',
-    'bilingual_english.dict.yaml', 'lua/bilingual_english_format.lua', 'lua/internet_english_filter.lua', 'lua/qingjian_gloss_filter.lua',
+    'tech_english_computer.dict.yaml', 'bilingual_english.dict.yaml', 'lua/bilingual_english_format.lua', 'lua/internet_english_filter.lua', 'lua/qingjian_gloss_filter.lua',
     'data/internet-english.tsv', 'data/programming-english.tsv', 'data/qingjian-glossary-en.tsv', 'data/technical-glossary-en.tsv',
     'build/default.yaml', 'build/wanxiang.schema.yaml', 'build/bilingual_english.table.bin', 'build/weasel.yaml')) {
     if (-not (Test-Path -LiteralPath (Join-Path $target $relative) -PathType Leaf)) { throw "Missing installed/built file: $relative" }

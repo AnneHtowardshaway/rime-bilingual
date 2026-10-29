@@ -212,3 +212,9 @@ py -3 -X utf8 .\scripts\manage.py data restore "$backupFile" --settings-only --r
 | 恢复提示输入法仍运行 | 检查 `WeaselServer` / `WeaselDeployer`，退出服务后再恢复，不能用 `--settings-only` 绕过运行检查 |
 
 目录问题不需要关闭安全软件、改系统全局 UTF-8 或绕过路径保护。桌面候选外观、高 DPI 与各应用交互仍需 Windows 实机验收；本教程不把脚本检查当成全部桌面体验已验证。
+
+## 计算机专业英语选词
+
+新增 300 个术语、600 个英文／拼音编码。例如 `algorithm` 或 `suanfa` 可选 algorithm，`datastructure` 或 `shujujiegou` 可选 data structure。普通模式完整编码通常按 2 选英文；只有一个候选时按 1。技术入口 `;authenticat` / `vvauthenticat` 支持补全。
+
+完整示例与词库链接见 [计算机专业英语](../README.md#计算机专业英语300-个术语)。更新源码后按本教程的脚本安装步骤重新部署；此前生成的离线安装包不包含本轮新增词。

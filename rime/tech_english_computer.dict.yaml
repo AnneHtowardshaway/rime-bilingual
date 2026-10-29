@@ -1,0 +1,1211 @@
+# Rime dictionary
+# encoding: utf-8
+# SPDX-License-Identifier: GPL-3.0-or-later
+# 300 个独立术语；英文全拼与中文拼音别名不重复计数。
+---
+name: tech_english_computer
+version: "2026.10.29"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# 算法
+algorithm	algorithm	80
+algorithm	suanfa	80
+
+# 数据结构
+data structure	datastructure	80
+data structure	shujujiegou	80
+
+# 二分查找
+binary search	binarysearch	80
+binary search	erfenchazhao	80
+
+# 二叉树
+binary tree	binarytree	80
+binary tree	erchashu	80
+
+# 递归
+recursion	recursion	80
+recursion	digui	80
+
+# 多态
+polymorphism	polymorphism	80
+polymorphism	duotai	80
+
+# 类继承
+inheritance	inheritance	80
+inheritance	leijicheng	80
+
+# 封装
+encapsulation	encapsulation	80
+encapsulation	fengzhuang	80
+
+# 抽象
+abstraction	abstraction	80
+abstraction	chouxiang	80
+
+# 并发
+concurrency	concurrency	80
+concurrency	bingfa	80
+
+# 并行
+parallelism	parallelism	80
+parallelism	bingxing	80
+
+# 协程
+coroutine	coroutine	80
+coroutine	xiecheng	80
+
+# 竞态条件
+race condition	racecondition	80
+race condition	jingtatiaojian	80
+
+# 线程池
+thread pool	threadpool	80
+thread pool	xianchengchi	80
+
+# 垃圾回收
+garbage collection	garbagecollection	80
+garbage collection	lajihuishou	80
+
+# 依赖注入
+dependency injection	dependencyinjection	80
+dependency injection	yilaizhuru	80
+
+# 身份认证
+authentication	authentication	80
+authentication	shenfenrenzheng	80
+
+# 授权
+authorization	authorization	80
+authorization	shouquan	80
+
+# 吞吐量
+throughput	throughput	80
+throughput	tuntuliang	80
+
+# 延迟
+latency	latency	80
+latency	yanchi	80
+
+# 背压
+backpressure	backpressure	80
+backpressure	beiya	80
+
+# 记忆化
+memoization	memoization	80
+memoization	jiyihua	80
+
+# 堆
+heap	heap	80
+heap	shujudui	80
+
+# 栈
+stack	stack	80
+stack	shujuzhan	80
+
+# 哈希映射
+hash map	cshashmap	80
+hash map	haxiyingshe	80
+
+# 哈希表
+hash table	cshashtable	80
+hash table	haxibiao	80
+
+# 链表
+linked list	cslinkedlist	80
+linked list	lianbiao	80
+
+# 邻接表
+adjacency list	adjacencylist	80
+adjacency list	linjiebiao	80
+
+# 邻接矩阵
+adjacency matrix	adjacencymatrix	80
+adjacency matrix	linjiejuzhen	80
+
+# 优先队列
+priority queue	cspriorityqueue	80
+priority queue	youxianduilie	80
+
+# 环形缓冲区
+circular buffer	circularbuffer	80
+circular buffer	huanxinghuanchongqu	80
+
+# 平衡树
+balanced tree	balancedtree	80
+balanced tree	pinghengshu	80
+
+# 红黑树
+red-black tree	redblacktree	80
+red-black tree	hongheishu	80
+
+# 二叉搜索树
+binary search tree	binarysearchtree	80
+binary search tree	erchasousuoshu	80
+
+# 字典树
+trie	trie	80
+trie	zidianshu	80
+
+# 后缀数组
+suffix array	suffixarray	80
+suffix array	houzhuishuzu	80
+
+# 线段树
+segment tree	segmenttree	80
+segment tree	xianduanshu	80
+
+# 树状数组
+Fenwick tree	fenwicktree	80
+Fenwick tree	shuzhuangshuzu	80
+
+# 并查集
+disjoint set	disjointset	80
+disjoint set	bingchaji	80
+
+# 布隆过滤器
+Bloom filter	bloomfilter	80
+Bloom filter	bulongguolvqi	80
+
+# 跳表
+skip list	skiplist	80
+skip list	tiaobiao	80
+
+# 有向图
+directed graph	directedgraph	80
+directed graph	youxiangtu	80
+
+# 无向图
+undirected graph	undirectedgraph	80
+undirected graph	wuxiangtu	80
+
+# 加权图
+weighted graph	weightedgraph	80
+weighted graph	jiaquantu	80
+
+# 生成树
+spanning tree	spanningtree	80
+spanning tree	shengchengshu	80
+
+# 最小生成树
+minimum spanning tree	minimumspanningtree	80
+minimum spanning tree	zuixiaoshengchengshu	80
+
+# 最短路径
+shortest path	shortestpath	80
+shortest path	zuiduanlujing	80
+
+# 拓扑排序
+topological sort	topologicalsort	80
+topological sort	tuopupaixu	80
+
+# 深度优先搜索
+depth-first search	depthfirstsearch	80
+depth-first search	shenduyouxiansousuo	80
+
+# 广度优先搜索
+breadth-first search	breadthfirstsearch	80
+breadth-first search	guangduyouxiansousuo	80
+
+# 动态规划
+dynamic programming	dynamicprogramming	80
+dynamic programming	dongtaiguihua	80
+
+# 贪心算法
+greedy algorithm	greedyalgorithm	80
+greedy algorithm	tanxinsuanfa	80
+
+# 回溯
+backtracking	backtracking	80
+backtracking	huisu	80
+
+# 分治
+divide and conquer	divideandconquer	80
+divide and conquer	fenzhi	80
+
+# 归并排序
+merge sort	mergesort	80
+merge sort	guibingpaixu	80
+
+# 快速排序
+quick sort	quicksort	80
+quick sort	kuaisupaixu	80
+
+# 堆排序
+heap sort	heapsort	80
+heap sort	duipaixu	80
+
+# 插入排序
+insertion sort	insertionsort	80
+insertion sort	charupaixu	80
+
+# 计数排序
+counting sort	countingsort	80
+counting sort	jishupaixu	80
+
+# 基数排序
+radix sort	radixsort	80
+radix sort	jishupaixufa	80
+
+# 桶排序
+bucket sort	bucketsort	80
+bucket sort	tongpaixu	80
+
+# 时间复杂度
+time complexity	timecomplexity	80
+time complexity	shijianfuzadu	80
+
+# 空间复杂度
+space complexity	spacecomplexity	80
+space complexity	kongjianfuzadu	80
+
+# 摊还分析
+amortized analysis	amortizedanalysis	80
+amortized analysis	tanhuanfenxi	80
+
+# 循环不变量
+loop invariant	loopinvariant	80
+loop invariant	xunhuanbubianliang	80
+
+# 抽象数据类型
+abstract data type	abstractdatatype	80
+abstract data type	chouxiangshujuleixing	80
+
+# 有限状态机
+finite state machine	finitestatemachine	80
+finite state machine	youxianzhuangtaiji	80
+
+# 正则语言
+regular language	regularlanguage	80
+regular language	zhengzeyuyan	80
+
+# 上下文无关文法
+context-free grammar	contextfreegrammar	80
+context-free grammar	shangxiawenwuguanwenfa	80
+
+# 词法分析
+lexical analysis	lexicalanalysis	80
+lexical analysis	cifafenxi	80
+
+# 语法分析
+syntax analysis	syntaxanalysis	80
+syntax analysis	yufafenxi	80
+
+# 语义分析
+semantic analysis	semanticanalysis	80
+semantic analysis	yuyifenxi	80
+
+# 抽象语法树
+abstract syntax tree	abstractsyntaxtree	80
+abstract syntax tree	chouxiangyufashu	80
+
+# 中间表示
+intermediate representation	intermediaterepresentation	80
+intermediate representation	zhongjianbiaoshi	80
+
+# 控制流图
+control flow graph	controlflowgraph	80
+control flow graph	kongzhiliutu	80
+
+# 符号表
+symbol table	symboltable	80
+symbol table	fuhaobiao	80
+
+# 类型检查
+type checking	typechecking	80
+type checking	leixingjiancha	80
+
+# 类型擦除
+type erasure	typeerasure	80
+type erasure	leixingcachu	80
+
+# 类型安全
+type safety	typesafety	80
+type safety	leixinganquan	80
+
+# 静态类型
+static typing	statictyping	80
+static typing	jingtaileixing	80
+
+# 动态类型
+dynamic typing	dynamictyping	80
+dynamic typing	dongtaileixing	80
+
+# 结构类型
+structural typing	structuraltyping	80
+structural typing	jiegouleixing	80
+
+# 名义类型
+nominal typing	nominaltyping	80
+nominal typing	mingyileixing	80
+
+# 代数数据类型
+algebraic data type	algebraicdatatype	80
+algebraic data type	daishushujuleixing	80
+
+# 和类型
+sum type	sumtype	80
+sum type	heleixing	80
+
+# 积类型
+product type	producttype	80
+product type	jileixing	80
+
+# 型变
+variance	variance	80
+variance	xingbian	80
+
+# 协变
+covariance	covariance	80
+covariance	xiebian	80
+
+# 逆变
+contravariance	contravariance	80
+contravariance	nibian	80
+
+# 子类型
+subtyping	subtyping	80
+subtyping	zileixing	80
+
+# 高阶函数
+higher-order function	higherorderfunction	80
+higher-order function	gaojiehanshu	80
+
+# 纯函数
+pure function	purefunction	80
+pure function	chunhanshu	80
+
+# 引用透明性
+referential transparency	referentialtransparency	80
+referential transparency	yinyongtoumingxing	80
+
+# 柯里化
+currying	currying	80
+currying	kelihua	80
+
+# 部分应用
+partial application	partialapplication	80
+partial application	bufenyingyong	80
+
+# 惰性求值
+lazy evaluation	lazyevaluation	80
+lazy evaluation	duoxingqiuzhi	80
+
+# 急切求值
+eager evaluation	eagerevaluation	80
+eager evaluation	jiqieqiuzhi	80
+
+# 尾递归
+tail recursion	tailrecursion	80
+tail recursion	weidigui	80
+
+# 尾调用
+tail call	tailcall	80
+tail call	weidiaoyong	80
+
+# 续延
+continuation	continuation	80
+continuation	xuyan	80
+
+# 模式匹配
+pattern matching	patternmatching	80
+pattern matching	moshipipei	80
+
+# 运算符重载
+operator overloading	operatoroverloading	80
+operator overloading	yunsuanfuzhongzai	80
+
+# 方法分派
+method dispatch	methoddispatch	80
+method dispatch	fangfafenpai	80
+
+# 多重继承
+multiple inheritance	multipleinheritance	80
+multiple inheritance	duochongjicheng	80
+
+# 组合
+composition	composition	80
+composition	duixiangzuhe	80
+
+# 信息隐藏
+information hiding	informationhiding	80
+information hiding	xinxiyincang	80
+
+# 关注点分离
+separation of concerns	separationofconcerns	80
+separation of concerns	guanzhudianfenli	80
+
+# 内聚
+cohesion	cohesion	80
+cohesion	neiju	80
+
+# 耦合
+coupling	coupling	80
+coupling	ouhe	80
+
+# 不可变性
+immutability	immutability	80
+immutability	bukebianxing	80
+
+# 可变性
+mutability	mutability	80
+mutability	kebianxing	80
+
+# 空指针
+null pointer	nullpointer	80
+null pointer	kongzhizhen	80
+
+# 悬空指针
+dangling pointer	danglingpointer	80
+dangling pointer	xuankongzhizhen	80
+
+# 智能指针
+smart pointer	smartpointer	80
+smart pointer	zhinengzhizhen	80
+
+# 引用计数
+reference counting	referencecounting	80
+reference counting	yinyongjishu	80
+
+# 内存分配
+memory allocation	memoryallocation	80
+memory allocation	neicunfenpei	80
+
+# 内存对齐
+memory alignment	memoryalignment	80
+memory alignment	neicunduiqi	80
+
+# 内存碎片
+memory fragmentation	memoryfragmentation	80
+memory fragmentation	neicunsuipian	80
+
+# 内存屏障
+memory barrier	memorybarrier	80
+memory barrier	neicunpingzhang	80
+
+# 内存模型
+memory model	memorymodel	80
+memory model	neicunmoxing	80
+
+# 虚拟内存
+virtual memory	virtualmemory	80
+virtual memory	xunineicun	80
+
+# 物理内存
+physical memory	physicalmemory	80
+physical memory	wulineicun	80
+
+# 页表
+page table	pagetable	80
+page table	yebiao	80
+
+# 缺页异常
+page fault	pagefault	80
+page fault	queyeyichang	80
+
+# 页面置换
+page replacement	pagereplacement	80
+page replacement	yemianzhihuan	80
+
+# 工作集
+working set	workingset	80
+working set	gongzuoji	80
+
+# 抖动
+thrashing	thrashing	80
+thrashing	neicundoudong	80
+
+# 上下文切换
+context switch	contextswitch	80
+context switch	shangxiawenqiehuan	80
+
+# 系统调用
+system call	systemcall	80
+system call	xitongdiaoyong	80
+
+# 中断处理程序
+interrupt handler	interrupthandler	80
+interrupt handler	zhongduanchulichengxu	80
+
+# 内核态
+kernel mode	kernelmode	80
+kernel mode	neihetai	80
+
+# 用户态
+user mode	usermode	80
+user mode	yonghutai	80
+
+# 进程调度
+process scheduling	processscheduling	80
+process scheduling	jinchengdiaodu	80
+
+# 抢占
+preemption	preemption	80
+preemption	qiangzhan	80
+
+# 轮转调度
+round-robin scheduling	roundrobinscheduling	80
+round-robin scheduling	lunzhuandiaodu	80
+
+# 优先级反转
+priority inversion	priorityinversion	80
+priority inversion	youxianjifanzhuan	80
+
+# 饥饿
+starvation	starvation	80
+starvation	jie	80
+
+# 活锁
+livelock	livelock	80
+livelock	huosuo	80
+
+# 互斥
+mutual exclusion	mutualexclusion	80
+mutual exclusion	huchi	80
+
+# 临界区
+critical section	criticalsection	80
+critical section	linjiequ	80
+
+# 条件变量
+condition variable	conditionvariable	80
+condition variable	tiaojianbianliang	80
+
+# 自旋锁
+spinlock	spinlock	80
+spinlock	zixuansuo	80
+
+# 读写锁
+read-write lock	csreadwritelock	80
+read-write lock	duxiesuo	80
+
+# 可重入锁
+reentrant lock	csreentrantlock	80
+reentrant lock	kechongrusuo	80
+
+# 原子操作
+atomic operation	atomicoperation	80
+atomic operation	yuanzicaozuo	80
+
+# 比较并交换
+compare-and-swap	compareandswap	80
+compare-and-swap	bijiaobingjiaohuan	80
+
+# 无锁
+lock-free	lockfree	80
+lock-free	wusuo	80
+
+# 无等待
+wait-free	waitfree	80
+wait-free	wudengdai	80
+
+# 线程安全
+thread safety	threadsafety	80
+thread safety	xianchenganquan	80
+
+# 线程本地存储
+thread-local storage	threadlocalstorage	80
+thread-local storage	xianchengbendicunchu	80
+
+# 进程间通信
+interprocess communication	interprocesscommunication	80
+interprocess communication	jinchengjiantongxin	80
+
+# 共享内存
+shared memory	sharedmemory	80
+shared memory	gongxiangneicun	80
+
+# 消息传递
+message passing	messagepassing	80
+message passing	xiaoxichuandi	80
+
+# 内存映射文件
+memory-mapped file	memorymappedfile	80
+memory-mapped file	neicunyingshewenjian	80
+
+# 文件描述符
+file descriptor	filedescriptor	80
+file descriptor	wenjianmiaoshufu	80
+
+# 文件系统
+file system	filesystem	80
+file system	wenjianxitong	80
+
+# 索引节点
+inode	inode	80
+inode	suoyinjiedian	80
+
+# 符号链接
+symbolic link	symboliclink	80
+symbolic link	fuhaolianjie	80
+
+# 硬链接
+hard link	hardlink	80
+hard link	yinglianjie	80
+
+# 日志记录
+journaling	journaling	80
+journaling	wenjianrizhijilu	80
+
+# 缓冲区缓存
+buffer cache	buffercache	80
+buffer cache	huanchongquhuancun	80
+
+# 直接内存访问
+direct memory access	directmemoryaccess	80
+direct memory access	zhijieneicunfangwen	80
+
+# 零拷贝
+zero-copy	zerocopy	80
+zero-copy	lingkaobei	80
+
+# 字节序
+byte order	byteorder	80
+byte order	zijiexu	80
+
+# 端序
+endianness	endianness	80
+endianness	duanxu	80
+
+# 指令集
+instruction set	instructionset	80
+instruction set	zhilingji	80
+
+# 指令流水线
+instruction pipeline	instructionpipeline	80
+instruction pipeline	zhilingliushuixian	80
+
+# 分支预测
+branch prediction	branchprediction	80
+branch prediction	fenzhiyuce	80
+
+# 缓存一致性
+cache coherence	cachecoherence	80
+cache coherence	huancunyizhixing	80
+
+# 伪共享
+false sharing	falsesharing	80
+false sharing	weigongxiang	80
+
+# 缓存局部性
+cache locality	cachelocality	80
+cache locality	huancunjubuxing	80
+
+# 空间局部性
+spatial locality	spatiallocality	80
+spatial locality	kongjianjubuxing	80
+
+# 时间局部性
+temporal locality	temporallocality	80
+temporal locality	shijianjubuxing	80
+
+# 分组交换
+packet switching	packetswitching	80
+packet switching	fenzujiaohuan	80
+
+# 电路交换
+circuit switching	circuitswitching	80
+circuit switching	dianlujiaohuan	80
+
+# 网络拓扑
+network topology	networktopology	80
+network topology	wangluotuopu	80
+
+# 子网掩码
+subnet mask	subnetmask	80
+subnet mask	ziwangyanma	80
+
+# 默认网关
+default gateway	defaultgateway	80
+default gateway	morenwangguan	80
+
+# 路由表
+routing table	routingtable	80
+routing table	luyoubiao	80
+
+# 地址解析
+address resolution	addressresolution	80
+address resolution	dizhijiexi	80
+
+# 网络地址转换
+network address translation	networkaddresstranslation	80
+network address translation	wangluodizhizhuanhuan	80
+
+# 拥塞控制
+congestion control	congestioncontrol	80
+congestion control	yongsaikongzhi	80
+
+# 流量控制
+flow control	flowcontrol	80
+flow control	liuliangkongzhi	80
+
+# 滑动窗口
+sliding window	slidingwindow	80
+sliding window	huadongchuangkou	80
+
+# 慢启动
+slow start	slowstart	80
+slow start	manqidong	80
+
+# 重传
+retransmission	retransmission	80
+retransmission	chongchuan	80
+
+# 往返时间
+round-trip time	roundtriptime	80
+round-trip time	wangfanshijian	80
+
+# 丢包
+packet loss	packetloss	80
+packet loss	diubao	80
+
+# 抖动延迟
+jitter	jitter	80
+jitter	doudongyanchi	80
+
+# 最大传输单元
+maximum transmission unit	maximumtransmissionunit	80
+maximum transmission unit	zuidachuanshudanyuan	80
+
+# 路径最大传输单元发现
+path MTU discovery	pathmtudiscovery	80
+path MTU discovery	lujingmtufaxian	80
+
+# 三次握手
+three-way handshake	threewayhandshake	80
+three-way handshake	sanciwoshou	80
+
+# 半关闭
+half-close	halfclose	80
+half-close	banguanbi	80
+
+# 队头阻塞
+head-of-line blocking	headoflineblocking	80
+head-of-line blocking	duitouzuse	80
+
+# 连接多路复用
+connection multiplexing	connectionmultiplexing	80
+connection multiplexing	lianjieduolufuyong	80
+
+# 名称解析
+name resolution	nameresolution	80
+name resolution	mingchengjiexi	80
+
+# 递归解析器
+recursive resolver	recursiveresolver	80
+recursive resolver	diguijiexiqi	80
+
+# 权威域名服务器
+authoritative name server	authoritativenameserver	80
+authoritative name server	quanweiyumingfuwuqi	80
+
+# 生存时间
+time to live	timetolive	80
+time to live	shengcunshijian	80
+
+# 证书颁发机构
+certificate authority	certificateauthority	80
+certificate authority	zhengshubanfajigou	80
+
+# 公钥基础设施
+public key infrastructure	publickeyinfrastructure	80
+public key infrastructure	gongyaojichusheshi	80
+
+# 对称加密
+symmetric encryption	symmetricencryption	80
+symmetric encryption	duichenjiami	80
+
+# 非对称加密
+asymmetric encryption	asymmetricencryption	80
+asymmetric encryption	feiduichenjiami	80
+
+# 数字签名
+digital signature	digitalsignature	80
+digital signature	shuziqianming	80
+
+# 密钥交换
+key exchange	keyexchange	80
+key exchange	miyaojiaohuan	80
+
+# 前向保密
+forward secrecy	forwardsecrecy	80
+forward secrecy	qianxiangbaomi	80
+
+# 消息认证码
+message authentication code	messageauthenticationcode	80
+message authentication code	xiaoxirenzhengma	80
+
+# 密码学哈希
+cryptographic hash	cryptographichash	80
+cryptographic hash	mimaxuehaxi	80
+
+# 盐值
+salt	salt	80
+salt	yanzhi	80
+
+# 一次性数值
+nonce	nonce	80
+nonce	yicixingshuzhi	80
+
+# 重放攻击
+replay attack	replayattack	80
+replay attack	chongfanggongji	80
+
+# 中间人攻击
+man-in-the-middle attack	maninthemiddleattack	80
+man-in-the-middle attack	zhongjianrengongji	80
+
+# 缓冲区溢出
+buffer overflow	bufferoverflow	80
+buffer overflow	huanchongquyichu	80
+
+# 整数溢出
+integer overflow	integeroverflow	80
+integer overflow	zhengshuyichu	80
+
+# 释放后使用
+use-after-free	useafterfree	80
+use-after-free	shifanghoushiyong	80
+
+# 检查与使用时差
+time-of-check to time-of-use	timeofchecktotimeofuse	80
+time-of-check to time-of-use	jianchayushiyongshicha	80
+
+# 权限提升
+privilege escalation	privilegeescalation	80
+privilege escalation	quanxiantisheng	80
+
+# 最小权限
+least privilege	leastprivilege	80
+least privilege	zuixiaoquanxian	80
+
+# 纵深防御
+defense in depth	defenseindepth	80
+defense in depth	zongshenfangyu	80
+
+# 攻击面
+attack surface	attacksurface	80
+attack surface	gongjimian	80
+
+# 威胁模型
+threat model	threatmodel	80
+threat model	weixiemoxing	80
+
+# 安全边界
+security boundary	securityboundary	80
+security boundary	anquanbianjie	80
+
+# 输入校验
+input validation	inputvalidation	80
+input validation	shurujiaoyan	80
+
+# 输出编码
+output encoding	outputencoding	80
+output encoding	shuchubianma	80
+
+# 沙箱隔离
+sandboxing	sandboxing	80
+sandboxing	shaxianggeli	80
+
+# 能力安全
+capability-based security	capabilitybasedsecurity	80
+capability-based security	nenglianquan	80
+
+# 基于角色的访问控制
+role-based access control	rolebasedaccesscontrol	80
+role-based access control	juesefangwenkongzhi	80
+
+# 基于属性的访问控制
+attribute-based access control	attributebasedaccesscontrol	80
+attribute-based access control	shuxingfangwenkongzhi	80
+
+# 强制访问控制
+mandatory access control	mandatoryaccesscontrol	80
+mandatory access control	qiangzhifangwenkongzhi	80
+
+# 自主访问控制
+discretionary access control	discretionaryaccesscontrol	80
+discretionary access control	zizhufangwenkongzhi	80
+
+# 原子性
+atomicity	atomicity	80
+atomicity	yuanzixing	80
+
+# 一致性
+consistency	consistency	80
+consistency	yizhixing	80
+
+# 隔离性
+isolation	isolation	80
+isolation	gelixing	80
+
+# 持久性
+durability	durability	80
+durability	chijiuxing	80
+
+# 脏读
+dirty read	dirtyread	80
+dirty read	zangdu	80
+
+# 不可重复读
+nonrepeatable read	nonrepeatableread	80
+nonrepeatable read	bukechongfudu	80
+
+# 幻读
+phantom read	phantomread	80
+phantom read	huandu	80
+
+# 写偏斜
+write skew	writeskew	80
+write skew	xiepianxie	80
+
+# 丢失更新
+lost update	lostupdate	80
+lost update	diushigengxin	80
+
+# 快照隔离
+snapshot isolation	snapshotisolation	80
+snapshot isolation	kuaizhaogeli	80
+
+# 多版本并发控制
+multiversion concurrency control	multiversionconcurrencycontrol	80
+multiversion concurrency control	duobanbenbingfakongzhi	80
+
+# 两阶段锁
+two-phase locking	twophaselocking	80
+two-phase locking	liangjieduansuo	80
+
+# 预写日志
+write-ahead logging	writeaheadlogging	80
+write-ahead logging	yuxierizhi	80
+
+# 保存点
+savepoint	savepoint	80
+savepoint	baocundian	80
+
+# 回滚
+rollback	rollback	80
+rollback	huigun	80
+
+# 提交协议
+commit protocol	commitprotocol	80
+commit protocol	tijiaoxieyi	80
+
+# 两阶段提交
+two-phase commit	twophasecommit	80
+two-phase commit	liangjieduantijiao	80
+
+# 三阶段提交
+three-phase commit	threephasecommit	80
+three-phase commit	sanjieduantijiao	80
+
+# 查询执行
+query execution	queryexecution	80
+query execution	chaxunzhixing	80
+
+# 顺序扫描
+sequential scan	sequentialscan	80
+sequential scan	shunxusaomiao	80
+
+# 一致性哈希
+consistent hashing	consistenthashing	80
+consistent hashing	yizhixinghaxi	80
+
+# 共识
+consensus	consensus	80
+consensus	gongshi	80
+
+# 法定人数
+quorum	quorum	80
+quorum	fadingrenshu	80
+
+# 领导者选举
+leader election	leaderelection	80
+leader election	lingdaozhexuanju	80
+
+# 脑裂
+split brain	splitbrain	80
+split brain	naolie	80
+
+# 网络分区
+network partition	networkpartition	80
+network partition	wangluofenqu	80
+
+# 线性一致性
+linearizability	linearizability	80
+linearizability	xianxingyizhixing	80
+
+# 顺序一致性
+sequential consistency	sequentialconsistency	80
+sequential consistency	shunxuyizhixing	80
+
+# 因果一致性
+causal consistency	causalconsistency	80
+causal consistency	yinguoyizhixing	80
+
+# 最终一致性
+eventual consistency	eventualconsistency	80
+eventual consistency	zuizhongyizhixing	80
+
+# 向量时钟
+vector clock	vectorclock	80
+vector clock	xiangliangshizhong	80
+
+# 逻辑时钟
+logical clock	logicalclock	80
+logical clock	luojishizhong	80
+
+# 兰伯特时钟
+Lamport clock	lamportclock	80
+Lamport clock	lanboteshizhong	80
+
+# 幂等操作
+idempotent operation	idempotentoperation	80
+idempotent operation	midengcaozuo	80
+
+# 至多一次投递
+at-most-once delivery	atmostoncedelivery	80
+at-most-once delivery	zhiduoyicitoudi	80
+
+# 至少一次投递
+at-least-once delivery	atleastoncedelivery	80
+at-least-once delivery	zhishaoyicitoudi	80
+
+# 恰好一次处理
+exactly-once processing	exactlyonceprocessing	80
+exactly-once processing	qiahaoyicichuli	80
+
+# 去重
+deduplication	deduplication	80
+deduplication	quchong	80
+
+# 隔离令牌
+fencing token	fencingtoken	80
+fencing token	gelilingpai	80
+
+# 租约
+lease	lease	80
+lease	zuyue	80
+
+# 优雅关闭
+graceful shutdown	gracefulshutdown	80
+graceful shutdown	youyaguanbi	80
+
+# 混沌工程
+chaos engineering	chaosengineering	80
+chaos engineering	hundungongcheng	80
+
+# 故障注入
+fault injection	faultinjection	80
+fault injection	guzhangzhuru	80
+
+# 基于属性的测试
+property-based testing	propertybasedtesting	80
+property-based testing	shuxingceshi	80
+
+# 变异测试
+mutation testing	mutationtesting	80
+mutation testing	bianyiceshi	80
+
+# 模糊测试
+fuzz testing	fuzztesting	80
+fuzz testing	mohuceshi	80
+
+# 契约测试
+contract testing	contracttesting	80
+contract testing	qiyueceshi	80
+
+# 回归测试
+regression testing	regressiontesting	80
+regression testing	huiguiceshi	80
+
+# 边界值分析
+boundary value analysis	boundaryvalueanalysis	80
+boundary value analysis	bianjiezhifenxi	80
+
+# 等价类划分
+equivalence partitioning	equivalencepartitioning	80
+equivalence partitioning	dengjialeihuafen	80
+
+# 圈复杂度
+cyclomatic complexity	cyclomaticcomplexity	80
+cyclomatic complexity	quanfuzadu	80
+
+# 技术债务
+technical debt	technicaldebt	80
+technical debt	jishuzhaiwu	80
+
+# 代码覆盖率
+code coverage	codecoverage	80
+code coverage	daimafugailv	80
+
+# 分支覆盖率
+branch coverage	branchcoverage	80
+branch coverage	fenzhifugailv	80
+
+# 语句覆盖率
+statement coverage	statementcoverage	80
+statement coverage	yujufugailv	80
+
+# 静态分析
+static analysis	staticanalysis	80
+static analysis	jingtaifenxi	80
+
+# 动态分析
+dynamic analysis	dynamicanalysis	80
+dynamic analysis	dongtaifenxi	80
+
+# 形式化验证
+formal verification	formalverification	80
+formal verification	xingshihuayanzheng	80
+
+# 模型检测
+model checking	modelchecking	80
+model checking	moxingjiance	80
+
+# 符号执行
+symbolic execution	symbolicexecution	80
+symbolic execution	fuhaozhixing	80
+
+# 可复现构建
+reproducible build	reproduciblebuild	80
+reproducible build	kefuxiangoujian	80
+
+# 确定性构建
+deterministic build	deterministicbuild	80
+deterministic build	quedingxinggoujian	80
+
+# 增量编译
+incremental compilation	incrementalcompilation	80
+incremental compilation	zengliangbianyi	80
+
+# 链接时优化
+link-time optimization	linktimeoptimization	80
+link-time optimization	lianjieshiyouhua	80
+
+# 死代码消除
+dead code elimination	deadcodeelimination	80
+dead code elimination	sidaimaxiaochu	80
+
+# 常量折叠
+constant folding	constantfolding	80
+constant folding	changliangzhedie	80
+
+# 公共子表达式消除
+common subexpression elimination	commonsubexpressionelimination	80
+common subexpression elimination	gonggongzibiaodashixiaochu	80
+
+# 循环展开
+loop unrolling	loopunrolling	80
+loop unrolling	xunhuanzhankai	80
+
+# 逃逸分析
+escape analysis	escapeanalysis	80
+escape analysis	taoyifenxi	80
+
+# 内联
+inlining	inlining	80
+inlining	neilian	80
+

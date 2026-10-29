@@ -1,51 +1,104 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # 常用编程与 AI 释义优先表；按 UTF-8 字节序排列，每列一个义项。
 上下文窗口	n. context window
+二分查找	n. binary search
+二叉搜索树	n. binary search tree
+二叉树	n. binary tree
 云原生	adj. cloud-native
 令牌	n. token
+优先队列	n. priority queue
 依赖注入	n. dependency injection
 内存泄漏	n. memory leak
+分治	n. divide and conquer
 分词	n. tokenization
 前端	n. frontend
+加权图	n. weighted graph
+动态规划	n. dynamic programming
 协程	n. coroutine
 单例	n. singleton
 反射	n. reflection
 反序列化	n. deserialization
 后端	n. backend
+后缀数组	n. suffix array
 向量数据库	n. vector database
+吞吐量	n. throughput
+哈希映射	n. hash map
+哈希表	n. hash table
 回归	n. regression	v. return
+回溯	n. backtracking
 回调	n. callback
 垃圾回收	n. garbage collection
+基数排序	n. radix sort
+堆	n. heap
+堆排序	n. heap sort
+多态	n. polymorphism
 多智能体	adj. multi-agent
 多模态	adj. multimodal
 大语言模型	n. large language model
+字典树	n. trie
 实现	v. implement	v. realize
 容器	n. container
 容器编排	n. container orchestration
+封装	n. encapsulation
 工作流	n. workflow
 工具调用	n. tool calling
+布隆过滤器	n. Bloom filter
 幂等	adj. idempotent
+平衡树	n. balanced tree
 并发	n. concurrency
+并查集	n. disjoint set
 并行	n. parallelism
 幻觉	n. hallucination
+广度优先搜索	n. breadth-first search
 序列化	n. serialization
 延迟	n. latency	v. delay
 异步	adj. asynchronous
+归并排序	n. merge sort
 微服务	n. microservice
 微调	n. fine-tuning
+快速排序	n. quick sort
 懒加载	n. lazy loading
+抽象	n. abstraction
+拓扑排序	n. topological sort
 持久化	n. persistence
+授权	n. authorization
 推理	n. inference	n. reasoning
 提示词	n. prompt
+插入排序	n. insertion sort
+数据结构	n. data structure
+无向图	n. undirected graph
 智能体	n. agent
+最小生成树	n. minimum spanning tree
+最短路径	n. shortest path
+有向图	n. directed graph
+栈	n. stack
+树状数组	n. Fenwick tree
 检索增强生成	n. retrieval-augmented generation
 死锁	n. deadlock
+深度优先搜索	n. depth-first search
 热重载	n. hot reloading
 熔断器	n. circuit breaker
+环形缓冲区	n. circular buffer
+生成树	n. spanning tree
 知识库	n. knowledge base
 竞态条件	n. race condition
+算法	n. algorithm
 类型推断	n. type inference
+类继承	n. inheritance
+红黑树	n. red-black tree
+线段树	n. segment tree
+线程池	n. thread pool
+背压	n. backpressure
 自动补全	n. autocompletion
+计数排序	n. counting sort
+记忆化	n. memoization
 词嵌入	n. embedding
+贪心算法	n. greedy algorithm
+跳表	n. skip list
+身份认证	n. authentication
+递归	n. recursion
+邻接矩阵	n. adjacency matrix
+邻接表	n. adjacency list
 量化	n. quantization
+链表	n. linked list
 闭包	n. closure

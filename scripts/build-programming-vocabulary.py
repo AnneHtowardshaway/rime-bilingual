@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parent.parent
 RIME = ROOT / "rime"
 OUTPUT = RIME / "data/programming-english.tsv"
 LABELS = {
+    "tech_english_computer": "计算机 · 专业英语",
     "tech_english_go": "Go · 库与 API",
     "tech_english_rust": "Rust · 库与 API",
     "tech_english_python": "Python · 库与 API",

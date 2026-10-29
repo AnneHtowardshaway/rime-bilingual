@@ -8,6 +8,7 @@ sort: by_weight
 use_preset_vocabulary: false
 # Rime 码表编译只读取直接导入的词条，语言词库也必须在这里列出。
 import_tables:
+  - tech_english_computer
   - tech_english_table
   - tech_english_rust
   - tech_english_python

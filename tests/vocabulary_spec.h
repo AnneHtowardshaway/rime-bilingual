@@ -35,6 +35,48 @@ static void vocabulary_spec(RimeApi* api, RimeSessionId session,
   std::printf("PASS %s：全量 %d 个英文编码的排序与去重\n", schema, count);
 }
 
+// 通过真实按键与提交验证专业英语；既测英文编码，也测中文拼音。
+static void computer_english_spec(RimeApi* api, RimeSessionId session) {
+  const char* cases[][2] = {
+    {"abstraction", "abstraction"}, {"coroutine", "coroutine"},
+    {"racecondition", "race condition"}, {"threadpool", "thread pool"},
+    {"garbagecollection", "garbage collection"}, {"dependencyinjection", "dependency injection"},
+    {"authorization", "authorization"}, {"throughput", "throughput"},
+    {"latency", "latency"}, {"backpressure", "backpressure"},
+    {"algorithm", "algorithm"}, {"suanfa", "algorithm"},
+    {"datastructure", "data structure"}, {"shujujiegou", "data structure"},
+    {"binarysearch", "binary search"}, {"erfenchazhao", "binary search"},
+    {"binarytree", "binary tree"}, {"erchashu", "binary tree"},
+    {"recursion", "recursion"}, {"digui", "recursion"},
+    {"polymorphism", "polymorphism"}, {"duotai", "polymorphism"},
+    {"inheritance", "inheritance"}, {"leijicheng", "inheritance"},
+    {"encapsulation", "encapsulation"}, {"fengzhuang", "encapsulation"},
+    {"concurrency", "concurrency"}, {"bingfa", "concurrency"},
+    {"authentication", "authentication"}, {"shenfenrenzheng", "authentication"},
+  };
+  int checked = 0;
+  for (const auto& item : cases) {
+    auto candidates = query(api, session, item[0]);
+    size_t position = candidates.size() == 1 ? 0 : 1;
+    require(!candidates.empty() && candidates[position].first == item[1],
+            "专业英语逐键候选错误：" + std::string(item[0]));
+    require(api->process_key(session, '1' + position, 0), "专业英语数字选词失败");
+    require(committed_text(api, session) == item[1], "专业英语完整上屏错误");
+    for (auto prefix : {";", "vv"}) {
+      query(api, session, std::string(prefix) + item[0]);
+      select_text(api, session, item[1]);
+      require(committed_text(api, session) == item[1], "专业入口上屏错误");
+    }
+    ++checked;
+  }
+  for (auto prefix : {";", "vv"}) {
+    query(api, session, std::string(prefix) + "authenticat");
+    select_text(api, session, "authentication");
+    require(committed_text(api, session) == "authentication", "专业前缀补全错误");
+  }
+  std::printf("PASS 计算机英语：%d 个逐键/数字选词用例、60 个专用入口、2 个前缀补全\n", checked);
+}
+
 static void technical_glossary_spec(RimeApi* api, RimeSessionId session,
                                     const char* schema) {
   const char* cases[][3] = {
@@ -64,6 +106,8 @@ static void mixed_english_spec(RimeApi* api, RimeSessionId session,
                                const char* schema) {
   const char* cases[][3] = {
     {"woyonggithub", "GitHub", "我用GitHub"},
+    {"woyongalgorithm", "algorithm", "我用algorithm"},
+    {"woyongsuanfa", "algorithm", "我用algorithm"},
     {"woyongdocker", "Docker", "我用Docker"},
     {"woyonggofmtprintf", "fmt.Printf", "我用fmt.Printf"},
     {"woyongserdejson", "serde_json", "我用serde_json"},

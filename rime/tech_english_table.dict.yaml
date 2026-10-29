@@ -9,6 +9,7 @@ version: "2026.10.22"
 sort: by_weight
 use_preset_vocabulary: false
 import_tables:
+  - tech_english_computer
   - tech_english_rust
   - tech_english_python
   - tech_english_go

@@ -128,6 +128,7 @@ static int run(int argc, char** argv) {
       vocabulary_spec(api, session, argv[1], argv[2]);
       input_experience_spec(api, session, argv[1], argv[2]);
       mixed_english_spec(api, session, argv[2]);
+      computer_english_spec(api, session);
       const std::pair<const char*, const char*> cases[] = {
         {"github", "GitHub"}, {"gitlab", "GitLab"}, {"docker", "Docker"},
         {"chatgpt", "ChatGPT"}, {"javascript", "JavaScript"}, {"typescript", "TypeScript"},
