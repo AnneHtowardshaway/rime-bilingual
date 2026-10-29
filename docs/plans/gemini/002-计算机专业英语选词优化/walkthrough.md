@@ -1,7 +1,7 @@
 # 002 计算机专业英语选词优化：交付复盘
 
 - 日期：2026-10-29（Asia/Shanghai）
-- 状态：用户确认后完成源码实现与 macOS 隔离真实引擎验证；未部署日用输入法，Windows 实机未验证。
+- 状态：用户确认后完成源码实现与 macOS 隔离真实引擎验证；未部署日用输入法；后续 Windows 原生 CI 验证结果见第 6 节。
 
 ## 1. 解决的问题与结果
 
@@ -66,3 +66,18 @@
 本轮已完成 macOS 真实 librime 隔离输入验收；没有在用户日用应用中手动输入，没有改正式 Rime 用户目录。Windows/PowerShell 当前未发现可用运行环境，Windows 脚本及桌面效果未执行验收；两平台共享词库、直接导入和安装遍历已做代码检查，不能替代实机结果。
 
 源码修改保持未暂存、未提交、未推送。用户之后可按平台教程用脚本安装并重新部署；已有离线包需要另行重建才会包含这次新增词。源码回滚只撤回本轮词库、聚合、生成表、释义及测试/说明增量，不能整文件覆盖共享文档或撤销既有打包工作。部署后的恢复沿用现有安装前备份和回滚脚本。
+
+## 6. 双平台验证与发布追加记录（2026-10-29）
+
+用户明确要求验证后推送，并进一步授权先推送验证分支，全部通过后更新 main。本追加授权取代前文“未提交/未推送”的初始边界。没有授权或执行日用输入法部署、离线包重建或正式 Release。
+
+只提取本需求代码与文档形成提交 dff915fdac40875f865fea60b3686fc4c56e9e06，分支 codex/computer-english-validation；原安装包相关改动未纳入。独立快照的 scripts/test.sh 保持仓库原版，没有依赖未提交的 release_spec.py。
+
+- macOS：在该提交的独立快照运行 ./scripts/test.sh，退出码 0；4840/4840 英文编码、50/50 中文语料、30/30 专业逐键与数字键、60/60 专用入口、2/2 补全及混输、学习持久化、安装回滚通过。日志 .cache/computer-validation/macos.log。
+- 本地 PowerShell 7.6.9：运行 scripts/test-windows.ps1（无 -Engine），安装回滚通过；这是 macOS 上的脚本验证，不冒充 Windows 引擎。
+- Windows Server 2022 x64、小狼毫 0.17.4：GitHub Actions 两组均执行 ./scripts/test-windows.ps1 -Engine。PowerShell 5.1.20348.5756 与 7.6.9 各自通过 4840/4840 英文编码、50/50 中文语料、30/30 专业逐键、60/60 专用入口、2/2 补全，且安装、持久化、静态部署检查和回滚成功。
+- Linux filters 检查通过。整次 CI 为 3/3 jobs success，源码 SHA 与验证分支提交一致。
+
+CI 证据：https://github.com/AnneHtowardshaway/rime-bilingual/actions/runs/40860908318 。Windows 两组日志已下载核对，保存在 .cache/computer-validation/windows-powershell.log 与 windows-pwsh.log。
+
+双平台原生引擎和升级/回滚门禁现已满足。桌面应用人工按键、候选窗口外观和高 DPI 仍未人工验收；本次词库修改没有调整样式。验证通过后仅补本文档记录，再快进发布 main；源代码与已验收提交一致。原安装包工作保留在本地工作区。
