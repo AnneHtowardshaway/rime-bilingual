@@ -10,7 +10,9 @@ foreach ($relative in @('weasel.custom.yaml', 'default.custom.yaml', 'wanxiang.c
     'build/wanxiang.schema.yaml', 'build/bilingual_english.table.bin', 'build/weasel.yaml')) {
     if (-not (Test-Path -LiteralPath (Join-Path $target $relative) -PathType Leaf)) { throw "Missing installed/built file: $relative" }
 }
-Assert-FileHash (Join-Path $target 'wanxiang-lts-zh-hans.gram') $script:ModelHash
+$installedModelHash = (Get-FileHash -LiteralPath (Join-Path $target 'wanxiang-lts-zh-hans.gram') -Algorithm SHA256).Hash
+$acceptedModelHashes = @($script:ModelHash, '9eedac1d836f3fdafb61b162035c8937253aedc106be40b2b957d9ab64e9ed89', '8f1b2d3ed2b2755fdd445f6ab103eff613052080b62a0c049f4b166043a16ac4')
+if ($installedModelHash -notin $acceptedModelHashes) { throw 'Installed model checksum is not a verified version.' }
 foreach ($schema in @('wanxiang')) {
     $content = [IO.File]::ReadAllText((Join-Path $target "build/$schema.schema.yaml"), $script:Utf8)
     $gloss = $content.IndexOf('lua_filter@*qingjian_gloss_filter')

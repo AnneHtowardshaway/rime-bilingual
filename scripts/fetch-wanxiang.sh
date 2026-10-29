@@ -5,8 +5,8 @@ project_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 cache_root="$project_root/.cache/wanxiang"
 release_version='v17.10.3'
 base_sha256='b01a9d62a0717c15b4669ea237226f13028ebe017bd2ed728cf92a2c0151bf1a'
-model_sha256='9eedac1d836f3fdafb61b162035c8937253aedc106be40b2b957d9ab64e9ed89'
-model_asset_id='655157355'
+model_sha256='e34500ab44626dc039a0641792ecba98ab63307646eb3d29186be56608ffe094'
+model_asset_id='676604065'
 base_url="https://github.com/amzxyz/rime-wanxiang/releases/download/$release_version/rime-wanxiang-base.zip"
 model_url="https://api.github.com/repos/amzxyz/rime-wanxiang-data/releases/assets/$model_asset_id"
 base_dir="$cache_root/$release_version"

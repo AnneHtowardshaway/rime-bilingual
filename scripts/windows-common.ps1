@@ -7,8 +7,8 @@ $script:ProjectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $script:Utf8 = New-Object Text.UTF8Encoding($false)
 $script:WanxiangVersion = 'v17.10.3'
 $script:BaseHash = 'b01a9d62a0717c15b4669ea237226f13028ebe017bd2ed728cf92a2c0151bf1a'
-$script:ModelHash = '9eedac1d836f3fdafb61b162035c8937253aedc106be40b2b957d9ab64e9ed89'
-$script:ModelAssetId = '655157355'
+$script:ModelHash = 'e34500ab44626dc039a0641792ecba98ab63307646eb3d29186be56608ffe094'
+$script:ModelAssetId = '676604065'
 $script:UpstreamFiles = @(
     'default.yaml', 'wanxiang.schema.yaml', 'wanxiang.dict.yaml',
     'wanxiang_algebra.yaml', 'wanxiang_symbols.yaml',
